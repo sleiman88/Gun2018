@@ -81,6 +81,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>gdssDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GiveAmmo.Designer.vb">
+      <DependentUpon>GiveAmmo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GiveAmmo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiveGun.Designer.vb">
+      <DependentUpon>GiveGun.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GiveGun.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LOGIN.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +129,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GiveGun.resx">
+      <DependentUpon>GiveGun.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LOGIN.resx">
       <DependentUpon>LOGIN.vb</DependentUpon>
     </EmbeddedResource>
