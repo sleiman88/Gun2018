@@ -81,6 +81,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>gdssDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="gdssDataSet1.vb">
+      <DependentUpon>gdssDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GiveAmmo.Designer.vb">
       <DependentUpon>GiveAmmo.vb</DependentUpon>
     </Compile>
