@@ -168,21 +168,9 @@
 
 
 
-    'Private Sub GunType_TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles GunType_TextBox.KeyPress
-    '    If GunType_TextBox.Text.Length > 20 Then
-
-    '        If e.KeyChar <> ControlChars.Back Then
-    '            GunType_Label.Visible = True
-    '            MsgBox("Maximum length allowed 20 Caracter")
-    '        End If
-
-    '    Else
-    '        GunType_Label.Visible = False
-
-    '    End If
-    'End Sub
-
-
-
-
+    Private Sub GunType_TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles GunType_TextBox.KeyPress
+        If GunType_TextBox.Text.Length > 20 Then
+            MsgBox("Maximum length allowed 20 Caracter")
+        End If
+    End Sub
 End Class

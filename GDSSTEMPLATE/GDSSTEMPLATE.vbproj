@@ -84,11 +84,6 @@
     <Compile Include="gdssDataSet1.vb">
       <DependentUpon>gdssDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="gdssDataSet11.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>gdssDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="GiveAmmo.Designer.vb">
       <DependentUpon>GiveAmmo.vb</DependentUpon>
     </Compile>
@@ -162,8 +157,8 @@
     </None>
     <None Include="gdssDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>gdssDataSet1.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
-      <LastGenOutput>gdssDataSet11.Designer.vb</LastGenOutput>
     </None>
     <None Include="gdssDataSet1.xss">
       <DependentUpon>gdssDataSet1.xsd</DependentUpon>

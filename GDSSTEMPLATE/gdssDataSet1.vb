@@ -1,8 +1,7 @@
-﻿
-
-Partial Public Class gdssDataSet1
+﻿Partial Class gdssDataSet1
 End Class
 
-
-Partial Public Class gdssDataSet1
-End Class
+Namespace gdssDataSet1TableAdapters
+    Partial Public Class N0ITEMSTableAdapter
+    End Class
+End Namespace
