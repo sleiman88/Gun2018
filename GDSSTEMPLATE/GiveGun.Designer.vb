@@ -32,6 +32,18 @@ Partial Class GiveGun
         Me.GdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
         Me.N0ITEMSTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.N0ITEMSTableAdapter()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.WithCleaner_CheckBox = New System.Windows.Forms.CheckBox()
+        Me.GunSize_TextBox = New System.Windows.Forms.TextBox()
+        Me.GunStore_TextBox = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.GunType_TextBox = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.LName_CheckBox = New System.Windows.Forms.CheckBox()
         Me.FATHER_CheckBox = New System.Windows.Forms.CheckBox()
@@ -48,24 +60,11 @@ Partial Class GiveGun
         Me.TextBoxMilitNb = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-
         Me.IDCARDTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.IDCARDTableAdapter()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.GunType_TextBox = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.GunStore_TextBox = New System.Windows.Forms.TextBox()
-        Me.GunSize_TextBox = New System.Windows.Forms.TextBox()
-        Me.WithCleaner_CheckBox = New System.Windows.Forms.CheckBox()
-        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.N0ITEMSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -136,6 +135,104 @@ Partial Class GiveGun
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(524, 281)
         Me.Panel1.TabIndex = 3
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(4, 166)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(69, 13)
+        Me.Label14.TabIndex = 14
+        Me.Label14.Text = "With Cleaner"
+        '
+        'WithCleaner_CheckBox
+        '
+        Me.WithCleaner_CheckBox.AutoSize = True
+        Me.WithCleaner_CheckBox.Location = New System.Drawing.Point(81, 166)
+        Me.WithCleaner_CheckBox.Name = "WithCleaner_CheckBox"
+        Me.WithCleaner_CheckBox.Size = New System.Drawing.Size(15, 14)
+        Me.WithCleaner_CheckBox.TabIndex = 13
+        Me.WithCleaner_CheckBox.UseVisualStyleBackColor = True
+        '
+        'GunSize_TextBox
+        '
+        Me.GunSize_TextBox.Location = New System.Drawing.Point(81, 140)
+        Me.GunSize_TextBox.Name = "GunSize_TextBox"
+        Me.GunSize_TextBox.Size = New System.Drawing.Size(143, 20)
+        Me.GunSize_TextBox.TabIndex = 12
+        '
+        'GunStore_TextBox
+        '
+        Me.GunStore_TextBox.Location = New System.Drawing.Point(81, 113)
+        Me.GunStore_TextBox.Name = "GunStore_TextBox"
+        Me.GunStore_TextBox.Size = New System.Drawing.Size(143, 20)
+        Me.GunStore_TextBox.TabIndex = 11
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(6, 140)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(48, 13)
+        Me.Label13.TabIndex = 10
+        Me.Label13.Text = "Gun Size"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(6, 113)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(55, 13)
+        Me.Label12.TabIndex = 9
+        Me.Label12.Text = "Gun Store"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(4, 86)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(66, 13)
+        Me.Label11.TabIndex = 8
+        Me.Label11.Text = "Gun Number"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(367, 77)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(143, 23)
+        Me.Button1.TabIndex = 7
+        Me.Button1.Text = "Check Availability"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(230, 72)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(136, 20)
+        Me.TextBox2.TabIndex = 6
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(81, 79)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(143, 20)
+        Me.TextBox1.TabIndex = 5
+        '
+        'GunType_TextBox
+        '
+        Me.GunType_TextBox.Location = New System.Drawing.Point(80, 45)
+        Me.GunType_TextBox.Name = "GunType_TextBox"
+        Me.GunType_TextBox.Size = New System.Drawing.Size(144, 20)
+        Me.GunType_TextBox.TabIndex = 4
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(6, 48)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(53, 13)
+        Me.Label10.TabIndex = 3
+        Me.Label10.Text = "Gun Type"
         '
         'Panel2
         '
@@ -301,14 +398,14 @@ Partial Class GiveGun
         Me.Panel3.Size = New System.Drawing.Size(512, 426)
         Me.Panel3.TabIndex = 7
         '
-        'Label7
+        'Label9
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(4, 16)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(32, 13)
-        Me.Label7.TabIndex = 0
-        Me.Label7.Text = "Code"
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(3, 72)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(38, 13)
+        Me.Label9.TabIndex = 2
+        Me.Label9.Text = "GType"
         '
         'Label8
         '
@@ -319,112 +416,14 @@ Partial Class GiveGun
         Me.Label8.TabIndex = 1
         Me.Label8.Text = "Gname"
         '
-        'Label9
+        'Label7
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(3, 72)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(38, 13)
-        Me.Label9.TabIndex = 2
-        Me.Label9.Text = "GType"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(6, 48)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(53, 13)
-        Me.Label10.TabIndex = 3
-        Me.Label10.Text = "Gun Type"
-        '
-        'GunType_TextBox
-        '
-        Me.GunType_TextBox.Location = New System.Drawing.Point(80, 45)
-        Me.GunType_TextBox.Name = "GunType_TextBox"
-        Me.GunType_TextBox.Size = New System.Drawing.Size(144, 20)
-        Me.GunType_TextBox.TabIndex = 4
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(81, 79)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(143, 20)
-        Me.TextBox1.TabIndex = 5
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(230, 79)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(136, 20)
-        Me.TextBox2.TabIndex = 6
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(367, 77)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(143, 23)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "Check Availability"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(4, 86)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(66, 13)
-        Me.Label11.TabIndex = 8
-        Me.Label11.Text = "Gun Number"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(6, 113)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(55, 13)
-        Me.Label12.TabIndex = 9
-        Me.Label12.Text = "Gun Store"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(6, 140)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(48, 13)
-        Me.Label13.TabIndex = 10
-        Me.Label13.Text = "Gun Size"
-        '
-        'GunStore_TextBox
-        '
-        Me.GunStore_TextBox.Location = New System.Drawing.Point(81, 113)
-        Me.GunStore_TextBox.Name = "GunStore_TextBox"
-        Me.GunStore_TextBox.Size = New System.Drawing.Size(143, 20)
-        Me.GunStore_TextBox.TabIndex = 11
-        '
-        'GunSize_TextBox
-        '
-        Me.GunSize_TextBox.Location = New System.Drawing.Point(81, 140)
-        Me.GunSize_TextBox.Name = "GunSize_TextBox"
-        Me.GunSize_TextBox.Size = New System.Drawing.Size(143, 20)
-        Me.GunSize_TextBox.TabIndex = 12
-        '
-        'WithCleaner_CheckBox
-        '
-        Me.WithCleaner_CheckBox.AutoSize = True
-        Me.WithCleaner_CheckBox.Location = New System.Drawing.Point(81, 166)
-        Me.WithCleaner_CheckBox.Name = "WithCleaner_CheckBox"
-        Me.WithCleaner_CheckBox.Size = New System.Drawing.Size(15, 14)
-        Me.WithCleaner_CheckBox.TabIndex = 13
-        Me.WithCleaner_CheckBox.UseVisualStyleBackColor = True
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(4, 166)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(69, 13)
-        Me.Label14.TabIndex = 14
-        Me.Label14.Text = "With Cleaner"
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(4, 16)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(32, 13)
+        Me.Label7.TabIndex = 0
+        Me.Label7.Text = "Code"
         '
         'GiveGun
         '
