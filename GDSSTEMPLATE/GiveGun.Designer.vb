@@ -32,6 +32,7 @@ Partial Class GiveGun
         Me.GdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
         Me.N0ITEMSTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.N0ITEMSTableAdapter()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.GunLabel_Label = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.WithCleaner_CheckBox = New System.Windows.Forms.CheckBox()
         Me.GunSize_TextBox = New System.Windows.Forms.TextBox()
@@ -116,6 +117,7 @@ Partial Class GiveGun
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.GunLabel_Label)
         Me.Panel1.Controls.Add(Me.Label14)
         Me.Panel1.Controls.Add(Me.WithCleaner_CheckBox)
         Me.Panel1.Controls.Add(Me.GunSize_TextBox)
@@ -135,6 +137,18 @@ Partial Class GiveGun
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(524, 281)
         Me.Panel1.TabIndex = 3
+        '
+        'GunLabel_Label
+        '
+        Me.GunLabel_Label.AutoSize = True
+        Me.GunLabel_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunLabel_Label.ForeColor = System.Drawing.Color.OrangeRed
+        Me.GunLabel_Label.Location = New System.Drawing.Point(215, 46)
+        Me.GunLabel_Label.Name = "GunLabel_Label"
+        Me.GunLabel_Label.Size = New System.Drawing.Size(18, 19)
+        Me.GunLabel_Label.TabIndex = 15
+        Me.GunLabel_Label.Text = "*"
+        Me.GunLabel_Label.Visible = False
         '
         'Label14
         '
@@ -206,7 +220,7 @@ Partial Class GiveGun
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(230, 72)
+        Me.TextBox2.Location = New System.Drawing.Point(230, 79)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(136, 20)
         Me.TextBox2.TabIndex = 6
@@ -220,7 +234,7 @@ Partial Class GiveGun
         '
         'GunType_TextBox
         '
-        Me.GunType_TextBox.Location = New System.Drawing.Point(80, 45)
+        Me.GunType_TextBox.Location = New System.Drawing.Point(65, 45)
         Me.GunType_TextBox.Name = "GunType_TextBox"
         Me.GunType_TextBox.Size = New System.Drawing.Size(144, 20)
         Me.GunType_TextBox.TabIndex = 4
@@ -491,4 +505,5 @@ Partial Class GiveGun
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents GunType_TextBox As TextBox
     Friend WithEvents Label10 As Label
+    Friend WithEvents GunLabel_Label As Label
 End Class

@@ -169,8 +169,13 @@
 
 
     Private Sub GunType_TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles GunType_TextBox.KeyPress
-        If GunType_TextBox.Text.Length > 20 Then
+        If GunType_TextBox.Text.Length > 19 Then
+
             MsgBox("Maximum length allowed 20 Caracter")
         End If
+    End Sub
+
+    Private Sub GunType_TextBox_TextChanged(sender As Object, e As EventArgs) Handles GunType_TextBox.TextChanged
+
     End Sub
 End Class
