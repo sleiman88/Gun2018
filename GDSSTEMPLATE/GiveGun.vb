@@ -9,6 +9,8 @@
 
     'End Sub
     Private Sub GiveGun_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'GdssDataSet11.N0OFFICE1' table. You can move, or remove it, as needed.
+        ' Me.N0OFFICE1TableAdapter.Fill(Me.GdssDataSet1.N0OFFICE1)
         'TODO: This line of code loads data into the 'GdssDataSet1.IDCARD' table. You can move, or remove it, as needed.
         '  Me.IDCARDTableAdapter.Fill(Me.GdssDataSet1.IDCARD)
         'TODO: This line of code loads data into the 'GdssDataSet1.N0ITEMS' table. You can move, or remove it, as needed.
@@ -310,6 +312,13 @@
         If Not Char.IsNumber(e.KeyChar) Then
             MsgBox("only Numbers allowed")
             e.Handled = True
+        End If
+    End Sub
+
+    Private Sub Supplier_TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Supplier_TextBox.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            ' Me.N0OFFICE1TableAdapter .FillByName (Me.da)
+            Me.N0OFFICE1TableAdapter.FillByName(Me.GdssDataSet1.N0OFFICE1, "%" & Supplier_TextBox.Text & "%")
         End If
     End Sub
 End Class

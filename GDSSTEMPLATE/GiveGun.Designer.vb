@@ -32,6 +32,7 @@ Partial Class GiveGun
         Me.GdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
         Me.N0ITEMSTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.N0ITEMSTableAdapter()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.GAMMO_Label = New System.Windows.Forms.Label()
         Me.GAMMO_TextBox = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.gunSize_Label = New System.Windows.Forms.Label()
@@ -51,6 +52,9 @@ Partial Class GiveGun
         Me.GunType_TextBox = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Grade_ComboBox = New System.Windows.Forms.ComboBox()
+        Me.IDCARDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Source_ComboBox = New System.Windows.Forms.ComboBox()
         Me.LName_CheckBox = New System.Windows.Forms.CheckBox()
         Me.FATHER_CheckBox = New System.Windows.Forms.CheckBox()
         Me.FName_CheckBox = New System.Windows.Forms.CheckBox()
@@ -59,7 +63,6 @@ Partial Class GiveGun
         Me.TextBox_FATHER = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ComboBoxPersons = New System.Windows.Forms.ComboBox()
-        Me.IDCARDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox_FName = New System.Windows.Forms.TextBox()
@@ -68,17 +71,23 @@ Partial Class GiveGun
         Me.Label2 = New System.Windows.Forms.Label()
         Me.IDCARDTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.IDCARDTableAdapter()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Supplier_TextBox = New System.Windows.Forms.TextBox()
         Me.PergunTableAdapter1 = New GDSSTEMPLATE.gdssDataSet1TableAdapters.PERGUNTableAdapter()
-        Me.GAMMO_Label = New System.Windows.Forms.Label()
         Me.Supplier = New System.Windows.Forms.Label()
         Me.Note_TextBox = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Save_Button = New System.Windows.Forms.Button()
+        Me.N0OFFICE1TableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.N0OFFICE1TableAdapter()
+        Me.Supplier_ComboBox = New System.Windows.Forms.ComboBox()
+        Me.N0OFFICE1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Label8 = New System.Windows.Forms.Label()
         CType(Me.N0ITEMSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
+        CType(Me.N0OFFICE1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TextBox_NameGun
@@ -150,6 +159,18 @@ Partial Class GiveGun
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(691, 364)
         Me.Panel1.TabIndex = 3
+        '
+        'GAMMO_Label
+        '
+        Me.GAMMO_Label.AutoSize = True
+        Me.GAMMO_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GAMMO_Label.ForeColor = System.Drawing.Color.OrangeRed
+        Me.GAMMO_Label.Location = New System.Drawing.Point(194, 244)
+        Me.GAMMO_Label.Name = "GAMMO_Label"
+        Me.GAMMO_Label.Size = New System.Drawing.Size(18, 19)
+        Me.GAMMO_Label.TabIndex = 22
+        Me.GAMMO_Label.Text = "*"
+        Me.GAMMO_Label.Visible = False
         '
         'GAMMO_TextBox
         '
@@ -317,6 +338,8 @@ Partial Class GiveGun
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Grade_ComboBox)
+        Me.Panel2.Controls.Add(Me.Source_ComboBox)
         Me.Panel2.Controls.Add(Me.LName_CheckBox)
         Me.Panel2.Controls.Add(Me.FATHER_CheckBox)
         Me.Panel2.Controls.Add(Me.FName_CheckBox)
@@ -333,6 +356,34 @@ Partial Class GiveGun
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(521, 181)
         Me.Panel2.TabIndex = 4
+        '
+        'Grade_ComboBox
+        '
+        Me.Grade_ComboBox.DataSource = Me.IDCARDBindingSource
+        Me.Grade_ComboBox.DisplayMember = "GRADE"
+        Me.Grade_ComboBox.FormattingEnabled = True
+        Me.Grade_ComboBox.Location = New System.Drawing.Point(309, 85)
+        Me.Grade_ComboBox.Name = "Grade_ComboBox"
+        Me.Grade_ComboBox.Size = New System.Drawing.Size(121, 21)
+        Me.Grade_ComboBox.TabIndex = 14
+        Me.Grade_ComboBox.ValueMember = "GRADE"
+        '
+        'IDCARDBindingSource
+        '
+        Me.IDCARDBindingSource.DataMember = "IDCARD"
+        Me.IDCARDBindingSource.DataSource = Me.GdssDataSet1
+        '
+        'Source_ComboBox
+        '
+        Me.Source_ComboBox.DataSource = Me.IDCARDBindingSource
+        Me.Source_ComboBox.DisplayMember = "SOURCE"
+        Me.Source_ComboBox.FormattingEnabled = True
+        Me.Source_ComboBox.Location = New System.Drawing.Point(309, 52)
+        Me.Source_ComboBox.Name = "Source_ComboBox"
+        Me.Source_ComboBox.Size = New System.Drawing.Size(92, 21)
+        Me.Source_ComboBox.TabIndex = 13
+        Me.Source_ComboBox.ValueMember = "SOURCE"
+        Me.Source_ComboBox.Visible = False
         '
         'LName_CheckBox
         '
@@ -409,11 +460,6 @@ Partial Class GiveGun
         Me.ComboBoxPersons.TabIndex = 4
         Me.ComboBoxPersons.ValueMember = "CODE"
         '
-        'IDCARDBindingSource
-        '
-        Me.IDCARDBindingSource.DataMember = "IDCARD"
-        Me.IDCARDBindingSource.DataSource = Me.GdssDataSet1
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -471,26 +517,24 @@ Partial Class GiveGun
         '
         'Panel3
         '
+        Me.Panel3.Controls.Add(Me.Label8)
+        Me.Panel3.Controls.Add(Me.Supplier_ComboBox)
+        Me.Panel3.Controls.Add(Me.Supplier_TextBox)
         Me.Panel3.Location = New System.Drawing.Point(709, 36)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(512, 135)
+        Me.Panel3.Size = New System.Drawing.Size(512, 68)
         Me.Panel3.TabIndex = 7
+        '
+        'Supplier_TextBox
+        '
+        Me.Supplier_TextBox.Location = New System.Drawing.Point(55, 20)
+        Me.Supplier_TextBox.Name = "Supplier_TextBox"
+        Me.Supplier_TextBox.Size = New System.Drawing.Size(190, 20)
+        Me.Supplier_TextBox.TabIndex = 1
         '
         'PergunTableAdapter1
         '
         Me.PergunTableAdapter1.ClearBeforeFill = True
-        '
-        'GAMMO_Label
-        '
-        Me.GAMMO_Label.AutoSize = True
-        Me.GAMMO_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GAMMO_Label.ForeColor = System.Drawing.Color.OrangeRed
-        Me.GAMMO_Label.Location = New System.Drawing.Point(194, 244)
-        Me.GAMMO_Label.Name = "GAMMO_Label"
-        Me.GAMMO_Label.Size = New System.Drawing.Size(18, 19)
-        Me.GAMMO_Label.TabIndex = 22
-        Me.GAMMO_Label.Text = "*"
-        Me.GAMMO_Label.Visible = False
         '
         'Supplier
         '
@@ -527,6 +571,35 @@ Partial Class GiveGun
         Me.Save_Button.Text = "Save"
         Me.Save_Button.UseVisualStyleBackColor = True
         '
+        'N0OFFICE1TableAdapter
+        '
+        Me.N0OFFICE1TableAdapter.ClearBeforeFill = True
+        '
+        'Supplier_ComboBox
+        '
+        Me.Supplier_ComboBox.DataSource = Me.N0OFFICE1BindingSource
+        Me.Supplier_ComboBox.DisplayMember = "LABEL"
+        Me.Supplier_ComboBox.FormattingEnabled = True
+        Me.Supplier_ComboBox.Location = New System.Drawing.Point(264, 20)
+        Me.Supplier_ComboBox.Name = "Supplier_ComboBox"
+        Me.Supplier_ComboBox.Size = New System.Drawing.Size(222, 21)
+        Me.Supplier_ComboBox.TabIndex = 2
+        Me.Supplier_ComboBox.ValueMember = "CODE"
+        '
+        'N0OFFICE1BindingSource
+        '
+        Me.N0OFFICE1BindingSource.DataMember = "N0OFFICE1"
+        Me.N0OFFICE1BindingSource.DataSource = Me.GdssDataSet1
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(4, 20)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(45, 13)
+        Me.Label8.TabIndex = 3
+        Me.Label8.Text = "Supplier"
+        '
         'GiveGun
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -550,6 +623,9 @@ Partial Class GiveGun
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        CType(Me.N0OFFICE1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -604,4 +680,11 @@ Partial Class GiveGun
     Friend WithEvents Note_TextBox As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Save_Button As Button
+    Friend WithEvents Source_ComboBox As ComboBox
+    Friend WithEvents Grade_ComboBox As ComboBox
+    Friend WithEvents Supplier_TextBox As TextBox
+    Friend WithEvents N0OFFICE1TableAdapter As N0OFFICE1TableAdapter
+    Friend WithEvents Supplier_ComboBox As ComboBox
+    Friend WithEvents N0OFFICE1BindingSource As BindingSource
+    Friend WithEvents Label8 As Label
 End Class
