@@ -242,6 +242,8 @@
     Private Sub gunNbConfirm_TextBox_MouseDown(sender As Object, e As MouseEventArgs) Handles gunNbConfirm_TextBox.MouseDown
         If e.Button = MouseButtons.Right Then
             MsgBox("Not allow to copy and past ")
+            gunNbConfirm_TextBox.Text = ""
+
         End If
     End Sub
 
@@ -253,6 +255,7 @@
     End Sub
 
     Private Sub gunNbConfirm_TextBox_Leave(sender As Object, e As EventArgs) Handles gunNbConfirm_TextBox.Leave
+
         If String.Compare(GunNb_TextBox.Text, gunNbConfirm_TextBox.Text) <> 0 Then
             Confirm_Label.Visible = True
             MsgBox("Gun Number does not Match ")
@@ -261,8 +264,52 @@
         Else
             Confirm_Label.Visible = False
             erreur = False
+            If checkNumberIfExist() = True Then
+                erreur = True
+                If gunNbConfirm_TextBox.Text.Length > 0 Then
+                    MsgBox("this Current Number already exist ,Please enter a valid Number ")
+                    gunNbConfirm_TextBox.Text = ""
+                    GunNb_TextBox.Text = ""
+
+                    GunNb_TextBox.Focus()
+
+                End If
+            Else
+                erreur = False
+
+            End If
+
 
         End If
 
+    End Sub
+
+
+    Private Function checkNumberIfExist() As Boolean
+
+        Dim result As String
+
+        result = Me.PergunTableAdapter1.checkIfNbExist(gunNbConfirm_TextBox.Text)
+        If result Is Nothing Then
+            Return True
+        Else
+            Return False
+        End If
+
+
+    End Function
+
+    Private Sub GunStore_TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles GunStore_TextBox.KeyPress
+        If Not Char.IsNumber(e.KeyChar) Then
+            MsgBox("only Numbers allowed")
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub GAMMO_TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles GAMMO_TextBox.KeyPress
+        If Not Char.IsNumber(e.KeyChar) Then
+            MsgBox("only Numbers allowed")
+            e.Handled = True
+        End If
     End Sub
 End Class
