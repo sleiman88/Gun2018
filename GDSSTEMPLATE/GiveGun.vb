@@ -212,4 +212,57 @@
 
 
     End Sub
+
+    Private Sub GunNb_TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles GunNb_TextBox.KeyPress
+
+
+        If e.KeyChar <> ChrW(Keys.Back) And e.KeyChar <> ChrW(Keys.Enter) Then
+            If GunType_TextBox.Text.Length > 49 Then
+                GunLabel_Label.Visible = True
+                e.Handled = True
+                MsgBox("Maximum length allowed 50 Caracter")
+                erreur = True
+
+
+
+            End If
+        Else
+
+            If GunType_TextBox.Text.Length <= 50 Then
+                GunLabel_Label.Visible = False
+                erreur = False
+            End If
+        End If
+
+    End Sub
+
+
+
+
+    Private Sub gunNbConfirm_TextBox_MouseDown(sender As Object, e As MouseEventArgs) Handles gunNbConfirm_TextBox.MouseDown
+        If e.Button = MouseButtons.Right Then
+            MsgBox("Not allow to copy and past ")
+        End If
+    End Sub
+
+    Private Sub gunNbConfirm_TextBox_KeyDown(sender As Object, e As KeyEventArgs) Handles gunNbConfirm_TextBox.KeyDown
+        If e.Modifiers = Keys.Control AndAlso e.KeyCode = Keys.V Then
+            e.SuppressKeyPress = True
+            MsgBox("Not allow to copy and past ")
+        End If
+    End Sub
+
+    Private Sub gunNbConfirm_TextBox_Leave(sender As Object, e As EventArgs) Handles gunNbConfirm_TextBox.Leave
+        If String.Compare(GunNb_TextBox.Text, gunNbConfirm_TextBox.Text) <> 0 Then
+            Confirm_Label.Visible = True
+            MsgBox("Gun Number does not Match ")
+            erreur = True
+            gunNbConfirm_TextBox.Focus()
+        Else
+            Confirm_Label.Visible = False
+            erreur = False
+
+        End If
+
+    End Sub
 End Class

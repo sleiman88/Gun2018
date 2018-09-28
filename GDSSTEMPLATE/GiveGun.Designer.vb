@@ -32,6 +32,7 @@ Partial Class GiveGun
         Me.GdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
         Me.N0ITEMSTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.N0ITEMSTableAdapter()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.GunLabel_Label = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.WithCleaner_CheckBox = New System.Windows.Forms.CheckBox()
@@ -41,8 +42,8 @@ Partial Class GiveGun
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.gunNbConfirm_TextBox = New System.Windows.Forms.TextBox()
+        Me.GunNb_TextBox = New System.Windows.Forms.TextBox()
         Me.GunType_TextBox = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -66,6 +67,7 @@ Partial Class GiveGun
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Confirm_Label = New System.Windows.Forms.Label()
         CType(Me.N0ITEMSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -117,6 +119,8 @@ Partial Class GiveGun
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Confirm_Label)
+        Me.Panel1.Controls.Add(Me.Label15)
         Me.Panel1.Controls.Add(Me.GunLabel_Label)
         Me.Panel1.Controls.Add(Me.Label14)
         Me.Panel1.Controls.Add(Me.WithCleaner_CheckBox)
@@ -126,8 +130,8 @@ Partial Class GiveGun
         Me.Panel1.Controls.Add(Me.Label12)
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.TextBox2)
-        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Controls.Add(Me.gunNbConfirm_TextBox)
+        Me.Panel1.Controls.Add(Me.GunNb_TextBox)
         Me.Panel1.Controls.Add(Me.GunType_TextBox)
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.TextBox_NameGun)
@@ -138,12 +142,21 @@ Partial Class GiveGun
         Me.Panel1.Size = New System.Drawing.Size(524, 281)
         Me.Panel1.TabIndex = 3
         '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(-3, 122)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(90, 13)
+        Me.Label15.TabIndex = 16
+        Me.Label15.Text = "Confirme Number"
+        '
         'GunLabel_Label
         '
         Me.GunLabel_Label.AutoSize = True
         Me.GunLabel_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunLabel_Label.ForeColor = System.Drawing.Color.OrangeRed
-        Me.GunLabel_Label.Location = New System.Drawing.Point(215, 46)
+        Me.GunLabel_Label.Location = New System.Drawing.Point(302, 49)
         Me.GunLabel_Label.Name = "GunLabel_Label"
         Me.GunLabel_Label.Size = New System.Drawing.Size(18, 19)
         Me.GunLabel_Label.TabIndex = 15
@@ -153,7 +166,7 @@ Partial Class GiveGun
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(4, 166)
+        Me.Label14.Location = New System.Drawing.Point(4, 250)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(69, 13)
         Me.Label14.TabIndex = 14
@@ -162,7 +175,7 @@ Partial Class GiveGun
         'WithCleaner_CheckBox
         '
         Me.WithCleaner_CheckBox.AutoSize = True
-        Me.WithCleaner_CheckBox.Location = New System.Drawing.Point(81, 166)
+        Me.WithCleaner_CheckBox.Location = New System.Drawing.Point(81, 250)
         Me.WithCleaner_CheckBox.Name = "WithCleaner_CheckBox"
         Me.WithCleaner_CheckBox.Size = New System.Drawing.Size(15, 14)
         Me.WithCleaner_CheckBox.TabIndex = 13
@@ -170,14 +183,14 @@ Partial Class GiveGun
         '
         'GunSize_TextBox
         '
-        Me.GunSize_TextBox.Location = New System.Drawing.Point(81, 140)
+        Me.GunSize_TextBox.Location = New System.Drawing.Point(81, 224)
         Me.GunSize_TextBox.Name = "GunSize_TextBox"
         Me.GunSize_TextBox.Size = New System.Drawing.Size(143, 20)
         Me.GunSize_TextBox.TabIndex = 12
         '
         'GunStore_TextBox
         '
-        Me.GunStore_TextBox.Location = New System.Drawing.Point(81, 113)
+        Me.GunStore_TextBox.Location = New System.Drawing.Point(81, 197)
         Me.GunStore_TextBox.Name = "GunStore_TextBox"
         Me.GunStore_TextBox.Size = New System.Drawing.Size(143, 20)
         Me.GunStore_TextBox.TabIndex = 11
@@ -185,7 +198,7 @@ Partial Class GiveGun
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(6, 140)
+        Me.Label13.Location = New System.Drawing.Point(6, 224)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(48, 13)
         Me.Label13.TabIndex = 10
@@ -194,7 +207,7 @@ Partial Class GiveGun
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(6, 113)
+        Me.Label12.Location = New System.Drawing.Point(6, 197)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(55, 13)
         Me.Label12.TabIndex = 9
@@ -211,32 +224,32 @@ Partial Class GiveGun
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(367, 77)
+        Me.Button1.Location = New System.Drawing.Point(326, 112)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(143, 23)
         Me.Button1.TabIndex = 7
         Me.Button1.Text = "Check Availability"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'gunNbConfirm_TextBox
         '
-        Me.TextBox2.Location = New System.Drawing.Point(230, 79)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(136, 20)
-        Me.TextBox2.TabIndex = 6
+        Me.gunNbConfirm_TextBox.Location = New System.Drawing.Point(88, 115)
+        Me.gunNbConfirm_TextBox.Name = "gunNbConfirm_TextBox"
+        Me.gunNbConfirm_TextBox.Size = New System.Drawing.Size(208, 20)
+        Me.gunNbConfirm_TextBox.TabIndex = 6
         '
-        'TextBox1
+        'GunNb_TextBox
         '
-        Me.TextBox1.Location = New System.Drawing.Point(81, 79)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(143, 20)
-        Me.TextBox1.TabIndex = 5
+        Me.GunNb_TextBox.Location = New System.Drawing.Point(88, 80)
+        Me.GunNb_TextBox.Name = "GunNb_TextBox"
+        Me.GunNb_TextBox.Size = New System.Drawing.Size(208, 20)
+        Me.GunNb_TextBox.TabIndex = 5
         '
         'GunType_TextBox
         '
-        Me.GunType_TextBox.Location = New System.Drawing.Point(65, 45)
+        Me.GunType_TextBox.Location = New System.Drawing.Point(88, 48)
         Me.GunType_TextBox.Name = "GunType_TextBox"
-        Me.GunType_TextBox.Size = New System.Drawing.Size(144, 20)
+        Me.GunType_TextBox.Size = New System.Drawing.Size(208, 20)
         Me.GunType_TextBox.TabIndex = 4
         '
         'Label10
@@ -439,6 +452,18 @@ Partial Class GiveGun
         Me.Label7.TabIndex = 0
         Me.Label7.Text = "Code"
         '
+        'Confirm_Label
+        '
+        Me.Confirm_Label.AutoSize = True
+        Me.Confirm_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Confirm_Label.ForeColor = System.Drawing.Color.OrangeRed
+        Me.Confirm_Label.Location = New System.Drawing.Point(302, 117)
+        Me.Confirm_Label.Name = "Confirm_Label"
+        Me.Confirm_Label.Size = New System.Drawing.Size(18, 19)
+        Me.Confirm_Label.TabIndex = 17
+        Me.Confirm_Label.Text = "*"
+        Me.Confirm_Label.Visible = False
+        '
         'GiveGun
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -501,9 +526,11 @@ Partial Class GiveGun
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents gunNbConfirm_TextBox As TextBox
+    Friend WithEvents GunNb_TextBox As TextBox
     Friend WithEvents GunType_TextBox As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents GunLabel_Label As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Confirm_Label As Label
 End Class
