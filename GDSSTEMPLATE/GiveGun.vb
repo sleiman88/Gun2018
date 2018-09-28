@@ -1,10 +1,19 @@
 ﻿Public Class GiveGun
+    Public erreur As Boolean
+    'Private Sub New()
+    '    erreur = False
+    '    ' This call is required by the designer.
+    '    InitializeComponent()
+
+    '    ' Add any initialization after the InitializeComponent() call.
+
+    'End Sub
     Private Sub GiveGun_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'GdssDataSet1.IDCARD' table. You can move, or remove it, as needed.
         '  Me.IDCARDTableAdapter.Fill(Me.GdssDataSet1.IDCARD)
         'TODO: This line of code loads data into the 'GdssDataSet1.N0ITEMS' table. You can move, or remove it, as needed.
         '  Me.N0ITEMSTableAdapter.Fill(Me.GdssDataSet1.N0ITEMS)
-
+        erreur = False
     End Sub
 
     Private Sub Button_Search_Click(sender As Object, e As EventArgs) Handles Button_Search.Click
@@ -169,13 +178,38 @@
 
 
     Private Sub GunType_TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles GunType_TextBox.KeyPress
-        If GunType_TextBox.Text.Length > 19 Then
 
-            MsgBox("Maximum length allowed 20 Caracter")
+        If e.KeyChar <> ChrW(Keys.Back) And e.KeyChar <> ChrW(Keys.Enter) Then
+            If GunType_TextBox.Text.Length > 19 Then
+                GunLabel_Label.Visible = True
+                e.Handled = True
+                MsgBox("Maximum length allowed 20 Caracter")
+                erreur = True
+
+
+
+            End If
+        Else
+
+            If GunType_TextBox.Text.Length <= 20 Then
+                GunLabel_Label.Visible = False
+                erreur = False
+            End If
         End If
+
+
+
     End Sub
 
+
+
     Private Sub GunType_TextBox_TextChanged(sender As Object, e As EventArgs) Handles GunType_TextBox.TextChanged
+
+    End Sub
+
+    Private Sub GunType_TextBox_KeyUp(sender As Object, e As KeyEventArgs) Handles GunType_TextBox.KeyUp
+
+
 
     End Sub
 End Class
