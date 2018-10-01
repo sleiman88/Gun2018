@@ -342,6 +342,7 @@
         temp = DateTimePicker1.Value
         temp.ToString("MM/DD/yyyy hh:mm")
         DDATE_TextBox.Text = temp.ToString
+        DDate_Label.Visible = False
 
     End Sub
 
@@ -350,6 +351,28 @@
 
         CurrentTime = Date.Now.ToString("MM/dd/yyyy hh:mm tt")
     End Sub
+    Private Function checkTest() As Boolean
+        Dim result As Boolean
+        result = False
+        If DDATE_TextBox.Text.Length = 0 Then
+            result = True
+            DDate_Label.Visible = True
+
+        End If
+
+        If NBDoc_TextBox.Text.Length = 0 Then
+            result = True
+            Document_Label.Visible = True
+        End If
 
 
+        Return False
+    End Function
+
+    Private Sub NBDoc_TextBox_KeyUp(sender As Object, e As KeyEventArgs) Handles NBDoc_TextBox.KeyUp
+        If NBDoc_TextBox.Text.Length > 0 Then
+            Document_Label.Visible = False
+
+        End If
+    End Sub
 End Class

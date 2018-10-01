@@ -31,6 +31,7 @@ Partial Class GiveGun
         Me.N0ITEMSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Item_Label = New System.Windows.Forms.Label()
         Me.GAMMO_Label = New System.Windows.Forms.Label()
         Me.GAMMO_TextBox = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -51,6 +52,7 @@ Partial Class GiveGun
         Me.GunType_TextBox = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Person_Label = New System.Windows.Forms.Label()
         Me.Grade_ComboBox = New System.Windows.Forms.ComboBox()
         Me.IDCARDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Source_ComboBox = New System.Windows.Forms.ComboBox()
@@ -69,6 +71,7 @@ Partial Class GiveGun
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Supplier_Label = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Supplier_ComboBox = New System.Windows.Forms.ComboBox()
         Me.N0OFFICE1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -78,10 +81,12 @@ Partial Class GiveGun
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Save_Button = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Document_Label = New System.Windows.Forms.Label()
         Me.NBDoc_TextBox = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.DDate_Label = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.DDATE_TextBox = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -145,6 +150,7 @@ Partial Class GiveGun
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Item_Label)
         Me.Panel1.Controls.Add(Me.GAMMO_Label)
         Me.Panel1.Controls.Add(Me.GAMMO_TextBox)
         Me.Panel1.Controls.Add(Me.Label16)
@@ -171,6 +177,18 @@ Partial Class GiveGun
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(691, 364)
         Me.Panel1.TabIndex = 3
+        '
+        'Item_Label
+        '
+        Me.Item_Label.AutoSize = True
+        Me.Item_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Item_Label.ForeColor = System.Drawing.Color.OrangeRed
+        Me.Item_Label.Location = New System.Drawing.Point(539, 18)
+        Me.Item_Label.Name = "Item_Label"
+        Me.Item_Label.Size = New System.Drawing.Size(18, 19)
+        Me.Item_Label.TabIndex = 17
+        Me.Item_Label.Text = "*"
+        Me.Item_Label.Visible = False
         '
         'GAMMO_Label
         '
@@ -351,6 +369,7 @@ Partial Class GiveGun
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.Person_Label)
         Me.Panel2.Controls.Add(Me.Grade_ComboBox)
         Me.Panel2.Controls.Add(Me.Source_ComboBox)
         Me.Panel2.Controls.Add(Me.LName_CheckBox)
@@ -367,8 +386,20 @@ Partial Class GiveGun
         Me.Panel2.Controls.Add(Me.TextBoxMilitNb)
         Me.Panel2.Location = New System.Drawing.Point(13, 485)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(521, 181)
+        Me.Panel2.Size = New System.Drawing.Size(581, 181)
         Me.Panel2.TabIndex = 4
+        '
+        'Person_Label
+        '
+        Me.Person_Label.AutoSize = True
+        Me.Person_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Person_Label.ForeColor = System.Drawing.Color.OrangeRed
+        Me.Person_Label.Location = New System.Drawing.Point(522, 18)
+        Me.Person_Label.Name = "Person_Label"
+        Me.Person_Label.Size = New System.Drawing.Size(18, 19)
+        Me.Person_Label.TabIndex = 16
+        Me.Person_Label.Text = "*"
+        Me.Person_Label.Visible = False
         '
         'Grade_ComboBox
         '
@@ -527,13 +558,26 @@ Partial Class GiveGun
         'Panel3
         '
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.Supplier_Label)
         Me.Panel3.Controls.Add(Me.Label8)
         Me.Panel3.Controls.Add(Me.Supplier_ComboBox)
         Me.Panel3.Controls.Add(Me.Supplier_TextBox)
         Me.Panel3.Location = New System.Drawing.Point(709, 36)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(512, 68)
+        Me.Panel3.Size = New System.Drawing.Size(520, 104)
         Me.Panel3.TabIndex = 7
+        '
+        'Supplier_Label
+        '
+        Me.Supplier_Label.AutoSize = True
+        Me.Supplier_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Supplier_Label.ForeColor = System.Drawing.Color.OrangeRed
+        Me.Supplier_Label.Location = New System.Drawing.Point(492, 22)
+        Me.Supplier_Label.Name = "Supplier_Label"
+        Me.Supplier_Label.Size = New System.Drawing.Size(18, 19)
+        Me.Supplier_Label.TabIndex = 16
+        Me.Supplier_Label.Text = "*"
+        Me.Supplier_Label.Visible = False
         '
         'Label8
         '
@@ -606,12 +650,25 @@ Partial Class GiveGun
         'Panel4
         '
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.Document_Label)
         Me.Panel4.Controls.Add(Me.NBDoc_TextBox)
         Me.Panel4.Controls.Add(Me.Label17)
         Me.Panel4.Location = New System.Drawing.Point(709, 170)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(512, 70)
         Me.Panel4.TabIndex = 12
+        '
+        'Document_Label
+        '
+        Me.Document_Label.AutoSize = True
+        Me.Document_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Document_Label.ForeColor = System.Drawing.Color.OrangeRed
+        Me.Document_Label.Location = New System.Drawing.Point(338, 10)
+        Me.Document_Label.Name = "Document_Label"
+        Me.Document_Label.Size = New System.Drawing.Size(18, 19)
+        Me.Document_Label.TabIndex = 16
+        Me.Document_Label.Text = "*"
+        Me.Document_Label.Visible = False
         '
         'NBDoc_TextBox
         '
@@ -642,12 +699,25 @@ Partial Class GiveGun
         'Panel5
         '
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel5.Controls.Add(Me.DDate_Label)
         Me.Panel5.Controls.Add(Me.DateTimePicker1)
         Me.Panel5.Controls.Add(Me.DDATE_TextBox)
         Me.Panel5.Location = New System.Drawing.Point(709, 295)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(512, 105)
         Me.Panel5.TabIndex = 14
+        '
+        'DDate_Label
+        '
+        Me.DDate_Label.AutoSize = True
+        Me.DDate_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DDate_Label.ForeColor = System.Drawing.Color.OrangeRed
+        Me.DDate_Label.Location = New System.Drawing.Point(474, 20)
+        Me.DDate_Label.Name = "DDate_Label"
+        Me.DDate_Label.Size = New System.Drawing.Size(18, 19)
+        Me.DDate_Label.TabIndex = 16
+        Me.DDate_Label.Text = "*"
+        Me.DDate_Label.Visible = False
         '
         'DateTimePicker1
         '
@@ -828,4 +898,9 @@ Partial Class GiveGun
     Friend WithEvents PERGUNTableAdapterBindingSource As BindingSource
     Friend WithEvents PERGUNTableAdapterTableAdapter As PERGUNTableAdapterTableAdapter
     Friend WithEvents TableAdapterManager As TableAdapterManager
+    Friend WithEvents Item_Label As Label
+    Friend WithEvents Person_Label As Label
+    Friend WithEvents Supplier_Label As Label
+    Friend WithEvents Document_Label As Label
+    Friend WithEvents DDate_Label As Label
 End Class
