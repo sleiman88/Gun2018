@@ -49,19 +49,19 @@ Partial Class main
         'GiveGunToolStripMenuItem
         '
         Me.GiveGunToolStripMenuItem.Name = "GiveGunToolStripMenuItem"
-        Me.GiveGunToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.GiveGunToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.GiveGunToolStripMenuItem.Text = "Give Gun"
         '
         'GiveAmmoToolStripMenuItem
         '
         Me.GiveAmmoToolStripMenuItem.Name = "GiveAmmoToolStripMenuItem"
-        Me.GiveAmmoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.GiveAmmoToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.GiveAmmoToolStripMenuItem.Text = "Give ammo"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'main

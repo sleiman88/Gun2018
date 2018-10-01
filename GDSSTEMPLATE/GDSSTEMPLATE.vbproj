@@ -132,6 +132,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GiveAmmo.resx">
+      <DependentUpon>GiveAmmo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GiveGun.resx">
       <DependentUpon>GiveGun.vb</DependentUpon>
     </EmbeddedResource>

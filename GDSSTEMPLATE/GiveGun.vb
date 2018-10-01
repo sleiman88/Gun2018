@@ -1,5 +1,6 @@
 ﻿Public Class GiveGun
     Public erreur As Boolean
+    Public Muser As String
     'Private Sub New()
     '    erreur = False
     '    ' This call is required by the designer.
@@ -9,13 +10,26 @@
 
     'End Sub
     Private Sub GiveGun_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'GdssDataSet1.PERGUNTableAdapter' table. You can move, or remove it, as needed.
+        Me.PERGUNTableAdapterTableAdapter.Fill(Me.GdssDataSet1.PERGUNTableAdapter)
+
+
         'TODO: This line of code loads data into the 'GdssDataSet11.N0OFFICE1' table. You can move, or remove it, as needed.
         ' Me.N0OFFICE1TableAdapter.Fill(Me.GdssDataSet1.N0OFFICE1)
         'TODO: This line of code loads data into the 'GdssDataSet1.IDCARD' table. You can move, or remove it, as needed.
         '  Me.IDCARDTableAdapter.Fill(Me.GdssDataSet1.IDCARD)
         'TODO: This line of code loads data into the 'GdssDataSet1.N0ITEMS' table. You can move, or remove it, as needed.
         '  Me.N0ITEMSTableAdapter.Fill(Me.GdssDataSet1.N0ITEMS)
+        User_TextBox.Text = Muser
         erreur = False
+    End Sub
+    Public Sub New(user As String)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+        Muser = user
+        ' Add any initialization after the InitializeComponent() call.
+
     End Sub
 
     Private Sub Button_Search_Click(sender As Object, e As EventArgs) Handles Button_Search.Click
@@ -291,11 +305,12 @@
 
         Dim result As String
 
-        result = Me.PergunTableAdapter1.checkIfNbExist(gunNbConfirm_TextBox.Text)
+        result = Me.PERGUNTableAdapterTableAdapter.checkIfNbExist(gunNbConfirm_TextBox.Text)
+
         If result Is Nothing Then
-            Return True
-        Else
             Return False
+        Else
+            Return True
         End If
 
 
@@ -321,4 +336,20 @@
             Me.N0OFFICE1TableAdapter.FillByName(Me.GdssDataSet1.N0OFFICE1, "%" & Supplier_TextBox.Text & "%")
         End If
     End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
+        Dim temp As Date
+        temp = DateTimePicker1.Value
+        temp.ToString("MM/DD/yyyy hh:mm")
+        DDATE_TextBox.Text = temp.ToString
+
+    End Sub
+
+    Private Sub Save_Button_Click(sender As Object, e As EventArgs) Handles Save_Button.Click
+        Dim CurrentTime As String
+
+        CurrentTime = Date.Now.ToString("MM/dd/yyyy hh:mm tt")
+    End Sub
+
+
 End Class

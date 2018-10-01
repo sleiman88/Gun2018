@@ -27,11 +27,15 @@
             ServerdatetimeTableAdapter1.Connection.Open()
 
             'Me.Get_nameTableAdapter1.Fill(NumbersDataSet1.get_name)
+            Dim Mmain As main
+            Mmain = New main(txt_user.Text)
+            Mmain.Show()
 
-            main.Show()
-            'MsgBox("logged in")
             ServerdatetimeTableAdapter1.Connection.Close()
             Me.Close()
+
+            'MsgBox("logged in")
+
 
 
         Catch ex As Exception
