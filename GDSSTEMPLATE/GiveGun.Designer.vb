@@ -28,6 +28,8 @@ Partial Class GiveGun
         Me.TextBox_NameGun = New System.Windows.Forms.TextBox()
         Me.Button_Search = New System.Windows.Forms.Button()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.N0ITEMSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GAMMO_Label = New System.Windows.Forms.Label()
         Me.GAMMO_TextBox = New System.Windows.Forms.TextBox()
@@ -50,6 +52,7 @@ Partial Class GiveGun
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Grade_ComboBox = New System.Windows.Forms.ComboBox()
+        Me.IDCARDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Source_ComboBox = New System.Windows.Forms.ComboBox()
         Me.LName_CheckBox = New System.Windows.Forms.CheckBox()
         Me.FATHER_CheckBox = New System.Windows.Forms.CheckBox()
@@ -68,6 +71,7 @@ Partial Class GiveGun
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Supplier_ComboBox = New System.Windows.Forms.ComboBox()
+        Me.N0OFFICE1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Supplier_TextBox = New System.Windows.Forms.TextBox()
         Me.Supplier = New System.Windows.Forms.Label()
         Me.Note_TextBox = New System.Windows.Forms.TextBox()
@@ -83,25 +87,21 @@ Partial Class GiveGun
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.User_TextBox = New System.Windows.Forms.TextBox()
-        Me.N0OFFICE1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
-        Me.IDCARDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.N0ITEMSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.N0ITEMSTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.N0ITEMSTableAdapter()
         Me.IDCARDTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.IDCARDTableAdapter()
         Me.N0OFFICE1TableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.N0OFFICE1TableAdapter()
         Me.PERGUNTableAdapterBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PERGUNTableAdapterTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.PERGUNTableAdapterTableAdapter()
         Me.TableAdapterManager = New GDSSTEMPLATE.gdssDataSet1TableAdapters.TableAdapterManager()
+        CType(Me.N0ITEMSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        CType(Me.N0OFFICE1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         Me.Panel5.SuspendLayout()
-        CType(Me.N0OFFICE1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.N0ITEMSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PERGUNTableAdapterBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -126,11 +126,21 @@ Partial Class GiveGun
         Me.ComboBox1.DataSource = Me.N0ITEMSBindingSource
         Me.ComboBox1.DisplayMember = "LABEL"
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(309, 16)
+        Me.ComboBox1.Location = New System.Drawing.Point(323, 16)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(201, 21)
         Me.ComboBox1.TabIndex = 2
         Me.ComboBox1.ValueMember = "ITEM"
+        '
+        'N0ITEMSBindingSource
+        '
+        Me.N0ITEMSBindingSource.DataMember = "N0ITEMS"
+        Me.N0ITEMSBindingSource.DataSource = Me.GdssDataSet1
+        '
+        'GdssDataSet1
+        '
+        Me.GdssDataSet1.DataSetName = "gdssDataSet1"
+        Me.GdssDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Panel1
         '
@@ -371,6 +381,11 @@ Partial Class GiveGun
         Me.Grade_ComboBox.TabIndex = 14
         Me.Grade_ComboBox.ValueMember = "GRADE"
         '
+        'IDCARDBindingSource
+        '
+        Me.IDCARDBindingSource.DataMember = "IDCARD"
+        Me.IDCARDBindingSource.DataSource = Me.GdssDataSet1
+        '
         'Source_ComboBox
         '
         Me.Source_ComboBox.DataSource = Me.IDCARDBindingSource
@@ -540,6 +555,11 @@ Partial Class GiveGun
         Me.Supplier_ComboBox.TabIndex = 2
         Me.Supplier_ComboBox.ValueMember = "CODE"
         '
+        'N0OFFICE1BindingSource
+        '
+        Me.N0OFFICE1BindingSource.DataMember = "N0OFFICE1"
+        Me.N0OFFICE1BindingSource.DataSource = Me.GdssDataSet1
+        '
         'Supplier_TextBox
         '
         Me.Supplier_TextBox.Location = New System.Drawing.Point(55, 20)
@@ -670,26 +690,6 @@ Partial Class GiveGun
         Me.User_TextBox.Size = New System.Drawing.Size(177, 20)
         Me.User_TextBox.TabIndex = 16
         '
-        'N0OFFICE1BindingSource
-        '
-        Me.N0OFFICE1BindingSource.DataMember = "N0OFFICE1"
-        Me.N0OFFICE1BindingSource.DataSource = Me.GdssDataSet1
-        '
-        'GdssDataSet1
-        '
-        Me.GdssDataSet1.DataSetName = "gdssDataSet1"
-        Me.GdssDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'IDCARDBindingSource
-        '
-        Me.IDCARDBindingSource.DataMember = "IDCARD"
-        Me.IDCARDBindingSource.DataSource = Me.GdssDataSet1
-        '
-        'N0ITEMSBindingSource
-        '
-        Me.N0ITEMSBindingSource.DataMember = "N0ITEMS"
-        Me.N0ITEMSBindingSource.DataSource = Me.GdssDataSet1
-        '
         'N0ITEMSTableAdapter
         '
         Me.N0ITEMSTableAdapter.ClearBeforeFill = True
@@ -740,20 +740,20 @@ Partial Class GiveGun
         Me.Controls.Add(Me.Panel1)
         Me.Name = "GiveGun"
         Me.Text = "Give Gun"
+        CType(Me.N0ITEMSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.N0OFFICE1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
-        CType(Me.N0OFFICE1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.N0ITEMSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PERGUNTableAdapterBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
