@@ -26,11 +26,13 @@ Partial Class GiveGun
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.TextBox_NameGun = New System.Windows.Forms.TextBox()
-        Me.Button_Search = New System.Windows.Forms.Button()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.N0ITEMSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Item_TextBox = New System.Windows.Forms.TextBox()
+        Me.GNb_Label = New System.Windows.Forms.Label()
         Me.Item_Label = New System.Windows.Forms.Label()
         Me.GAMMO_Label = New System.Windows.Forms.Label()
         Me.GAMMO_TextBox = New System.Windows.Forms.TextBox()
@@ -52,6 +54,7 @@ Partial Class GiveGun
         Me.GunType_TextBox = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.FullName_TextBox = New System.Windows.Forms.TextBox()
         Me.Person_Label = New System.Windows.Forms.Label()
         Me.Grade_ComboBox = New System.Windows.Forms.ComboBox()
         Me.IDCARDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -71,6 +74,7 @@ Partial Class GiveGun
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.SuppShow_TextBox = New System.Windows.Forms.TextBox()
         Me.Supplier_Label = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Supplier_ComboBox = New System.Windows.Forms.ComboBox()
@@ -112,28 +116,19 @@ Partial Class GiveGun
         '
         'TextBox_NameGun
         '
-        Me.TextBox_NameGun.Location = New System.Drawing.Point(3, 16)
+        Me.TextBox_NameGun.Location = New System.Drawing.Point(88, 16)
         Me.TextBox_NameGun.Name = "TextBox_NameGun"
-        Me.TextBox_NameGun.Size = New System.Drawing.Size(197, 20)
+        Me.TextBox_NameGun.Size = New System.Drawing.Size(164, 20)
         Me.TextBox_NameGun.TabIndex = 0
-        '
-        'Button_Search
-        '
-        Me.Button_Search.Location = New System.Drawing.Point(206, 14)
-        Me.Button_Search.Name = "Button_Search"
-        Me.Button_Search.Size = New System.Drawing.Size(97, 23)
-        Me.Button_Search.TabIndex = 1
-        Me.Button_Search.Text = "Search"
-        Me.Button_Search.UseVisualStyleBackColor = True
         '
         'ComboBox1
         '
         Me.ComboBox1.DataSource = Me.N0ITEMSBindingSource
         Me.ComboBox1.DisplayMember = "LABEL"
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(323, 16)
+        Me.ComboBox1.Location = New System.Drawing.Point(268, 15)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(201, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(176, 21)
         Me.ComboBox1.TabIndex = 2
         Me.ComboBox1.ValueMember = "ITEM"
         '
@@ -150,6 +145,9 @@ Partial Class GiveGun
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Label20)
+        Me.Panel1.Controls.Add(Me.Item_TextBox)
+        Me.Panel1.Controls.Add(Me.GNb_Label)
         Me.Panel1.Controls.Add(Me.Item_Label)
         Me.Panel1.Controls.Add(Me.GAMMO_Label)
         Me.Panel1.Controls.Add(Me.GAMMO_TextBox)
@@ -172,18 +170,46 @@ Partial Class GiveGun
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.TextBox_NameGun)
         Me.Panel1.Controls.Add(Me.ComboBox1)
-        Me.Panel1.Controls.Add(Me.Button_Search)
         Me.Panel1.Location = New System.Drawing.Point(9, 78)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(691, 364)
         Me.Panel1.TabIndex = 3
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(4, 22)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(72, 13)
+        Me.Label20.TabIndex = 25
+        Me.Label20.Text = "Name of Item"
+        '
+        'Item_TextBox
+        '
+        Me.Item_TextBox.Enabled = False
+        Me.Item_TextBox.Location = New System.Drawing.Point(451, 15)
+        Me.Item_TextBox.Name = "Item_TextBox"
+        Me.Item_TextBox.Size = New System.Drawing.Size(200, 20)
+        Me.Item_TextBox.TabIndex = 24
+        '
+        'GNb_Label
+        '
+        Me.GNb_Label.AutoSize = True
+        Me.GNb_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GNb_Label.ForeColor = System.Drawing.Color.OrangeRed
+        Me.GNb_Label.Location = New System.Drawing.Point(258, 81)
+        Me.GNb_Label.Name = "GNb_Label"
+        Me.GNb_Label.Size = New System.Drawing.Size(18, 19)
+        Me.GNb_Label.TabIndex = 23
+        Me.GNb_Label.Text = "*"
+        Me.GNb_Label.Visible = False
         '
         'Item_Label
         '
         Me.Item_Label.AutoSize = True
         Me.Item_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Item_Label.ForeColor = System.Drawing.Color.OrangeRed
-        Me.Item_Label.Location = New System.Drawing.Point(539, 18)
+        Me.Item_Label.Location = New System.Drawing.Point(657, 17)
         Me.Item_Label.Name = "Item_Label"
         Me.Item_Label.Size = New System.Drawing.Size(18, 19)
         Me.Item_Label.TabIndex = 17
@@ -247,7 +273,7 @@ Partial Class GiveGun
         Me.Confirm_Label.AutoSize = True
         Me.Confirm_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Confirm_Label.ForeColor = System.Drawing.Color.OrangeRed
-        Me.Confirm_Label.Location = New System.Drawing.Point(302, 117)
+        Me.Confirm_Label.Location = New System.Drawing.Point(258, 117)
         Me.Confirm_Label.Name = "Confirm_Label"
         Me.Confirm_Label.Size = New System.Drawing.Size(18, 19)
         Me.Confirm_Label.TabIndex = 17
@@ -268,7 +294,7 @@ Partial Class GiveGun
         Me.GunLabel_Label.AutoSize = True
         Me.GunLabel_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunLabel_Label.ForeColor = System.Drawing.Color.OrangeRed
-        Me.GunLabel_Label.Location = New System.Drawing.Point(302, 49)
+        Me.GunLabel_Label.Location = New System.Drawing.Point(258, 49)
         Me.GunLabel_Label.Name = "GunLabel_Label"
         Me.GunLabel_Label.Size = New System.Drawing.Size(18, 19)
         Me.GunLabel_Label.TabIndex = 15
@@ -340,21 +366,22 @@ Partial Class GiveGun
         '
         Me.gunNbConfirm_TextBox.Location = New System.Drawing.Point(88, 116)
         Me.gunNbConfirm_TextBox.Name = "gunNbConfirm_TextBox"
-        Me.gunNbConfirm_TextBox.Size = New System.Drawing.Size(208, 20)
+        Me.gunNbConfirm_TextBox.Size = New System.Drawing.Size(164, 20)
         Me.gunNbConfirm_TextBox.TabIndex = 6
         '
         'GunNb_TextBox
         '
         Me.GunNb_TextBox.Location = New System.Drawing.Point(88, 80)
         Me.GunNb_TextBox.Name = "GunNb_TextBox"
-        Me.GunNb_TextBox.Size = New System.Drawing.Size(208, 20)
+        Me.GunNb_TextBox.Size = New System.Drawing.Size(164, 20)
         Me.GunNb_TextBox.TabIndex = 5
         '
         'GunType_TextBox
         '
         Me.GunType_TextBox.Location = New System.Drawing.Point(88, 48)
+        Me.GunType_TextBox.MaxLength = 20
         Me.GunType_TextBox.Name = "GunType_TextBox"
-        Me.GunType_TextBox.Size = New System.Drawing.Size(208, 20)
+        Me.GunType_TextBox.Size = New System.Drawing.Size(164, 20)
         Me.GunType_TextBox.TabIndex = 4
         '
         'Label10
@@ -369,6 +396,7 @@ Partial Class GiveGun
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.FullName_TextBox)
         Me.Panel2.Controls.Add(Me.Person_Label)
         Me.Panel2.Controls.Add(Me.Grade_ComboBox)
         Me.Panel2.Controls.Add(Me.Source_ComboBox)
@@ -386,15 +414,23 @@ Partial Class GiveGun
         Me.Panel2.Controls.Add(Me.TextBoxMilitNb)
         Me.Panel2.Location = New System.Drawing.Point(13, 485)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(581, 181)
+        Me.Panel2.Size = New System.Drawing.Size(687, 181)
         Me.Panel2.TabIndex = 4
+        '
+        'FullName_TextBox
+        '
+        Me.FullName_TextBox.Enabled = False
+        Me.FullName_TextBox.Location = New System.Drawing.Point(412, 19)
+        Me.FullName_TextBox.Name = "FullName_TextBox"
+        Me.FullName_TextBox.Size = New System.Drawing.Size(211, 20)
+        Me.FullName_TextBox.TabIndex = 17
         '
         'Person_Label
         '
         Me.Person_Label.AutoSize = True
         Me.Person_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Person_Label.ForeColor = System.Drawing.Color.OrangeRed
-        Me.Person_Label.Location = New System.Drawing.Point(522, 18)
+        Me.Person_Label.Location = New System.Drawing.Point(629, 21)
         Me.Person_Label.Name = "Person_Label"
         Me.Person_Label.Size = New System.Drawing.Size(18, 19)
         Me.Person_Label.TabIndex = 16
@@ -498,7 +534,7 @@ Partial Class GiveGun
         Me.ComboBoxPersons.DataSource = Me.IDCARDBindingSource
         Me.ComboBoxPersons.DisplayMember = "FullName"
         Me.ComboBoxPersons.FormattingEnabled = True
-        Me.ComboBoxPersons.Location = New System.Drawing.Point(306, 16)
+        Me.ComboBoxPersons.Location = New System.Drawing.Point(204, 19)
         Me.ComboBoxPersons.Name = "ComboBoxPersons"
         Me.ComboBoxPersons.Size = New System.Drawing.Size(201, 21)
         Me.ComboBoxPersons.TabIndex = 4
@@ -558,6 +594,7 @@ Partial Class GiveGun
         'Panel3
         '
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.SuppShow_TextBox)
         Me.Panel3.Controls.Add(Me.Supplier_Label)
         Me.Panel3.Controls.Add(Me.Label8)
         Me.Panel3.Controls.Add(Me.Supplier_ComboBox)
@@ -566,6 +603,14 @@ Partial Class GiveGun
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(520, 104)
         Me.Panel3.TabIndex = 7
+        '
+        'SuppShow_TextBox
+        '
+        Me.SuppShow_TextBox.Enabled = False
+        Me.SuppShow_TextBox.Location = New System.Drawing.Point(263, 64)
+        Me.SuppShow_TextBox.Name = "SuppShow_TextBox"
+        Me.SuppShow_TextBox.Size = New System.Drawing.Size(222, 20)
+        Me.SuppShow_TextBox.TabIndex = 17
         '
         'Supplier_Label
         '
@@ -593,7 +638,7 @@ Partial Class GiveGun
         Me.Supplier_ComboBox.DataSource = Me.N0OFFICE1BindingSource
         Me.Supplier_ComboBox.DisplayMember = "LABEL"
         Me.Supplier_ComboBox.FormattingEnabled = True
-        Me.Supplier_ComboBox.Location = New System.Drawing.Point(264, 20)
+        Me.Supplier_ComboBox.Location = New System.Drawing.Point(263, 17)
         Me.Supplier_ComboBox.Name = "Supplier_ComboBox"
         Me.Supplier_ComboBox.Size = New System.Drawing.Size(222, 21)
         Me.Supplier_ComboBox.TabIndex = 2
@@ -606,7 +651,7 @@ Partial Class GiveGun
         '
         'Supplier_TextBox
         '
-        Me.Supplier_TextBox.Location = New System.Drawing.Point(55, 20)
+        Me.Supplier_TextBox.Location = New System.Drawing.Point(55, 17)
         Me.Supplier_TextBox.Name = "Supplier_TextBox"
         Me.Supplier_TextBox.Size = New System.Drawing.Size(190, 20)
         Me.Supplier_TextBox.TabIndex = 1
@@ -831,7 +876,6 @@ Partial Class GiveGun
     End Sub
 
     Friend WithEvents TextBox_NameGun As TextBox
-    Friend WithEvents Button_Search As Button
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents GdssDataSet1 As gdssDataSet1
     Friend WithEvents N0ITEMSBindingSource As BindingSource
@@ -903,4 +947,9 @@ Partial Class GiveGun
     Friend WithEvents Supplier_Label As Label
     Friend WithEvents Document_Label As Label
     Friend WithEvents DDate_Label As Label
+    Friend WithEvents GNb_Label As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Item_TextBox As TextBox
+    Friend WithEvents FullName_TextBox As TextBox
+    Friend WithEvents SuppShow_TextBox As TextBox
 End Class
