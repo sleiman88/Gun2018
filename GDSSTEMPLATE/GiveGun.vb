@@ -358,13 +358,24 @@
             MsgBox("error")
         Else
             MsgBox("every thing is good ")
+
+            Dim CurrentTime As String
+
+            CurrentTime = Date.Now.ToString("MM/dd/yyyy hh:mm tt")
+
+            Dim withCleaner As Integer
+            If WithCleaner_CheckBox.AutoCheck = True Then
+                withCleaner = 1
+            Else
+                withCleaner = 0
+            End If
+
+
         End If
 
 
 
-        Dim CurrentTime As String
 
-        CurrentTime = Date.Now.ToString("MM/dd/yyyy hh:mm tt")
     End Sub
     Private Function checkTest() As Boolean
         Dim result As Boolean
