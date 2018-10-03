@@ -8,9 +8,6 @@
 End Class
 
 Namespace gdssDataSet1TableAdapters
-    Partial Public Class PERGUNTableAdapterTableAdapter
-    End Class
-
     Partial Public Class PERGUNTableAdapter
     End Class
 

@@ -12,7 +12,7 @@
     Private Sub GiveGun_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GunType_TextBox.Text = ""
         'TODO: This line of code loads data into the 'GdssDataSet1.PERGUNTableAdapter' table. You can move, or remove it, as needed.
-        '   Me.PERGUNTableAdapterTableAdapter.Fill(Me.GdssDataSet1.PERGUNTableAdapter)
+        Me.PERGUNTableAdapterTableAdapter.Fill(Me.GdssDataSet1.PERGUNTableAdapter)
 
 
         'TODO: This line of code loads data into the 'GdssDataSet11.N0OFFICE1' table. You can move, or remove it, as needed.
@@ -328,7 +328,7 @@
         End If
 
         If GAMMO_TextBox.Text = String.Empty Then
-            GAMMO_Label.Visible = True
+            GAMMO_Label.Visible = False
         End If
     End Sub
 
@@ -354,25 +354,16 @@
     Private Sub Save_Button_Click(sender As Object, e As EventArgs) Handles Save_Button.Click
 
         If checkTest() = True Then
-            MsgBox("error, please fill missing information")
+            MsgBox("error")
         Else
-
-            'Dim withClearner As Integer
-            'If WithCleaner_CheckBox.AutoCheck = True Then
-            '    withClearner = 1
-            'Else
-            '    withClearner = 0
-            'End If
-            'Dim Udate As String
-
-            'Udate = Date.Now.ToString("MM/dd/yyyy hh:mm tt")
-            'Me.PERGUNTableAdapterTableAdapter.InsertQuery(Me.PERGUNTableAdapterTableAdapter.getMaxCodePlus1(), Item_TextBox.Text, GunType_TextBox.Text, gunNbConfirm_TextBox.Text, Decimal.Parse(GunStore_TextBox.Text), GunSize_TextBox.Text, withClearner, Decimal.Parse(GAMMO_TextBox.Text), Supplier_ComboBox.SelectedValue, ComboBoxPersons.SelectedValue, Source_ComboBox.SelectedValue, Grade_ComboBox.SelectedValue, DDATE_TextBox.Text, NBDoc_TextBox.Text, Note_TextBox.Text, SDATE_TextBox.Text, Udate, Muser)
-            'MsgBox("Saved ")
+            MsgBox("every thing is good ")
         End If
 
 
 
+        Dim CurrentTime As String
 
+        CurrentTime = Date.Now.ToString("MM/dd/yyyy hh:mm tt")
     End Sub
     Private Function checkTest() As Boolean
         Dim result As Boolean
@@ -382,10 +373,7 @@
             DDate_Label.Visible = True
 
         End If
-        If SDATE_TextBox.Text.Length = 0 Then
-            result = True
-            SDATE_Label.Visible = True
-        End If
+
         If NBDoc_TextBox.Text.Length = 0 Then
             result = True
             Document_Label.Visible = True
@@ -473,7 +461,9 @@
     End Sub
 
     Private Sub GunSize_TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles GunSize_TextBox.KeyPress
-
+        If GunSize_TextBox.Text <> String.Empty Then
+            gunSize_Label.Visible = False
+        End If
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
@@ -497,27 +487,5 @@
         If SuppShow_TextBox.Text <> String.Empty Then
             Supplier_Label.Visible = False
         End If
-    End Sub
-
-    Private Sub GunSize_TextBox_KeyUp(sender As Object, e As KeyEventArgs) Handles GunSize_TextBox.KeyUp
-        If GunSize_TextBox.Text <> String.Empty Then
-            gunSize_Label.Visible = False
-        End If
-    End Sub
-
-    Private Sub GAMMO_TextBox_KeyUp(sender As Object, e As KeyEventArgs) Handles GAMMO_TextBox.KeyUp
-
-
-        If GAMMO_TextBox.Text <> String.Empty Then
-            GAMMO_Label.Visible = False
-        End If
-    End Sub
-
-    Private Sub DateTimePicker_SDATE_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker_SDATE.ValueChanged
-        Dim temp As Date
-        temp = DateTimePicker_SDATE.Value
-        temp.ToString("MM/DD/yyyy hh:mm")
-        SDATE_TextBox.Text = temp.ToString
-        SDATE_Label.Visible = False
     End Sub
 End Class
