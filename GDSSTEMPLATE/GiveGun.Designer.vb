@@ -452,6 +452,7 @@ Partial Class GiveGun
         Me.Grade_ComboBox.Size = New System.Drawing.Size(121, 21)
         Me.Grade_ComboBox.TabIndex = 14
         Me.Grade_ComboBox.ValueMember = "GRADE"
+        Me.Grade_ComboBox.Visible = False
         '
         'IDCARDBindingSource
         '
