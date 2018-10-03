@@ -373,6 +373,7 @@
             Try
                 Me.PERGUNTableAdapterTableAdapter.InsertQuery(Decimal.Parse(Me.PERGUNTableAdapterTableAdapter.getMaxCodePlus1().ToString), ComboBox1.SelectedValue.ToString, GunType_TextBox.Text, gunNbConfirm_TextBox.Text, Decimal.Parse(GunStore_TextBox.Text), Decimal.Parse(GunSize_TextBox.Text), withCleaner, Decimal.Parse(GAMMO_TextBox.Text), Decimal.Parse(Supplier_ComboBox.SelectedValue.ToString), Decimal.Parse(ComboBoxPersons.SelectedValue.ToString), Decimal.Parse(Source_ComboBox.SelectedValue.ToString), Decimal.Parse(Grade_ComboBox.SelectedValue.ToString), DDATE_TextBox.Text, NBDoc_TextBox.Text, Note_TextBox.Text, SDATE_TextBox.Text, CurrentTime, Muser, CurrentTime, "None")
                 MsgBox("Saved")
+                Me.Close()
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try

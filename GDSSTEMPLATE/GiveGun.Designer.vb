@@ -893,7 +893,7 @@ Partial Class GiveGun
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1241, 857)
+        Me.ClientSize = New System.Drawing.Size(1241, 679)
         Me.Controls.Add(Me.User_TextBox)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.Panel5)

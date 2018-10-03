@@ -156,13 +156,13 @@ Partial Class LOGIN
         'SettingToolStripMenuItem
         '
         Me.SettingToolStripMenuItem.Name = "SettingToolStripMenuItem"
-        Me.SettingToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SettingToolStripMenuItem.Size = New System.Drawing.Size(111, 22)
         Me.SettingToolStripMenuItem.Text = "&Servers"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(111, 22)
         Me.ExitToolStripMenuItem.Text = "E&xit"
         '
         'Label1
@@ -197,7 +197,7 @@ Partial Class LOGIN
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.Name = "LOGIN"
-        Me.Text = "LOGIN"
+        Me.Text = "Guns V1.0"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
