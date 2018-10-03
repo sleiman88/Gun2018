@@ -315,6 +315,7 @@
         If Not Char.IsNumber(e.KeyChar) Then
             MsgBox("only Numbers allowed")
             e.Handled = True
+            GunStore_Label.Visible = True
         End If
         If GunStore_TextBox.Text = String.Empty Then
             GunStore_Label.Visible = False
@@ -325,11 +326,11 @@
         If Not Char.IsNumber(e.KeyChar) And e.KeyChar <> ChrW(Keys.Back) Then
             MsgBox("only Numbers allowed")
             e.Handled = True
+            GAMMO_Label.Visible = True
         End If
 
-        If GAMMO_TextBox.Text = String.Empty Then
-            GAMMO_Label.Visible = False
-        End If
+
+
     End Sub
 
     Private Sub Supplier_TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Supplier_TextBox.KeyPress
@@ -441,6 +442,12 @@
             result = True
         End If
 
+        If SDATE_TextBox.Text.Length = 0 Then
+            SDATE_Label.Visible = True
+            result = True
+
+        End If
+
 
 
 
@@ -461,9 +468,7 @@
     End Sub
 
     Private Sub GunSize_TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles GunSize_TextBox.KeyPress
-        If GunSize_TextBox.Text <> String.Empty Then
-            gunSize_Label.Visible = False
-        End If
+
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
@@ -486,6 +491,38 @@
 
         If SuppShow_TextBox.Text <> String.Empty Then
             Supplier_Label.Visible = False
+        End If
+    End Sub
+
+    Private Sub GAMMO_TextBox_KeyUp(sender As Object, e As KeyEventArgs) Handles GAMMO_TextBox.KeyUp
+        If GAMMO_TextBox.Text <> String.Empty Then
+            GAMMO_Label.Visible = False
+        End If
+    End Sub
+
+    Private Sub GunSize_TextBox_KeyUp(sender As Object, e As KeyEventArgs) Handles GunSize_TextBox.KeyUp
+        If GunSize_TextBox.Text <> String.Empty Then
+            gunSize_Label.Visible = False
+        End If
+    End Sub
+
+    Private Sub GunStore_TextBox_KeyUp(sender As Object, e As KeyEventArgs) Handles GunStore_TextBox.KeyUp
+        If GunStore_TextBox.Text <> String.Empty Then
+            GunStore_Label.Visible = False
+        End If
+    End Sub
+
+    Private Sub DateTimePickerSDATE_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePickerSDATE.ValueChanged
+        Dim temp As Date
+        temp = DateTimePicker1.Value
+        temp.ToString("MM/DD/yyyy hh:mm")
+        SDATE_TextBox.Text = temp.ToString
+        SDATE_Label.Visible = False
+    End Sub
+
+    Private Sub SDATE_TextBox_KeyUp(sender As Object, e As KeyEventArgs) Handles SDATE_TextBox.KeyUp
+        If SDATE_TextBox.Text <> String.Empty Then
+            SDATE_Label.Visible = False
         End If
     End Sub
 End Class

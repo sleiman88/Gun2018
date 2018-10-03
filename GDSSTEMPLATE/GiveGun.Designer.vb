@@ -85,14 +85,19 @@ Partial Class GiveGun
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Save_Button = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.DDate_Label = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.Document_Label = New System.Windows.Forms.Label()
+        Me.DDATE_TextBox = New System.Windows.Forms.TextBox()
         Me.NBDoc_TextBox = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.DDate_Label = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.DDATE_TextBox = New System.Windows.Forms.TextBox()
+        Me.SDATE_Label = New System.Windows.Forms.Label()
+        Me.SDATE_TextBox = New System.Windows.Forms.TextBox()
+        Me.DateTimePickerSDATE = New System.Windows.Forms.DateTimePicker()
+        Me.Label22 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.User_TextBox = New System.Windows.Forms.TextBox()
@@ -695,13 +700,45 @@ Partial Class GiveGun
         'Panel4
         '
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.DateTimePicker1)
+        Me.Panel4.Controls.Add(Me.DDate_Label)
+        Me.Panel4.Controls.Add(Me.Label21)
         Me.Panel4.Controls.Add(Me.Document_Label)
+        Me.Panel4.Controls.Add(Me.DDATE_TextBox)
         Me.Panel4.Controls.Add(Me.NBDoc_TextBox)
         Me.Panel4.Controls.Add(Me.Label17)
         Me.Panel4.Location = New System.Drawing.Point(709, 170)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(512, 70)
         Me.Panel4.TabIndex = 12
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(140, 37)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(192, 20)
+        Me.DateTimePicker1.TabIndex = 2
+        '
+        'DDate_Label
+        '
+        Me.DDate_Label.AutoSize = True
+        Me.DDate_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DDate_Label.ForeColor = System.Drawing.Color.OrangeRed
+        Me.DDate_Label.Location = New System.Drawing.Point(489, 41)
+        Me.DDate_Label.Name = "DDate_Label"
+        Me.DDate_Label.Size = New System.Drawing.Size(18, 19)
+        Me.DDate_Label.TabIndex = 16
+        Me.DDate_Label.Text = "*"
+        Me.DDate_Label.Visible = False
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(4, 40)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(81, 13)
+        Me.Label21.TabIndex = 17
+        Me.Label21.Text = "Document Date"
         '
         'Document_Label
         '
@@ -714,6 +751,14 @@ Partial Class GiveGun
         Me.Document_Label.TabIndex = 16
         Me.Document_Label.Text = "*"
         Me.Document_Label.Visible = False
+        '
+        'DDATE_TextBox
+        '
+        Me.DDATE_TextBox.Enabled = False
+        Me.DDATE_TextBox.Location = New System.Drawing.Point(338, 37)
+        Me.DDATE_TextBox.Name = "DDATE_TextBox"
+        Me.DDATE_TextBox.Size = New System.Drawing.Size(145, 20)
+        Me.DDATE_TextBox.TabIndex = 1
         '
         'NBDoc_TextBox
         '
@@ -744,49 +789,59 @@ Partial Class GiveGun
         'Panel5
         '
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel5.Controls.Add(Me.DDate_Label)
-        Me.Panel5.Controls.Add(Me.DateTimePicker1)
-        Me.Panel5.Controls.Add(Me.DDATE_TextBox)
+        Me.Panel5.Controls.Add(Me.SDATE_Label)
+        Me.Panel5.Controls.Add(Me.SDATE_TextBox)
+        Me.Panel5.Controls.Add(Me.DateTimePickerSDATE)
+        Me.Panel5.Controls.Add(Me.Label22)
         Me.Panel5.Location = New System.Drawing.Point(709, 295)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(512, 105)
         Me.Panel5.TabIndex = 14
         '
-        'DDate_Label
+        'SDATE_Label
         '
-        Me.DDate_Label.AutoSize = True
-        Me.DDate_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DDate_Label.ForeColor = System.Drawing.Color.OrangeRed
-        Me.DDate_Label.Location = New System.Drawing.Point(474, 20)
-        Me.DDate_Label.Name = "DDate_Label"
-        Me.DDate_Label.Size = New System.Drawing.Size(18, 19)
-        Me.DDate_Label.TabIndex = 16
-        Me.DDate_Label.Text = "*"
-        Me.DDate_Label.Visible = False
+        Me.SDATE_Label.AutoSize = True
+        Me.SDATE_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SDATE_Label.ForeColor = System.Drawing.Color.OrangeRed
+        Me.SDATE_Label.Location = New System.Drawing.Point(489, 28)
+        Me.SDATE_Label.Name = "SDATE_Label"
+        Me.SDATE_Label.Size = New System.Drawing.Size(18, 19)
+        Me.SDATE_Label.TabIndex = 17
+        Me.SDATE_Label.Text = "*"
+        Me.SDATE_Label.Visible = False
         '
-        'DateTimePicker1
+        'SDATE_TextBox
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(17, 17)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker1.TabIndex = 2
+        Me.SDATE_TextBox.Enabled = False
+        Me.SDATE_TextBox.Location = New System.Drawing.Point(338, 25)
+        Me.SDATE_TextBox.Name = "SDATE_TextBox"
+        Me.SDATE_TextBox.Size = New System.Drawing.Size(147, 20)
+        Me.SDATE_TextBox.TabIndex = 2
         '
-        'DDATE_TextBox
+        'DateTimePickerSDATE
         '
-        Me.DDATE_TextBox.Enabled = False
-        Me.DDATE_TextBox.Location = New System.Drawing.Point(242, 17)
-        Me.DDATE_TextBox.Name = "DDATE_TextBox"
-        Me.DDATE_TextBox.Size = New System.Drawing.Size(226, 20)
-        Me.DDATE_TextBox.TabIndex = 1
+        Me.DateTimePickerSDATE.Location = New System.Drawing.Point(140, 26)
+        Me.DateTimePickerSDATE.Name = "DateTimePickerSDATE"
+        Me.DateTimePickerSDATE.Size = New System.Drawing.Size(192, 20)
+        Me.DateTimePickerSDATE.TabIndex = 1
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(3, 33)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(72, 13)
+        Me.Label22.TabIndex = 0
+        Me.Label22.Text = "Delivery Date"
         '
         'Label19
         '
         Me.Label19.AutoSize = True
         Me.Label19.Location = New System.Drawing.Point(710, 280)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(72, 13)
+        Me.Label19.Size = New System.Drawing.Size(49, 13)
         Me.Label19.TabIndex = 0
-        Me.Label19.Text = "Delivery Date"
+        Me.Label19.Text = "Delivery "
         '
         'Label18
         '
@@ -952,4 +1007,9 @@ Partial Class GiveGun
     Friend WithEvents Item_TextBox As TextBox
     Friend WithEvents FullName_TextBox As TextBox
     Friend WithEvents SuppShow_TextBox As TextBox
+    Friend WithEvents Label21 As Label
+    Friend WithEvents SDATE_Label As Label
+    Friend WithEvents SDATE_TextBox As TextBox
+    Friend WithEvents DateTimePickerSDATE As DateTimePicker
+    Friend WithEvents Label22 As Label
 End Class
