@@ -187,7 +187,7 @@ Partial Class GiveGun
         'Item_TextBox
         '
         Me.Item_TextBox.Enabled = False
-        Me.Item_TextBox.Location = New System.Drawing.Point(451, 15)
+        Me.Item_TextBox.Location = New System.Drawing.Point(450, 16)
         Me.Item_TextBox.Name = "Item_TextBox"
         Me.Item_TextBox.Size = New System.Drawing.Size(200, 20)
         Me.Item_TextBox.TabIndex = 24
