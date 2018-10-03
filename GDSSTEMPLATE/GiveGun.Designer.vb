@@ -318,7 +318,7 @@ Partial Class GiveGun
         'WithCleaner_CheckBox
         '
         Me.WithCleaner_CheckBox.AutoSize = True
-        Me.WithCleaner_CheckBox.Location = New System.Drawing.Point(88, 214)
+        Me.WithCleaner_CheckBox.Location = New System.Drawing.Point(88, 213)
         Me.WithCleaner_CheckBox.Name = "WithCleaner_CheckBox"
         Me.WithCleaner_CheckBox.Size = New System.Drawing.Size(15, 14)
         Me.WithCleaner_CheckBox.TabIndex = 13
