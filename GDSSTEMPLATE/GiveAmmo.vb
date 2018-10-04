@@ -3,7 +3,7 @@
     Private Sub GiveAmmo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'GdssDataSet1.IDCARD' table. You can move, or remove it, as needed.
         '  Me.IDCARDTableAdapter.Fill(Me.GdssDataSet1.IDCARD)
-
+        User_TextBox.Text = Muser
     End Sub
     Public Sub New(user As String)
 
@@ -172,4 +172,27 @@
             End If
         End If
     End Sub
+
+    Private Sub NBDoc_TextBox_KeyUp(sender As Object, e As KeyEventArgs) Handles NBDoc_TextBox.KeyUp
+        If NBDoc_TextBox.Text <> String.Empty Then
+            Document_Label.Visible = False
+        End If
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles Document_DateTimePicker.ValueChanged
+        Dim temp As Date
+        temp = Document_DateTimePicker.Value
+        temp.ToString("MM/DD/yyyy hh:mm")
+        DDATE_TextBox.Text = temp.ToString
+        DDate_Label.Visible = False
+    End Sub
+
+    Private Sub Year_DateTimePicker_ValueChanged(sender As Object, e As EventArgs) Handles Year_DateTimePicker.ValueChanged
+        Dim temp As Date
+        temp = Year_DateTimePicker.Value
+        temp.ToString("yyyy")
+        Year_TextBox.Text = temp.ToString
+        Year_Label.Visible = False
+    End Sub
+
 End Class

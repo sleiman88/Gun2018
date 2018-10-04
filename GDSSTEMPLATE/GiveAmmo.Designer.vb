@@ -26,8 +26,6 @@ Partial Class GiveAmmo
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.FullName_TextBox = New System.Windows.Forms.TextBox()
         Me.Person_Label = New System.Windows.Forms.Label()
-        Me.Grade_ComboBox = New System.Windows.Forms.ComboBox()
-        Me.Source_ComboBox = New System.Windows.Forms.ComboBox()
         Me.LName_CheckBox = New System.Windows.Forms.CheckBox()
         Me.FATHER_CheckBox = New System.Windows.Forms.CheckBox()
         Me.FName_CheckBox = New System.Windows.Forms.CheckBox()
@@ -36,17 +34,41 @@ Partial Class GiveAmmo
         Me.TextBox_FATHER = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ComboBoxPersons = New System.Windows.Forms.ComboBox()
+        Me.IDCARDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox_FName = New System.Windows.Forms.TextBox()
         Me.TextBoxMilitNb = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
-        Me.IDCARDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.IDCARDTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.IDCARDTableAdapter()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.User_TextBox = New System.Windows.Forms.TextBox()
+        Me.Note_TextBox = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Document_DateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.DDate_Label = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Document_Label = New System.Windows.Forms.Label()
+        Me.DDATE_TextBox = New System.Windows.Forms.TextBox()
+        Me.NBDoc_TextBox = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.GdssDataSet11 = New GDSSTEMPLATE.gdssDataSet1()
+        Me.Save_Button = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Year_Label = New System.Windows.Forms.Label()
+        Me.Year_TextBox = New System.Windows.Forms.TextBox()
+        Me.Year_DateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
-        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel4.SuspendLayout()
+        CType(Me.GdssDataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel2
@@ -54,8 +76,6 @@ Partial Class GiveAmmo
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.FullName_TextBox)
         Me.Panel2.Controls.Add(Me.Person_Label)
-        Me.Panel2.Controls.Add(Me.Grade_ComboBox)
-        Me.Panel2.Controls.Add(Me.Source_ComboBox)
         Me.Panel2.Controls.Add(Me.LName_CheckBox)
         Me.Panel2.Controls.Add(Me.FATHER_CheckBox)
         Me.Panel2.Controls.Add(Me.FName_CheckBox)
@@ -68,9 +88,9 @@ Partial Class GiveAmmo
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.TextBox_FName)
         Me.Panel2.Controls.Add(Me.TextBoxMilitNb)
-        Me.Panel2.Location = New System.Drawing.Point(12, 62)
+        Me.Panel2.Location = New System.Drawing.Point(12, 63)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(667, 178)
+        Me.Panel2.Size = New System.Drawing.Size(654, 178)
         Me.Panel2.TabIndex = 5
         '
         'FullName_TextBox
@@ -92,28 +112,6 @@ Partial Class GiveAmmo
         Me.Person_Label.TabIndex = 16
         Me.Person_Label.Text = "*"
         Me.Person_Label.Visible = False
-        '
-        'Grade_ComboBox
-        '
-        Me.Grade_ComboBox.DisplayMember = "GRADE"
-        Me.Grade_ComboBox.FormattingEnabled = True
-        Me.Grade_ComboBox.Location = New System.Drawing.Point(309, 85)
-        Me.Grade_ComboBox.Name = "Grade_ComboBox"
-        Me.Grade_ComboBox.Size = New System.Drawing.Size(121, 21)
-        Me.Grade_ComboBox.TabIndex = 14
-        Me.Grade_ComboBox.ValueMember = "GRADE"
-        Me.Grade_ComboBox.Visible = False
-        '
-        'Source_ComboBox
-        '
-        Me.Source_ComboBox.DisplayMember = "SOURCE"
-        Me.Source_ComboBox.FormattingEnabled = True
-        Me.Source_ComboBox.Location = New System.Drawing.Point(309, 52)
-        Me.Source_ComboBox.Name = "Source_ComboBox"
-        Me.Source_ComboBox.Size = New System.Drawing.Size(92, 21)
-        Me.Source_ComboBox.TabIndex = 13
-        Me.Source_ComboBox.ValueMember = "SOURCE"
-        Me.Source_ComboBox.Visible = False
         '
         'LName_CheckBox
         '
@@ -190,6 +188,16 @@ Partial Class GiveAmmo
         Me.ComboBoxPersons.TabIndex = 4
         Me.ComboBoxPersons.ValueMember = "CODE"
         '
+        'IDCARDBindingSource
+        '
+        Me.IDCARDBindingSource.DataMember = "IDCARD"
+        Me.IDCARDBindingSource.DataSource = Me.GdssDataSet1
+        '
+        'GdssDataSet1
+        '
+        Me.GdssDataSet1.DataSetName = "gdssDataSet1"
+        Me.GdssDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -226,39 +234,236 @@ Partial Class GiveAmmo
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 43)
+        Me.Label1.Location = New System.Drawing.Point(12, 44)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Person"
         '
-        'GdssDataSet1
-        '
-        Me.GdssDataSet1.DataSetName = "gdssDataSet1"
-        Me.GdssDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'IDCARDBindingSource
-        '
-        Me.IDCARDBindingSource.DataMember = "IDCARD"
-        Me.IDCARDBindingSource.DataSource = Me.GdssDataSet1
-        '
         'IDCARDTableAdapter
         '
         Me.IDCARDTableAdapter.ClearBeforeFill = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(9, 4)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(29, 13)
+        Me.Label2.TabIndex = 7
+        Me.Label2.Text = "User"
+        '
+        'User_TextBox
+        '
+        Me.User_TextBox.Enabled = False
+        Me.User_TextBox.Location = New System.Drawing.Point(49, 1)
+        Me.User_TextBox.Name = "User_TextBox"
+        Me.User_TextBox.Size = New System.Drawing.Size(173, 20)
+        Me.User_TextBox.TabIndex = 8
+        '
+        'Note_TextBox
+        '
+        Me.Note_TextBox.Location = New System.Drawing.Point(791, 360)
+        Me.Note_TextBox.Multiline = True
+        Me.Note_TextBox.Name = "Note_TextBox"
+        Me.Note_TextBox.Size = New System.Drawing.Size(451, 129)
+        Me.Note_TextBox.TabIndex = 9
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(788, 335)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(30, 13)
+        Me.Label7.TabIndex = 10
+        Me.Label7.Text = "Note"
+        '
+        'Panel4
+        '
+        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.Document_DateTimePicker)
+        Me.Panel4.Controls.Add(Me.DDate_Label)
+        Me.Panel4.Controls.Add(Me.Label21)
+        Me.Panel4.Controls.Add(Me.Document_Label)
+        Me.Panel4.Controls.Add(Me.DDATE_TextBox)
+        Me.Panel4.Controls.Add(Me.NBDoc_TextBox)
+        Me.Panel4.Controls.Add(Me.Label17)
+        Me.Panel4.Location = New System.Drawing.Point(689, 63)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(512, 70)
+        Me.Panel4.TabIndex = 13
+        '
+        'Document_DateTimePicker
+        '
+        Me.Document_DateTimePicker.Location = New System.Drawing.Point(140, 37)
+        Me.Document_DateTimePicker.Name = "Document_DateTimePicker"
+        Me.Document_DateTimePicker.Size = New System.Drawing.Size(192, 20)
+        Me.Document_DateTimePicker.TabIndex = 2
+        '
+        'DDate_Label
+        '
+        Me.DDate_Label.AutoSize = True
+        Me.DDate_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DDate_Label.ForeColor = System.Drawing.Color.OrangeRed
+        Me.DDate_Label.Location = New System.Drawing.Point(489, 41)
+        Me.DDate_Label.Name = "DDate_Label"
+        Me.DDate_Label.Size = New System.Drawing.Size(18, 19)
+        Me.DDate_Label.TabIndex = 16
+        Me.DDate_Label.Text = "*"
+        Me.DDate_Label.Visible = False
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(4, 40)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(81, 13)
+        Me.Label21.TabIndex = 17
+        Me.Label21.Text = "Document Date"
+        '
+        'Document_Label
+        '
+        Me.Document_Label.AutoSize = True
+        Me.Document_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Document_Label.ForeColor = System.Drawing.Color.OrangeRed
+        Me.Document_Label.Location = New System.Drawing.Point(338, 10)
+        Me.Document_Label.Name = "Document_Label"
+        Me.Document_Label.Size = New System.Drawing.Size(18, 19)
+        Me.Document_Label.TabIndex = 16
+        Me.Document_Label.Text = "*"
+        Me.Document_Label.Visible = False
+        '
+        'DDATE_TextBox
+        '
+        Me.DDATE_TextBox.Enabled = False
+        Me.DDATE_TextBox.Location = New System.Drawing.Point(338, 37)
+        Me.DDATE_TextBox.Name = "DDATE_TextBox"
+        Me.DDATE_TextBox.Size = New System.Drawing.Size(145, 20)
+        Me.DDATE_TextBox.TabIndex = 1
+        '
+        'NBDoc_TextBox
+        '
+        Me.NBDoc_TextBox.Location = New System.Drawing.Point(140, 9)
+        Me.NBDoc_TextBox.MaxLength = 20
+        Me.NBDoc_TextBox.Name = "NBDoc_TextBox"
+        Me.NBDoc_TextBox.Size = New System.Drawing.Size(192, 20)
+        Me.NBDoc_TextBox.TabIndex = 1
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(4, 9)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(108, 13)
+        Me.Label17.TabIndex = 0
+        Me.Label17.Text = "Number of Document"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(689, 44)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(55, 13)
+        Me.Label8.TabIndex = 14
+        Me.Label8.Text = "Document"
+        '
+        'GdssDataSet11
+        '
+        Me.GdssDataSet11.DataSetName = "gdssDataSet1"
+        Me.GdssDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Save_Button
+        '
+        Me.Save_Button.Location = New System.Drawing.Point(1130, 521)
+        Me.Save_Button.Name = "Save_Button"
+        Me.Save_Button.Size = New System.Drawing.Size(75, 23)
+        Me.Save_Button.TabIndex = 15
+        Me.Save_Button.Text = "Save"
+        Me.Save_Button.UseVisualStyleBackColor = True
+        '
+        'Panel1
+        '
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Year_Label)
+        Me.Panel1.Controls.Add(Me.Year_TextBox)
+        Me.Panel1.Controls.Add(Me.Year_DateTimePicker)
+        Me.Panel1.Controls.Add(Me.Label10)
+        Me.Panel1.Location = New System.Drawing.Point(689, 187)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(516, 62)
+        Me.Panel1.TabIndex = 16
+        '
+        'Year_Label
+        '
+        Me.Year_Label.AutoSize = True
+        Me.Year_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Year_Label.ForeColor = System.Drawing.Color.OrangeRed
+        Me.Year_Label.Location = New System.Drawing.Point(486, 23)
+        Me.Year_Label.Name = "Year_Label"
+        Me.Year_Label.Size = New System.Drawing.Size(18, 19)
+        Me.Year_Label.TabIndex = 21
+        Me.Year_Label.Text = "*"
+        Me.Year_Label.Visible = False
+        '
+        'Year_TextBox
+        '
+        Me.Year_TextBox.Location = New System.Drawing.Point(339, 20)
+        Me.Year_TextBox.Name = "Year_TextBox"
+        Me.Year_TextBox.Size = New System.Drawing.Size(141, 20)
+        Me.Year_TextBox.TabIndex = 20
+        '
+        'Year_DateTimePicker
+        '
+        Me.Year_DateTimePicker.Location = New System.Drawing.Point(141, 21)
+        Me.Year_DateTimePicker.Name = "Year_DateTimePicker"
+        Me.Year_DateTimePicker.Size = New System.Drawing.Size(192, 20)
+        Me.Year_DateTimePicker.TabIndex = 19
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(5, 20)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(93, 13)
+        Me.Label10.TabIndex = 18
+        Me.Label10.Text = "Year of the Ammo"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(686, 162)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(29, 13)
+        Me.Label9.TabIndex = 17
+        Me.Label9.Text = "Year"
         '
         'GiveAmmo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1027, 373)
+        Me.ClientSize = New System.Drawing.Size(1254, 563)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Save_Button)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Note_TextBox)
+        Me.Controls.Add(Me.User_TextBox)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "GiveAmmo"
         Me.Text = "Ammo"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
+        CType(Me.GdssDataSet11, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -267,8 +472,6 @@ Partial Class GiveAmmo
     Friend WithEvents Panel2 As Panel
     Friend WithEvents FullName_TextBox As TextBox
     Friend WithEvents Person_Label As Label
-    Friend WithEvents Grade_ComboBox As ComboBox
-    Friend WithEvents Source_ComboBox As ComboBox
     Friend WithEvents LName_CheckBox As CheckBox
     Friend WithEvents FATHER_CheckBox As CheckBox
     Friend WithEvents FName_CheckBox As CheckBox
@@ -285,4 +488,25 @@ Partial Class GiveAmmo
     Friend WithEvents GdssDataSet1 As gdssDataSet1
     Friend WithEvents IDCARDBindingSource As BindingSource
     Friend WithEvents IDCARDTableAdapter As gdssDataSet1TableAdapters.IDCARDTableAdapter
+    Friend WithEvents Label2 As Label
+    Friend WithEvents User_TextBox As TextBox
+    Friend WithEvents Note_TextBox As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Document_DateTimePicker As DateTimePicker
+    Friend WithEvents DDate_Label As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents Document_Label As Label
+    Friend WithEvents DDATE_TextBox As TextBox
+    Friend WithEvents NBDoc_TextBox As TextBox
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents GdssDataSet11 As gdssDataSet1
+    Friend WithEvents Save_Button As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Year_Label As Label
+    Friend WithEvents Year_TextBox As TextBox
+    Friend WithEvents Year_DateTimePicker As DateTimePicker
+    Friend WithEvents Label10 As Label
 End Class

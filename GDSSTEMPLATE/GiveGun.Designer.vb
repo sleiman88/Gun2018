@@ -708,7 +708,7 @@ Partial Class GiveGun
         Me.Panel4.Controls.Add(Me.DDATE_TextBox)
         Me.Panel4.Controls.Add(Me.NBDoc_TextBox)
         Me.Panel4.Controls.Add(Me.Label17)
-        Me.Panel4.Location = New System.Drawing.Point(709, 170)
+        Me.Panel4.Location = New System.Drawing.Point(709, 167)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(512, 70)
         Me.Panel4.TabIndex = 12
