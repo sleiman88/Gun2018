@@ -85,6 +85,11 @@
     Private Sub TextBoxMilitNb_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxMilitNb.KeyPress
         If e.KeyChar = ChrW(Keys.Enter) Then
             Try
+
+                FName_CheckBox.Checked = False
+                LName_CheckBox.Checked = False
+                FATHER_CheckBox.Checked = False
+
                 If IsNumeric(TextBoxMilitNb.Text) Then
                     Me.N0ITEMSTableAdapter.ClearBeforeFill = True
                     Me.IDCARDTableAdapter.FillByCODE(Me.GdssDataSet1.IDCARD, CDec(Val(TextBoxMilitNb.Text)))
