@@ -28,9 +28,9 @@ Partial Class GiveAmmo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 261)
+        Me.ClientSize = New System.Drawing.Size(641, 261)
         Me.Name = "GiveAmmo"
-        Me.Text = "GiveAmmo"
+        Me.Text = "Ammo"
         Me.ResumeLayout(False)
 
     End Sub

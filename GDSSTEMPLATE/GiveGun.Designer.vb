@@ -910,7 +910,7 @@ Partial Class GiveGun
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "GiveGun"
-        Me.Text = "Give Gun"
+        Me.Text = "Guns"
         CType(Me.N0ITEMSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
