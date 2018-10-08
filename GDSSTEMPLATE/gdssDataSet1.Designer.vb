@@ -35,6 +35,8 @@ Partial Public Class gdssDataSet1
     
     Private tablePERGUNTableAdapter As PERGUNTableAdapterDataTable
     
+    Private tableAMMO As AMMODataTable
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -82,6 +84,9 @@ Partial Public Class gdssDataSet1
             End If
             If (Not (ds.Tables("PERGUNTableAdapter")) Is Nothing) Then
                 MyBase.Tables.Add(New PERGUNTableAdapterDataTable(ds.Tables("PERGUNTableAdapter")))
+            End If
+            If (Not (ds.Tables("AMMO")) Is Nothing) Then
+                MyBase.Tables.Add(New AMMODataTable(ds.Tables("AMMO")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -148,6 +153,16 @@ Partial Public Class gdssDataSet1
     Public ReadOnly Property PERGUNTableAdapter() As PERGUNTableAdapterDataTable
         Get
             Return Me.tablePERGUNTableAdapter
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property AMMO() As AMMODataTable
+        Get
+            Return Me.tableAMMO
         End Get
     End Property
     
@@ -234,6 +249,9 @@ Partial Public Class gdssDataSet1
             If (Not (ds.Tables("PERGUNTableAdapter")) Is Nothing) Then
                 MyBase.Tables.Add(New PERGUNTableAdapterDataTable(ds.Tables("PERGUNTableAdapter")))
             End If
+            If (Not (ds.Tables("AMMO")) Is Nothing) Then
+                MyBase.Tables.Add(New AMMODataTable(ds.Tables("AMMO")))
+            End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
             Me.Namespace = ds.Namespace
@@ -296,6 +314,12 @@ Partial Public Class gdssDataSet1
                 Me.tablePERGUNTableAdapter.InitVars
             End If
         End If
+        Me.tableAMMO = CType(MyBase.Tables("AMMO"),AMMODataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableAMMO) Is Nothing) Then
+                Me.tableAMMO.InitVars
+            End If
+        End If
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -316,6 +340,8 @@ Partial Public Class gdssDataSet1
         MyBase.Tables.Add(Me.tableN0OFFICE1)
         Me.tablePERGUNTableAdapter = New PERGUNTableAdapterDataTable()
         MyBase.Tables.Add(Me.tablePERGUNTableAdapter)
+        Me.tableAMMO = New AMMODataTable()
+        MyBase.Tables.Add(Me.tableAMMO)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -345,6 +371,12 @@ Partial Public Class gdssDataSet1
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Function ShouldSerializePERGUNTableAdapter() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Private Function ShouldSerializeAMMO() As Boolean
         Return false
     End Function
     
@@ -426,6 +458,9 @@ Partial Public Class gdssDataSet1
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub PERGUNTableAdapterRowChangeEventHandler(ByVal sender As Object, ByVal e As PERGUNTableAdapterRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Delegate Sub AMMORowChangeEventHandler(ByVal sender As Object, ByVal e As AMMORowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -2247,6 +2282,452 @@ Partial Public Class gdssDataSet1
     End Class
     
     '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class AMMODataTable
+        Inherits Global.System.Data.TypedTableBase(Of AMMORow)
+        
+        Private columnAMMOTRANSACTION_PK As Global.System.Data.DataColumn
+        
+        Private columnMILITARY_NB As Global.System.Data.DataColumn
+        
+        Private columnYEAR As Global.System.Data.DataColumn
+        
+        Private columnQUANTITY As Global.System.Data.DataColumn
+        
+        Private columnNBROF_DOC As Global.System.Data.DataColumn
+        
+        Private columnDATEOF_DOC As Global.System.Data.DataColumn
+        
+        Private columnIS_SPECIAL_ORDER As Global.System.Data.DataColumn
+        
+        Private columnSPECIAL_NOTE As Global.System.Data.DataColumn
+        
+        Private columnSIZE_AMMO As Global.System.Data.DataColumn
+        
+        Private columnNOTE As Global.System.Data.DataColumn
+        
+        Private columnUSER_APP As Global.System.Data.DataColumn
+        
+        Private columnSYSTEM_DATE As Global.System.Data.DataColumn
+        
+        Private columnUPDATE_USER As Global.System.Data.DataColumn
+        
+        Private columnUPDATE_DATE As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "AMMO"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property AMMOTRANSACTION_PKColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAMMOTRANSACTION_PK
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property MILITARY_NBColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMILITARY_NB
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property YEARColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnYEAR
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property QUANTITYColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnQUANTITY
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property NBROF_DOCColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNBROF_DOC
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property DATEOF_DOCColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDATEOF_DOC
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property IS_SPECIAL_ORDERColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIS_SPECIAL_ORDER
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property SPECIAL_NOTEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSPECIAL_NOTE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property SIZE_AMMOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSIZE_AMMO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property NOTEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNOTE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property USER_APPColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnUSER_APP
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property SYSTEM_DATEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSYSTEM_DATE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property UPDATE_USERColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnUPDATE_USER
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property UPDATE_DATEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnUPDATE_DATE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As AMMORow
+            Get
+                Return CType(Me.Rows(index),AMMORow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event AMMORowChanging As AMMORowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event AMMORowChanged As AMMORowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event AMMORowDeleting As AMMORowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event AMMORowDeleted As AMMORowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub AddAMMORow(ByVal row As AMMORow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function AddAMMORow(ByVal AMMOTRANSACTION_PK As Decimal, ByVal MILITARY_NB As String, ByVal YEAR As Integer, ByVal QUANTITY As Long, ByVal NBROF_DOC As String, ByVal DATEOF_DOC As Date, ByVal IS_SPECIAL_ORDER As Short, ByVal SPECIAL_NOTE As String, ByVal SIZE_AMMO As String, ByVal NOTE As String, ByVal USER_APP As String, ByVal SYSTEM_DATE As Date, ByVal UPDATE_USER As String, ByVal UPDATE_DATE As Date) As AMMORow
+            Dim rowAMMORow As AMMORow = CType(Me.NewRow,AMMORow)
+            Dim columnValuesArray() As Object = New Object() {AMMOTRANSACTION_PK, MILITARY_NB, YEAR, QUANTITY, NBROF_DOC, DATEOF_DOC, IS_SPECIAL_ORDER, SPECIAL_NOTE, SIZE_AMMO, NOTE, USER_APP, SYSTEM_DATE, UPDATE_USER, UPDATE_DATE}
+            rowAMMORow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowAMMORow)
+            Return rowAMMORow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function FindByAMMOTRANSACTION_PK(ByVal AMMOTRANSACTION_PK As Decimal) As AMMORow
+            Return CType(Me.Rows.Find(New Object() {AMMOTRANSACTION_PK}),AMMORow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As AMMODataTable = CType(MyBase.Clone,AMMODataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New AMMODataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnAMMOTRANSACTION_PK = MyBase.Columns("AMMOTRANSACTION_PK")
+            Me.columnMILITARY_NB = MyBase.Columns("MILITARY_NB")
+            Me.columnYEAR = MyBase.Columns("YEAR")
+            Me.columnQUANTITY = MyBase.Columns("QUANTITY")
+            Me.columnNBROF_DOC = MyBase.Columns("NBROF_DOC")
+            Me.columnDATEOF_DOC = MyBase.Columns("DATEOF_DOC")
+            Me.columnIS_SPECIAL_ORDER = MyBase.Columns("IS_SPECIAL_ORDER")
+            Me.columnSPECIAL_NOTE = MyBase.Columns("SPECIAL_NOTE")
+            Me.columnSIZE_AMMO = MyBase.Columns("SIZE_AMMO")
+            Me.columnNOTE = MyBase.Columns("NOTE")
+            Me.columnUSER_APP = MyBase.Columns("USER_APP")
+            Me.columnSYSTEM_DATE = MyBase.Columns("SYSTEM_DATE")
+            Me.columnUPDATE_USER = MyBase.Columns("UPDATE_USER")
+            Me.columnUPDATE_DATE = MyBase.Columns("UPDATE_DATE")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnAMMOTRANSACTION_PK = New Global.System.Data.DataColumn("AMMOTRANSACTION_PK", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAMMOTRANSACTION_PK)
+            Me.columnMILITARY_NB = New Global.System.Data.DataColumn("MILITARY_NB", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMILITARY_NB)
+            Me.columnYEAR = New Global.System.Data.DataColumn("YEAR", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnYEAR)
+            Me.columnQUANTITY = New Global.System.Data.DataColumn("QUANTITY", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnQUANTITY)
+            Me.columnNBROF_DOC = New Global.System.Data.DataColumn("NBROF_DOC", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNBROF_DOC)
+            Me.columnDATEOF_DOC = New Global.System.Data.DataColumn("DATEOF_DOC", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDATEOF_DOC)
+            Me.columnIS_SPECIAL_ORDER = New Global.System.Data.DataColumn("IS_SPECIAL_ORDER", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIS_SPECIAL_ORDER)
+            Me.columnSPECIAL_NOTE = New Global.System.Data.DataColumn("SPECIAL_NOTE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSPECIAL_NOTE)
+            Me.columnSIZE_AMMO = New Global.System.Data.DataColumn("SIZE_AMMO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSIZE_AMMO)
+            Me.columnNOTE = New Global.System.Data.DataColumn("NOTE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNOTE)
+            Me.columnUSER_APP = New Global.System.Data.DataColumn("USER_APP", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUSER_APP)
+            Me.columnSYSTEM_DATE = New Global.System.Data.DataColumn("SYSTEM_DATE", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSYSTEM_DATE)
+            Me.columnUPDATE_USER = New Global.System.Data.DataColumn("UPDATE_USER", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUPDATE_USER)
+            Me.columnUPDATE_DATE = New Global.System.Data.DataColumn("UPDATE_DATE", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUPDATE_DATE)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnAMMOTRANSACTION_PK}, true))
+            Me.columnAMMOTRANSACTION_PK.AllowDBNull = false
+            Me.columnAMMOTRANSACTION_PK.Unique = true
+            Me.columnMILITARY_NB.AllowDBNull = false
+            Me.columnMILITARY_NB.MaxLength = 20
+            Me.columnYEAR.AllowDBNull = false
+            Me.columnQUANTITY.AllowDBNull = false
+            Me.columnNBROF_DOC.AllowDBNull = false
+            Me.columnNBROF_DOC.MaxLength = 50
+            Me.columnDATEOF_DOC.AllowDBNull = false
+            Me.columnIS_SPECIAL_ORDER.AllowDBNull = false
+            Me.columnSPECIAL_NOTE.MaxLength = 500
+            Me.columnSIZE_AMMO.AllowDBNull = false
+            Me.columnSIZE_AMMO.MaxLength = 20
+            Me.columnNOTE.MaxLength = 500
+            Me.columnUSER_APP.AllowDBNull = false
+            Me.columnUSER_APP.MaxLength = 20
+            Me.columnSYSTEM_DATE.AllowDBNull = false
+            Me.columnUPDATE_USER.MaxLength = 20
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function NewAMMORow() As AMMORow
+            Return CType(Me.NewRow,AMMORow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New AMMORow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(AMMORow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.AMMORowChangedEvent) Is Nothing) Then
+                RaiseEvent AMMORowChanged(Me, New AMMORowChangeEvent(CType(e.Row,AMMORow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.AMMORowChangingEvent) Is Nothing) Then
+                RaiseEvent AMMORowChanging(Me, New AMMORowChangeEvent(CType(e.Row,AMMORow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.AMMORowDeletedEvent) Is Nothing) Then
+                RaiseEvent AMMORowDeleted(Me, New AMMORowChangeEvent(CType(e.Row,AMMORow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.AMMORowDeletingEvent) Is Nothing) Then
+                RaiseEvent AMMORowDeleting(Me, New AMMORowChangeEvent(CType(e.Row,AMMORow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub RemoveAMMORow(ByVal row As AMMORow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As gdssDataSet1 = New gdssDataSet1()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "AMMODataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
     Partial Public Class serverdatetimeRow
@@ -3076,6 +3557,240 @@ Partial Public Class gdssDataSet1
     End Class
     
     '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class AMMORow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableAMMO As AMMODataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableAMMO = CType(Me.Table,AMMODataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property AMMOTRANSACTION_PK() As Decimal
+            Get
+                Return CType(Me(Me.tableAMMO.AMMOTRANSACTION_PKColumn),Decimal)
+            End Get
+            Set
+                Me(Me.tableAMMO.AMMOTRANSACTION_PKColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property MILITARY_NB() As String
+            Get
+                Return CType(Me(Me.tableAMMO.MILITARY_NBColumn),String)
+            End Get
+            Set
+                Me(Me.tableAMMO.MILITARY_NBColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property YEAR() As Integer
+            Get
+                Return CType(Me(Me.tableAMMO.YEARColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableAMMO.YEARColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property QUANTITY() As Long
+            Get
+                Return CType(Me(Me.tableAMMO.QUANTITYColumn),Long)
+            End Get
+            Set
+                Me(Me.tableAMMO.QUANTITYColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property NBROF_DOC() As String
+            Get
+                Return CType(Me(Me.tableAMMO.NBROF_DOCColumn),String)
+            End Get
+            Set
+                Me(Me.tableAMMO.NBROF_DOCColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property DATEOF_DOC() As Date
+            Get
+                Return CType(Me(Me.tableAMMO.DATEOF_DOCColumn),Date)
+            End Get
+            Set
+                Me(Me.tableAMMO.DATEOF_DOCColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property IS_SPECIAL_ORDER() As Short
+            Get
+                Return CType(Me(Me.tableAMMO.IS_SPECIAL_ORDERColumn),Short)
+            End Get
+            Set
+                Me(Me.tableAMMO.IS_SPECIAL_ORDERColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property SPECIAL_NOTE() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAMMO.SPECIAL_NOTEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SPECIAL_NOTE' in table 'AMMO' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAMMO.SPECIAL_NOTEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property SIZE_AMMO() As String
+            Get
+                Return CType(Me(Me.tableAMMO.SIZE_AMMOColumn),String)
+            End Get
+            Set
+                Me(Me.tableAMMO.SIZE_AMMOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property NOTE() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAMMO.NOTEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'NOTE' in table 'AMMO' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAMMO.NOTEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property USER_APP() As String
+            Get
+                Return CType(Me(Me.tableAMMO.USER_APPColumn),String)
+            End Get
+            Set
+                Me(Me.tableAMMO.USER_APPColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property SYSTEM_DATE() As Date
+            Get
+                Return CType(Me(Me.tableAMMO.SYSTEM_DATEColumn),Date)
+            End Get
+            Set
+                Me(Me.tableAMMO.SYSTEM_DATEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property UPDATE_USER() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAMMO.UPDATE_USERColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'UPDATE_USER' in table 'AMMO' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAMMO.UPDATE_USERColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property UPDATE_DATE() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableAMMO.UPDATE_DATEColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'UPDATE_DATE' in table 'AMMO' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAMMO.UPDATE_DATEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsSPECIAL_NOTENull() As Boolean
+            Return Me.IsNull(Me.tableAMMO.SPECIAL_NOTEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetSPECIAL_NOTENull()
+            Me(Me.tableAMMO.SPECIAL_NOTEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsNOTENull() As Boolean
+            Return Me.IsNull(Me.tableAMMO.NOTEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetNOTENull()
+            Me(Me.tableAMMO.NOTEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsUPDATE_USERNull() As Boolean
+            Return Me.IsNull(Me.tableAMMO.UPDATE_USERColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetUPDATE_USERNull()
+            Me(Me.tableAMMO.UPDATE_USERColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsUPDATE_DATENull() As Boolean
+            Return Me.IsNull(Me.tableAMMO.UPDATE_DATEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetUPDATE_DATENull()
+            Me(Me.tableAMMO.UPDATE_DATEColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -3241,6 +3956,42 @@ Partial Public Class gdssDataSet1
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property Row() As PERGUNTableAdapterRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class AMMORowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As AMMORow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As AMMORow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As AMMORow
             Get
                 Return Me.eventRow
             End Get
@@ -5952,7 +6703,7 @@ Namespace gdssDataSet1TableAdapters
             Me._commandCollection(1).Parameters.Add(param)
             Me._commandCollection(2) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        MAX(CODE) + 1 AS NewCode"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.PERGUN"
+            Me._commandCollection(2).CommandText = "SELECT        NVL(MAX(CODE), 0) + 1 AS NewCode"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.PERGUN"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(3).Connection = Me.Connection
@@ -6777,7 +7528,7 @@ Namespace gdssDataSet1TableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function getMaxCodePlus1() As Global.System.Nullable(Of Decimal)
+        Public Overloads Overridable Function getMaxCodePlus1() As Object
             Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = Me.CommandCollection(2)
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -6794,9 +7545,9 @@ Namespace gdssDataSet1TableAdapters
             End Try
             If ((returnValue Is Nothing)  _
                         OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
-                Return New Global.System.Nullable(Of Decimal)()
+                Return Nothing
             Else
-                Return New Global.System.Nullable(Of Decimal)(CType(returnValue,Decimal))
+                Return CType(returnValue,Object)
             End If
         End Function
         
@@ -6928,6 +7679,1326 @@ Namespace gdssDataSet1TableAdapters
     End Class
     
     '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class AMMOTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter
+        
+        Private _connection As Global.Oracle.ManagedDataAccess.Client.OracleConnection
+        
+        Private _transaction As Global.Oracle.ManagedDataAccess.Client.OracleTransaction
+        
+        Private _commandCollection() As Global.Oracle.ManagedDataAccess.Client.OracleCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Connection() As Global.Oracle.ManagedDataAccess.Client.OracleConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Transaction() As Global.Oracle.ManagedDataAccess.Client.OracleTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "AMMO"
+            tableMapping.ColumnMappings.Add("AMMOTRANSACTION_PK", "AMMOTRANSACTION_PK")
+            tableMapping.ColumnMappings.Add("MILITARY_NB", "MILITARY_NB")
+            tableMapping.ColumnMappings.Add("YEAR", "YEAR")
+            tableMapping.ColumnMappings.Add("QUANTITY", "QUANTITY")
+            tableMapping.ColumnMappings.Add("NBROF_DOC", "NBROF_DOC")
+            tableMapping.ColumnMappings.Add("DATEOF_DOC", "DATEOF_DOC")
+            tableMapping.ColumnMappings.Add("IS_SPECIAL_ORDER", "IS_SPECIAL_ORDER")
+            tableMapping.ColumnMappings.Add("SPECIAL_NOTE", "SPECIAL_NOTE")
+            tableMapping.ColumnMappings.Add("SIZE_AMMO", "SIZE_AMMO")
+            tableMapping.ColumnMappings.Add("NOTE", "NOTE")
+            tableMapping.ColumnMappings.Add("USER_APP", "USER_APP")
+            tableMapping.ColumnMappings.Add("SYSTEM_DATE", "SYSTEM_DATE")
+            tableMapping.ColumnMappings.Add("UPDATE_USER", "UPDATE_USER")
+            tableMapping.ColumnMappings.Add("UPDATE_DATE", "UPDATE_DATE")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM ""TEAM"".""AMMO"" WHERE ((""AMMOTRANSACTION_PK"" = :Original_AMMOTRANSACTIO"& _ 
+                "N_PK) AND (""MILITARY_NB"" = :Original_MILITARY_NB) AND (""YEAR"" = :Original_YEAR) "& _ 
+                "AND (""QUANTITY"" = :Original_QUANTITY) AND (""NBROF_DOC"" = :Original_NBROF_DOC) AN"& _ 
+                "D (""DATEOF_DOC"" = :Original_DATEOF_DOC) AND (""IS_SPECIAL_ORDER"" = :Original_IS_S"& _ 
+                "PECIAL_ORDER) AND ((:IsNull_SPECIAL_NOTE = 1 AND ""SPECIAL_NOTE"" IS NULL) OR (""SP"& _ 
+                "ECIAL_NOTE"" = :Original_SPECIAL_NOTE)) AND (""SIZE_AMMO"" = :Original_SIZE_AMMO) A"& _ 
+                "ND ((:IsNull_NOTE = 1 AND ""NOTE"" IS NULL) OR (""NOTE"" = :Original_NOTE)) AND (""US"& _ 
+                "ER_APP"" = :Original_USER_APP) AND (""SYSTEM_DATE"" = :Original_SYSTEM_DATE) AND (("& _ 
+                ":IsNull_UPDATE_USER = 1 AND ""UPDATE_USER"" IS NULL) OR (""UPDATE_USER"" = :Original"& _ 
+                "_UPDATE_USER)) AND ((:IsNull_UPDATE_DATE = 1 AND ""UPDATE_DATE"" IS NULL) OR (""UPD"& _ 
+                "ATE_DATE"" = :Original_UPDATE_DATE)))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_AMMOTRANSACTION_PK"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "AMMOTRANSACTION_PK"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_MILITARY_NB"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "MILITARY_NB"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_YEAR"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "YEAR"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_QUANTITY"
+            param.DbType = Global.System.Data.DbType.Int64
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int64
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "QUANTITY"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_NBROF_DOC"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 50
+            param.IsNullable = true
+            param.SourceColumn = "NBROF_DOC"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_DATEOF_DOC"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
+            param.Size = 7
+            param.IsNullable = true
+            param.SourceColumn = "DATEOF_DOC"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_IS_SPECIAL_ORDER"
+            param.DbType = Global.System.Data.DbType.Int16
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int16
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "IS_SPECIAL_ORDER"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "IsNull_SPECIAL_NOTE"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
+            param.Size = 500
+            param.IsNullable = true
+            param.SourceColumn = "SPECIAL_NOTE"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            param.SourceColumnNullMapping = true
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_SPECIAL_NOTE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 500
+            param.IsNullable = true
+            param.SourceColumn = "SPECIAL_NOTE"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_SIZE_AMMO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "SIZE_AMMO"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "IsNull_NOTE"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
+            param.Size = 500
+            param.IsNullable = true
+            param.SourceColumn = "NOTE"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            param.SourceColumnNullMapping = true
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_NOTE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 500
+            param.IsNullable = true
+            param.SourceColumn = "NOTE"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_USER_APP"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "USER_APP"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_SYSTEM_DATE"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
+            param.Size = 7
+            param.IsNullable = true
+            param.SourceColumn = "SYSTEM_DATE"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "IsNull_UPDATE_USER"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "UPDATE_USER"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            param.SourceColumnNullMapping = true
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_UPDATE_USER"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "UPDATE_USER"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "IsNull_UPDATE_DATE"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
+            param.Size = 7
+            param.IsNullable = true
+            param.SourceColumn = "UPDATE_DATE"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            param.SourceColumnNullMapping = true
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_UPDATE_DATE"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
+            param.Size = 7
+            param.IsNullable = true
+            param.SourceColumn = "UPDATE_DATE"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            Me._adapter.InsertCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO ""TEAM"".""AMMO"" (""AMMOTRANSACTION_PK"", ""MILITARY_NB"", ""YEAR"", ""QUANTITY"& _ 
+                """, ""NBROF_DOC"", ""DATEOF_DOC"", ""IS_SPECIAL_ORDER"", ""SPECIAL_NOTE"", ""SIZE_AMMO"", """& _ 
+                "NOTE"", ""USER_APP"", ""SYSTEM_DATE"", ""UPDATE_USER"", ""UPDATE_DATE"") VALUES (:AMMOTRA"& _ 
+                "NSACTION_PK, :MILITARY_NB, :YEAR, :QUANTITY, :NBROF_DOC, :DATEOF_DOC, :IS_SPECIA"& _ 
+                "L_ORDER, :SPECIAL_NOTE, :SIZE_AMMO, :NOTE, :USER_APP, :SYSTEM_DATE, :UPDATE_USER"& _ 
+                ", :UPDATE_DATE)"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "AMMOTRANSACTION_PK"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "AMMOTRANSACTION_PK"
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "MILITARY_NB"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "MILITARY_NB"
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "YEAR"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "YEAR"
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "QUANTITY"
+            param.DbType = Global.System.Data.DbType.Int64
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int64
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "QUANTITY"
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "NBROF_DOC"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 50
+            param.IsNullable = true
+            param.SourceColumn = "NBROF_DOC"
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "DATEOF_DOC"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
+            param.Size = 7
+            param.IsNullable = true
+            param.SourceColumn = "DATEOF_DOC"
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "IS_SPECIAL_ORDER"
+            param.DbType = Global.System.Data.DbType.Int16
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int16
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "IS_SPECIAL_ORDER"
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "SPECIAL_NOTE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 500
+            param.IsNullable = true
+            param.SourceColumn = "SPECIAL_NOTE"
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "SIZE_AMMO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "SIZE_AMMO"
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "NOTE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 500
+            param.IsNullable = true
+            param.SourceColumn = "NOTE"
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "USER_APP"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "USER_APP"
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "SYSTEM_DATE"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
+            param.Size = 7
+            param.IsNullable = true
+            param.SourceColumn = "SYSTEM_DATE"
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "UPDATE_USER"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "UPDATE_USER"
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "UPDATE_DATE"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
+            param.Size = 7
+            param.IsNullable = true
+            param.SourceColumn = "UPDATE_DATE"
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            Me._adapter.UpdateCommand = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE ""TEAM"".""AMMO"" SET ""AMMOTRANSACTION_PK"" = :AMMOTRANSACTION_PK, ""MILITARY_NB"& _ 
+                """ = :MILITARY_NB, ""YEAR"" = :YEAR, ""QUANTITY"" = :QUANTITY, ""NBROF_DOC"" = :NBROF_D"& _ 
+                "OC, ""DATEOF_DOC"" = :DATEOF_DOC, ""IS_SPECIAL_ORDER"" = :IS_SPECIAL_ORDER, ""SPECIAL"& _ 
+                "_NOTE"" = :SPECIAL_NOTE, ""SIZE_AMMO"" = :SIZE_AMMO, ""NOTE"" = :NOTE, ""USER_APP"" = :"& _ 
+                "USER_APP, ""SYSTEM_DATE"" = :SYSTEM_DATE, ""UPDATE_USER"" = :UPDATE_USER, ""UPDATE_DA"& _ 
+                "TE"" = :UPDATE_DATE WHERE ((""AMMOTRANSACTION_PK"" = :Original_AMMOTRANSACTION_PK) "& _ 
+                "AND (""MILITARY_NB"" = :Original_MILITARY_NB) AND (""YEAR"" = :Original_YEAR) AND ("""& _ 
+                "QUANTITY"" = :Original_QUANTITY) AND (""NBROF_DOC"" = :Original_NBROF_DOC) AND (""DA"& _ 
+                "TEOF_DOC"" = :Original_DATEOF_DOC) AND (""IS_SPECIAL_ORDER"" = :Original_IS_SPECIAL"& _ 
+                "_ORDER) AND ((:IsNull_SPECIAL_NOTE = 1 AND ""SPECIAL_NOTE"" IS NULL) OR (""SPECIAL_"& _ 
+                "NOTE"" = :Original_SPECIAL_NOTE)) AND (""SIZE_AMMO"" = :Original_SIZE_AMMO) AND ((:"& _ 
+                "IsNull_NOTE = 1 AND ""NOTE"" IS NULL) OR (""NOTE"" = :Original_NOTE)) AND (""USER_APP"& _ 
+                """ = :Original_USER_APP) AND (""SYSTEM_DATE"" = :Original_SYSTEM_DATE) AND ((:IsNul"& _ 
+                "l_UPDATE_USER = 1 AND ""UPDATE_USER"" IS NULL) OR (""UPDATE_USER"" = :Original_UPDAT"& _ 
+                "E_USER)) AND ((:IsNull_UPDATE_DATE = 1 AND ""UPDATE_DATE"" IS NULL) OR (""UPDATE_DA"& _ 
+                "TE"" = :Original_UPDATE_DATE)))"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "AMMOTRANSACTION_PK"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "AMMOTRANSACTION_PK"
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "MILITARY_NB"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "MILITARY_NB"
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "YEAR"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "YEAR"
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "QUANTITY"
+            param.DbType = Global.System.Data.DbType.Int64
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int64
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "QUANTITY"
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "NBROF_DOC"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 50
+            param.IsNullable = true
+            param.SourceColumn = "NBROF_DOC"
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "DATEOF_DOC"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
+            param.Size = 7
+            param.IsNullable = true
+            param.SourceColumn = "DATEOF_DOC"
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "IS_SPECIAL_ORDER"
+            param.DbType = Global.System.Data.DbType.Int16
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int16
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "IS_SPECIAL_ORDER"
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "SPECIAL_NOTE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 500
+            param.IsNullable = true
+            param.SourceColumn = "SPECIAL_NOTE"
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "SIZE_AMMO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "SIZE_AMMO"
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "NOTE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 500
+            param.IsNullable = true
+            param.SourceColumn = "NOTE"
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "USER_APP"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "USER_APP"
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "SYSTEM_DATE"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
+            param.Size = 7
+            param.IsNullable = true
+            param.SourceColumn = "SYSTEM_DATE"
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "UPDATE_USER"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "UPDATE_USER"
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "UPDATE_DATE"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
+            param.Size = 7
+            param.IsNullable = true
+            param.SourceColumn = "UPDATE_DATE"
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_AMMOTRANSACTION_PK"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "AMMOTRANSACTION_PK"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_MILITARY_NB"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "MILITARY_NB"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_YEAR"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "YEAR"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_QUANTITY"
+            param.DbType = Global.System.Data.DbType.Int64
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int64
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "QUANTITY"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_NBROF_DOC"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 50
+            param.IsNullable = true
+            param.SourceColumn = "NBROF_DOC"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_DATEOF_DOC"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
+            param.Size = 7
+            param.IsNullable = true
+            param.SourceColumn = "DATEOF_DOC"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_IS_SPECIAL_ORDER"
+            param.DbType = Global.System.Data.DbType.Int16
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int16
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "IS_SPECIAL_ORDER"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "IsNull_SPECIAL_NOTE"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
+            param.Size = 500
+            param.IsNullable = true
+            param.SourceColumn = "SPECIAL_NOTE"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            param.SourceColumnNullMapping = true
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_SPECIAL_NOTE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 500
+            param.IsNullable = true
+            param.SourceColumn = "SPECIAL_NOTE"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_SIZE_AMMO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "SIZE_AMMO"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "IsNull_NOTE"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
+            param.Size = 500
+            param.IsNullable = true
+            param.SourceColumn = "NOTE"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            param.SourceColumnNullMapping = true
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_NOTE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 500
+            param.IsNullable = true
+            param.SourceColumn = "NOTE"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_USER_APP"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "USER_APP"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_SYSTEM_DATE"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
+            param.Size = 7
+            param.IsNullable = true
+            param.SourceColumn = "SYSTEM_DATE"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "IsNull_UPDATE_USER"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "UPDATE_USER"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            param.SourceColumnNullMapping = true
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_UPDATE_USER"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "UPDATE_USER"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "IsNull_UPDATE_DATE"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Int32
+            param.Size = 7
+            param.IsNullable = true
+            param.SourceColumn = "UPDATE_DATE"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            param.SourceColumnNullMapping = true
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = "Original_UPDATE_DATE"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
+            param.Size = 7
+            param.IsNullable = true
+            param.SourceColumn = "UPDATE_DATE"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection()
+            Me._connection.ConnectionString = Global.GDSSTEMPLATE.My.MySettings.Default.gdssConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(2) {}
+            Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT        TEAM.AMMO.*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.AMMO"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT        NVL(MAX(AMMOTRANSACTION_PK), 0) + 1 AS EXPR1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM."& _ 
+                "AMMO"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "INSERT INTO TEAM.AMMO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (AMMOTRANSACTION_PK, MILITARY_NB,"& _ 
+                " ""YEAR"", QUANTITY, NBROF_DOC, DATEOF_DOC, IS_SPECIAL_ORDER, SPECIAL_NOTE, SIZE_A"& _ 
+                "MMO, NOTE, USER_APP, SYSTEM_DATE, UPDATE_USER, UPDATE_DATE)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (:AMM"& _ 
+                "OTRANSACTION_PK, :MILITARY_NB, :YEAR, :QUANTITY, :NBROF_DOC, :DATEOF_DOC, :IS_SP"& _ 
+                "ECIAL_ORDER, :SPECIAL_NOTE, :SIZE_AMMO, :NOTE, :USER_APP, :SYSTEM_DATE, :UPDATE_"& _ 
+                "USER, :UPDATE_DATE)"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":AMMOTRANSACTION_PK"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "AMMOTRANSACTION_PK"
+            Me._commandCollection(2).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":MILITARY_NB"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "MILITARY_NB"
+            Me._commandCollection(2).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":YEAR"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "YEAR"
+            Me._commandCollection(2).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":QUANTITY"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "QUANTITY"
+            Me._commandCollection(2).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":NBROF_DOC"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 50
+            param.IsNullable = true
+            param.SourceColumn = "NBROF_DOC"
+            Me._commandCollection(2).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":DATEOF_DOC"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
+            param.Size = 7
+            param.IsNullable = true
+            param.SourceColumn = "DATEOF_DOC"
+            Me._commandCollection(2).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":IS_SPECIAL_ORDER"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "IS_SPECIAL_ORDER"
+            Me._commandCollection(2).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":SPECIAL_NOTE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 500
+            param.IsNullable = true
+            param.SourceColumn = "SPECIAL_NOTE"
+            Me._commandCollection(2).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":SIZE_AMMO"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "SIZE_AMMO"
+            Me._commandCollection(2).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":NOTE"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 500
+            param.IsNullable = true
+            param.SourceColumn = "NOTE"
+            Me._commandCollection(2).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":USER_APP"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "USER_APP"
+            Me._commandCollection(2).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":SYSTEM_DATE"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
+            param.Size = 7
+            param.IsNullable = true
+            param.SourceColumn = "SYSTEM_DATE"
+            Me._commandCollection(2).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":UPDATE_USER"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "UPDATE_USER"
+            Me._commandCollection(2).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":UPDATE_DATE"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Date]
+            param.Size = 7
+            param.IsNullable = true
+            param.SourceColumn = "UPDATE_DATE"
+            Me._commandCollection(2).Parameters.Add(param)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As gdssDataSet1.AMMODataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As gdssDataSet1.AMMODataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As gdssDataSet1.AMMODataTable = New gdssDataSet1.AMMODataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As gdssDataSet1.AMMODataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As gdssDataSet1) As Integer
+            Return Me.Adapter.Update(dataSet, "AMMO")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_AMMOTRANSACTION_PK As Decimal, ByVal Original_MILITARY_NB As String, ByVal Original_YEAR As Integer, ByVal Original_QUANTITY As Long, ByVal Original_NBROF_DOC As String, ByVal Original_DATEOF_DOC As Date, ByVal Original_IS_SPECIAL_ORDER As Short, ByVal Original_SPECIAL_NOTE As String, ByVal Original_SIZE_AMMO As String, ByVal Original_NOTE As String, ByVal Original_USER_APP As String, ByVal Original_SYSTEM_DATE As Date, ByVal Original_UPDATE_USER As String, ByVal Original_UPDATE_DATE As Global.System.Nullable(Of Date)) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_AMMOTRANSACTION_PK,Decimal)
+            If (Original_MILITARY_NB Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_MILITARY_NB")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_MILITARY_NB,String)
+            End If
+            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_YEAR,Integer)
+            Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_QUANTITY,Long)
+            If (Original_NBROF_DOC Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_NBROF_DOC")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_NBROF_DOC,String)
+            End If
+            Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_DATEOF_DOC,Date)
+            Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_IS_SPECIAL_ORDER,Short)
+            If (Original_SPECIAL_NOTE Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_SPECIAL_NOTE,String)
+            End If
+            If (Original_SIZE_AMMO Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_SIZE_AMMO")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_SIZE_AMMO,String)
+            End If
+            If (Original_NOTE Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(11).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(Original_NOTE,String)
+            End If
+            If (Original_USER_APP Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_USER_APP")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_USER_APP,String)
+            End If
+            Me.Adapter.DeleteCommand.Parameters(13).Value = CType(Original_SYSTEM_DATE,Date)
+            If (Original_UPDATE_USER Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(15).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(Original_UPDATE_USER,String)
+            End If
+            If (Original_UPDATE_DATE.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(Original_UPDATE_DATE.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(17).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal AMMOTRANSACTION_PK As Decimal, ByVal MILITARY_NB As String, ByVal YEAR As Integer, ByVal QUANTITY As Long, ByVal NBROF_DOC As String, ByVal DATEOF_DOC As Date, ByVal IS_SPECIAL_ORDER As Short, ByVal SPECIAL_NOTE As String, ByVal SIZE_AMMO As String, ByVal NOTE As String, ByVal USER_APP As String, ByVal SYSTEM_DATE As Date, ByVal UPDATE_USER As String, ByVal UPDATE_DATE As Global.System.Nullable(Of Date)) As Integer
+            Me.Adapter.InsertCommand.Parameters(0).Value = CType(AMMOTRANSACTION_PK,Decimal)
+            If (MILITARY_NB Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("MILITARY_NB")
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(MILITARY_NB,String)
+            End If
+            Me.Adapter.InsertCommand.Parameters(2).Value = CType(YEAR,Integer)
+            Me.Adapter.InsertCommand.Parameters(3).Value = CType(QUANTITY,Long)
+            If (NBROF_DOC Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("NBROF_DOC")
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(NBROF_DOC,String)
+            End If
+            Me.Adapter.InsertCommand.Parameters(5).Value = CType(DATEOF_DOC,Date)
+            Me.Adapter.InsertCommand.Parameters(6).Value = CType(IS_SPECIAL_ORDER,Short)
+            If (SPECIAL_NOTE Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(SPECIAL_NOTE,String)
+            End If
+            If (SIZE_AMMO Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("SIZE_AMMO")
+            Else
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(SIZE_AMMO,String)
+            End If
+            If (NOTE Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(9).Value = CType(NOTE,String)
+            End If
+            If (USER_APP Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("USER_APP")
+            Else
+                Me.Adapter.InsertCommand.Parameters(10).Value = CType(USER_APP,String)
+            End If
+            Me.Adapter.InsertCommand.Parameters(11).Value = CType(SYSTEM_DATE,Date)
+            If (UPDATE_USER Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(12).Value = CType(UPDATE_USER,String)
+            End If
+            If (UPDATE_DATE.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(13).Value = CType(UPDATE_DATE.Value,Date)
+            Else
+                Me.Adapter.InsertCommand.Parameters(13).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update( _
+                    ByVal AMMOTRANSACTION_PK As Decimal,  _
+                    ByVal MILITARY_NB As String,  _
+                    ByVal YEAR As Integer,  _
+                    ByVal QUANTITY As Long,  _
+                    ByVal NBROF_DOC As String,  _
+                    ByVal DATEOF_DOC As Date,  _
+                    ByVal IS_SPECIAL_ORDER As Short,  _
+                    ByVal SPECIAL_NOTE As String,  _
+                    ByVal SIZE_AMMO As String,  _
+                    ByVal NOTE As String,  _
+                    ByVal USER_APP As String,  _
+                    ByVal SYSTEM_DATE As Date,  _
+                    ByVal UPDATE_USER As String,  _
+                    ByVal UPDATE_DATE As Global.System.Nullable(Of Date),  _
+                    ByVal Original_AMMOTRANSACTION_PK As Decimal,  _
+                    ByVal Original_MILITARY_NB As String,  _
+                    ByVal Original_YEAR As Integer,  _
+                    ByVal Original_QUANTITY As Long,  _
+                    ByVal Original_NBROF_DOC As String,  _
+                    ByVal Original_DATEOF_DOC As Date,  _
+                    ByVal Original_IS_SPECIAL_ORDER As Short,  _
+                    ByVal Original_SPECIAL_NOTE As String,  _
+                    ByVal Original_SIZE_AMMO As String,  _
+                    ByVal Original_NOTE As String,  _
+                    ByVal Original_USER_APP As String,  _
+                    ByVal Original_SYSTEM_DATE As Date,  _
+                    ByVal Original_UPDATE_USER As String,  _
+                    ByVal Original_UPDATE_DATE As Global.System.Nullable(Of Date)) As Integer
+            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(AMMOTRANSACTION_PK,Decimal)
+            If (MILITARY_NB Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("MILITARY_NB")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(MILITARY_NB,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(YEAR,Integer)
+            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(QUANTITY,Long)
+            If (NBROF_DOC Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("NBROF_DOC")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(NBROF_DOC,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(DATEOF_DOC,Date)
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(IS_SPECIAL_ORDER,Short)
+            If (SPECIAL_NOTE Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(SPECIAL_NOTE,String)
+            End If
+            If (SIZE_AMMO Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("SIZE_AMMO")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(SIZE_AMMO,String)
+            End If
+            If (NOTE Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(NOTE,String)
+            End If
+            If (USER_APP Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("USER_APP")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(USER_APP,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(SYSTEM_DATE,Date)
+            If (UPDATE_USER Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(UPDATE_USER,String)
+            End If
+            If (UPDATE_DATE.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(UPDATE_DATE.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_AMMOTRANSACTION_PK,Decimal)
+            If (Original_MILITARY_NB Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_MILITARY_NB")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_MILITARY_NB,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_YEAR,Integer)
+            Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_QUANTITY,Long)
+            If (Original_NBROF_DOC Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_NBROF_DOC")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_NBROF_DOC,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_DATEOF_DOC,Date)
+            Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_IS_SPECIAL_ORDER,Short)
+            If (Original_SPECIAL_NOTE Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_SPECIAL_NOTE,String)
+            End If
+            If (Original_SIZE_AMMO Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_SIZE_AMMO")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_SIZE_AMMO,String)
+            End If
+            If (Original_NOTE Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_NOTE,String)
+            End If
+            If (Original_USER_APP Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_USER_APP")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_USER_APP,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_SYSTEM_DATE,Date)
+            If (Original_UPDATE_USER Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(Original_UPDATE_USER,String)
+            End If
+            If (Original_UPDATE_DATE.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(Original_UPDATE_DATE.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update( _
+                    ByVal MILITARY_NB As String,  _
+                    ByVal YEAR As Integer,  _
+                    ByVal QUANTITY As Long,  _
+                    ByVal NBROF_DOC As String,  _
+                    ByVal DATEOF_DOC As Date,  _
+                    ByVal IS_SPECIAL_ORDER As Short,  _
+                    ByVal SPECIAL_NOTE As String,  _
+                    ByVal SIZE_AMMO As String,  _
+                    ByVal NOTE As String,  _
+                    ByVal USER_APP As String,  _
+                    ByVal SYSTEM_DATE As Date,  _
+                    ByVal UPDATE_USER As String,  _
+                    ByVal UPDATE_DATE As Global.System.Nullable(Of Date),  _
+                    ByVal Original_AMMOTRANSACTION_PK As Decimal,  _
+                    ByVal Original_MILITARY_NB As String,  _
+                    ByVal Original_YEAR As Integer,  _
+                    ByVal Original_QUANTITY As Long,  _
+                    ByVal Original_NBROF_DOC As String,  _
+                    ByVal Original_DATEOF_DOC As Date,  _
+                    ByVal Original_IS_SPECIAL_ORDER As Short,  _
+                    ByVal Original_SPECIAL_NOTE As String,  _
+                    ByVal Original_SIZE_AMMO As String,  _
+                    ByVal Original_NOTE As String,  _
+                    ByVal Original_USER_APP As String,  _
+                    ByVal Original_SYSTEM_DATE As Date,  _
+                    ByVal Original_UPDATE_USER As String,  _
+                    ByVal Original_UPDATE_DATE As Global.System.Nullable(Of Date)) As Integer
+            Return Me.Update(Original_AMMOTRANSACTION_PK, MILITARY_NB, YEAR, QUANTITY, NBROF_DOC, DATEOF_DOC, IS_SPECIAL_ORDER, SPECIAL_NOTE, SIZE_AMMO, NOTE, USER_APP, SYSTEM_DATE, UPDATE_USER, UPDATE_DATE, Original_AMMOTRANSACTION_PK, Original_MILITARY_NB, Original_YEAR, Original_QUANTITY, Original_NBROF_DOC, Original_DATEOF_DOC, Original_IS_SPECIAL_ORDER, Original_SPECIAL_NOTE, Original_SIZE_AMMO, Original_NOTE, Original_USER_APP, Original_SYSTEM_DATE, Original_UPDATE_USER, Original_UPDATE_DATE)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function getNewPK() As Object
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = Me.CommandCollection(1)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return Nothing
+            Else
+                Return CType(returnValue,Object)
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
+        Public Overloads Overridable Function InsertQuery(ByVal AMMOTRANSACTION_PK As Decimal, ByVal MILITARY_NB As String, ByVal YEAR As Decimal, ByVal QUANTITY As Decimal, ByVal NBROF_DOC As String, ByVal DATEOF_DOC As Date, ByVal IS_SPECIAL_ORDER As Decimal, ByVal SPECIAL_NOTE As String, ByVal SIZE_AMMO As String, ByVal NOTE As String, ByVal USER_APP As String, ByVal SYSTEM_DATE As Date, ByVal UPDATE_USER As String, ByVal UPDATE_DATE As Global.System.Nullable(Of Date)) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = Me.CommandCollection(2)
+            command.Parameters(0).Value = CType(AMMOTRANSACTION_PK,Decimal)
+            If (MILITARY_NB Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("MILITARY_NB")
+            Else
+                command.Parameters(1).Value = CType(MILITARY_NB,String)
+            End If
+            command.Parameters(2).Value = CType(YEAR,Decimal)
+            command.Parameters(3).Value = CType(QUANTITY,Decimal)
+            If (NBROF_DOC Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("NBROF_DOC")
+            Else
+                command.Parameters(4).Value = CType(NBROF_DOC,String)
+            End If
+            command.Parameters(5).Value = CType(DATEOF_DOC,Date)
+            command.Parameters(6).Value = CType(IS_SPECIAL_ORDER,Decimal)
+            If (SPECIAL_NOTE Is Nothing) Then
+                command.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(7).Value = CType(SPECIAL_NOTE,String)
+            End If
+            If (SIZE_AMMO Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("SIZE_AMMO")
+            Else
+                command.Parameters(8).Value = CType(SIZE_AMMO,String)
+            End If
+            If (NOTE Is Nothing) Then
+                command.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(9).Value = CType(NOTE,String)
+            End If
+            If (USER_APP Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("USER_APP")
+            Else
+                command.Parameters(10).Value = CType(USER_APP,String)
+            End If
+            command.Parameters(11).Value = CType(SYSTEM_DATE,Date)
+            If (UPDATE_USER Is Nothing) Then
+                command.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(12).Value = CType(UPDATE_USER,String)
+            End If
+            If (UPDATE_DATE.HasValue = true) Then
+                command.Parameters(13).Value = CType(UPDATE_DATE.Value,Date)
+            Else
+                command.Parameters(13).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+    End Class
+    
+    '''<summary>
     '''TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     '''</summary>
     <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -6943,6 +9014,8 @@ Namespace gdssDataSet1TableAdapters
         Private _n0ITEMSTableAdapter As N0ITEMSTableAdapter
         
         Private _pERGUNTableAdapterTableAdapter As PERGUNTableAdapterTableAdapter
+        
+        Private _aMMOTableAdapter As AMMOTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -6988,6 +9061,20 @@ Namespace gdssDataSet1TableAdapters
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property AMMOTableAdapter() As AMMOTableAdapter
+            Get
+                Return Me._aMMOTableAdapter
+            End Get
+            Set
+                Me._aMMOTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property BackupDataSetBeforeUpdate() As Boolean
             Get
@@ -7014,6 +9101,10 @@ Namespace gdssDataSet1TableAdapters
                             AndAlso (Not (Me._pERGUNTableAdapterTableAdapter.Connection) Is Nothing)) Then
                     Return Me._pERGUNTableAdapterTableAdapter.Connection
                 End If
+                If ((Not (Me._aMMOTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._aMMOTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._aMMOTableAdapter.Connection
+                End If
                 Return Nothing
             End Get
             Set
@@ -7031,6 +9122,9 @@ Namespace gdssDataSet1TableAdapters
                     count = (count + 1)
                 End If
                 If (Not (Me._pERGUNTableAdapterTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._aMMOTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -7062,6 +9156,15 @@ Namespace gdssDataSet1TableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._aMMOTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.AMMO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._aMMOTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -7088,6 +9191,14 @@ Namespace gdssDataSet1TableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._aMMOTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.AMMO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._aMMOTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -7098,6 +9209,14 @@ Namespace gdssDataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As gdssDataSet1, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._aMMOTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.AMMO.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._aMMOTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._pERGUNTableAdapterTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.PERGUNTableAdapter.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -7165,6 +9284,11 @@ Namespace gdssDataSet1TableAdapters
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
+            If ((Not (Me._aMMOTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._aMMOTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
             Dim workConnection As Global.System.Data.IDbConnection = Me.Connection
             If (workConnection Is Nothing) Then
                 Throw New Global.System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana"& _ 
@@ -7213,6 +9337,15 @@ Namespace gdssDataSet1TableAdapters
                     If Me._pERGUNTableAdapterTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._pERGUNTableAdapterTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._pERGUNTableAdapterTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._aMMOTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._aMMOTableAdapter, Me._aMMOTableAdapter.Connection)
+                    Me._aMMOTableAdapter.Connection = CType(workConnection,Global.Oracle.ManagedDataAccess.Client.OracleConnection)
+                    Me._aMMOTableAdapter.Transaction = CType(workTransaction,Global.Oracle.ManagedDataAccess.Client.OracleTransaction)
+                    If Me._aMMOTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._aMMOTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._aMMOTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -7282,6 +9415,10 @@ Namespace gdssDataSet1TableAdapters
                 If (Not (Me._pERGUNTableAdapterTableAdapter) Is Nothing) Then
                     Me._pERGUNTableAdapterTableAdapter.Connection = CType(revertConnections(Me._pERGUNTableAdapterTableAdapter),Global.Oracle.ManagedDataAccess.Client.OracleConnection)
                     Me._pERGUNTableAdapterTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._aMMOTableAdapter) Is Nothing) Then
+                    Me._aMMOTableAdapter.Connection = CType(revertConnections(Me._aMMOTableAdapter),Global.Oracle.ManagedDataAccess.Client.OracleConnection)
+                    Me._aMMOTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

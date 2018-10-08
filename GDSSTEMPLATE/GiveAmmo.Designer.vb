@@ -55,7 +55,6 @@ Partial Class GiveAmmo
         Me.NBDoc_TextBox = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.GdssDataSet11 = New GDSSTEMPLATE.gdssDataSet1()
         Me.Save_Button = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Year_Label = New System.Windows.Forms.Label()
@@ -64,21 +63,23 @@ Partial Class GiveAmmo
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.SpecialNote_Label = New System.Windows.Forms.Label()
+        Me.Special_CheckBox = New System.Windows.Forms.CheckBox()
+        Me.SpecialNote_TextBox = New System.Windows.Forms.TextBox()
         Me.AmmoQuantity_Label = New System.Windows.Forms.Label()
         Me.Check_Button = New System.Windows.Forms.Button()
         Me.AmoQuantity_TextBox = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.SpecialNote_TextBox = New System.Windows.Forms.TextBox()
-        Me.Special_CheckBox = New System.Windows.Forms.CheckBox()
-        Me.SpecialNote_Label = New System.Windows.Forms.Label()
+        Me.AMMOBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AMMOTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.AMMOTableAdapter()
         Me.Panel2.SuspendLayout()
         CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
-        CType(Me.GdssDataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        CType(Me.AMMOBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
@@ -377,11 +378,6 @@ Partial Class GiveAmmo
         Me.Label8.TabIndex = 14
         Me.Label8.Text = "Document"
         '
-        'GdssDataSet11
-        '
-        Me.GdssDataSet11.DataSetName = "gdssDataSet1"
-        Me.GdssDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'Save_Button
         '
         Me.Save_Button.Location = New System.Drawing.Point(1130, 521)
@@ -464,6 +460,37 @@ Partial Class GiveAmmo
         Me.Panel3.Size = New System.Drawing.Size(654, 172)
         Me.Panel3.TabIndex = 18
         '
+        'SpecialNote_Label
+        '
+        Me.SpecialNote_Label.AutoSize = True
+        Me.SpecialNote_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SpecialNote_Label.ForeColor = System.Drawing.Color.OrangeRed
+        Me.SpecialNote_Label.Location = New System.Drawing.Point(616, 56)
+        Me.SpecialNote_Label.Name = "SpecialNote_Label"
+        Me.SpecialNote_Label.Size = New System.Drawing.Size(18, 19)
+        Me.SpecialNote_Label.TabIndex = 20
+        Me.SpecialNote_Label.Text = "*"
+        Me.SpecialNote_Label.Visible = False
+        '
+        'Special_CheckBox
+        '
+        Me.Special_CheckBox.AutoSize = True
+        Me.Special_CheckBox.Location = New System.Drawing.Point(5, 69)
+        Me.Special_CheckBox.Name = "Special_CheckBox"
+        Me.Special_CheckBox.Size = New System.Drawing.Size(90, 17)
+        Me.Special_CheckBox.TabIndex = 19
+        Me.Special_CheckBox.Text = "Special Order"
+        Me.Special_CheckBox.UseVisualStyleBackColor = True
+        '
+        'SpecialNote_TextBox
+        '
+        Me.SpecialNote_TextBox.Location = New System.Drawing.Point(102, 56)
+        Me.SpecialNote_TextBox.Multiline = True
+        Me.SpecialNote_TextBox.Name = "SpecialNote_TextBox"
+        Me.SpecialNote_TextBox.Size = New System.Drawing.Size(508, 95)
+        Me.SpecialNote_TextBox.TabIndex = 18
+        Me.SpecialNote_TextBox.Visible = False
+        '
         'AmmoQuantity_Label
         '
         Me.AmmoQuantity_Label.AutoSize = True
@@ -510,36 +537,9 @@ Partial Class GiveAmmo
         Me.Label11.TabIndex = 19
         Me.Label11.Text = "Ammo"
         '
-        'SpecialNote_TextBox
+        'AMMOTableAdapter
         '
-        Me.SpecialNote_TextBox.Location = New System.Drawing.Point(102, 56)
-        Me.SpecialNote_TextBox.Multiline = True
-        Me.SpecialNote_TextBox.Name = "SpecialNote_TextBox"
-        Me.SpecialNote_TextBox.Size = New System.Drawing.Size(508, 95)
-        Me.SpecialNote_TextBox.TabIndex = 18
-        Me.SpecialNote_TextBox.Visible = False
-        '
-        'Special_CheckBox
-        '
-        Me.Special_CheckBox.AutoSize = True
-        Me.Special_CheckBox.Location = New System.Drawing.Point(5, 69)
-        Me.Special_CheckBox.Name = "Special_CheckBox"
-        Me.Special_CheckBox.Size = New System.Drawing.Size(90, 17)
-        Me.Special_CheckBox.TabIndex = 19
-        Me.Special_CheckBox.Text = "Special Order"
-        Me.Special_CheckBox.UseVisualStyleBackColor = True
-        '
-        'SpecialNote_Label
-        '
-        Me.SpecialNote_Label.AutoSize = True
-        Me.SpecialNote_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SpecialNote_Label.ForeColor = System.Drawing.Color.OrangeRed
-        Me.SpecialNote_Label.Location = New System.Drawing.Point(616, 56)
-        Me.SpecialNote_Label.Name = "SpecialNote_Label"
-        Me.SpecialNote_Label.Size = New System.Drawing.Size(18, 19)
-        Me.SpecialNote_Label.TabIndex = 20
-        Me.SpecialNote_Label.Text = "*"
-        Me.SpecialNote_Label.Visible = False
+        Me.AMMOTableAdapter.ClearBeforeFill = True
         '
         'GiveAmmo
         '
@@ -567,11 +567,11 @@ Partial Class GiveAmmo
         CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        CType(Me.GdssDataSet11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.AMMOBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -609,7 +609,6 @@ Partial Class GiveAmmo
     Friend WithEvents NBDoc_TextBox As TextBox
     Friend WithEvents Label17 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents GdssDataSet11 As gdssDataSet1
     Friend WithEvents Save_Button As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label9 As Label
@@ -626,4 +625,6 @@ Partial Class GiveAmmo
     Friend WithEvents Special_CheckBox As CheckBox
     Friend WithEvents SpecialNote_TextBox As TextBox
     Friend WithEvents SpecialNote_Label As Label
+    Friend WithEvents AMMOBindingSource As BindingSource
+    Friend WithEvents AMMOTableAdapter As gdssDataSet1TableAdapters.AMMOTableAdapter
 End Class
