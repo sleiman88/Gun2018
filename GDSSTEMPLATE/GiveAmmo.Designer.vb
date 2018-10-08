@@ -63,6 +63,9 @@ Partial Class GiveAmmo
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.size_Label = New System.Windows.Forms.Label()
+        Me.size_TextBox = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.SpecialNote_Label = New System.Windows.Forms.Label()
         Me.Special_CheckBox = New System.Windows.Forms.CheckBox()
         Me.SpecialNote_TextBox = New System.Windows.Forms.TextBox()
@@ -448,6 +451,9 @@ Partial Class GiveAmmo
         'Panel3
         '
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.size_Label)
+        Me.Panel3.Controls.Add(Me.size_TextBox)
+        Me.Panel3.Controls.Add(Me.Label13)
         Me.Panel3.Controls.Add(Me.SpecialNote_Label)
         Me.Panel3.Controls.Add(Me.Special_CheckBox)
         Me.Panel3.Controls.Add(Me.SpecialNote_TextBox)
@@ -460,12 +466,40 @@ Partial Class GiveAmmo
         Me.Panel3.Size = New System.Drawing.Size(654, 172)
         Me.Panel3.TabIndex = 18
         '
+        'size_Label
+        '
+        Me.size_Label.AutoSize = True
+        Me.size_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.size_Label.ForeColor = System.Drawing.Color.OrangeRed
+        Me.size_Label.Location = New System.Drawing.Point(250, 44)
+        Me.size_Label.Name = "size_Label"
+        Me.size_Label.Size = New System.Drawing.Size(18, 19)
+        Me.size_Label.TabIndex = 23
+        Me.size_Label.Text = "*"
+        Me.size_Label.Visible = False
+        '
+        'size_TextBox
+        '
+        Me.size_TextBox.Location = New System.Drawing.Point(102, 41)
+        Me.size_TextBox.Name = "size_TextBox"
+        Me.size_TextBox.Size = New System.Drawing.Size(139, 20)
+        Me.size_TextBox.TabIndex = 22
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(4, 50)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(58, 13)
+        Me.Label13.TabIndex = 21
+        Me.Label13.Text = "Ammo Size"
+        '
         'SpecialNote_Label
         '
         Me.SpecialNote_Label.AutoSize = True
         Me.SpecialNote_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SpecialNote_Label.ForeColor = System.Drawing.Color.OrangeRed
-        Me.SpecialNote_Label.Location = New System.Drawing.Point(616, 56)
+        Me.SpecialNote_Label.Location = New System.Drawing.Point(67, 89)
         Me.SpecialNote_Label.Name = "SpecialNote_Label"
         Me.SpecialNote_Label.Size = New System.Drawing.Size(18, 19)
         Me.SpecialNote_Label.TabIndex = 20
@@ -475,7 +509,7 @@ Partial Class GiveAmmo
         'Special_CheckBox
         '
         Me.Special_CheckBox.AutoSize = True
-        Me.Special_CheckBox.Location = New System.Drawing.Point(5, 69)
+        Me.Special_CheckBox.Location = New System.Drawing.Point(6, 69)
         Me.Special_CheckBox.Name = "Special_CheckBox"
         Me.Special_CheckBox.Size = New System.Drawing.Size(90, 17)
         Me.Special_CheckBox.TabIndex = 19
@@ -484,7 +518,7 @@ Partial Class GiveAmmo
         '
         'SpecialNote_TextBox
         '
-        Me.SpecialNote_TextBox.Location = New System.Drawing.Point(102, 56)
+        Me.SpecialNote_TextBox.Location = New System.Drawing.Point(101, 67)
         Me.SpecialNote_TextBox.Multiline = True
         Me.SpecialNote_TextBox.Name = "SpecialNote_TextBox"
         Me.SpecialNote_TextBox.Size = New System.Drawing.Size(508, 95)
@@ -536,6 +570,11 @@ Partial Class GiveAmmo
         Me.Label11.Size = New System.Drawing.Size(36, 13)
         Me.Label11.TabIndex = 19
         Me.Label11.Text = "Ammo"
+        '
+        'AMMOBindingSource
+        '
+        Me.AMMOBindingSource.DataMember = "AMMO"
+        Me.AMMOBindingSource.DataSource = Me.GdssDataSet1
         '
         'AMMOTableAdapter
         '
@@ -627,4 +666,7 @@ Partial Class GiveAmmo
     Friend WithEvents SpecialNote_Label As Label
     Friend WithEvents AMMOBindingSource As BindingSource
     Friend WithEvents AMMOTableAdapter As gdssDataSet1TableAdapters.AMMOTableAdapter
+    Friend WithEvents size_Label As Label
+    Friend WithEvents size_TextBox As TextBox
+    Friend WithEvents Label13 As Label
 End Class

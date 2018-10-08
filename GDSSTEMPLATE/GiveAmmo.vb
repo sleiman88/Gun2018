@@ -1,8 +1,12 @@
 ﻿Public Class GiveAmmo
     Public Muser As String
     Private Sub GiveAmmo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'GdssDataSet1.AMMO' table. You can move, or remove it, as needed.
+        ' Me.AMMOTableAdapter.Fill(Me.GdssDataSet1.AMMO)
+        'TODO: This line of code loads data into the 'GdssDataSet1.PERGUNTableAdapter' table. You can move, or remove it, as needed.
+        '  Me.PERGUNTableAdapterTableAdapter.Fill(Me.GdssDataSet1.PERGUNTableAdapter)
         'TODO: This line of code loads data into the 'GdssDataSet11.AMMO' table. You can move, or remove it, as needed.
-        Me.AMMOTableAdapter.Fill(Me.GdssDataSet11.AMMO)
+        ' Me.AMMOTableAdapter.Fill(Me.GdssDataSet11.AMMO)
         'TODO: This line of code loads data into the 'GdssDataSet1.IDCARD' table. You can move, or remove it, as needed.
         '  Me.IDCARDTableAdapter.Fill(Me.GdssDataSet1.IDCARD)
         User_TextBox.Text = Muser
@@ -242,14 +246,36 @@
             SpecialNote_Label.Visible = True
 
         End If
+        If size_TextBox.Text.Length = 0 Then
+            result = True
+            size_Label.Visible = True
+
+        End If
+        If Year_TextBox.Text <> String.Empty And FullName_TextBox.Text <> String.Empty And AmoQuantity_TextBox.Text <> String.Empty Then
+            Dim totalQuantity As Integer
+            totalQuantity = Decimal.Parse(Me.AMMOTableAdapter.getTotalQuantityByYearAndPerson(Year_TextBox.Text, ComboBoxPersons.SelectedValue.ToString))
+            totalQuantity = totalQuantity + Decimal.Parse(AmoQuantity_TextBox.Text)
+            If totalQuantity >= 100 And SpecialNote_TextBox.Text = String.Empty Then
+                MsgBox("Maximum Ammo quantity allowed for year :  " + Year_TextBox.Text + " taken already .It required as special permisison please !!")
+                result = True
+                SpecialNote_Label.Visible = True
+            End If
+        End If
+
 
         Return result
     End Function
 
     Private Sub Check_Button_Click(sender As Object, e As EventArgs) Handles Check_Button.Click
-        If Year_TextBox.Text.Length = 0 Or FullName_TextBox.Text.Length = 0 Then
-            MsgBox("Please choose first a person and a Year ")
+        If Year_TextBox.Text.Length = 0 Or FullName_TextBox.Text.Length = 0 Or AmoQuantity_TextBox.Text.Length = 0 Then
+            MsgBox("Please choose first a person and a Year and add a quantity  ")
         Else
+            Dim totalQuantity As Integer
+            totalQuantity = Decimal.Parse(Me.AMMOTableAdapter.getTotalQuantityByYearAndPerson(Year_TextBox.Text, ComboBoxPersons.SelectedValue.ToString))
+            totalQuantity = totalQuantity + Decimal.Parse(AmoQuantity_TextBox.Text)
+            If totalQuantity >= 100 And SpecialNote_TextBox.Text = String.Empty Then
+                MsgBox("Maximum Ammo quantity allowed for year :  " + Year_TextBox.Text + " taken already .It required as special permisison please !!")
+            End If
 
         End If
     End Sub
@@ -272,7 +298,15 @@
         If checkValidation() = True Then
             MsgBox("Please enter Missing Informations!")
         Else
-            MsgBox("Every Thing is good")
+            Dim status As Int32
+            If Special_CheckBox.Checked = True Then
+                status = 1
+            Else
+                status = 0
+            End If
+            Me.AMMOTableAdapter.InsertQuery(Decimal.Parse(Me.AMMOTableAdapter.getNewPK()), TextBoxMilitNb.Text, Year_TextBox.Text, Decimal.Parse(AmoQuantity_TextBox.Text), NBDoc_TextBox.Text, Document_DateTimePicker.Value, status, SpecialNote_TextBox.Text, size_TextBox.Text, Note_TextBox.Text, Muser, System.DateTime.Now, "Null", System.DateTime.Now)
+            MsgBox("Saved")
+            Me.Close()
         End If
     End Sub
 
@@ -291,6 +325,12 @@
         If SpecialNote_TextBox.Text.Length > 0 Then
             SpecialNote_Label.Visible = False
 
+        End If
+    End Sub
+
+    Private Sub size_TextBox_KeyUp(sender As Object, e As KeyEventArgs) Handles size_TextBox.KeyUp
+        If size_TextBox.Text <> String.Empty Then
+            size_Label.Visible = False
         End If
     End Sub
 End Class

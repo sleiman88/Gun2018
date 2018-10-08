@@ -8402,7 +8402,7 @@ Namespace gdssDataSet1TableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(2) {}
+            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(3) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        TEAM.AMMO.*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.AMMO"
@@ -8414,30 +8414,11 @@ Namespace gdssDataSet1TableAdapters
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "INSERT INTO TEAM.AMMO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (AMMOTRANSACTION_PK, MILITARY_NB,"& _ 
-                " ""YEAR"", QUANTITY, NBROF_DOC, DATEOF_DOC, IS_SPECIAL_ORDER, SPECIAL_NOTE, SIZE_A"& _ 
-                "MMO, NOTE, USER_APP, SYSTEM_DATE, UPDATE_USER, UPDATE_DATE)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (:AMM"& _ 
-                "OTRANSACTION_PK, :MILITARY_NB, :YEAR, :QUANTITY, :NBROF_DOC, :DATEOF_DOC, :IS_SP"& _ 
-                "ECIAL_ORDER, :SPECIAL_NOTE, :SIZE_AMMO, :NOTE, :USER_APP, :SYSTEM_DATE, :UPDATE_"& _ 
-                "USER, :UPDATE_DATE)"
+            Me._commandCollection(2).CommandText = "SELECT       NVL( SUM(QUANTITY),0) AS TotalQuantity"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.AMMO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"W"& _ 
+                "HERE        (""YEAR"" = :year) AND (MILITARY_NB = :MilitaryNB)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = ":AMMOTRANSACTION_PK"
-            param.DbType = Global.System.Data.DbType.[Decimal]
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
-            param.Size = 22
-            param.IsNullable = true
-            param.SourceColumn = "AMMOTRANSACTION_PK"
-            Me._commandCollection(2).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = ":MILITARY_NB"
-            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
-            param.Size = 20
-            param.IsNullable = true
-            param.SourceColumn = "MILITARY_NB"
-            Me._commandCollection(2).Parameters.Add(param)
-            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = ":YEAR"
+            param.ParameterName = ":year"
             param.DbType = Global.System.Data.DbType.[Decimal]
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
             param.Size = 22
@@ -8445,20 +8426,59 @@ Namespace gdssDataSet1TableAdapters
             param.SourceColumn = "YEAR"
             Me._commandCollection(2).Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":MilitaryNB"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "MILITARY_NB"
+            Me._commandCollection(2).Parameters.Add(param)
+            Me._commandCollection(3) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "INSERT INTO TEAM.AMMO"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (AMMOTRANSACTION_PK, MILITARY_NB,"& _ 
+                " ""YEAR"", QUANTITY, NBROF_DOC, DATEOF_DOC, IS_SPECIAL_ORDER, SPECIAL_NOTE, SIZE_A"& _ 
+                "MMO, NOTE, USER_APP, SYSTEM_DATE, UPDATE_USER, UPDATE_DATE)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (:AMM"& _ 
+                "OTRANSACTION_PK, :MILITARY_NB, :YEAR, :QUANTITY, :NBROF_DOC, :DATEOF_DOC, :IS_SP"& _ 
+                "ECIAL_ORDER, :SPECIAL_NOTE, :SIZE_AMMO, :NOTE, :USER_APP, :SYSTEM_DATE, :UPDATE_"& _ 
+                "USER, :UPDATE_DATE)"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":AMMOTRANSACTION_PK"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "AMMOTRANSACTION_PK"
+            Me._commandCollection(3).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":MILITARY_NB"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "MILITARY_NB"
+            Me._commandCollection(3).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":YEAR"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "YEAR"
+            Me._commandCollection(3).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = ":QUANTITY"
             param.DbType = Global.System.Data.DbType.[Decimal]
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
             param.Size = 22
             param.IsNullable = true
             param.SourceColumn = "QUANTITY"
-            Me._commandCollection(2).Parameters.Add(param)
+            Me._commandCollection(3).Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = ":NBROF_DOC"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 50
             param.IsNullable = true
             param.SourceColumn = "NBROF_DOC"
-            Me._commandCollection(2).Parameters.Add(param)
+            Me._commandCollection(3).Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = ":DATEOF_DOC"
             param.DbType = Global.System.Data.DbType.[Date]
@@ -8466,7 +8486,7 @@ Namespace gdssDataSet1TableAdapters
             param.Size = 7
             param.IsNullable = true
             param.SourceColumn = "DATEOF_DOC"
-            Me._commandCollection(2).Parameters.Add(param)
+            Me._commandCollection(3).Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = ":IS_SPECIAL_ORDER"
             param.DbType = Global.System.Data.DbType.[Decimal]
@@ -8474,35 +8494,35 @@ Namespace gdssDataSet1TableAdapters
             param.Size = 22
             param.IsNullable = true
             param.SourceColumn = "IS_SPECIAL_ORDER"
-            Me._commandCollection(2).Parameters.Add(param)
+            Me._commandCollection(3).Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = ":SPECIAL_NOTE"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 500
             param.IsNullable = true
             param.SourceColumn = "SPECIAL_NOTE"
-            Me._commandCollection(2).Parameters.Add(param)
+            Me._commandCollection(3).Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = ":SIZE_AMMO"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 20
             param.IsNullable = true
             param.SourceColumn = "SIZE_AMMO"
-            Me._commandCollection(2).Parameters.Add(param)
+            Me._commandCollection(3).Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = ":NOTE"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 500
             param.IsNullable = true
             param.SourceColumn = "NOTE"
-            Me._commandCollection(2).Parameters.Add(param)
+            Me._commandCollection(3).Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = ":USER_APP"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 20
             param.IsNullable = true
             param.SourceColumn = "USER_APP"
-            Me._commandCollection(2).Parameters.Add(param)
+            Me._commandCollection(3).Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = ":SYSTEM_DATE"
             param.DbType = Global.System.Data.DbType.[Date]
@@ -8510,14 +8530,14 @@ Namespace gdssDataSet1TableAdapters
             param.Size = 7
             param.IsNullable = true
             param.SourceColumn = "SYSTEM_DATE"
-            Me._commandCollection(2).Parameters.Add(param)
+            Me._commandCollection(3).Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = ":UPDATE_USER"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 20
             param.IsNullable = true
             param.SourceColumn = "UPDATE_USER"
-            Me._commandCollection(2).Parameters.Add(param)
+            Me._commandCollection(3).Parameters.Add(param)
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = ":UPDATE_DATE"
             param.DbType = Global.System.Data.DbType.[Date]
@@ -8525,7 +8545,7 @@ Namespace gdssDataSet1TableAdapters
             param.Size = 7
             param.IsNullable = true
             param.SourceColumn = "UPDATE_DATE"
-            Me._commandCollection(2).Parameters.Add(param)
+            Me._commandCollection(3).Parameters.Add(param)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8931,10 +8951,42 @@ Namespace gdssDataSet1TableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function getTotalQuantityByYearAndPerson(ByVal year As Decimal, ByVal MilitaryNB As String) As Object
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = Me.CommandCollection(2)
+            command.Parameters(0).Value = CType(year,Decimal)
+            If (MilitaryNB Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("MilitaryNB")
+            Else
+                command.Parameters(1).Value = CType(MilitaryNB,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return Nothing
+            Else
+                Return CType(returnValue,Object)
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
         Public Overloads Overridable Function InsertQuery(ByVal AMMOTRANSACTION_PK As Decimal, ByVal MILITARY_NB As String, ByVal YEAR As Decimal, ByVal QUANTITY As Decimal, ByVal NBROF_DOC As String, ByVal DATEOF_DOC As Date, ByVal IS_SPECIAL_ORDER As Decimal, ByVal SPECIAL_NOTE As String, ByVal SIZE_AMMO As String, ByVal NOTE As String, ByVal USER_APP As String, ByVal SYSTEM_DATE As Date, ByVal UPDATE_USER As String, ByVal UPDATE_DATE As Global.System.Nullable(Of Date)) As Integer
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = Me.CommandCollection(2)
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = Me.CommandCollection(3)
             command.Parameters(0).Value = CType(AMMOTRANSACTION_PK,Decimal)
             If (MILITARY_NB Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("MILITARY_NB")
