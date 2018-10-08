@@ -4,11 +4,16 @@
         'TODO: This line of code loads data into the 'GdssDataSet1.IDCARD' table. You can move, or remove it, as needed.
         '  Me.IDCARDTableAdapter.Fill(Me.GdssDataSet1.IDCARD)
         User_TextBox.Text = Muser
+
+
     End Sub
     Public Sub New(user As String)
 
         ' This call is required by the designer.
         InitializeComponent()
+
+
+
         Muser = user
 
         ' Add any initialization after the InitializeComponent() call.
@@ -182,17 +187,108 @@
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles Document_DateTimePicker.ValueChanged
         Dim temp As Date
         temp = Document_DateTimePicker.Value
-        temp.ToString("MM/DD/yyyy hh:mm")
+        temp.ToString("yyyy")
         DDATE_TextBox.Text = temp.ToString
         DDate_Label.Visible = False
     End Sub
 
     Private Sub Year_DateTimePicker_ValueChanged(sender As Object, e As EventArgs) Handles Year_DateTimePicker.ValueChanged
-        Dim temp As Date
-        temp = Year_DateTimePicker.Value
-        temp.ToString("yyyy")
+        Dim temp As Integer
+        temp = Year_DateTimePicker.Value.Year
+
         Year_TextBox.Text = temp.ToString
         Year_Label.Visible = False
     End Sub
 
+
+
+    Private Function checkValidation() As Boolean
+        Dim result As Boolean
+        result = False
+        If FullName_TextBox.Text.Length = 0 Then
+            result = True
+            Person_Label.Visible = True
+
+        End If
+
+        If NBDoc_TextBox.Text.Length = 0 Then
+            result = True
+            Document_Label.Visible = True
+
+        End If
+
+        If Year_TextBox.Text.Length = 0 Then
+            result = True
+
+            Year_Label.Visible = True
+
+        End If
+
+        If DDATE_TextBox.Text.Length = 0 Then
+            result = True
+            DDate_Label.Visible = True
+
+        End If
+
+        If AmoQuantity_TextBox.Text.Length = 0 Then
+            result = True
+            AmmoQuantity_Label.Visible = True
+
+        End If
+
+        If Special_CheckBox.Checked = True And SpecialNote_TextBox.Text.Length = 0 Then
+            SpecialNote_Label.Visible = True
+
+        End If
+
+        Return result
+    End Function
+
+    Private Sub Check_Button_Click(sender As Object, e As EventArgs) Handles Check_Button.Click
+        If Year_TextBox.Text.Length = 0 Or FullName_TextBox.Text.Length = 0 Then
+            MsgBox("Please choose first a person and a Year ")
+        Else
+
+        End If
+    End Sub
+
+    Private Sub AmoQuantity_TextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles AmoQuantity_TextBox.KeyPress
+        If Not Char.IsNumber(e.KeyChar) And e.KeyChar <> ChrW(Keys.Back) Then
+            MsgBox("only Numbers allowed")
+            e.Handled = True
+            AmmoQuantity_Label.Visible = True
+        End If
+    End Sub
+
+    Private Sub AmoQuantity_TextBox_KeyUp(sender As Object, e As KeyEventArgs) Handles AmoQuantity_TextBox.KeyUp
+        If AmoQuantity_TextBox.Text <> String.Empty Then
+            AmmoQuantity_Label.Visible = False
+        End If
+    End Sub
+
+    Private Sub Save_Button_Click(sender As Object, e As EventArgs) Handles Save_Button.Click
+        If checkValidation() = True Then
+            MsgBox("Please enter Missing Informations!")
+        Else
+            MsgBox("Every Thing is good")
+        End If
+    End Sub
+
+    Private Sub Special_CheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles Special_CheckBox.CheckedChanged
+        If Special_CheckBox.Checked = True Then
+            SpecialNote_TextBox.Visible = True
+        Else
+
+            SpecialNote_TextBox.Text = ""
+            SpecialNote_TextBox.Visible = False
+
+        End If
+    End Sub
+
+    Private Sub SpecialNote_TextBox_KeyUp(sender As Object, e As KeyEventArgs) Handles SpecialNote_TextBox.KeyUp
+        If SpecialNote_TextBox.Text.Length > 0 Then
+            SpecialNote_Label.Visible = False
+
+        End If
+    End Sub
 End Class

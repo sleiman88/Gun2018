@@ -63,12 +63,22 @@ Partial Class GiveAmmo
         Me.Year_DateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.AmmoQuantity_Label = New System.Windows.Forms.Label()
+        Me.Check_Button = New System.Windows.Forms.Button()
+        Me.AmoQuantity_TextBox = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.SpecialNote_TextBox = New System.Windows.Forms.TextBox()
+        Me.Special_CheckBox = New System.Windows.Forms.CheckBox()
+        Me.SpecialNote_Label = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         CType(Me.GdssDataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel2
@@ -388,9 +398,9 @@ Partial Class GiveAmmo
         Me.Panel1.Controls.Add(Me.Year_TextBox)
         Me.Panel1.Controls.Add(Me.Year_DateTimePicker)
         Me.Panel1.Controls.Add(Me.Label10)
-        Me.Panel1.Location = New System.Drawing.Point(689, 187)
+        Me.Panel1.Location = New System.Drawing.Point(12, 270)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(516, 62)
+        Me.Panel1.Size = New System.Drawing.Size(654, 62)
         Me.Panel1.TabIndex = 16
         '
         'Year_Label
@@ -398,7 +408,7 @@ Partial Class GiveAmmo
         Me.Year_Label.AutoSize = True
         Me.Year_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Year_Label.ForeColor = System.Drawing.Color.OrangeRed
-        Me.Year_Label.Location = New System.Drawing.Point(486, 23)
+        Me.Year_Label.Location = New System.Drawing.Point(629, 18)
         Me.Year_Label.Name = "Year_Label"
         Me.Year_Label.Size = New System.Drawing.Size(18, 19)
         Me.Year_Label.TabIndex = 21
@@ -407,16 +417,18 @@ Partial Class GiveAmmo
         '
         'Year_TextBox
         '
-        Me.Year_TextBox.Location = New System.Drawing.Point(339, 20)
+        Me.Year_TextBox.Enabled = False
+        Me.Year_TextBox.Location = New System.Drawing.Point(412, 17)
         Me.Year_TextBox.Name = "Year_TextBox"
-        Me.Year_TextBox.Size = New System.Drawing.Size(141, 20)
+        Me.Year_TextBox.Size = New System.Drawing.Size(211, 20)
         Me.Year_TextBox.TabIndex = 20
         '
         'Year_DateTimePicker
         '
-        Me.Year_DateTimePicker.Location = New System.Drawing.Point(141, 21)
+        Me.Year_DateTimePicker.CustomFormat = ""
+        Me.Year_DateTimePicker.Location = New System.Drawing.Point(205, 17)
         Me.Year_DateTimePicker.Name = "Year_DateTimePicker"
-        Me.Year_DateTimePicker.Size = New System.Drawing.Size(192, 20)
+        Me.Year_DateTimePicker.Size = New System.Drawing.Size(201, 20)
         Me.Year_DateTimePicker.TabIndex = 19
         '
         'Label10
@@ -431,17 +443,111 @@ Partial Class GiveAmmo
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(686, 162)
+        Me.Label9.Location = New System.Drawing.Point(9, 254)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(29, 13)
         Me.Label9.TabIndex = 17
         Me.Label9.Text = "Year"
+        '
+        'Panel3
+        '
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.SpecialNote_Label)
+        Me.Panel3.Controls.Add(Me.Special_CheckBox)
+        Me.Panel3.Controls.Add(Me.SpecialNote_TextBox)
+        Me.Panel3.Controls.Add(Me.AmmoQuantity_Label)
+        Me.Panel3.Controls.Add(Me.Check_Button)
+        Me.Panel3.Controls.Add(Me.AmoQuantity_TextBox)
+        Me.Panel3.Controls.Add(Me.Label12)
+        Me.Panel3.Location = New System.Drawing.Point(6, 379)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(654, 172)
+        Me.Panel3.TabIndex = 18
+        '
+        'AmmoQuantity_Label
+        '
+        Me.AmmoQuantity_Label.AutoSize = True
+        Me.AmmoQuantity_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AmmoQuantity_Label.ForeColor = System.Drawing.Color.OrangeRed
+        Me.AmmoQuantity_Label.Location = New System.Drawing.Point(250, 21)
+        Me.AmmoQuantity_Label.Name = "AmmoQuantity_Label"
+        Me.AmmoQuantity_Label.Size = New System.Drawing.Size(18, 19)
+        Me.AmmoQuantity_Label.TabIndex = 17
+        Me.AmmoQuantity_Label.Text = "*"
+        Me.AmmoQuantity_Label.Visible = False
+        '
+        'Check_Button
+        '
+        Me.Check_Button.Location = New System.Drawing.Point(292, 17)
+        Me.Check_Button.Name = "Check_Button"
+        Me.Check_Button.Size = New System.Drawing.Size(119, 23)
+        Me.Check_Button.TabIndex = 2
+        Me.Check_Button.Text = "Check"
+        Me.Check_Button.UseVisualStyleBackColor = True
+        '
+        'AmoQuantity_TextBox
+        '
+        Me.AmoQuantity_TextBox.Location = New System.Drawing.Point(102, 17)
+        Me.AmoQuantity_TextBox.Name = "AmoQuantity_TextBox"
+        Me.AmoQuantity_TextBox.Size = New System.Drawing.Size(139, 20)
+        Me.AmoQuantity_TextBox.TabIndex = 1
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(3, 20)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(45, 13)
+        Me.Label12.TabIndex = 0
+        Me.Label12.Text = "Quantiy"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(9, 360)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(36, 13)
+        Me.Label11.TabIndex = 19
+        Me.Label11.Text = "Ammo"
+        '
+        'SpecialNote_TextBox
+        '
+        Me.SpecialNote_TextBox.Location = New System.Drawing.Point(102, 56)
+        Me.SpecialNote_TextBox.Multiline = True
+        Me.SpecialNote_TextBox.Name = "SpecialNote_TextBox"
+        Me.SpecialNote_TextBox.Size = New System.Drawing.Size(508, 95)
+        Me.SpecialNote_TextBox.TabIndex = 18
+        Me.SpecialNote_TextBox.Visible = False
+        '
+        'Special_CheckBox
+        '
+        Me.Special_CheckBox.AutoSize = True
+        Me.Special_CheckBox.Location = New System.Drawing.Point(5, 69)
+        Me.Special_CheckBox.Name = "Special_CheckBox"
+        Me.Special_CheckBox.Size = New System.Drawing.Size(90, 17)
+        Me.Special_CheckBox.TabIndex = 19
+        Me.Special_CheckBox.Text = "Special Order"
+        Me.Special_CheckBox.UseVisualStyleBackColor = True
+        '
+        'SpecialNote_Label
+        '
+        Me.SpecialNote_Label.AutoSize = True
+        Me.SpecialNote_Label.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SpecialNote_Label.ForeColor = System.Drawing.Color.OrangeRed
+        Me.SpecialNote_Label.Location = New System.Drawing.Point(616, 56)
+        Me.SpecialNote_Label.Name = "SpecialNote_Label"
+        Me.SpecialNote_Label.Size = New System.Drawing.Size(18, 19)
+        Me.SpecialNote_Label.TabIndex = 20
+        Me.SpecialNote_Label.Text = "*"
+        Me.SpecialNote_Label.Visible = False
         '
         'GiveAmmo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1254, 563)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Save_Button)
@@ -464,6 +570,8 @@ Partial Class GiveAmmo
         CType(Me.GdssDataSet11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -509,4 +617,13 @@ Partial Class GiveAmmo
     Friend WithEvents Year_TextBox As TextBox
     Friend WithEvents Year_DateTimePicker As DateTimePicker
     Friend WithEvents Label10 As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents AmmoQuantity_Label As Label
+    Friend WithEvents Check_Button As Button
+    Friend WithEvents AmoQuantity_TextBox As TextBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Special_CheckBox As CheckBox
+    Friend WithEvents SpecialNote_TextBox As TextBox
+    Friend WithEvents SpecialNote_Label As Label
 End Class
