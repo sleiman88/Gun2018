@@ -57,9 +57,9 @@ Partial Class GiveAmmo
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Save_Button = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Year_NumericUpDown = New System.Windows.Forms.NumericUpDown()
         Me.Year_Label = New System.Windows.Forms.Label()
         Me.Year_TextBox = New System.Windows.Forms.TextBox()
-        Me.Year_DateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -81,6 +81,7 @@ Partial Class GiveAmmo
         CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        CType(Me.Year_NumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.AMMOBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -195,8 +196,9 @@ Partial Class GiveAmmo
         '
         Me.ComboBoxPersons.DataSource = Me.IDCARDBindingSource
         Me.ComboBoxPersons.DisplayMember = "FullName"
+        Me.ComboBoxPersons.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxPersons.FormattingEnabled = True
-        Me.ComboBoxPersons.Location = New System.Drawing.Point(204, 19)
+        Me.ComboBoxPersons.Location = New System.Drawing.Point(96, 16)
         Me.ComboBoxPersons.Name = "ComboBoxPersons"
         Me.ComboBoxPersons.Size = New System.Drawing.Size(201, 21)
         Me.ComboBoxPersons.TabIndex = 4
@@ -240,7 +242,7 @@ Partial Class GiveAmmo
         '
         'TextBoxMilitNb
         '
-        Me.TextBoxMilitNb.Location = New System.Drawing.Point(96, 19)
+        Me.TextBoxMilitNb.Location = New System.Drawing.Point(306, 17)
         Me.TextBoxMilitNb.Name = "TextBoxMilitNb"
         Me.TextBoxMilitNb.Size = New System.Drawing.Size(100, 20)
         Me.TextBoxMilitNb.TabIndex = 0
@@ -393,14 +395,21 @@ Partial Class GiveAmmo
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Year_NumericUpDown)
         Me.Panel1.Controls.Add(Me.Year_Label)
         Me.Panel1.Controls.Add(Me.Year_TextBox)
-        Me.Panel1.Controls.Add(Me.Year_DateTimePicker)
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Location = New System.Drawing.Point(12, 270)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(654, 62)
         Me.Panel1.TabIndex = 16
+        '
+        'Year_NumericUpDown
+        '
+        Me.Year_NumericUpDown.Location = New System.Drawing.Point(223, 17)
+        Me.Year_NumericUpDown.Name = "Year_NumericUpDown"
+        Me.Year_NumericUpDown.Size = New System.Drawing.Size(145, 20)
+        Me.Year_NumericUpDown.TabIndex = 22
         '
         'Year_Label
         '
@@ -421,14 +430,6 @@ Partial Class GiveAmmo
         Me.Year_TextBox.Name = "Year_TextBox"
         Me.Year_TextBox.Size = New System.Drawing.Size(211, 20)
         Me.Year_TextBox.TabIndex = 20
-        '
-        'Year_DateTimePicker
-        '
-        Me.Year_DateTimePicker.CustomFormat = ""
-        Me.Year_DateTimePicker.Location = New System.Drawing.Point(205, 17)
-        Me.Year_DateTimePicker.Name = "Year_DateTimePicker"
-        Me.Year_DateTimePicker.Size = New System.Drawing.Size(201, 20)
-        Me.Year_DateTimePicker.TabIndex = 19
         '
         'Label10
         '
@@ -608,6 +609,7 @@ Partial Class GiveAmmo
         Me.Panel4.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.Year_NumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.AMMOBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -653,7 +655,6 @@ Partial Class GiveAmmo
     Friend WithEvents Label9 As Label
     Friend WithEvents Year_Label As Label
     Friend WithEvents Year_TextBox As TextBox
-    Friend WithEvents Year_DateTimePicker As DateTimePicker
     Friend WithEvents Label10 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents AmmoQuantity_Label As Label
@@ -669,4 +670,5 @@ Partial Class GiveAmmo
     Friend WithEvents size_Label As Label
     Friend WithEvents size_TextBox As TextBox
     Friend WithEvents Label13 As Label
+    Friend WithEvents Year_NumericUpDown As NumericUpDown
 End Class

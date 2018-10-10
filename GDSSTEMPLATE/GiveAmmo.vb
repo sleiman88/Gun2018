@@ -1,6 +1,8 @@
 ﻿Public Class GiveAmmo
     Public Muser As String
     Private Sub GiveAmmo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Year_NumericUpDown.Value = Decimal.Parse(System.DateTime.UtcNow.Year)
+        Year_TextBox.Text = Year_NumericUpDown.Value.ToString
         'TODO: This line of code loads data into the 'GdssDataSet1.AMMO' table. You can move, or remove it, as needed.
         ' Me.AMMOTableAdapter.Fill(Me.GdssDataSet1.AMMO)
         'TODO: This line of code loads data into the 'GdssDataSet1.PERGUNTableAdapter' table. You can move, or remove it, as needed.
@@ -18,7 +20,8 @@
         ' This call is required by the designer.
         InitializeComponent()
 
-
+        Year_NumericUpDown.Minimum = 1
+        Year_NumericUpDown.Maximum = 3000
 
         Muser = user
 
@@ -198,13 +201,6 @@
         DDate_Label.Visible = False
     End Sub
 
-    Private Sub Year_DateTimePicker_ValueChanged(sender As Object, e As EventArgs) Handles Year_DateTimePicker.ValueChanged
-        Dim temp As Integer
-        temp = Year_DateTimePicker.Value.Year
-
-        Year_TextBox.Text = temp.ToString
-        Year_Label.Visible = False
-    End Sub
 
 
 
@@ -275,6 +271,8 @@
             totalQuantity = totalQuantity + Decimal.Parse(AmoQuantity_TextBox.Text)
             If totalQuantity >= 100 And SpecialNote_TextBox.Text = String.Empty Then
                 MsgBox("Maximum Ammo quantity allowed for year :  " + Year_TextBox.Text + " taken already .It required as special permisison please !!")
+            Else
+                MsgBox("Valide")
             End If
 
         End If
@@ -332,5 +330,9 @@
         If size_TextBox.Text <> String.Empty Then
             size_Label.Visible = False
         End If
+    End Sub
+
+    Private Sub Year_NumericUpDown_ValueChanged(sender As Object, e As EventArgs) Handles Year_NumericUpDown.ValueChanged
+        Year_TextBox.Text = Year_NumericUpDown.Value
     End Sub
 End Class

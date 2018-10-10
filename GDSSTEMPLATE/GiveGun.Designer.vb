@@ -121,7 +121,7 @@ Partial Class GiveGun
         '
         'TextBox_NameGun
         '
-        Me.TextBox_NameGun.Location = New System.Drawing.Point(88, 16)
+        Me.TextBox_NameGun.Location = New System.Drawing.Point(270, 19)
         Me.TextBox_NameGun.Name = "TextBox_NameGun"
         Me.TextBox_NameGun.Size = New System.Drawing.Size(164, 20)
         Me.TextBox_NameGun.TabIndex = 0
@@ -130,8 +130,9 @@ Partial Class GiveGun
         '
         Me.ComboBox1.DataSource = Me.N0ITEMSBindingSource
         Me.ComboBox1.DisplayMember = "LABEL"
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(268, 15)
+        Me.ComboBox1.Location = New System.Drawing.Point(88, 17)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(176, 21)
         Me.ComboBox1.TabIndex = 2
@@ -539,8 +540,9 @@ Partial Class GiveGun
         '
         Me.ComboBoxPersons.DataSource = Me.IDCARDBindingSource
         Me.ComboBoxPersons.DisplayMember = "FullName"
+        Me.ComboBoxPersons.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxPersons.FormattingEnabled = True
-        Me.ComboBoxPersons.Location = New System.Drawing.Point(204, 19)
+        Me.ComboBoxPersons.Location = New System.Drawing.Point(99, 19)
         Me.ComboBoxPersons.Name = "ComboBoxPersons"
         Me.ComboBoxPersons.Size = New System.Drawing.Size(201, 21)
         Me.ComboBoxPersons.TabIndex = 4
@@ -574,7 +576,7 @@ Partial Class GiveGun
         '
         'TextBoxMilitNb
         '
-        Me.TextBoxMilitNb.Location = New System.Drawing.Point(96, 19)
+        Me.TextBoxMilitNb.Location = New System.Drawing.Point(306, 20)
         Me.TextBoxMilitNb.Name = "TextBoxMilitNb"
         Me.TextBoxMilitNb.Size = New System.Drawing.Size(100, 20)
         Me.TextBoxMilitNb.TabIndex = 0
@@ -613,7 +615,7 @@ Partial Class GiveGun
         'SuppShow_TextBox
         '
         Me.SuppShow_TextBox.Enabled = False
-        Me.SuppShow_TextBox.Location = New System.Drawing.Point(263, 64)
+        Me.SuppShow_TextBox.Location = New System.Drawing.Point(55, 60)
         Me.SuppShow_TextBox.Name = "SuppShow_TextBox"
         Me.SuppShow_TextBox.Size = New System.Drawing.Size(222, 20)
         Me.SuppShow_TextBox.TabIndex = 17
@@ -643,8 +645,9 @@ Partial Class GiveGun
         '
         Me.Supplier_ComboBox.DataSource = Me.N0OFFICE1BindingSource
         Me.Supplier_ComboBox.DisplayMember = "LABEL"
+        Me.Supplier_ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Supplier_ComboBox.FormattingEnabled = True
-        Me.Supplier_ComboBox.Location = New System.Drawing.Point(263, 17)
+        Me.Supplier_ComboBox.Location = New System.Drawing.Point(55, 17)
         Me.Supplier_ComboBox.Name = "Supplier_ComboBox"
         Me.Supplier_ComboBox.Size = New System.Drawing.Size(222, 21)
         Me.Supplier_ComboBox.TabIndex = 2
@@ -657,7 +660,7 @@ Partial Class GiveGun
         '
         'Supplier_TextBox
         '
-        Me.Supplier_TextBox.Location = New System.Drawing.Point(55, 17)
+        Me.Supplier_TextBox.Location = New System.Drawing.Point(293, 18)
         Me.Supplier_TextBox.Name = "Supplier_TextBox"
         Me.Supplier_TextBox.Size = New System.Drawing.Size(190, 20)
         Me.Supplier_TextBox.TabIndex = 1
@@ -884,6 +887,7 @@ Partial Class GiveGun
         '
         'TableAdapterManager
         '
+        Me.TableAdapterManager.AMMOTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.N0ITEMSTableAdapter = Nothing
         Me.TableAdapterManager.PERGUNTableAdapterTableAdapter = Me.PERGUNTableAdapterTableAdapter
