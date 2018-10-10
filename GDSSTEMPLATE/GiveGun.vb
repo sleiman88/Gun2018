@@ -169,6 +169,7 @@
 
     Private Sub TextBoxLName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxLName.KeyPress
         If e.KeyChar = ChrW(Keys.Enter) Then
+
             Try
                 If FName_CheckBox.Checked = True And LName_CheckBox.Checked = True Then
 
