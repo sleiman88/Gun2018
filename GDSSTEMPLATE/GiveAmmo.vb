@@ -88,6 +88,7 @@
 
     Private Sub TextBox_FATHER_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox_FATHER.KeyPress
         If e.KeyChar = ChrW(Keys.Enter) Then
+            TextBoxMilitNb.Text = ""
             Try
                 If FName_CheckBox.Checked = True And LName_CheckBox.Checked = True Then
 
@@ -121,6 +122,7 @@
 
     Private Sub TextBoxLName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxLName.KeyPress
         If e.KeyChar = ChrW(Keys.Enter) Then
+            TextBoxMilitNb.Text = ""
             Try
                 If FName_CheckBox.Checked = True And LName_CheckBox.Checked = True Then
 
@@ -154,6 +156,7 @@
 
     Private Sub TextBox_FName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox_FName.KeyPress
         If e.KeyChar = ChrW(Keys.Enter) Then
+            TextBoxMilitNb.Text = ""
             Try
                 If FATHER_CheckBox.Checked = True And LName_CheckBox.Checked = True Then
 
