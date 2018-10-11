@@ -49,6 +49,7 @@
 
     Private Sub TextBox_FName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox_FName.KeyPress
         If e.KeyChar = ChrW(Keys.Enter) Then
+            TextBoxMilitNb.Text = ""
             Try
                 If FATHER_CheckBox.Checked = True And LName_CheckBox.Checked = True Then
 
@@ -82,6 +83,7 @@
         End If
     End Sub
 
+    'module log in 
     Private Sub TextBoxMilitNb_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxMilitNb.KeyPress
         If e.KeyChar = ChrW(Keys.Enter) Then
             Try
@@ -105,7 +107,7 @@
             End If
         End If
     End Sub
-
+    'module login
     Private Sub FName_CheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles FName_CheckBox.CheckedChanged
         If FName_CheckBox.Checked = True Then
             TextBox_FName.Enabled = True
@@ -133,9 +135,10 @@
             TextBoxLName.Text = ""
         End If
     End Sub
-
+    'module login 
     Private Sub TextBox_FATHER_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox_FATHER.KeyPress
         If e.KeyChar = ChrW(Keys.Enter) Then
+            TextBoxMilitNb.Text = ""
             Try
                 If FName_CheckBox.Checked = True And LName_CheckBox.Checked = True Then
 
@@ -169,6 +172,7 @@
 
     Private Sub TextBoxLName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxLName.KeyPress
         If e.KeyChar = ChrW(Keys.Enter) Then
+            TextBoxMilitNb.Text = ""
             Try
                 If FName_CheckBox.Checked = True And LName_CheckBox.Checked = True Then
 
@@ -506,7 +510,7 @@
             Item_Label.Visible = False
         End If
     End Sub
-
+    'module login 
     Private Sub ComboBoxPersons_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxPersons.SelectedIndexChanged
         FullName_TextBox.Text = ComboBoxPersons.GetItemText(ComboBoxPersons.SelectedItem)
         If FullName_TextBox.Text <> String.Empty Then

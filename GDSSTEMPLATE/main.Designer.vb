@@ -22,6 +22,7 @@ Partial Class main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GiveGunToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -46,8 +47,13 @@ Partial Class main
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox_FName = New System.Windows.Forms.TextBox()
         Me.TextBoxMilitNb = New System.Windows.Forms.TextBox()
+        Me.GdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
+        Me.IDCARDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IDCARDTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.IDCARDTableAdapter()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -229,6 +235,7 @@ Partial Class main
         '
         'ComboBoxPersons
         '
+        Me.ComboBoxPersons.DataSource = Me.IDCARDBindingSource
         Me.ComboBoxPersons.DisplayMember = "FullName"
         Me.ComboBoxPersons.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxPersons.FormattingEnabled = True
@@ -271,6 +278,20 @@ Partial Class main
         Me.TextBoxMilitNb.Size = New System.Drawing.Size(100, 20)
         Me.TextBoxMilitNb.TabIndex = 0
         '
+        'GdssDataSet1
+        '
+        Me.GdssDataSet1.DataSetName = "gdssDataSet1"
+        Me.GdssDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'IDCARDBindingSource
+        '
+        Me.IDCARDBindingSource.DataMember = "IDCARD"
+        Me.IDCARDBindingSource.DataSource = Me.GdssDataSet1
+        '
+        'IDCARDTableAdapter
+        '
+        Me.IDCARDTableAdapter.ClearBeforeFill = True
+        '
         'main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -286,6 +307,8 @@ Partial Class main
         Me.MenuStrip1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -315,4 +338,7 @@ Partial Class main
     Friend WithEvents Label3 As Label
     Friend WithEvents TextBox_FName As TextBox
     Friend WithEvents TextBoxMilitNb As TextBox
+    Friend WithEvents GdssDataSet1 As gdssDataSet1
+    Friend WithEvents IDCARDBindingSource As BindingSource
+    Friend WithEvents IDCARDTableAdapter As gdssDataSet1TableAdapters.IDCARDTableAdapter
 End Class
