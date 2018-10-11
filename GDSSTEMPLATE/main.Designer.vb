@@ -118,7 +118,7 @@ Partial Class main
         Me.Panel2.Controls.Add(Me.TextBoxMilitNb)
         Me.Panel2.Location = New System.Drawing.Point(12, 46)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(687, 181)
+        Me.Panel2.Size = New System.Drawing.Size(656, 181)
         Me.Panel2.TabIndex = 5
         '
         'FullName_TextBox

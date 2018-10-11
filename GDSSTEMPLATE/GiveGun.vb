@@ -255,6 +255,7 @@
 
     Private Sub gunNbConfirm_TextBox_MouseDown(sender As Object, e As MouseEventArgs) Handles gunNbConfirm_TextBox.MouseDown
         If e.Button = MouseButtons.Right Then
+
             MsgBox("Not allow to copy and past ")
             gunNbConfirm_TextBox.Text = ""
 
@@ -264,7 +265,10 @@
     Private Sub gunNbConfirm_TextBox_KeyDown(sender As Object, e As KeyEventArgs) Handles gunNbConfirm_TextBox.KeyDown
         If e.Modifiers = Keys.Control AndAlso e.KeyCode = Keys.V Then
             e.SuppressKeyPress = True
+            e.Handled = True
+
             MsgBox("Not allow to copy and past ")
+            gunNbConfirm_TextBox.Text = ""
         End If
     End Sub
 
