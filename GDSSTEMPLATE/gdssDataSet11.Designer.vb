@@ -37,7 +37,7 @@ Partial Public Class gdssDataSet1
     
     Private tableAMMO As AMMODataTable
     
-    Private tableGUNSGRIDVIEW As GUNSGRIDVIEWDataTable
+    Private tableGunsMainForm As GunsMainFormDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -90,8 +90,8 @@ Partial Public Class gdssDataSet1
             If (Not (ds.Tables("AMMO")) Is Nothing) Then
                 MyBase.Tables.Add(New AMMODataTable(ds.Tables("AMMO")))
             End If
-            If (Not (ds.Tables("GUNSGRIDVIEW")) Is Nothing) Then
-                MyBase.Tables.Add(New GUNSGRIDVIEWDataTable(ds.Tables("GUNSGRIDVIEW")))
+            If (Not (ds.Tables("GunsMainForm")) Is Nothing) Then
+                MyBase.Tables.Add(New GunsMainFormDataTable(ds.Tables("GunsMainForm")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -175,9 +175,9 @@ Partial Public Class gdssDataSet1
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property GUNSGRIDVIEW() As GUNSGRIDVIEWDataTable
+    Public ReadOnly Property GunsMainForm() As GunsMainFormDataTable
         Get
-            Return Me.tableGUNSGRIDVIEW
+            Return Me.tableGunsMainForm
         End Get
     End Property
     
@@ -267,8 +267,8 @@ Partial Public Class gdssDataSet1
             If (Not (ds.Tables("AMMO")) Is Nothing) Then
                 MyBase.Tables.Add(New AMMODataTable(ds.Tables("AMMO")))
             End If
-            If (Not (ds.Tables("GUNSGRIDVIEW")) Is Nothing) Then
-                MyBase.Tables.Add(New GUNSGRIDVIEWDataTable(ds.Tables("GUNSGRIDVIEW")))
+            If (Not (ds.Tables("GunsMainForm")) Is Nothing) Then
+                MyBase.Tables.Add(New GunsMainFormDataTable(ds.Tables("GunsMainForm")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -338,10 +338,10 @@ Partial Public Class gdssDataSet1
                 Me.tableAMMO.InitVars
             End If
         End If
-        Me.tableGUNSGRIDVIEW = CType(MyBase.Tables("GUNSGRIDVIEW"),GUNSGRIDVIEWDataTable)
+        Me.tableGunsMainForm = CType(MyBase.Tables("GunsMainForm"),GunsMainFormDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableGUNSGRIDVIEW) Is Nothing) Then
-                Me.tableGUNSGRIDVIEW.InitVars
+            If (Not (Me.tableGunsMainForm) Is Nothing) Then
+                Me.tableGunsMainForm.InitVars
             End If
         End If
     End Sub
@@ -366,8 +366,8 @@ Partial Public Class gdssDataSet1
         MyBase.Tables.Add(Me.tablePERGUNTableAdapter)
         Me.tableAMMO = New AMMODataTable()
         MyBase.Tables.Add(Me.tableAMMO)
-        Me.tableGUNSGRIDVIEW = New GUNSGRIDVIEWDataTable()
-        MyBase.Tables.Add(Me.tableGUNSGRIDVIEW)
+        Me.tableGunsMainForm = New GunsMainFormDataTable()
+        MyBase.Tables.Add(Me.tableGunsMainForm)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -408,7 +408,7 @@ Partial Public Class gdssDataSet1
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializeGUNSGRIDVIEW() As Boolean
+    Private Function ShouldSerializeGunsMainForm() As Boolean
         Return false
     End Function
     
@@ -495,7 +495,7 @@ Partial Public Class gdssDataSet1
     Public Delegate Sub AMMORowChangeEventHandler(ByVal sender As Object, ByVal e As AMMORowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub GUNSGRIDVIEWRowChangeEventHandler(ByVal sender As Object, ByVal e As GUNSGRIDVIEWRowChangeEvent)
+    Public Delegate Sub GunsMainFormRowChangeEventHandler(ByVal sender As Object, ByVal e As GunsMainFormRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -2767,10 +2767,12 @@ Partial Public Class gdssDataSet1
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class GUNSGRIDVIEWDataTable
-        Inherits Global.System.Data.TypedTableBase(Of GUNSGRIDVIEWRow)
+    Partial Public Class GunsMainFormDataTable
+        Inherits Global.System.Data.TypedTableBase(Of GunsMainFormRow)
         
         Private columnLABEL As Global.System.Data.DataColumn
+        
+        Private columnCODE As Global.System.Data.DataColumn
         
         Private columnSDATE As Global.System.Data.DataColumn
         
@@ -2778,7 +2780,7 @@ Partial Public Class gdssDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "GUNSGRIDVIEW"
+            Me.TableName = "GunsMainForm"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -2819,6 +2821,14 @@ Partial Public Class gdssDataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CODEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCODE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property SDATEColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnSDATE
@@ -2836,44 +2846,44 @@ Partial Public Class gdssDataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As GUNSGRIDVIEWRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As GunsMainFormRow
             Get
-                Return CType(Me.Rows(index),GUNSGRIDVIEWRow)
+                Return CType(Me.Rows(index),GunsMainFormRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event GUNSGRIDVIEWRowChanging As GUNSGRIDVIEWRowChangeEventHandler
+        Public Event GunsMainFormRowChanging As GunsMainFormRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event GUNSGRIDVIEWRowChanged As GUNSGRIDVIEWRowChangeEventHandler
+        Public Event GunsMainFormRowChanged As GunsMainFormRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event GUNSGRIDVIEWRowDeleting As GUNSGRIDVIEWRowChangeEventHandler
+        Public Event GunsMainFormRowDeleting As GunsMainFormRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event GUNSGRIDVIEWRowDeleted As GUNSGRIDVIEWRowChangeEventHandler
+        Public Event GunsMainFormRowDeleted As GunsMainFormRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub AddGUNSGRIDVIEWRow(ByVal row As GUNSGRIDVIEWRow)
+        Public Overloads Sub AddGunsMainFormRow(ByVal row As GunsMainFormRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddGUNSGRIDVIEWRow(ByVal LABEL As String, ByVal SDATE As Date) As GUNSGRIDVIEWRow
-            Dim rowGUNSGRIDVIEWRow As GUNSGRIDVIEWRow = CType(Me.NewRow,GUNSGRIDVIEWRow)
-            Dim columnValuesArray() As Object = New Object() {LABEL, SDATE}
-            rowGUNSGRIDVIEWRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowGUNSGRIDVIEWRow)
-            Return rowGUNSGRIDVIEWRow
+        Public Overloads Function AddGunsMainFormRow(ByVal LABEL As String, ByVal CODE As Decimal, ByVal SDATE As Date) As GunsMainFormRow
+            Dim rowGunsMainFormRow As GunsMainFormRow = CType(Me.NewRow,GunsMainFormRow)
+            Dim columnValuesArray() As Object = New Object() {LABEL, CODE, SDATE}
+            rowGunsMainFormRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowGunsMainFormRow)
+            Return rowGunsMainFormRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As GUNSGRIDVIEWDataTable = CType(MyBase.Clone,GUNSGRIDVIEWDataTable)
+            Dim cln As GunsMainFormDataTable = CType(MyBase.Clone,GunsMainFormDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -2881,13 +2891,14 @@ Partial Public Class gdssDataSet1
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New GUNSGRIDVIEWDataTable()
+            Return New GunsMainFormDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnLABEL = MyBase.Columns("LABEL")
+            Me.columnCODE = MyBase.Columns("CODE")
             Me.columnSDATE = MyBase.Columns("SDATE")
         End Sub
         
@@ -2896,36 +2907,39 @@ Partial Public Class gdssDataSet1
         Private Sub InitClass()
             Me.columnLABEL = New Global.System.Data.DataColumn("LABEL", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnLABEL)
+            Me.columnCODE = New Global.System.Data.DataColumn("CODE", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCODE)
             Me.columnSDATE = New Global.System.Data.DataColumn("SDATE", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnSDATE)
             Me.columnLABEL.AllowDBNull = false
             Me.columnLABEL.MaxLength = 60
+            Me.columnCODE.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function NewGUNSGRIDVIEWRow() As GUNSGRIDVIEWRow
-            Return CType(Me.NewRow,GUNSGRIDVIEWRow)
+        Public Function NewGunsMainFormRow() As GunsMainFormRow
+            Return CType(Me.NewRow,GunsMainFormRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New GUNSGRIDVIEWRow(builder)
+            Return New GunsMainFormRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(GUNSGRIDVIEWRow)
+            Return GetType(GunsMainFormRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.GUNSGRIDVIEWRowChangedEvent) Is Nothing) Then
-                RaiseEvent GUNSGRIDVIEWRowChanged(Me, New GUNSGRIDVIEWRowChangeEvent(CType(e.Row,GUNSGRIDVIEWRow), e.Action))
+            If (Not (Me.GunsMainFormRowChangedEvent) Is Nothing) Then
+                RaiseEvent GunsMainFormRowChanged(Me, New GunsMainFormRowChangeEvent(CType(e.Row,GunsMainFormRow), e.Action))
             End If
         End Sub
         
@@ -2933,8 +2947,8 @@ Partial Public Class gdssDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.GUNSGRIDVIEWRowChangingEvent) Is Nothing) Then
-                RaiseEvent GUNSGRIDVIEWRowChanging(Me, New GUNSGRIDVIEWRowChangeEvent(CType(e.Row,GUNSGRIDVIEWRow), e.Action))
+            If (Not (Me.GunsMainFormRowChangingEvent) Is Nothing) Then
+                RaiseEvent GunsMainFormRowChanging(Me, New GunsMainFormRowChangeEvent(CType(e.Row,GunsMainFormRow), e.Action))
             End If
         End Sub
         
@@ -2942,8 +2956,8 @@ Partial Public Class gdssDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.GUNSGRIDVIEWRowDeletedEvent) Is Nothing) Then
-                RaiseEvent GUNSGRIDVIEWRowDeleted(Me, New GUNSGRIDVIEWRowChangeEvent(CType(e.Row,GUNSGRIDVIEWRow), e.Action))
+            If (Not (Me.GunsMainFormRowDeletedEvent) Is Nothing) Then
+                RaiseEvent GunsMainFormRowDeleted(Me, New GunsMainFormRowChangeEvent(CType(e.Row,GunsMainFormRow), e.Action))
             End If
         End Sub
         
@@ -2951,14 +2965,14 @@ Partial Public Class gdssDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.GUNSGRIDVIEWRowDeletingEvent) Is Nothing) Then
-                RaiseEvent GUNSGRIDVIEWRowDeleting(Me, New GUNSGRIDVIEWRowChangeEvent(CType(e.Row,GUNSGRIDVIEWRow), e.Action))
+            If (Not (Me.GunsMainFormRowDeletingEvent) Is Nothing) Then
+                RaiseEvent GunsMainFormRowDeleting(Me, New GunsMainFormRowChangeEvent(CType(e.Row,GunsMainFormRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub RemoveGUNSGRIDVIEWRow(ByVal row As GUNSGRIDVIEWRow)
+        Public Sub RemoveGunsMainFormRow(ByVal row As GunsMainFormRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -2985,7 +2999,7 @@ Partial Public Class gdssDataSet1
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "GUNSGRIDVIEWDataTable"
+            attribute2.FixedValue = "GunsMainFormDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -4095,26 +4109,37 @@ Partial Public Class gdssDataSet1
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class GUNSGRIDVIEWRow
+    Partial Public Class GunsMainFormRow
         Inherits Global.System.Data.DataRow
         
-        Private tableGUNSGRIDVIEW As GUNSGRIDVIEWDataTable
+        Private tableGunsMainForm As GunsMainFormDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableGUNSGRIDVIEW = CType(Me.Table,GUNSGRIDVIEWDataTable)
+            Me.tableGunsMainForm = CType(Me.Table,GunsMainFormDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property LABEL() As String
             Get
-                Return CType(Me(Me.tableGUNSGRIDVIEW.LABELColumn),String)
+                Return CType(Me(Me.tableGunsMainForm.LABELColumn),String)
             End Get
             Set
-                Me(Me.tableGUNSGRIDVIEW.LABELColumn) = value
+                Me(Me.tableGunsMainForm.LABELColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property CODE() As Decimal
+            Get
+                Return CType(Me(Me.tableGunsMainForm.CODEColumn),Decimal)
+            End Get
+            Set
+                Me(Me.tableGunsMainForm.CODEColumn) = value
             End Set
         End Property
         
@@ -4123,26 +4148,26 @@ Partial Public Class gdssDataSet1
         Public Property SDATE() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tableGUNSGRIDVIEW.SDATEColumn),Date)
+                    Return CType(Me(Me.tableGunsMainForm.SDATEColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'SDATE' in table 'GUNSGRIDVIEW' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SDATE' in table 'GunsMainForm' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableGUNSGRIDVIEW.SDATEColumn) = value
+                Me(Me.tableGunsMainForm.SDATEColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsSDATENull() As Boolean
-            Return Me.IsNull(Me.tableGUNSGRIDVIEW.SDATEColumn)
+            Return Me.IsNull(Me.tableGunsMainForm.SDATEColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetSDATENull()
-            Me(Me.tableGUNSGRIDVIEW.SDATEColumn) = Global.System.Convert.DBNull
+            Me(Me.tableGunsMainForm.SDATEColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -4366,16 +4391,16 @@ Partial Public Class gdssDataSet1
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class GUNSGRIDVIEWRowChangeEvent
+    Public Class GunsMainFormRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As GUNSGRIDVIEWRow
+        Private eventRow As GunsMainFormRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As GUNSGRIDVIEWRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As GunsMainFormRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -4383,7 +4408,7 @@ Partial Public Class gdssDataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As GUNSGRIDVIEWRow
+        Public ReadOnly Property Row() As GunsMainFormRow
             Get
                 Return Me.eventRow
             End Get
@@ -9451,7 +9476,7 @@ Namespace gdssDataSet1TableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class GUNSGRIDVIEWTableAdapter
+    Partial Public Class GunsMainFormTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter
@@ -9568,8 +9593,9 @@ Namespace gdssDataSet1TableAdapters
             Me._adapter = New Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "GUNSGRIDVIEW"
+            tableMapping.DataSetTable = "GunsMainForm"
             tableMapping.ColumnMappings.Add("LABEL", "LABEL")
+            tableMapping.ColumnMappings.Add("CODE", "CODE")
             tableMapping.ColumnMappings.Add("SDATE", "SDATE")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
@@ -9587,15 +9613,15 @@ Namespace gdssDataSet1TableAdapters
             Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(1) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        TEAM.N0ITEMS.LABEL, TEAM.PERGUN.SDATE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.N0ITEMS"& _ 
-                " INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.PERGUN ON TEAM.N0ITEMS.ITEM = TEAM.PE"& _ 
-                "RGUN.GNAME"
+            Me._commandCollection(0).CommandText = "SELECT        TEAM.N0ITEMS.LABEL, TEAM.PERGUN.SDATE, TEAM.PERGUN.CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM      "& _ 
+                "      TEAM.N0ITEMS INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.PERGUN ON TEAM.N0IT"& _ 
+                "EMS.ITEM = TEAM.PERGUN.GNAME"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        TEAM.N0ITEMS.LABEL AS GUN, TEAM.PERGUN.SDATE AS ""Delivery Date"""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FR"& _ 
-                "OM            TEAM.N0ITEMS INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.PERGUN ON T"& _ 
-                "EAM.N0ITEMS.ITEM = TEAM.PERGUN.GNAME"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (TEAM.PERGUN.OWNER = :owner)"
+            Me._commandCollection(1).CommandText = "SELECT        TEAM.N0ITEMS.LABEL, TEAM.PERGUN.SDATE, TEAM.PERGUN.CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM      "& _ 
+                "      TEAM.N0ITEMS INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.PERGUN ON TEAM.N0IT"& _ 
+                "EMS.ITEM = TEAM.PERGUN.GNAME"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (TEAM.PERGUN.OWNER = :owner)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = ":owner"
@@ -9611,7 +9637,7 @@ Namespace gdssDataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As gdssDataSet1.GUNSGRIDVIEWDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As gdssDataSet1.GunsMainFormDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -9624,9 +9650,9 @@ Namespace gdssDataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As gdssDataSet1.GUNSGRIDVIEWDataTable
+        Public Overloads Overridable Function GetData() As gdssDataSet1.GunsMainFormDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As gdssDataSet1.GUNSGRIDVIEWDataTable = New gdssDataSet1.GUNSGRIDVIEWDataTable()
+            Dim dataTable As gdssDataSet1.GunsMainFormDataTable = New gdssDataSet1.GunsMainFormDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -9635,7 +9661,7 @@ Namespace gdssDataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByOwner(ByVal dataTable As gdssDataSet1.GUNSGRIDVIEWDataTable, ByVal owner As Decimal) As Integer
+        Public Overloads Overridable Function FillByOwner(ByVal dataTable As gdssDataSet1.GunsMainFormDataTable, ByVal owner As Decimal) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(owner,Decimal)
             If (Me.ClearBeforeFill = true) Then
@@ -9649,10 +9675,10 @@ Namespace gdssDataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetDataByOwner(ByVal owner As Decimal) As gdssDataSet1.GUNSGRIDVIEWDataTable
+        Public Overloads Overridable Function GetDataByOwner(ByVal owner As Decimal) As gdssDataSet1.GunsMainFormDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(owner,Decimal)
-            Dim dataTable As gdssDataSet1.GUNSGRIDVIEWDataTable = New gdssDataSet1.GUNSGRIDVIEWDataTable()
+            Dim dataTable As gdssDataSet1.GunsMainFormDataTable = New gdssDataSet1.GunsMainFormDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function

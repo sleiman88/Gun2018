@@ -31,6 +31,7 @@ Partial Class main
         Me.ByPersonToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.SearchGun_Button = New System.Windows.Forms.Button()
         Me.FullName_TextBox = New System.Windows.Forms.TextBox()
         Me.Person_Label = New System.Windows.Forms.Label()
         Me.LName_CheckBox = New System.Windows.Forms.CheckBox()
@@ -52,7 +53,6 @@ Partial Class main
         Me.Ammo_DataGridView = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.SearchGun_Button = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,7 +66,7 @@ Partial Class main
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1287, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1471, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -130,6 +130,15 @@ Partial Class main
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(656, 181)
         Me.Panel2.TabIndex = 5
+        '
+        'SearchGun_Button
+        '
+        Me.SearchGun_Button.Location = New System.Drawing.Point(503, 153)
+        Me.SearchGun_Button.Name = "SearchGun_Button"
+        Me.SearchGun_Button.Size = New System.Drawing.Size(120, 23)
+        Me.SearchGun_Button.TabIndex = 18
+        Me.SearchGun_Button.Text = "Search Guns"
+        Me.SearchGun_Button.UseVisualStyleBackColor = True
         '
         'FullName_TextBox
         '
@@ -279,13 +288,13 @@ Partial Class main
         Me.Gun_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Gun_DataGridView.Location = New System.Drawing.Point(683, 46)
         Me.Gun_DataGridView.Name = "Gun_DataGridView"
-        Me.Gun_DataGridView.Size = New System.Drawing.Size(278, 368)
+        Me.Gun_DataGridView.Size = New System.Drawing.Size(330, 368)
         Me.Gun_DataGridView.TabIndex = 6
         '
         'Ammo_DataGridView
         '
         Me.Ammo_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Ammo_DataGridView.Location = New System.Drawing.Point(980, 46)
+        Me.Ammo_DataGridView.Location = New System.Drawing.Point(1130, 46)
         Me.Ammo_DataGridView.Name = "Ammo_DataGridView"
         Me.Ammo_DataGridView.Size = New System.Drawing.Size(286, 368)
         Me.Ammo_DataGridView.TabIndex = 7
@@ -302,26 +311,17 @@ Partial Class main
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(977, 30)
+        Me.Label2.Location = New System.Drawing.Point(1127, 30)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(36, 13)
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "Ammo"
         '
-        'SearchGun_Button
-        '
-        Me.SearchGun_Button.Location = New System.Drawing.Point(503, 153)
-        Me.SearchGun_Button.Name = "SearchGun_Button"
-        Me.SearchGun_Button.Size = New System.Drawing.Size(120, 23)
-        Me.SearchGun_Button.TabIndex = 18
-        Me.SearchGun_Button.Text = "Search Guns"
-        Me.SearchGun_Button.UseVisualStyleBackColor = True
-        '
         'main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1287, 431)
+        Me.ClientSize = New System.Drawing.Size(1471, 431)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Ammo_DataGridView)
