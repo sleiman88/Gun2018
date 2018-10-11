@@ -33,8 +33,6 @@ Partial Class main
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.FullName_TextBox = New System.Windows.Forms.TextBox()
         Me.Person_Label = New System.Windows.Forms.Label()
-        Me.Grade_ComboBox = New System.Windows.Forms.ComboBox()
-        Me.Source_ComboBox = New System.Windows.Forms.ComboBox()
         Me.LName_CheckBox = New System.Windows.Forms.CheckBox()
         Me.FATHER_CheckBox = New System.Windows.Forms.CheckBox()
         Me.FName_CheckBox = New System.Windows.Forms.CheckBox()
@@ -43,17 +41,24 @@ Partial Class main
         Me.TextBox_FATHER = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ComboBoxPersons = New System.Windows.Forms.ComboBox()
+        Me.IDCARDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox_FName = New System.Windows.Forms.TextBox()
         Me.TextBoxMilitNb = New System.Windows.Forms.TextBox()
-        Me.GdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
-        Me.IDCARDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.IDCARDTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.IDCARDTableAdapter()
+        Me.Gun_DataGridView = New System.Windows.Forms.DataGridView()
+        Me.Ammo_DataGridView = New System.Windows.Forms.DataGridView()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.SearchGun_Button = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Gun_DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ammo_DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -61,7 +66,7 @@ Partial Class main
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(887, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1287, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -106,10 +111,9 @@ Partial Class main
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.SearchGun_Button)
         Me.Panel2.Controls.Add(Me.FullName_TextBox)
         Me.Panel2.Controls.Add(Me.Person_Label)
-        Me.Panel2.Controls.Add(Me.Grade_ComboBox)
-        Me.Panel2.Controls.Add(Me.Source_ComboBox)
         Me.Panel2.Controls.Add(Me.LName_CheckBox)
         Me.Panel2.Controls.Add(Me.FATHER_CheckBox)
         Me.Panel2.Controls.Add(Me.FName_CheckBox)
@@ -146,28 +150,6 @@ Partial Class main
         Me.Person_Label.TabIndex = 16
         Me.Person_Label.Text = "*"
         Me.Person_Label.Visible = False
-        '
-        'Grade_ComboBox
-        '
-        Me.Grade_ComboBox.DisplayMember = "GRADE"
-        Me.Grade_ComboBox.FormattingEnabled = True
-        Me.Grade_ComboBox.Location = New System.Drawing.Point(309, 85)
-        Me.Grade_ComboBox.Name = "Grade_ComboBox"
-        Me.Grade_ComboBox.Size = New System.Drawing.Size(121, 21)
-        Me.Grade_ComboBox.TabIndex = 14
-        Me.Grade_ComboBox.ValueMember = "GRADE"
-        Me.Grade_ComboBox.Visible = False
-        '
-        'Source_ComboBox
-        '
-        Me.Source_ComboBox.DisplayMember = "SOURCE"
-        Me.Source_ComboBox.FormattingEnabled = True
-        Me.Source_ComboBox.Location = New System.Drawing.Point(309, 52)
-        Me.Source_ComboBox.Name = "Source_ComboBox"
-        Me.Source_ComboBox.Size = New System.Drawing.Size(92, 21)
-        Me.Source_ComboBox.TabIndex = 13
-        Me.Source_ComboBox.ValueMember = "SOURCE"
-        Me.Source_ComboBox.Visible = False
         '
         'LName_CheckBox
         '
@@ -245,6 +227,16 @@ Partial Class main
         Me.ComboBoxPersons.TabIndex = 4
         Me.ComboBoxPersons.ValueMember = "CODE"
         '
+        'IDCARDBindingSource
+        '
+        Me.IDCARDBindingSource.DataMember = "IDCARD"
+        Me.IDCARDBindingSource.DataSource = Me.GdssDataSet1
+        '
+        'GdssDataSet1
+        '
+        Me.GdssDataSet1.DataSetName = "gdssDataSet1"
+        Me.GdssDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -278,25 +270,62 @@ Partial Class main
         Me.TextBoxMilitNb.Size = New System.Drawing.Size(100, 20)
         Me.TextBoxMilitNb.TabIndex = 0
         '
-        'GdssDataSet1
-        '
-        Me.GdssDataSet1.DataSetName = "gdssDataSet1"
-        Me.GdssDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'IDCARDBindingSource
-        '
-        Me.IDCARDBindingSource.DataMember = "IDCARD"
-        Me.IDCARDBindingSource.DataSource = Me.GdssDataSet1
-        '
         'IDCARDTableAdapter
         '
         Me.IDCARDTableAdapter.ClearBeforeFill = True
+        '
+        'Gun_DataGridView
+        '
+        Me.Gun_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Gun_DataGridView.Location = New System.Drawing.Point(683, 46)
+        Me.Gun_DataGridView.Name = "Gun_DataGridView"
+        Me.Gun_DataGridView.Size = New System.Drawing.Size(278, 368)
+        Me.Gun_DataGridView.TabIndex = 6
+        '
+        'Ammo_DataGridView
+        '
+        Me.Ammo_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Ammo_DataGridView.Location = New System.Drawing.Point(980, 46)
+        Me.Ammo_DataGridView.Name = "Ammo_DataGridView"
+        Me.Ammo_DataGridView.Size = New System.Drawing.Size(286, 368)
+        Me.Ammo_DataGridView.TabIndex = 7
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(680, 30)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(31, 13)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "Guns"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(977, 30)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(36, 13)
+        Me.Label2.TabIndex = 9
+        Me.Label2.Text = "Ammo"
+        '
+        'SearchGun_Button
+        '
+        Me.SearchGun_Button.Location = New System.Drawing.Point(503, 153)
+        Me.SearchGun_Button.Name = "SearchGun_Button"
+        Me.SearchGun_Button.Size = New System.Drawing.Size(120, 23)
+        Me.SearchGun_Button.TabIndex = 18
+        Me.SearchGun_Button.Text = "Search Guns"
+        Me.SearchGun_Button.UseVisualStyleBackColor = True
         '
         'main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(887, 402)
+        Me.ClientSize = New System.Drawing.Size(1287, 431)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Ammo_DataGridView)
+        Me.Controls.Add(Me.Gun_DataGridView)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -307,8 +336,10 @@ Partial Class main
         Me.MenuStrip1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Gun_DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ammo_DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -324,8 +355,6 @@ Partial Class main
     Friend WithEvents Panel2 As Panel
     Friend WithEvents FullName_TextBox As TextBox
     Friend WithEvents Person_Label As Label
-    Friend WithEvents Grade_ComboBox As ComboBox
-    Friend WithEvents Source_ComboBox As ComboBox
     Friend WithEvents LName_CheckBox As CheckBox
     Friend WithEvents FATHER_CheckBox As CheckBox
     Friend WithEvents FName_CheckBox As CheckBox
@@ -341,4 +370,9 @@ Partial Class main
     Friend WithEvents GdssDataSet1 As gdssDataSet1
     Friend WithEvents IDCARDBindingSource As BindingSource
     Friend WithEvents IDCARDTableAdapter As gdssDataSet1TableAdapters.IDCARDTableAdapter
+    Friend WithEvents SearchGun_Button As Button
+    Friend WithEvents Gun_DataGridView As DataGridView
+    Friend WithEvents Ammo_DataGridView As DataGridView
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
 End Class
