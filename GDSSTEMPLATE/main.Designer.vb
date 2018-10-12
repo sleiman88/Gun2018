@@ -53,12 +53,18 @@ Partial Class main
         Me.Ammo_DataGridView = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.N0itemsAndPerGUnBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.N0itemsAndPerGUnTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.N0itemsAndPerGUnTableAdapter()
+        Me.LABELDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CODEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SDATEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Gun_DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Ammo_DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.N0itemsAndPerGUnBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -285,7 +291,10 @@ Partial Class main
         '
         'Gun_DataGridView
         '
+        Me.Gun_DataGridView.AutoGenerateColumns = False
         Me.Gun_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Gun_DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.LABELDataGridViewTextBoxColumn, Me.CODEDataGridViewTextBoxColumn, Me.SDATEDataGridViewTextBoxColumn})
+        Me.Gun_DataGridView.DataSource = Me.N0itemsAndPerGUnBindingSource
         Me.Gun_DataGridView.Location = New System.Drawing.Point(683, 46)
         Me.Gun_DataGridView.Name = "Gun_DataGridView"
         Me.Gun_DataGridView.Size = New System.Drawing.Size(278, 368)
@@ -317,6 +326,33 @@ Partial Class main
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "Ammo"
         '
+        'N0itemsAndPerGUnBindingSource
+        '
+        Me.N0itemsAndPerGUnBindingSource.DataMember = "N0itemsAndPerGUn"
+        Me.N0itemsAndPerGUnBindingSource.DataSource = Me.GdssDataSet1
+        '
+        'N0itemsAndPerGUnTableAdapter
+        '
+        Me.N0itemsAndPerGUnTableAdapter.ClearBeforeFill = True
+        '
+        'LABELDataGridViewTextBoxColumn
+        '
+        Me.LABELDataGridViewTextBoxColumn.DataPropertyName = "LABEL"
+        Me.LABELDataGridViewTextBoxColumn.HeaderText = "LABEL"
+        Me.LABELDataGridViewTextBoxColumn.Name = "LABELDataGridViewTextBoxColumn"
+        '
+        'CODEDataGridViewTextBoxColumn
+        '
+        Me.CODEDataGridViewTextBoxColumn.DataPropertyName = "CODE"
+        Me.CODEDataGridViewTextBoxColumn.HeaderText = "CODE"
+        Me.CODEDataGridViewTextBoxColumn.Name = "CODEDataGridViewTextBoxColumn"
+        '
+        'SDATEDataGridViewTextBoxColumn
+        '
+        Me.SDATEDataGridViewTextBoxColumn.DataPropertyName = "SDATE"
+        Me.SDATEDataGridViewTextBoxColumn.HeaderText = "SDATE"
+        Me.SDATEDataGridViewTextBoxColumn.Name = "SDATEDataGridViewTextBoxColumn"
+        '
         'main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -340,6 +376,7 @@ Partial Class main
         CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Gun_DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Ammo_DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.N0itemsAndPerGUnBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -375,4 +412,9 @@ Partial Class main
     Friend WithEvents Ammo_DataGridView As DataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents N0itemsAndPerGUnBindingSource As BindingSource
+    Friend WithEvents N0itemsAndPerGUnTableAdapter As gdssDataSet1TableAdapters.N0itemsAndPerGUnTableAdapter
+    Friend WithEvents LABELDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CODEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents SDATEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

@@ -29,6 +29,8 @@
     End Sub
 
     Private Sub main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'GdssDataSet1.N0itemsAndPerGUn' table. You can move, or remove it, as needed.
+        'Me.N0itemsAndPerGUnTableAdapter.Fill(Me.GdssDataSet1.N0itemsAndPerGUn)
         'TODO: This line of code loads data into the 'GdssDataSet1.IDCARD' table. You can move, or remove it, as needed.
         ' Me.IDCARDTableAdapter.Fill(Me.GdssDataSet1.IDCARD)
 
@@ -196,5 +198,9 @@
                 Person_Label.Visible = False
             End If
         End If
+    End Sub
+
+    Private Sub SearchGun_Button_Click(sender As Object, e As EventArgs) Handles SearchGun_Button.Click
+        Me.N0itemsAndPerGUnTableAdapter.FillByOwner(Me.GdssDataSet1.N0itemsAndPerGUn, ComboBoxPersons.SelectedValue)
     End Sub
 End Class
