@@ -210,6 +210,19 @@
 
     End Sub
 
+    Private Sub Gun_DataGridView_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles Gun_DataGridView.CellContentDoubleClick
+        If Gun_DataGridView.Item(1, e.RowIndex).Value IsNot Nothing Then
+            MsgBox(Gun_DataGridView.Item(1, e.RowIndex).Value.ToString)
+        End If
+    End Sub
+
+    Private Sub Gun_DataGridView_RowHeaderMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles Gun_DataGridView.RowHeaderMouseDoubleClick
+
+        If Gun_DataGridView.Item(1, e.RowIndex).Value IsNot Nothing Then
+            MsgBox(Gun_DataGridView.Item(1, e.RowIndex).Value.ToString)
+        End If
+    End Sub
+
 
 
 

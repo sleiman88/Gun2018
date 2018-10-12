@@ -50,21 +50,21 @@ Partial Class main
         Me.TextBoxMilitNb = New System.Windows.Forms.TextBox()
         Me.IDCARDTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.IDCARDTableAdapter()
         Me.Gun_DataGridView = New System.Windows.Forms.DataGridView()
-        Me.Ammo_DataGridView = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.N0itemsAndPerGUnBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.N0itemsAndPerGUnTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.N0itemsAndPerGUnTableAdapter()
         Me.LABELDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CODEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SDATEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.N0itemsAndPerGUnBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Ammo_DataGridView = New System.Windows.Forms.DataGridView()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.N0itemsAndPerGUnTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.N0itemsAndPerGUnTableAdapter()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Gun_DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Ammo_DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.N0itemsAndPerGUnBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ammo_DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -139,11 +139,11 @@ Partial Class main
         '
         'SearchGun_Button
         '
-        Me.SearchGun_Button.Location = New System.Drawing.Point(503, 153)
+        Me.SearchGun_Button.Location = New System.Drawing.Point(463, 153)
         Me.SearchGun_Button.Name = "SearchGun_Button"
-        Me.SearchGun_Button.Size = New System.Drawing.Size(120, 23)
+        Me.SearchGun_Button.Size = New System.Drawing.Size(160, 23)
         Me.SearchGun_Button.TabIndex = 18
-        Me.SearchGun_Button.Text = "Search Guns"
+        Me.SearchGun_Button.Text = "Search Guns and Ammo"
         Me.SearchGun_Button.UseVisualStyleBackColor = True
         '
         'FullName_TextBox
@@ -303,6 +303,35 @@ Partial Class main
         Me.Gun_DataGridView.Size = New System.Drawing.Size(300, 368)
         Me.Gun_DataGridView.TabIndex = 6
         '
+        'LABELDataGridViewTextBoxColumn
+        '
+        Me.LABELDataGridViewTextBoxColumn.DataPropertyName = "LABEL"
+        Me.LABELDataGridViewTextBoxColumn.HeaderText = "Gun"
+        Me.LABELDataGridViewTextBoxColumn.Name = "LABELDataGridViewTextBoxColumn"
+        Me.LABELDataGridViewTextBoxColumn.ReadOnly = True
+        Me.LABELDataGridViewTextBoxColumn.Width = 105
+        '
+        'CODEDataGridViewTextBoxColumn
+        '
+        Me.CODEDataGridViewTextBoxColumn.DataPropertyName = "CODE"
+        Me.CODEDataGridViewTextBoxColumn.HeaderText = "CODE"
+        Me.CODEDataGridViewTextBoxColumn.Name = "CODEDataGridViewTextBoxColumn"
+        Me.CODEDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CODEDataGridViewTextBoxColumn.Visible = False
+        '
+        'SDATEDataGridViewTextBoxColumn
+        '
+        Me.SDATEDataGridViewTextBoxColumn.DataPropertyName = "SDATE"
+        Me.SDATEDataGridViewTextBoxColumn.HeaderText = "Delivery Date"
+        Me.SDATEDataGridViewTextBoxColumn.Name = "SDATEDataGridViewTextBoxColumn"
+        Me.SDATEDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SDATEDataGridViewTextBoxColumn.Width = 150
+        '
+        'N0itemsAndPerGUnBindingSource
+        '
+        Me.N0itemsAndPerGUnBindingSource.DataMember = "N0itemsAndPerGUn"
+        Me.N0itemsAndPerGUnBindingSource.DataSource = Me.GdssDataSet1
+        '
         'Ammo_DataGridView
         '
         Me.Ammo_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -329,35 +358,9 @@ Partial Class main
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "Ammo"
         '
-        'N0itemsAndPerGUnBindingSource
-        '
-        Me.N0itemsAndPerGUnBindingSource.DataMember = "N0itemsAndPerGUn"
-        Me.N0itemsAndPerGUnBindingSource.DataSource = Me.GdssDataSet1
-        '
         'N0itemsAndPerGUnTableAdapter
         '
         Me.N0itemsAndPerGUnTableAdapter.ClearBeforeFill = True
-        '
-        'LABELDataGridViewTextBoxColumn
-        '
-        Me.LABELDataGridViewTextBoxColumn.DataPropertyName = "LABEL"
-        Me.LABELDataGridViewTextBoxColumn.HeaderText = "Gun"
-        Me.LABELDataGridViewTextBoxColumn.Name = "LABELDataGridViewTextBoxColumn"
-        Me.LABELDataGridViewTextBoxColumn.Width = 105
-        '
-        'CODEDataGridViewTextBoxColumn
-        '
-        Me.CODEDataGridViewTextBoxColumn.DataPropertyName = "CODE"
-        Me.CODEDataGridViewTextBoxColumn.HeaderText = "CODE"
-        Me.CODEDataGridViewTextBoxColumn.Name = "CODEDataGridViewTextBoxColumn"
-        Me.CODEDataGridViewTextBoxColumn.Visible = False
-        '
-        'SDATEDataGridViewTextBoxColumn
-        '
-        Me.SDATEDataGridViewTextBoxColumn.DataPropertyName = "SDATE"
-        Me.SDATEDataGridViewTextBoxColumn.HeaderText = "Delivery Date"
-        Me.SDATEDataGridViewTextBoxColumn.Name = "SDATEDataGridViewTextBoxColumn"
-        Me.SDATEDataGridViewTextBoxColumn.Width = 150
         '
         'main
         '
@@ -381,8 +384,8 @@ Partial Class main
         CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Gun_DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Ammo_DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.N0itemsAndPerGUnBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ammo_DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
