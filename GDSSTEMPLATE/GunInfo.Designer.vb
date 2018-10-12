@@ -43,24 +43,10 @@ Partial Class GunInfo
         Dim EXPR1Label As System.Windows.Forms.Label
         Dim EXPR2Label As System.Windows.Forms.Label
         Dim DBIRTHLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GunInfo))
         Me.GdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
         Me.GunReportInfoFormBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GunReportInfoFormTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.GunReportInfoFormTableAdapter()
         Me.TableAdapterManager = New GDSSTEMPLATE.gdssDataSet1TableAdapters.TableAdapterManager()
-        Me.GunReportInfoFormBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.GunReportInfoFormBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.CODETextBox = New System.Windows.Forms.TextBox()
         Me.GTYPETextBox = New System.Windows.Forms.TextBox()
         Me.GNUMBERTextBox = New System.Windows.Forms.TextBox()
@@ -109,8 +95,6 @@ Partial Class GunInfo
         DBIRTHLabel = New System.Windows.Forms.Label()
         CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GunReportInfoFormBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GunReportInfoFormBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GunReportInfoFormBindingNavigator.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -320,118 +304,6 @@ Partial Class GunInfo
         Me.TableAdapterManager.N0ITEMSTableAdapter = Nothing
         Me.TableAdapterManager.PERGUNTableAdapterTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = GDSSTEMPLATE.gdssDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'GunReportInfoFormBindingNavigator
-        '
-        Me.GunReportInfoFormBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
-        Me.GunReportInfoFormBindingNavigator.BindingSource = Me.GunReportInfoFormBindingSource
-        Me.GunReportInfoFormBindingNavigator.CountItem = Me.BindingNavigatorCountItem
-        Me.GunReportInfoFormBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.GunReportInfoFormBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.GunReportInfoFormBindingNavigatorSaveItem})
-        Me.GunReportInfoFormBindingNavigator.Location = New System.Drawing.Point(0, 0)
-        Me.GunReportInfoFormBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
-        Me.GunReportInfoFormBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
-        Me.GunReportInfoFormBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
-        Me.GunReportInfoFormBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
-        Me.GunReportInfoFormBindingNavigator.Name = "GunReportInfoFormBindingNavigator"
-        Me.GunReportInfoFormBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.GunReportInfoFormBindingNavigator.Size = New System.Drawing.Size(696, 25)
-        Me.GunReportInfoFormBindingNavigator.TabIndex = 0
-        Me.GunReportInfoFormBindingNavigator.Text = "BindingNavigator1"
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
-        '
-        'BindingNavigatorMoveFirstItem
-        '
-        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
-        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveFirstItem.Text = "Move first"
-        '
-        'BindingNavigatorMovePreviousItem
-        '
-        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
-        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
-        '
-        'BindingNavigatorSeparator
-        '
-        Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorPositionItem
-        '
-        Me.BindingNavigatorPositionItem.AccessibleName = "Position"
-        Me.BindingNavigatorPositionItem.AutoSize = False
-        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
-        Me.BindingNavigatorPositionItem.Text = "0"
-        Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
-        '
-        'BindingNavigatorSeparator1
-        '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorMoveNextItem
-        '
-        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
-        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveNextItem.Text = "Move next"
-        '
-        'BindingNavigatorMoveLastItem
-        '
-        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
-        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveLastItem.Text = "Move last"
-        '
-        'BindingNavigatorSeparator2
-        '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'GunReportInfoFormBindingNavigatorSaveItem
-        '
-        Me.GunReportInfoFormBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.GunReportInfoFormBindingNavigatorSaveItem.Enabled = False
-        Me.GunReportInfoFormBindingNavigatorSaveItem.Image = CType(resources.GetObject("GunReportInfoFormBindingNavigatorSaveItem.Image"), System.Drawing.Image)
-        Me.GunReportInfoFormBindingNavigatorSaveItem.Name = "GunReportInfoFormBindingNavigatorSaveItem"
-        Me.GunReportInfoFormBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
-        Me.GunReportInfoFormBindingNavigatorSaveItem.Text = "Save Data"
         '
         'CODETextBox
         '
@@ -718,15 +590,11 @@ Partial Class GunInfo
         Me.Controls.Add(Me.CODETextBox)
         Me.Controls.Add(NOTELabel)
         Me.Controls.Add(Me.NOTETextBox)
-        Me.Controls.Add(Me.GunReportInfoFormBindingNavigator)
         Me.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.GunReportInfoFormBindingSource, "SDATE", True))
         Me.Name = "GunInfo"
         Me.Text = "GunInfo"
         CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GunReportInfoFormBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GunReportInfoFormBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GunReportInfoFormBindingNavigator.ResumeLayout(False)
-        Me.GunReportInfoFormBindingNavigator.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
@@ -744,19 +612,6 @@ Partial Class GunInfo
     Friend WithEvents GunReportInfoFormBindingSource As BindingSource
     Friend WithEvents GunReportInfoFormTableAdapter As gdssDataSet1TableAdapters.GunReportInfoFormTableAdapter
     Friend WithEvents TableAdapterManager As gdssDataSet1TableAdapters.TableAdapterManager
-    Friend WithEvents GunReportInfoFormBindingNavigator As BindingNavigator
-    Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
-    Friend WithEvents BindingNavigatorCountItem As ToolStripLabel
-    Friend WithEvents BindingNavigatorDeleteItem As ToolStripButton
-    Friend WithEvents BindingNavigatorMoveFirstItem As ToolStripButton
-    Friend WithEvents BindingNavigatorMovePreviousItem As ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator As ToolStripSeparator
-    Friend WithEvents BindingNavigatorPositionItem As ToolStripTextBox
-    Friend WithEvents BindingNavigatorSeparator1 As ToolStripSeparator
-    Friend WithEvents BindingNavigatorMoveNextItem As ToolStripButton
-    Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
-    Friend WithEvents GunReportInfoFormBindingNavigatorSaveItem As ToolStripButton
     Friend WithEvents CODETextBox As TextBox
     Friend WithEvents GTYPETextBox As TextBox
     Friend WithEvents GNUMBERTextBox As TextBox
