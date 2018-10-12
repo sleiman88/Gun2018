@@ -8,6 +8,9 @@
 End Class
 
 Namespace gdssDataSet1TableAdapters
+    Partial Public Class dataGridGunsTableAdapter
+    End Class
+
     Partial Public Class PERGUNTableAdapter
     End Class
 
