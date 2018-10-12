@@ -201,6 +201,12 @@
     End Sub
 
     Private Sub SearchGun_Button_Click(sender As Object, e As EventArgs) Handles SearchGun_Button.Click
-        Me.N0itemsAndPerGUnTableAdapter.FillByOwner(Me.GdssDataSet1.N0itemsAndPerGUn, ComboBoxPersons.SelectedValue)
+        If FullName_TextBox.Text.Length = 0 Then
+            MsgBox("Please a choose a person first !!!")
+            Person_Label.Visible = True
+        Else
+            Me.N0itemsAndPerGUnTableAdapter.FillByOwner(Me.GdssDataSet1.N0itemsAndPerGUn, ComboBoxPersons.SelectedValue)
+        End If
+
     End Sub
 End Class

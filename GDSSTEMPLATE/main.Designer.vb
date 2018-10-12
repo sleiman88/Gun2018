@@ -291,13 +291,16 @@ Partial Class main
         '
         'Gun_DataGridView
         '
+        Me.Gun_DataGridView.AllowUserToAddRows = False
+        Me.Gun_DataGridView.AllowUserToDeleteRows = False
         Me.Gun_DataGridView.AutoGenerateColumns = False
         Me.Gun_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Gun_DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.LABELDataGridViewTextBoxColumn, Me.CODEDataGridViewTextBoxColumn, Me.SDATEDataGridViewTextBoxColumn})
         Me.Gun_DataGridView.DataSource = Me.N0itemsAndPerGUnBindingSource
         Me.Gun_DataGridView.Location = New System.Drawing.Point(683, 46)
         Me.Gun_DataGridView.Name = "Gun_DataGridView"
-        Me.Gun_DataGridView.Size = New System.Drawing.Size(278, 368)
+        Me.Gun_DataGridView.ReadOnly = True
+        Me.Gun_DataGridView.Size = New System.Drawing.Size(300, 368)
         Me.Gun_DataGridView.TabIndex = 6
         '
         'Ammo_DataGridView
@@ -338,20 +341,23 @@ Partial Class main
         'LABELDataGridViewTextBoxColumn
         '
         Me.LABELDataGridViewTextBoxColumn.DataPropertyName = "LABEL"
-        Me.LABELDataGridViewTextBoxColumn.HeaderText = "LABEL"
+        Me.LABELDataGridViewTextBoxColumn.HeaderText = "Gun"
         Me.LABELDataGridViewTextBoxColumn.Name = "LABELDataGridViewTextBoxColumn"
+        Me.LABELDataGridViewTextBoxColumn.Width = 105
         '
         'CODEDataGridViewTextBoxColumn
         '
         Me.CODEDataGridViewTextBoxColumn.DataPropertyName = "CODE"
         Me.CODEDataGridViewTextBoxColumn.HeaderText = "CODE"
         Me.CODEDataGridViewTextBoxColumn.Name = "CODEDataGridViewTextBoxColumn"
+        Me.CODEDataGridViewTextBoxColumn.Visible = False
         '
         'SDATEDataGridViewTextBoxColumn
         '
         Me.SDATEDataGridViewTextBoxColumn.DataPropertyName = "SDATE"
-        Me.SDATEDataGridViewTextBoxColumn.HeaderText = "SDATE"
+        Me.SDATEDataGridViewTextBoxColumn.HeaderText = "Delivery Date"
         Me.SDATEDataGridViewTextBoxColumn.Name = "SDATEDataGridViewTextBoxColumn"
+        Me.SDATEDataGridViewTextBoxColumn.Width = 150
         '
         'main
         '
