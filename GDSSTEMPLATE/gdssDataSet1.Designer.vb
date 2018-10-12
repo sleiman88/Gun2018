@@ -41,6 +41,8 @@ Partial Public Class gdssDataSet1
     
     Private tableAMMODataGrid As AMMODataGridDataTable
     
+    Private tableGunReportInfoForm As GunReportInfoFormDataTable
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -97,6 +99,9 @@ Partial Public Class gdssDataSet1
             End If
             If (Not (ds.Tables("AMMODataGrid")) Is Nothing) Then
                 MyBase.Tables.Add(New AMMODataGridDataTable(ds.Tables("AMMODataGrid")))
+            End If
+            If (Not (ds.Tables("GunReportInfoForm")) Is Nothing) Then
+                MyBase.Tables.Add(New GunReportInfoFormDataTable(ds.Tables("GunReportInfoForm")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -198,6 +203,16 @@ Partial Public Class gdssDataSet1
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property GunReportInfoForm() As GunReportInfoFormDataTable
+        Get
+            Return Me.tableGunReportInfoForm
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.BrowsableAttribute(true),  _
      Global.System.ComponentModel.DesignerSerializationVisibilityAttribute(Global.System.ComponentModel.DesignerSerializationVisibility.Visible)>  _
     Public Overrides Property SchemaSerializationMode() As Global.System.Data.SchemaSerializationMode
@@ -288,6 +303,9 @@ Partial Public Class gdssDataSet1
             If (Not (ds.Tables("AMMODataGrid")) Is Nothing) Then
                 MyBase.Tables.Add(New AMMODataGridDataTable(ds.Tables("AMMODataGrid")))
             End If
+            If (Not (ds.Tables("GunReportInfoForm")) Is Nothing) Then
+                MyBase.Tables.Add(New GunReportInfoFormDataTable(ds.Tables("GunReportInfoForm")))
+            End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
             Me.Namespace = ds.Namespace
@@ -368,6 +386,12 @@ Partial Public Class gdssDataSet1
                 Me.tableAMMODataGrid.InitVars
             End If
         End If
+        Me.tableGunReportInfoForm = CType(MyBase.Tables("GunReportInfoForm"),GunReportInfoFormDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableGunReportInfoForm) Is Nothing) Then
+                Me.tableGunReportInfoForm.InitVars
+            End If
+        End If
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -394,6 +418,8 @@ Partial Public Class gdssDataSet1
         MyBase.Tables.Add(Me.tableN0itemsAndPerGUn)
         Me.tableAMMODataGrid = New AMMODataGridDataTable()
         MyBase.Tables.Add(Me.tableAMMODataGrid)
+        Me.tableGunReportInfoForm = New GunReportInfoFormDataTable()
+        MyBase.Tables.Add(Me.tableGunReportInfoForm)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -441,6 +467,12 @@ Partial Public Class gdssDataSet1
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Function ShouldSerializeAMMODataGrid() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Private Function ShouldSerializeGunReportInfoForm() As Boolean
         Return false
     End Function
     
@@ -531,6 +563,9 @@ Partial Public Class gdssDataSet1
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub AMMODataGridRowChangeEventHandler(ByVal sender As Object, ByVal e As AMMODataGridRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Delegate Sub GunReportInfoFormRowChangeEventHandler(ByVal sender As Object, ByVal e As GunReportInfoFormRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -3368,6 +3403,659 @@ Partial Public Class gdssDataSet1
     End Class
     
     '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class GunReportInfoFormDataTable
+        Inherits Global.System.Data.TypedTableBase(Of GunReportInfoFormRow)
+        
+        Private columnCODE As Global.System.Data.DataColumn
+        
+        Private columnGNAME As Global.System.Data.DataColumn
+        
+        Private columnGTYPE As Global.System.Data.DataColumn
+        
+        Private columnGNUMBER As Global.System.Data.DataColumn
+        
+        Private columnGSTORE As Global.System.Data.DataColumn
+        
+        Private columnGSIZE As Global.System.Data.DataColumn
+        
+        Private columnGCLEANER As Global.System.Data.DataColumn
+        
+        Private columnGAMMO As Global.System.Data.DataColumn
+        
+        Private columnSUPPLIER As Global.System.Data.DataColumn
+        
+        Private columnOWNER As Global.System.Data.DataColumn
+        
+        Private columnOWNERSOURCE As Global.System.Data.DataColumn
+        
+        Private columnGRADE As Global.System.Data.DataColumn
+        
+        Private columnDDATE As Global.System.Data.DataColumn
+        
+        Private columnNBDOC As Global.System.Data.DataColumn
+        
+        Private columnNOTE As Global.System.Data.DataColumn
+        
+        Private columnSDATE As Global.System.Data.DataColumn
+        
+        Private columnUDATE As Global.System.Data.DataColumn
+        
+        Private columnUUSER As Global.System.Data.DataColumn
+        
+        Private columnMDATE As Global.System.Data.DataColumn
+        
+        Private columnMUSER As Global.System.Data.DataColumn
+        
+        Private columnLABEL As Global.System.Data.DataColumn
+        
+        Private columnEXPR1 As Global.System.Data.DataColumn
+        
+        Private columnEXPR2 As Global.System.Data.DataColumn
+        
+        Private columnFNAME As Global.System.Data.DataColumn
+        
+        Private columnLNAME As Global.System.Data.DataColumn
+        
+        Private columnFATHER As Global.System.Data.DataColumn
+        
+        Private columnDBIRTH As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "GunReportInfoForm"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CODEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCODE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property GNAMEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGNAME
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property GTYPEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGTYPE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property GNUMBERColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGNUMBER
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property GSTOREColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGSTORE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property GSIZEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGSIZE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property GCLEANERColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGCLEANER
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property GAMMOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGAMMO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property SUPPLIERColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSUPPLIER
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property OWNERColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnOWNER
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property OWNERSOURCEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnOWNERSOURCE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property GRADEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGRADE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property DDATEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDDATE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property NBDOCColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNBDOC
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property NOTEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNOTE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property SDATEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSDATE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property UDATEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnUDATE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property UUSERColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnUUSER
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property MDATEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMDATE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property MUSERColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMUSER
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property LABELColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnLABEL
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property EXPR1Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEXPR1
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property EXPR2Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEXPR2
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property FNAMEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFNAME
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property LNAMEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnLNAME
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property FATHERColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFATHER
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property DBIRTHColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDBIRTH
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As GunReportInfoFormRow
+            Get
+                Return CType(Me.Rows(index),GunReportInfoFormRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event GunReportInfoFormRowChanging As GunReportInfoFormRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event GunReportInfoFormRowChanged As GunReportInfoFormRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event GunReportInfoFormRowDeleting As GunReportInfoFormRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event GunReportInfoFormRowDeleted As GunReportInfoFormRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub AddGunReportInfoFormRow(ByVal row As GunReportInfoFormRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function AddGunReportInfoFormRow( _
+                    ByVal CODE As Decimal,  _
+                    ByVal GNAME As String,  _
+                    ByVal GTYPE As String,  _
+                    ByVal GNUMBER As String,  _
+                    ByVal GSTORE As Decimal,  _
+                    ByVal GSIZE As String,  _
+                    ByVal GCLEANER As Decimal,  _
+                    ByVal GAMMO As Decimal,  _
+                    ByVal SUPPLIER As Decimal,  _
+                    ByVal OWNER As Decimal,  _
+                    ByVal OWNERSOURCE As Decimal,  _
+                    ByVal GRADE As Decimal,  _
+                    ByVal DDATE As Date,  _
+                    ByVal NBDOC As String,  _
+                    ByVal NOTE As String,  _
+                    ByVal SDATE As Date,  _
+                    ByVal UDATE As Date,  _
+                    ByVal UUSER As String,  _
+                    ByVal MDATE As Date,  _
+                    ByVal MUSER As String,  _
+                    ByVal LABEL As String,  _
+                    ByVal EXPR1 As String,  _
+                    ByVal EXPR2 As String,  _
+                    ByVal FNAME As String,  _
+                    ByVal LNAME As String,  _
+                    ByVal FATHER As String,  _
+                    ByVal DBIRTH As Date) As GunReportInfoFormRow
+            Dim rowGunReportInfoFormRow As GunReportInfoFormRow = CType(Me.NewRow,GunReportInfoFormRow)
+            Dim columnValuesArray() As Object = New Object() {CODE, GNAME, GTYPE, GNUMBER, GSTORE, GSIZE, GCLEANER, GAMMO, SUPPLIER, OWNER, OWNERSOURCE, GRADE, DDATE, NBDOC, NOTE, SDATE, UDATE, UUSER, MDATE, MUSER, LABEL, EXPR1, EXPR2, FNAME, LNAME, FATHER, DBIRTH}
+            rowGunReportInfoFormRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowGunReportInfoFormRow)
+            Return rowGunReportInfoFormRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As GunReportInfoFormDataTable = CType(MyBase.Clone,GunReportInfoFormDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New GunReportInfoFormDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnCODE = MyBase.Columns("CODE")
+            Me.columnGNAME = MyBase.Columns("GNAME")
+            Me.columnGTYPE = MyBase.Columns("GTYPE")
+            Me.columnGNUMBER = MyBase.Columns("GNUMBER")
+            Me.columnGSTORE = MyBase.Columns("GSTORE")
+            Me.columnGSIZE = MyBase.Columns("GSIZE")
+            Me.columnGCLEANER = MyBase.Columns("GCLEANER")
+            Me.columnGAMMO = MyBase.Columns("GAMMO")
+            Me.columnSUPPLIER = MyBase.Columns("SUPPLIER")
+            Me.columnOWNER = MyBase.Columns("OWNER")
+            Me.columnOWNERSOURCE = MyBase.Columns("OWNERSOURCE")
+            Me.columnGRADE = MyBase.Columns("GRADE")
+            Me.columnDDATE = MyBase.Columns("DDATE")
+            Me.columnNBDOC = MyBase.Columns("NBDOC")
+            Me.columnNOTE = MyBase.Columns("NOTE")
+            Me.columnSDATE = MyBase.Columns("SDATE")
+            Me.columnUDATE = MyBase.Columns("UDATE")
+            Me.columnUUSER = MyBase.Columns("UUSER")
+            Me.columnMDATE = MyBase.Columns("MDATE")
+            Me.columnMUSER = MyBase.Columns("MUSER")
+            Me.columnLABEL = MyBase.Columns("LABEL")
+            Me.columnEXPR1 = MyBase.Columns("EXPR1")
+            Me.columnEXPR2 = MyBase.Columns("EXPR2")
+            Me.columnFNAME = MyBase.Columns("FNAME")
+            Me.columnLNAME = MyBase.Columns("LNAME")
+            Me.columnFATHER = MyBase.Columns("FATHER")
+            Me.columnDBIRTH = MyBase.Columns("DBIRTH")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnCODE = New Global.System.Data.DataColumn("CODE", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCODE)
+            Me.columnGNAME = New Global.System.Data.DataColumn("GNAME", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGNAME)
+            Me.columnGTYPE = New Global.System.Data.DataColumn("GTYPE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGTYPE)
+            Me.columnGNUMBER = New Global.System.Data.DataColumn("GNUMBER", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGNUMBER)
+            Me.columnGSTORE = New Global.System.Data.DataColumn("GSTORE", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGSTORE)
+            Me.columnGSIZE = New Global.System.Data.DataColumn("GSIZE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGSIZE)
+            Me.columnGCLEANER = New Global.System.Data.DataColumn("GCLEANER", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGCLEANER)
+            Me.columnGAMMO = New Global.System.Data.DataColumn("GAMMO", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGAMMO)
+            Me.columnSUPPLIER = New Global.System.Data.DataColumn("SUPPLIER", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSUPPLIER)
+            Me.columnOWNER = New Global.System.Data.DataColumn("OWNER", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnOWNER)
+            Me.columnOWNERSOURCE = New Global.System.Data.DataColumn("OWNERSOURCE", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnOWNERSOURCE)
+            Me.columnGRADE = New Global.System.Data.DataColumn("GRADE", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGRADE)
+            Me.columnDDATE = New Global.System.Data.DataColumn("DDATE", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDDATE)
+            Me.columnNBDOC = New Global.System.Data.DataColumn("NBDOC", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNBDOC)
+            Me.columnNOTE = New Global.System.Data.DataColumn("NOTE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNOTE)
+            Me.columnSDATE = New Global.System.Data.DataColumn("SDATE", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSDATE)
+            Me.columnUDATE = New Global.System.Data.DataColumn("UDATE", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUDATE)
+            Me.columnUUSER = New Global.System.Data.DataColumn("UUSER", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUUSER)
+            Me.columnMDATE = New Global.System.Data.DataColumn("MDATE", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMDATE)
+            Me.columnMUSER = New Global.System.Data.DataColumn("MUSER", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMUSER)
+            Me.columnLABEL = New Global.System.Data.DataColumn("LABEL", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnLABEL)
+            Me.columnEXPR1 = New Global.System.Data.DataColumn("EXPR1", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEXPR1)
+            Me.columnEXPR2 = New Global.System.Data.DataColumn("EXPR2", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEXPR2)
+            Me.columnFNAME = New Global.System.Data.DataColumn("FNAME", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFNAME)
+            Me.columnLNAME = New Global.System.Data.DataColumn("LNAME", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnLNAME)
+            Me.columnFATHER = New Global.System.Data.DataColumn("FATHER", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFATHER)
+            Me.columnDBIRTH = New Global.System.Data.DataColumn("DBIRTH", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDBIRTH)
+            Me.columnCODE.ReadOnly = true
+            Me.columnGNAME.AllowDBNull = false
+            Me.columnGNAME.MaxLength = 7
+            Me.columnGTYPE.MaxLength = 20
+            Me.columnGNUMBER.AllowDBNull = false
+            Me.columnGNUMBER.MaxLength = 50
+            Me.columnGSIZE.MaxLength = 10
+            Me.columnSUPPLIER.ReadOnly = true
+            Me.columnOWNER.ReadOnly = true
+            Me.columnOWNERSOURCE.ReadOnly = true
+            Me.columnGRADE.ReadOnly = true
+            Me.columnDDATE.ReadOnly = true
+            Me.columnNBDOC.ReadOnly = true
+            Me.columnNBDOC.MaxLength = 20
+            Me.columnNOTE.ReadOnly = true
+            Me.columnNOTE.MaxLength = 500
+            Me.columnSDATE.ReadOnly = true
+            Me.columnUDATE.ReadOnly = true
+            Me.columnUUSER.ReadOnly = true
+            Me.columnUUSER.MaxLength = 10
+            Me.columnMDATE.ReadOnly = true
+            Me.columnMUSER.ReadOnly = true
+            Me.columnMUSER.MaxLength = 10
+            Me.columnLABEL.ReadOnly = true
+            Me.columnLABEL.MaxLength = 60
+            Me.columnEXPR1.ReadOnly = true
+            Me.columnEXPR1.MaxLength = 20
+            Me.columnEXPR2.ReadOnly = true
+            Me.columnEXPR2.MaxLength = 50
+            Me.columnFNAME.ReadOnly = true
+            Me.columnFNAME.MaxLength = 20
+            Me.columnLNAME.ReadOnly = true
+            Me.columnLNAME.MaxLength = 35
+            Me.columnFATHER.ReadOnly = true
+            Me.columnFATHER.MaxLength = 20
+            Me.columnDBIRTH.ReadOnly = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function NewGunReportInfoFormRow() As GunReportInfoFormRow
+            Return CType(Me.NewRow,GunReportInfoFormRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New GunReportInfoFormRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(GunReportInfoFormRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.GunReportInfoFormRowChangedEvent) Is Nothing) Then
+                RaiseEvent GunReportInfoFormRowChanged(Me, New GunReportInfoFormRowChangeEvent(CType(e.Row,GunReportInfoFormRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.GunReportInfoFormRowChangingEvent) Is Nothing) Then
+                RaiseEvent GunReportInfoFormRowChanging(Me, New GunReportInfoFormRowChangeEvent(CType(e.Row,GunReportInfoFormRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.GunReportInfoFormRowDeletedEvent) Is Nothing) Then
+                RaiseEvent GunReportInfoFormRowDeleted(Me, New GunReportInfoFormRowChangeEvent(CType(e.Row,GunReportInfoFormRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.GunReportInfoFormRowDeletingEvent) Is Nothing) Then
+                RaiseEvent GunReportInfoFormRowDeleting(Me, New GunReportInfoFormRowChangeEvent(CType(e.Row,GunReportInfoFormRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub RemoveGunReportInfoFormRow(ByVal row As GunReportInfoFormRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As gdssDataSet1 = New gdssDataSet1()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "GunReportInfoFormDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
     Partial Public Class serverdatetimeRow
@@ -4545,6 +5233,719 @@ Partial Public Class gdssDataSet1
     End Class
     
     '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class GunReportInfoFormRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableGunReportInfoForm As GunReportInfoFormDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableGunReportInfoForm = CType(Me.Table,GunReportInfoFormDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property CODE() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.CODEColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CODE' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.CODEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property GNAME() As String
+            Get
+                Return CType(Me(Me.tableGunReportInfoForm.GNAMEColumn),String)
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.GNAMEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property GTYPE() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.GTYPEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GTYPE' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.GTYPEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property GNUMBER() As String
+            Get
+                Return CType(Me(Me.tableGunReportInfoForm.GNUMBERColumn),String)
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.GNUMBERColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property GSTORE() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.GSTOREColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GSTORE' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.GSTOREColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property GSIZE() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.GSIZEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GSIZE' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.GSIZEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property GCLEANER() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.GCLEANERColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GCLEANER' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.GCLEANERColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property GAMMO() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.GAMMOColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GAMMO' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.GAMMOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property SUPPLIER() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.SUPPLIERColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SUPPLIER' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.SUPPLIERColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property OWNER() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.OWNERColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'OWNER' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.OWNERColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property OWNERSOURCE() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.OWNERSOURCEColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'OWNERSOURCE' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.OWNERSOURCEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property GRADE() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.GRADEColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GRADE' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.GRADEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property DDATE() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.DDATEColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DDATE' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.DDATEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property NBDOC() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.NBDOCColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'NBDOC' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.NBDOCColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property NOTE() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.NOTEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'NOTE' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.NOTEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property SDATE() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.SDATEColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SDATE' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.SDATEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property UDATE() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.UDATEColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'UDATE' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.UDATEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property UUSER() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.UUSERColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'UUSER' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.UUSERColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property MDATE() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.MDATEColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MDATE' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.MDATEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property MUSER() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.MUSERColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MUSER' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.MUSERColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property LABEL() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.LABELColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'LABEL' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.LABELColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property EXPR1() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.EXPR1Column),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'EXPR1' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.EXPR1Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property EXPR2() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.EXPR2Column),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'EXPR2' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.EXPR2Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property FNAME() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.FNAMEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'FNAME' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.FNAMEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property LNAME() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.LNAMEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'LNAME' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.LNAMEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property FATHER() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.FATHERColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'FATHER' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.FATHERColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property DBIRTH() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.DBIRTHColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DBIRTH' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.DBIRTHColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCODENull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.CODEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCODENull()
+            Me(Me.tableGunReportInfoForm.CODEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGTYPENull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.GTYPEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetGTYPENull()
+            Me(Me.tableGunReportInfoForm.GTYPEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGSTORENull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.GSTOREColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetGSTORENull()
+            Me(Me.tableGunReportInfoForm.GSTOREColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGSIZENull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.GSIZEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetGSIZENull()
+            Me(Me.tableGunReportInfoForm.GSIZEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGCLEANERNull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.GCLEANERColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetGCLEANERNull()
+            Me(Me.tableGunReportInfoForm.GCLEANERColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGAMMONull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.GAMMOColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetGAMMONull()
+            Me(Me.tableGunReportInfoForm.GAMMOColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsSUPPLIERNull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.SUPPLIERColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetSUPPLIERNull()
+            Me(Me.tableGunReportInfoForm.SUPPLIERColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsOWNERNull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.OWNERColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetOWNERNull()
+            Me(Me.tableGunReportInfoForm.OWNERColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsOWNERSOURCENull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.OWNERSOURCEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetOWNERSOURCENull()
+            Me(Me.tableGunReportInfoForm.OWNERSOURCEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGRADENull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.GRADEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetGRADENull()
+            Me(Me.tableGunReportInfoForm.GRADEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsDDATENull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.DDATEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetDDATENull()
+            Me(Me.tableGunReportInfoForm.DDATEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsNBDOCNull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.NBDOCColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetNBDOCNull()
+            Me(Me.tableGunReportInfoForm.NBDOCColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsNOTENull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.NOTEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetNOTENull()
+            Me(Me.tableGunReportInfoForm.NOTEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsSDATENull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.SDATEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetSDATENull()
+            Me(Me.tableGunReportInfoForm.SDATEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsUDATENull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.UDATEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetUDATENull()
+            Me(Me.tableGunReportInfoForm.UDATEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsUUSERNull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.UUSERColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetUUSERNull()
+            Me(Me.tableGunReportInfoForm.UUSERColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsMDATENull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.MDATEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetMDATENull()
+            Me(Me.tableGunReportInfoForm.MDATEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsMUSERNull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.MUSERColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetMUSERNull()
+            Me(Me.tableGunReportInfoForm.MUSERColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsLABELNull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.LABELColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetLABELNull()
+            Me(Me.tableGunReportInfoForm.LABELColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsEXPR1Null() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.EXPR1Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetEXPR1Null()
+            Me(Me.tableGunReportInfoForm.EXPR1Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsEXPR2Null() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.EXPR2Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetEXPR2Null()
+            Me(Me.tableGunReportInfoForm.EXPR2Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsFNAMENull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.FNAMEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetFNAMENull()
+            Me(Me.tableGunReportInfoForm.FNAMEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsLNAMENull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.LNAMEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetLNAMENull()
+            Me(Me.tableGunReportInfoForm.LNAMEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsFATHERNull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.FATHERColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetFATHERNull()
+            Me(Me.tableGunReportInfoForm.FATHERColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsDBIRTHNull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.DBIRTHColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetDBIRTHNull()
+            Me(Me.tableGunReportInfoForm.DBIRTHColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -4818,6 +6219,42 @@ Partial Public Class gdssDataSet1
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property Row() As AMMODataGridRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class GunReportInfoFormRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As GunReportInfoFormRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As GunReportInfoFormRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As GunReportInfoFormRow
             Get
                 Return Me.eventRow
             End Get
@@ -10309,6 +11746,212 @@ Namespace gdssDataSet1TableAdapters
                 Me.Adapter.SelectCommand.Parameters(0).Value = CType(Mili_NB,String)
             End If
             Dim dataTable As gdssDataSet1.AMMODataGridDataTable = New gdssDataSet1.AMMODataGridDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class GunReportInfoFormTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter
+        
+        Private _connection As Global.Oracle.ManagedDataAccess.Client.OracleConnection
+        
+        Private _transaction As Global.Oracle.ManagedDataAccess.Client.OracleTransaction
+        
+        Private _commandCollection() As Global.Oracle.ManagedDataAccess.Client.OracleCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Connection() As Global.Oracle.ManagedDataAccess.Client.OracleConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Transaction() As Global.Oracle.ManagedDataAccess.Client.OracleTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "GunReportInfoForm"
+            tableMapping.ColumnMappings.Add("CODE", "CODE")
+            tableMapping.ColumnMappings.Add("GNAME", "GNAME")
+            tableMapping.ColumnMappings.Add("GTYPE", "GTYPE")
+            tableMapping.ColumnMappings.Add("GNUMBER", "GNUMBER")
+            tableMapping.ColumnMappings.Add("GSTORE", "GSTORE")
+            tableMapping.ColumnMappings.Add("GSIZE", "GSIZE")
+            tableMapping.ColumnMappings.Add("GCLEANER", "GCLEANER")
+            tableMapping.ColumnMappings.Add("GAMMO", "GAMMO")
+            tableMapping.ColumnMappings.Add("SUPPLIER", "SUPPLIER")
+            tableMapping.ColumnMappings.Add("OWNER", "OWNER")
+            tableMapping.ColumnMappings.Add("OWNERSOURCE", "OWNERSOURCE")
+            tableMapping.ColumnMappings.Add("GRADE", "GRADE")
+            tableMapping.ColumnMappings.Add("DDATE", "DDATE")
+            tableMapping.ColumnMappings.Add("NBDOC", "NBDOC")
+            tableMapping.ColumnMappings.Add("NOTE", "NOTE")
+            tableMapping.ColumnMappings.Add("SDATE", "SDATE")
+            tableMapping.ColumnMappings.Add("UDATE", "UDATE")
+            tableMapping.ColumnMappings.Add("UUSER", "UUSER")
+            tableMapping.ColumnMappings.Add("MDATE", "MDATE")
+            tableMapping.ColumnMappings.Add("MUSER", "MUSER")
+            tableMapping.ColumnMappings.Add("LABEL", "LABEL")
+            tableMapping.ColumnMappings.Add("EXPR1", "EXPR1")
+            tableMapping.ColumnMappings.Add("EXPR2", "EXPR2")
+            tableMapping.ColumnMappings.Add("FNAME", "FNAME")
+            tableMapping.ColumnMappings.Add("LNAME", "LNAME")
+            tableMapping.ColumnMappings.Add("FATHER", "FATHER")
+            tableMapping.ColumnMappings.Add("DBIRTH", "DBIRTH")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection()
+            Me._connection.ConnectionString = Global.GDSSTEMPLATE.My.MySettings.Default.gdssConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(0) {}
+            Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT        TEAM.PERGUN.*, TEAM.N0ITEMS.LABEL, TEAM.GRADE.LABEL AS EXPR1, TEAM."& _ 
+                "N0OFFICE1.LABEL AS EXPR2, TEAM.IDCARD.FNAME, TEAM.IDCARD.LNAME, TEAM.IDCARD.FATH"& _ 
+                "ER, TEAM.IDCARD.DBIRTH"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.PERGUN INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                "& _ 
+                "         TEAM.N0ITEMS ON TEAM.PERGUN.GNAME = TEAM.N0ITEMS.ITEM INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"     "& _ 
+                "                    TEAM.GRADE ON TEAM.PERGUN.GRADE = TEAM.GRADE.CODE INNER JOIN"& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.N0OFFICE1 ON TEAM.PERGUN.SUPPLIER = TEAM.N0OFFIC"& _ 
+                "E1.CODE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.IDCARD ON TEAM.PERGUN.OWNER = "& _ 
+                "TEAM.IDCARD.CODE"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As gdssDataSet1.GunReportInfoFormDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As gdssDataSet1.GunReportInfoFormDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As gdssDataSet1.GunReportInfoFormDataTable = New gdssDataSet1.GunReportInfoFormDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function

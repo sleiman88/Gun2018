@@ -96,6 +96,12 @@
     <Compile Include="GiveGun.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GunInfo.Designer.vb">
+      <DependentUpon>GunInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GunInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LOGIN.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GiveGun.resx">
       <DependentUpon>GiveGun.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GunInfo.resx">
+      <DependentUpon>GunInfo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LOGIN.resx">
       <DependentUpon>LOGIN.vb</DependentUpon>

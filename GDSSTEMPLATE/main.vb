@@ -227,6 +227,18 @@
         End If
     End Sub
 
+    Private Sub Ammo_DataGridView_RowHeaderMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles Ammo_DataGridView.RowHeaderMouseDoubleClick
+        If Ammo_DataGridView.Item(0, e.RowIndex).Value IsNot Nothing Then
+            MsgBox(Ammo_DataGridView.Item(0, e.RowIndex).Value.ToString)
+        End If
+    End Sub
+
+    Private Sub Ammo_DataGridView_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles Ammo_DataGridView.CellContentDoubleClick
+        If Ammo_DataGridView.Item(0, e.RowIndex).Value IsNot Nothing Then
+            MsgBox(Ammo_DataGridView.Item(0, e.RowIndex).Value.ToString)
+        End If
+    End Sub
+
 
 
 
