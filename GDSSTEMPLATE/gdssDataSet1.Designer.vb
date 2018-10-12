@@ -418,7 +418,7 @@ Partial Public Class gdssDataSet1
         MyBase.Tables.Add(Me.tableN0itemsAndPerGUn)
         Me.tableAMMODataGrid = New AMMODataGridDataTable()
         MyBase.Tables.Add(Me.tableAMMODataGrid)
-        Me.tableGunReportInfoForm = New GunReportInfoFormDataTable()
+        Me.tableGunReportInfoForm = New GunReportInfoFormDataTable(false)
         MyBase.Tables.Add(Me.tableGunReportInfoForm)
     End Sub
     
@@ -538,6 +538,7 @@ Partial Public Class gdssDataSet1
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Sub InitExpressions()
         Me.IDCARD.FullNameColumn.Expression = "FName+' '+FATHER+' '+LNAME"
+        Me.GunReportInfoForm.Full_NameColumn.Expression = "FName+' '+FATHER+' '+LNAME"
     End Sub
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -3464,13 +3465,24 @@ Partial Public Class gdssDataSet1
         
         Private columnDBIRTH As Global.System.Data.DataColumn
         
+        Private columnFull_Name As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
+            Me.New(false)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal initExpressions As Boolean)
             MyBase.New
             Me.TableName = "GunReportInfoForm"
             Me.BeginInit
             Me.InitClass
+            If (initExpressions = true) Then
+                Me.InitExpressions
+            End If
             Me.EndInit
         End Sub
         
@@ -3716,6 +3728,14 @@ Partial Public Class gdssDataSet1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Full_NameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFull_Name
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3779,9 +3799,47 @@ Partial Public Class gdssDataSet1
                     ByVal FNAME As String,  _
                     ByVal LNAME As String,  _
                     ByVal FATHER As String,  _
+                    ByVal DBIRTH As Date,  _
+                    ByVal Full_Name As String) As GunReportInfoFormRow
+            Dim rowGunReportInfoFormRow As GunReportInfoFormRow = CType(Me.NewRow,GunReportInfoFormRow)
+            Dim columnValuesArray() As Object = New Object() {CODE, GNAME, GTYPE, GNUMBER, GSTORE, GSIZE, GCLEANER, GAMMO, SUPPLIER, OWNER, OWNERSOURCE, GRADE, DDATE, NBDOC, NOTE, SDATE, UDATE, UUSER, MDATE, MUSER, LABEL, EXPR1, EXPR2, FNAME, LNAME, FATHER, DBIRTH, Full_Name}
+            rowGunReportInfoFormRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowGunReportInfoFormRow)
+            Return rowGunReportInfoFormRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function AddGunReportInfoFormRow( _
+                    ByVal CODE As Decimal,  _
+                    ByVal GNAME As String,  _
+                    ByVal GTYPE As String,  _
+                    ByVal GNUMBER As String,  _
+                    ByVal GSTORE As Decimal,  _
+                    ByVal GSIZE As String,  _
+                    ByVal GCLEANER As Decimal,  _
+                    ByVal GAMMO As Decimal,  _
+                    ByVal SUPPLIER As Decimal,  _
+                    ByVal OWNER As Decimal,  _
+                    ByVal OWNERSOURCE As Decimal,  _
+                    ByVal GRADE As Decimal,  _
+                    ByVal DDATE As Date,  _
+                    ByVal NBDOC As String,  _
+                    ByVal NOTE As String,  _
+                    ByVal SDATE As Date,  _
+                    ByVal UDATE As Date,  _
+                    ByVal UUSER As String,  _
+                    ByVal MDATE As Date,  _
+                    ByVal MUSER As String,  _
+                    ByVal LABEL As String,  _
+                    ByVal EXPR1 As String,  _
+                    ByVal EXPR2 As String,  _
+                    ByVal FNAME As String,  _
+                    ByVal LNAME As String,  _
+                    ByVal FATHER As String,  _
                     ByVal DBIRTH As Date) As GunReportInfoFormRow
             Dim rowGunReportInfoFormRow As GunReportInfoFormRow = CType(Me.NewRow,GunReportInfoFormRow)
-            Dim columnValuesArray() As Object = New Object() {CODE, GNAME, GTYPE, GNUMBER, GSTORE, GSIZE, GCLEANER, GAMMO, SUPPLIER, OWNER, OWNERSOURCE, GRADE, DDATE, NBDOC, NOTE, SDATE, UDATE, UUSER, MDATE, MUSER, LABEL, EXPR1, EXPR2, FNAME, LNAME, FATHER, DBIRTH}
+            Dim columnValuesArray() As Object = New Object() {CODE, GNAME, GTYPE, GNUMBER, GSTORE, GSIZE, GCLEANER, GAMMO, SUPPLIER, OWNER, OWNERSOURCE, GRADE, DDATE, NBDOC, NOTE, SDATE, UDATE, UUSER, MDATE, MUSER, LABEL, EXPR1, EXPR2, FNAME, LNAME, FATHER, DBIRTH, Nothing}
             rowGunReportInfoFormRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowGunReportInfoFormRow)
             Return rowGunReportInfoFormRow
@@ -3831,6 +3889,7 @@ Partial Public Class gdssDataSet1
             Me.columnLNAME = MyBase.Columns("LNAME")
             Me.columnFATHER = MyBase.Columns("FATHER")
             Me.columnDBIRTH = MyBase.Columns("DBIRTH")
+            Me.columnFull_Name = MyBase.Columns("Full Name")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3890,6 +3949,8 @@ Partial Public Class gdssDataSet1
             MyBase.Columns.Add(Me.columnFATHER)
             Me.columnDBIRTH = New Global.System.Data.DataColumn("DBIRTH", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDBIRTH)
+            Me.columnFull_Name = New Global.System.Data.DataColumn("Full Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFull_Name)
             Me.columnCODE.ReadOnly = true
             Me.columnGNAME.AllowDBNull = false
             Me.columnGNAME.MaxLength = 7
@@ -3926,6 +3987,7 @@ Partial Public Class gdssDataSet1
             Me.columnFATHER.ReadOnly = true
             Me.columnFATHER.MaxLength = 20
             Me.columnDBIRTH.ReadOnly = true
+            Me.columnFull_Name.ReadOnly = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3945,6 +4007,12 @@ Partial Public Class gdssDataSet1
         Protected Overrides Function GetRowType() As Global.System.Type
             Return GetType(GunReportInfoFormRow)
         End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitExpressions()
+            Me.Full_NameColumn.Expression = "FName+' '+FATHER+' '+LNAME"
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -5646,6 +5714,21 @@ Partial Public Class gdssDataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Full_Name() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableGunReportInfoForm.Full_NameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Full Name' in table 'GunReportInfoForm' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableGunReportInfoForm.Full_NameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsCODENull() As Boolean
             Return Me.IsNull(Me.tableGunReportInfoForm.CODEColumn)
         End Function
@@ -5942,6 +6025,18 @@ Partial Public Class gdssDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetDBIRTHNull()
             Me(Me.tableGunReportInfoForm.DBIRTHColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsFull_NameNull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.Full_NameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetFull_NameNull()
+            Me(Me.tableGunReportInfoForm.Full_NameColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -11918,7 +12013,7 @@ Namespace gdssDataSet1TableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(0) {}
+            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(1) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        TEAM.PERGUN.*, TEAM.N0ITEMS.LABEL, TEAM.GRADE.LABEL AS EXPR1, TEAM."& _ 
@@ -11930,6 +12025,31 @@ Namespace gdssDataSet1TableAdapters
                 "E1.CODE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.IDCARD ON TEAM.PERGUN.OWNER = "& _ 
                 "TEAM.IDCARD.CODE"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT        TEAM.PERGUN.CODE, TEAM.PERGUN.GNAME, TEAM.PERGUN.GTYPE, TEAM.PERGUN"& _ 
+                ".GNUMBER, TEAM.PERGUN.GSTORE, TEAM.PERGUN.GSIZE, TEAM.PERGUN.GCLEANER, TEAM.PERG"& _ 
+                "UN.GAMMO, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.PERGUN.SUPPLIER, TEAM.PERGUN.OWNER, TE"& _ 
+                "AM.PERGUN.OWNERSOURCE, TEAM.PERGUN.GRADE, TEAM.PERGUN.DDATE, TEAM.PERGUN.NBDOC, "& _ 
+                "TEAM.PERGUN.NOTE, TEAM.PERGUN.SDATE, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.PERGUN.UDAT"& _ 
+                "E, TEAM.PERGUN.UUSER, TEAM.PERGUN.MDATE, TEAM.PERGUN.MUSER, TEAM.N0ITEMS.LABEL, "& _ 
+                "TEAM.GRADE.LABEL AS EXPR1, TEAM.N0OFFICE1.LABEL AS EXPR2, TEAM.IDCARD.FNAME, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&" "& _ 
+                "                        TEAM.IDCARD.LNAME, TEAM.IDCARD.FATHER, TEAM.IDCARD.DBIRT"& _ 
+                "H"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.PERGUN INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.N0ITEMS"& _ 
+                " ON TEAM.PERGUN.GNAME = TEAM.N0ITEMS.ITEM INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         T"& _ 
+                "EAM.GRADE ON TEAM.PERGUN.GRADE = TEAM.GRADE.CODE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                   "& _ 
+                "      TEAM.N0OFFICE1 ON TEAM.PERGUN.SUPPLIER = TEAM.N0OFFICE1.CODE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&" "& _ 
+                "                        TEAM.IDCARD ON TEAM.PERGUN.OWNER = TEAM.IDCARD.CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHE"& _ 
+                "RE        (TEAM.PERGUN.CODE = :code)"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":code"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "CODE"
+            Me._commandCollection(1).Parameters.Add(param)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11951,7 +12071,33 @@ Namespace gdssDataSet1TableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As gdssDataSet1.GunReportInfoFormDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As gdssDataSet1.GunReportInfoFormDataTable = New gdssDataSet1.GunReportInfoFormDataTable()
+            Dim dataTable As gdssDataSet1.GunReportInfoFormDataTable = New gdssDataSet1.GunReportInfoFormDataTable(true)
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByCode(ByVal dataTable As gdssDataSet1.GunReportInfoFormDataTable, ByVal code As Decimal) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(code,Decimal)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataByCode(ByVal code As Decimal) As gdssDataSet1.GunReportInfoFormDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(code,Decimal)
+            Dim dataTable As gdssDataSet1.GunReportInfoFormDataTable = New gdssDataSet1.GunReportInfoFormDataTable(true)
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
