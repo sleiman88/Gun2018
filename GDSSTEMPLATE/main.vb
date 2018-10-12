@@ -29,6 +29,8 @@
     End Sub
 
     Private Sub main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'GdssDataSet1.AMMODataGrid' table. You can move, or remove it, as needed.
+        ' Me.AMMODataGridTableAdapter.Fill(Me.GdssDataSet1.AMMODataGrid)
         'TODO: This line of code loads data into the 'GdssDataSet1.N0itemsAndPerGUn' table. You can move, or remove it, as needed.
         'Me.N0itemsAndPerGUnTableAdapter.Fill(Me.GdssDataSet1.N0itemsAndPerGUn)
         'TODO: This line of code loads data into the 'GdssDataSet1.IDCARD' table. You can move, or remove it, as needed.
@@ -206,6 +208,8 @@
             Person_Label.Visible = True
         Else
             Me.N0itemsAndPerGUnTableAdapter.FillByOwner(Me.GdssDataSet1.N0itemsAndPerGUn, ComboBoxPersons.SelectedValue)
+            Me.AMMODataGridTableAdapter.FillByMilitaryNB(Me.GdssDataSet1.AMMODataGrid, ComboBoxPersons.SelectedValue.ToString)
+
         End If
 
     End Sub

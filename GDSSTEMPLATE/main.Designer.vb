@@ -58,6 +58,11 @@ Partial Class main
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.N0itemsAndPerGUnTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.N0itemsAndPerGUnTableAdapter()
+        Me.AMMODataGridBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AMMODataGridTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.AMMODataGridTableAdapter()
+        Me.AMMOTRANSACTIONPKDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.YEARDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.QUANTITYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,6 +70,7 @@ Partial Class main
         CType(Me.Gun_DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.N0itemsAndPerGUnBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Ammo_DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AMMODataGridBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -334,9 +340,15 @@ Partial Class main
         '
         'Ammo_DataGridView
         '
+        Me.Ammo_DataGridView.AllowUserToAddRows = False
+        Me.Ammo_DataGridView.AllowUserToDeleteRows = False
+        Me.Ammo_DataGridView.AutoGenerateColumns = False
         Me.Ammo_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Ammo_DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.AMMOTRANSACTIONPKDataGridViewTextBoxColumn, Me.YEARDataGridViewTextBoxColumn, Me.QUANTITYDataGridViewTextBoxColumn})
+        Me.Ammo_DataGridView.DataSource = Me.AMMODataGridBindingSource
         Me.Ammo_DataGridView.Location = New System.Drawing.Point(989, 46)
         Me.Ammo_DataGridView.Name = "Ammo_DataGridView"
+        Me.Ammo_DataGridView.ReadOnly = True
         Me.Ammo_DataGridView.Size = New System.Drawing.Size(286, 368)
         Me.Ammo_DataGridView.TabIndex = 7
         '
@@ -362,6 +374,37 @@ Partial Class main
         '
         Me.N0itemsAndPerGUnTableAdapter.ClearBeforeFill = True
         '
+        'AMMODataGridBindingSource
+        '
+        Me.AMMODataGridBindingSource.DataMember = "AMMODataGrid"
+        Me.AMMODataGridBindingSource.DataSource = Me.GdssDataSet1
+        '
+        'AMMODataGridTableAdapter
+        '
+        Me.AMMODataGridTableAdapter.ClearBeforeFill = True
+        '
+        'AMMOTRANSACTIONPKDataGridViewTextBoxColumn
+        '
+        Me.AMMOTRANSACTIONPKDataGridViewTextBoxColumn.DataPropertyName = "AMMOTRANSACTION_PK"
+        Me.AMMOTRANSACTIONPKDataGridViewTextBoxColumn.HeaderText = "AMMOTRANSACTION_PK"
+        Me.AMMOTRANSACTIONPKDataGridViewTextBoxColumn.Name = "AMMOTRANSACTIONPKDataGridViewTextBoxColumn"
+        Me.AMMOTRANSACTIONPKDataGridViewTextBoxColumn.ReadOnly = True
+        Me.AMMOTRANSACTIONPKDataGridViewTextBoxColumn.Visible = False
+        '
+        'YEARDataGridViewTextBoxColumn
+        '
+        Me.YEARDataGridViewTextBoxColumn.DataPropertyName = "YEAR"
+        Me.YEARDataGridViewTextBoxColumn.HeaderText = "YEAR"
+        Me.YEARDataGridViewTextBoxColumn.Name = "YEARDataGridViewTextBoxColumn"
+        Me.YEARDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'QUANTITYDataGridViewTextBoxColumn
+        '
+        Me.QUANTITYDataGridViewTextBoxColumn.DataPropertyName = "QUANTITY"
+        Me.QUANTITYDataGridViewTextBoxColumn.HeaderText = "QUANTITY"
+        Me.QUANTITYDataGridViewTextBoxColumn.Name = "QUANTITYDataGridViewTextBoxColumn"
+        Me.QUANTITYDataGridViewTextBoxColumn.ReadOnly = True
+        '
         'main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -386,6 +429,7 @@ Partial Class main
         CType(Me.Gun_DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.N0itemsAndPerGUnBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Ammo_DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AMMODataGridBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -426,4 +470,9 @@ Partial Class main
     Friend WithEvents LABELDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CODEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SDATEDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents AMMODataGridBindingSource As BindingSource
+    Friend WithEvents AMMODataGridTableAdapter As gdssDataSet1TableAdapters.AMMODataGridTableAdapter
+    Friend WithEvents AMMOTRANSACTIONPKDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents YEARDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents QUANTITYDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class
