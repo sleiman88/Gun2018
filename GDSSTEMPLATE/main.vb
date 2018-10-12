@@ -209,4 +209,24 @@
         End If
 
     End Sub
+
+
+
+
+
+    'Private Sub DataGridView_TypeErreur_RowHeaderMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DataGridView_TypeErreur.RowHeaderMouseDoubleClick
+    '    If DataGridView_TypeErreur.Item(0, e.RowIndex).Value IsNot Nothing Then
+    '        callImgVieweWithEdit(DataGridView_TypeErreur.Item(0, e.RowIndex).Value.ToString(), IdScan)
+    '    End If
+    'End Sub
+
+
+    ''------------------------
+    'Private Sub DataGridView_good_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView_good.CellContentDoubleClick
+    '    If DataGridView_good.Item(0, e.RowIndex).Value IsNot Nothing Then
+    '        callImgVieweWithEdit(DataGridView_good.Item(0, e.RowIndex).Value.ToString(), IdScan)
+    '    End If
+    'End Sub
+
+
 End Class
