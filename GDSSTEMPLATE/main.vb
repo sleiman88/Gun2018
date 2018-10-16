@@ -226,10 +226,9 @@
     Private Sub Gun_DataGridView_RowHeaderMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles Gun_DataGridView.RowHeaderMouseDoubleClick
 
         If Gun_DataGridView.Item(1, e.RowIndex).Value IsNot Nothing Then
-            ' MsgBox(Gun_DataGridView.Item(1, e.RowIndex).Value.ToString)
-            'Dim gunInfo As GunInfo
-            'gunInfo = New GunInfo(Gun_DataGridView.Item(1, e.RowIndex).Value)
-            'gunInfo.Show()
+            Dim AgunInfo As GunInfo
+            AgunInfo = New GunInfo(Gun_DataGridView.Item(1, e.RowIndex).Value)
+            AgunInfo.Show()
         End If
     End Sub
 
