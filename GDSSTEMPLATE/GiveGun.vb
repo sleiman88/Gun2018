@@ -1,6 +1,7 @@
 ﻿Public Class GiveGun
     Public erreur As Boolean
     Public Muser As String
+    Public myMiliNb As String
     'Private Sub New()
     '    erreur = False
     '    ' This call is required by the designer.
@@ -29,6 +30,21 @@
         ' This call is required by the designer.
         InitializeComponent()
         Muser = user
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+
+    Public Sub New(user As String, MilitiNB As String)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+        myMiliNb = MilitiNB
+        Muser = user
+        TextBoxMilitNb.Text = myMiliNb
+
+        Me.IDCARDTableAdapter.FillByCODE(Me.GdssDataSet1.IDCARD, Decimal.Parse(myMiliNb))
+        FullName_TextBox.Text = ComboBoxPersons.GetItemText(ComboBoxPersons.SelectedItem)
+
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
