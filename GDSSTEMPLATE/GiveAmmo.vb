@@ -1,5 +1,6 @@
 ﻿Public Class GiveAmmo
     Public Muser As String
+    Public MymilitNB As String
     Private Sub GiveAmmo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Year_NumericUpDown.Value = Decimal.Parse(System.DateTime.UtcNow.Year)
         Year_TextBox.Text = Year_NumericUpDown.Value.ToString
@@ -24,6 +25,24 @@
         Year_NumericUpDown.Maximum = 3000
 
         Muser = user
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+    Public Sub New(user As String, militNb As String)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        Year_NumericUpDown.Minimum = 1
+        Year_NumericUpDown.Maximum = 3000
+
+        Muser = user
+        MymilitNB = militNb
+        TextBoxMilitNb.Text = MymilitNB
+
+        Me.IDCARDTableAdapter.FillByCODE(Me.GdssDataSet1.IDCARD, Decimal.Parse(MymilitNB))
+        FullName_TextBox.Text = ComboBoxPersons.GetItemText(ComboBoxPersons.SelectedItem)
 
         ' Add any initialization after the InitializeComponent() call.
 

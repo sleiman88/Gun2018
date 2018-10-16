@@ -254,6 +254,9 @@
             Person_Label.Visible = True
             TextBoxMilitNb.Focus()
         Else
+            Dim myGiveAmo As GiveAmmo
+            myGiveAmo = New GiveAmmo(Myuser, ComboBoxPersons.SelectedValue.ToString)
+            myGiveAmo.ShowDialog()
             'call give Gun  
         End If
     End Sub
