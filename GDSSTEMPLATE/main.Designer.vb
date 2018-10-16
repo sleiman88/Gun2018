@@ -55,14 +55,16 @@ Partial Class main
         Me.SDATEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.N0itemsAndPerGUnBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Ammo_DataGridView = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.N0itemsAndPerGUnTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.N0itemsAndPerGUnTableAdapter()
-        Me.AMMODataGridBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.AMMODataGridTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.AMMODataGridTableAdapter()
         Me.AMMOTRANSACTIONPKDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.YEARDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.QUANTITYDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AMMODataGridBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.N0itemsAndPerGUnTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.N0itemsAndPerGUnTableAdapter()
+        Me.AMMODataGridTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.AMMODataGridTableAdapter()
+        Me.GiveGun_Button = New System.Windows.Forms.Button()
+        Me.GiveAmmo_Button = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -145,7 +147,7 @@ Partial Class main
         '
         'SearchGun_Button
         '
-        Me.SearchGun_Button.Location = New System.Drawing.Point(463, 153)
+        Me.SearchGun_Button.Location = New System.Drawing.Point(477, 141)
         Me.SearchGun_Button.Name = "SearchGun_Button"
         Me.SearchGun_Button.Size = New System.Drawing.Size(160, 23)
         Me.SearchGun_Button.TabIndex = 18
@@ -352,37 +354,6 @@ Partial Class main
         Me.Ammo_DataGridView.Size = New System.Drawing.Size(286, 368)
         Me.Ammo_DataGridView.TabIndex = 7
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(680, 30)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(31, 13)
-        Me.Label1.TabIndex = 8
-        Me.Label1.Text = "Guns"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(986, 30)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(36, 13)
-        Me.Label2.TabIndex = 9
-        Me.Label2.Text = "Ammo"
-        '
-        'N0itemsAndPerGUnTableAdapter
-        '
-        Me.N0itemsAndPerGUnTableAdapter.ClearBeforeFill = True
-        '
-        'AMMODataGridBindingSource
-        '
-        Me.AMMODataGridBindingSource.DataMember = "AMMODataGrid"
-        Me.AMMODataGridBindingSource.DataSource = Me.GdssDataSet1
-        '
-        'AMMODataGridTableAdapter
-        '
-        Me.AMMODataGridTableAdapter.ClearBeforeFill = True
-        '
         'AMMOTRANSACTIONPKDataGridViewTextBoxColumn
         '
         Me.AMMOTRANSACTIONPKDataGridViewTextBoxColumn.DataPropertyName = "AMMOTRANSACTION_PK"
@@ -405,12 +376,63 @@ Partial Class main
         Me.QUANTITYDataGridViewTextBoxColumn.Name = "QUANTITYDataGridViewTextBoxColumn"
         Me.QUANTITYDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'AMMODataGridBindingSource
+        '
+        Me.AMMODataGridBindingSource.DataMember = "AMMODataGrid"
+        Me.AMMODataGridBindingSource.DataSource = Me.GdssDataSet1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(680, 30)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(31, 13)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "Guns"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(986, 30)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(36, 13)
+        Me.Label2.TabIndex = 9
+        Me.Label2.Text = "Ammo"
+        '
+        'N0itemsAndPerGUnTableAdapter
+        '
+        Me.N0itemsAndPerGUnTableAdapter.ClearBeforeFill = True
+        '
+        'AMMODataGridTableAdapter
+        '
+        Me.AMMODataGridTableAdapter.ClearBeforeFill = True
+        '
+        'GiveGun_Button
+        '
+        Me.GiveGun_Button.Location = New System.Drawing.Point(561, 288)
+        Me.GiveGun_Button.Name = "GiveGun_Button"
+        Me.GiveGun_Button.Size = New System.Drawing.Size(75, 23)
+        Me.GiveGun_Button.TabIndex = 19
+        Me.GiveGun_Button.Text = "Give Gun"
+        Me.GiveGun_Button.UseVisualStyleBackColor = True
+        '
+        'GiveAmmo_Button
+        '
+        Me.GiveAmmo_Button.Location = New System.Drawing.Point(561, 317)
+        Me.GiveAmmo_Button.Name = "GiveAmmo_Button"
+        Me.GiveAmmo_Button.Size = New System.Drawing.Size(75, 23)
+        Me.GiveAmmo_Button.TabIndex = 20
+        Me.GiveAmmo_Button.Text = "Give Ammo"
+        Me.GiveAmmo_Button.UseVisualStyleBackColor = True
+        '
         'main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1287, 431)
+        Me.Controls.Add(Me.GiveAmmo_Button)
         Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.GiveGun_Button)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Ammo_DataGridView)
         Me.Controls.Add(Me.Gun_DataGridView)
@@ -475,4 +497,6 @@ Partial Class main
     Friend WithEvents AMMOTRANSACTIONPKDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents YEARDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents QUANTITYDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents GiveGun_Button As Button
+    Friend WithEvents GiveAmmo_Button As Button
 End Class

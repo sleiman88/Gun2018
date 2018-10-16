@@ -39,6 +39,10 @@
     End Sub
 
     Private Sub TextBoxMilitNb_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxMilitNb.KeyPress
+        If TextBoxMilitNb.Text <> String.Empty Then
+            Person_Label.Visible = False
+
+        End If
         If e.KeyChar = ChrW(Keys.Enter) Then
             Try
 
@@ -241,6 +245,26 @@
     Private Sub Ammo_DataGridView_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles Ammo_DataGridView.CellContentDoubleClick
         If Ammo_DataGridView.Item(0, e.RowIndex).Value IsNot Nothing Then
             MsgBox(Ammo_DataGridView.Item(0, e.RowIndex).Value.ToString)
+        End If
+    End Sub
+
+    Private Sub GiveAmmo_Button_Click(sender As Object, e As EventArgs) Handles GiveAmmo_Button.Click
+        If FullName_TextBox.Text.Length = 0 Then
+            MsgBox("Please choose a person first !!")
+            Person_Label.Visible = True
+            TextBoxMilitNb.Focus()
+        Else
+            'call give Gun  
+        End If
+    End Sub
+
+    Private Sub GiveGun_Button_Click(sender As Object, e As EventArgs) Handles GiveGun_Button.Click
+        If FullName_TextBox.Text.Length = 0 Then
+            MsgBox("Please choose a person first !!")
+            Person_Label.Visible = True
+            TextBoxMilitNb.Focus()
+        Else
+            'call give Gun  
         End If
     End Sub
 
