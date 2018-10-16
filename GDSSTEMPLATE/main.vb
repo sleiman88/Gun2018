@@ -223,7 +223,7 @@
             'MsgBox(Gun_DataGridView.Item(1, e.RowIndex).Value.ToString)
             Dim AgunInfo As GunInfo
             AgunInfo = New GunInfo(Gun_DataGridView.Item(1, e.RowIndex).Value)
-            AgunInfo.Show()
+            AgunInfo.ShowDialog()
         End If
     End Sub
 
@@ -232,19 +232,23 @@
         If Gun_DataGridView.Item(1, e.RowIndex).Value IsNot Nothing Then
             Dim AgunInfo As GunInfo
             AgunInfo = New GunInfo(Gun_DataGridView.Item(1, e.RowIndex).Value)
-            AgunInfo.Show()
+            AgunInfo.ShowDialog()
         End If
     End Sub
 
     Private Sub Ammo_DataGridView_RowHeaderMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles Ammo_DataGridView.RowHeaderMouseDoubleClick
         If Ammo_DataGridView.Item(0, e.RowIndex).Value IsNot Nothing Then
-            MsgBox(Ammo_DataGridView.Item(0, e.RowIndex).Value.ToString)
+            Dim myAmmoInfo As AmmoInfo
+            myAmmoInfo = New AmmoInfo(Ammo_DataGridView.Item(0, e.RowIndex).Value)
+            myAmmoInfo.ShowDialog()
         End If
     End Sub
 
     Private Sub Ammo_DataGridView_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles Ammo_DataGridView.CellContentDoubleClick
         If Ammo_DataGridView.Item(0, e.RowIndex).Value IsNot Nothing Then
-            MsgBox(Ammo_DataGridView.Item(0, e.RowIndex).Value.ToString)
+            Dim myAmmoInfo As AmmoInfo
+            myAmmoInfo = New AmmoInfo(Ammo_DataGridView.Item(0, e.RowIndex).Value)
+            myAmmoInfo.ShowDialog()
         End If
     End Sub
 
