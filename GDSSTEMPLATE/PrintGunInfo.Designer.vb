@@ -23,35 +23,35 @@ Partial Class PrintGunInfo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.GdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.GunReportInfoFormBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.GunReportInfoFormTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.GunReportInfoFormTableAdapter()
-        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GunReportInfoFormBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'ReportViewer1
+        'GunReportInfoFormBindingSource
         '
-        ReportDataSource2.Name = "DataSet1"
-        ReportDataSource2.Value = Me.GunReportInfoFormBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "GDSSTEMPLATE.Report1.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(12, 12)
-        Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(883, 391)
-        Me.ReportViewer1.TabIndex = 0
+        Me.GunReportInfoFormBindingSource.DataMember = "GunReportInfoForm"
+        Me.GunReportInfoFormBindingSource.DataSource = Me.GdssDataSet1
         '
         'GdssDataSet1
         '
         Me.GdssDataSet1.DataSetName = "gdssDataSet1"
         Me.GdssDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'GunReportInfoFormBindingSource
+        'ReportViewer1
         '
-        Me.GunReportInfoFormBindingSource.DataMember = "GunReportInfoForm"
-        Me.GunReportInfoFormBindingSource.DataSource = Me.GdssDataSet1
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.GunReportInfoFormBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "GDSSTEMPLATE.Report2.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(12, 12)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.Size = New System.Drawing.Size(883, 391)
+        Me.ReportViewer1.TabIndex = 0
         '
         'GunReportInfoFormTableAdapter
         '
@@ -67,8 +67,8 @@ Partial Class PrintGunInfo
         Me.MinimizeBox = False
         Me.Name = "PrintGunInfo"
         Me.Text = "PrintGunInfo"
-        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GunReportInfoFormBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
