@@ -73,6 +73,7 @@ Partial Class GunInfo
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Print_Button = New System.Windows.Forms.Button()
         CODELabel = New System.Windows.Forms.Label()
         GTYPELabel = New System.Windows.Forms.Label()
         GNUMBERLabel = New System.Windows.Forms.Label()
@@ -106,9 +107,9 @@ Partial Class GunInfo
         CODELabel.AutoSize = True
         CODELabel.Location = New System.Drawing.Point(25, 512)
         CODELabel.Name = "CODELabel"
-        CODELabel.Size = New System.Drawing.Size(39, 13)
+        CODELabel.Size = New System.Drawing.Size(50, 13)
         CODELabel.TabIndex = 1
-        CODELabel.Text = "CODE:"
+        CODELabel.Text = "CODEpk:"
         CODELabel.Visible = False
         '
         'GTYPELabel
@@ -435,7 +436,7 @@ Partial Class GunInfo
         '
         'FullName_TextBox
         '
-        Me.FullName_TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.GunReportInfoFormBindingSource, "Full Name", True))
+        Me.FullName_TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.GunReportInfoFormBindingSource, "FullName", True))
         Me.FullName_TextBox.Enabled = False
         Me.FullName_TextBox.Location = New System.Drawing.Point(112, 13)
         Me.FullName_TextBox.Name = "FullName_TextBox"
@@ -577,11 +578,21 @@ Partial Class GunInfo
         Me.Panel4.Size = New System.Drawing.Size(334, 159)
         Me.Panel4.TabIndex = 66
         '
+        'Print_Button
+        '
+        Me.Print_Button.Location = New System.Drawing.Point(610, 608)
+        Me.Print_Button.Name = "Print_Button"
+        Me.Print_Button.Size = New System.Drawing.Size(75, 23)
+        Me.Print_Button.TabIndex = 67
+        Me.Print_Button.Text = "Print"
+        Me.Print_Button.UseVisualStyleBackColor = True
+        '
         'GunInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(696, 598)
+        Me.ClientSize = New System.Drawing.Size(696, 634)
+        Me.Controls.Add(Me.Print_Button)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
@@ -591,6 +602,8 @@ Partial Class GunInfo
         Me.Controls.Add(NOTELabel)
         Me.Controls.Add(Me.NOTETextBox)
         Me.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.GunReportInfoFormBindingSource, "SDATE", True))
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "GunInfo"
         Me.Text = "GunInfo"
         CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -638,4 +651,5 @@ Partial Class GunInfo
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel4 As Panel
+    Friend WithEvents Print_Button As Button
 End Class

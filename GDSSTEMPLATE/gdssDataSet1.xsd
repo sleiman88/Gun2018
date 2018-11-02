@@ -1239,7 +1239,7 @@ WHERE        (TEAM.AMMO.AMMOTRANSACTION_PK = :PK)</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="DBIRTH" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDBIRTH" msprop:Generator_ColumnPropNameInRow="DBIRTH" msprop:Generator_ColumnPropNameInTable="DBIRTHColumn" msprop:Generator_UserColumnName="DBIRTH" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Full_x0020_Name" msdata:ReadOnly="true" msdata:Expression="FName+' '+FATHER+' '+LNAME" msprop:Generator_ColumnVarNameInTable="columnFull_Name" msprop:Generator_ColumnPropNameInRow="Full_Name" msprop:Generator_ColumnPropNameInTable="Full_NameColumn" msprop:Generator_UserColumnName="Full Name" type="xs:string" minOccurs="0" />
+              <xs:element name="FullName" msdata:ReadOnly="true" msdata:Expression="FName+' '+FATHER+' '+LNAME" msprop:Generator_ColumnVarNameInTable="columnFullName" msprop:Generator_ColumnPropNameInRow="FullName" msprop:Generator_ColumnPropNameInTable="FullNameColumn" msprop:Generator_UserColumnName="FullName" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

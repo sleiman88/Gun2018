@@ -570,7 +570,7 @@ Partial Public Class gdssDataSet1
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Sub InitExpressions()
         Me.IDCARD.FullNameColumn.Expression = "FName+' '+FATHER+' '+LNAME"
-        Me.GunReportInfoForm.Full_NameColumn.Expression = "FName+' '+FATHER+' '+LNAME"
+        Me.GunReportInfoForm.FullNameColumn.Expression = "FName+' '+FATHER+' '+LNAME"
         Me.AmmoReportInfo.FullNameColumn.Expression = "FName+' '+FATHER+' '+LNAME"
     End Sub
     
@@ -3501,7 +3501,7 @@ Partial Public Class gdssDataSet1
         
         Private columnDBIRTH As Global.System.Data.DataColumn
         
-        Private columnFull_Name As Global.System.Data.DataColumn
+        Private columnFullName As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -3765,9 +3765,9 @@ Partial Public Class gdssDataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Full_NameColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property FullNameColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnFull_Name
+                Return Me.columnFullName
             End Get
         End Property
         
@@ -3836,9 +3836,9 @@ Partial Public Class gdssDataSet1
                     ByVal LNAME As String,  _
                     ByVal FATHER As String,  _
                     ByVal DBIRTH As Date,  _
-                    ByVal Full_Name As String) As GunReportInfoFormRow
+                    ByVal FullName As String) As GunReportInfoFormRow
             Dim rowGunReportInfoFormRow As GunReportInfoFormRow = CType(Me.NewRow,GunReportInfoFormRow)
-            Dim columnValuesArray() As Object = New Object() {CODE, GNAME, GTYPE, GNUMBER, GSTORE, GSIZE, GCLEANER, GAMMO, SUPPLIER, OWNER, OWNERSOURCE, GRADE, DDATE, NBDOC, NOTE, SDATE, UDATE, UUSER, MDATE, MUSER, LABEL, EXPR1, EXPR2, FNAME, LNAME, FATHER, DBIRTH, Full_Name}
+            Dim columnValuesArray() As Object = New Object() {CODE, GNAME, GTYPE, GNUMBER, GSTORE, GSIZE, GCLEANER, GAMMO, SUPPLIER, OWNER, OWNERSOURCE, GRADE, DDATE, NBDOC, NOTE, SDATE, UDATE, UUSER, MDATE, MUSER, LABEL, EXPR1, EXPR2, FNAME, LNAME, FATHER, DBIRTH, FullName}
             rowGunReportInfoFormRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowGunReportInfoFormRow)
             Return rowGunReportInfoFormRow
@@ -3925,7 +3925,7 @@ Partial Public Class gdssDataSet1
             Me.columnLNAME = MyBase.Columns("LNAME")
             Me.columnFATHER = MyBase.Columns("FATHER")
             Me.columnDBIRTH = MyBase.Columns("DBIRTH")
-            Me.columnFull_Name = MyBase.Columns("Full Name")
+            Me.columnFullName = MyBase.Columns("FullName")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3985,8 +3985,8 @@ Partial Public Class gdssDataSet1
             MyBase.Columns.Add(Me.columnFATHER)
             Me.columnDBIRTH = New Global.System.Data.DataColumn("DBIRTH", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDBIRTH)
-            Me.columnFull_Name = New Global.System.Data.DataColumn("Full Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnFull_Name)
+            Me.columnFullName = New Global.System.Data.DataColumn("FullName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFullName)
             Me.columnCODE.ReadOnly = true
             Me.columnGNAME.AllowDBNull = false
             Me.columnGNAME.MaxLength = 7
@@ -4023,7 +4023,7 @@ Partial Public Class gdssDataSet1
             Me.columnFATHER.ReadOnly = true
             Me.columnFATHER.MaxLength = 20
             Me.columnDBIRTH.ReadOnly = true
-            Me.columnFull_Name.ReadOnly = true
+            Me.columnFullName.ReadOnly = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4047,7 +4047,7 @@ Partial Public Class gdssDataSet1
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitExpressions()
-            Me.Full_NameColumn.Expression = "FName+' '+FATHER+' '+LNAME"
+            Me.FullNameColumn.Expression = "FName+' '+FATHER+' '+LNAME"
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6361,16 +6361,16 @@ Partial Public Class gdssDataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Full_Name() As String
+        Public Property FullName() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableGunReportInfoForm.Full_NameColumn),String)
+                    Return CType(Me(Me.tableGunReportInfoForm.FullNameColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Full Name' in table 'GunReportInfoForm' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'FullName' in table 'GunReportInfoForm' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableGunReportInfoForm.Full_NameColumn) = value
+                Me(Me.tableGunReportInfoForm.FullNameColumn) = value
             End Set
         End Property
         
@@ -6676,14 +6676,14 @@ Partial Public Class gdssDataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsFull_NameNull() As Boolean
-            Return Me.IsNull(Me.tableGunReportInfoForm.Full_NameColumn)
+        Public Function IsFullNameNull() As Boolean
+            Return Me.IsNull(Me.tableGunReportInfoForm.FullNameColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetFull_NameNull()
-            Me(Me.tableGunReportInfoForm.Full_NameColumn) = Global.System.Convert.DBNull
+        Public Sub SetFullNameNull()
+            Me(Me.tableGunReportInfoForm.FullNameColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

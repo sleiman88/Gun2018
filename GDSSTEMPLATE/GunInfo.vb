@@ -16,4 +16,13 @@
         Me.GunReportInfoFormTableAdapter.FillByCode(Me.GdssDataSet1.GunReportInfoForm, mycode)
 
     End Sub
+
+    Private Sub Print_Button_Click(sender As Object, e As EventArgs) Handles Print_Button.Click
+        'Call report viwer
+        Me.GunReportInfoFormTableAdapter.FillByCode(Me.GdssDataSet1.GunReportInfoForm, mycode)
+        Dim MyPrintGunIfo As PrintGunInfo
+        MyPrintGunIfo = New PrintGunInfo(mycode, Me)
+        MyPrintGunIfo.ShowDialog()
+        MyPrintGunIfo.ReportViewer1.RefreshReport()
+    End Sub
 End Class
