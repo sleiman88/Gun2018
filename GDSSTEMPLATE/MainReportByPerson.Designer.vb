@@ -22,8 +22,10 @@ Partial Class MainReportByPerson
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.SearchGun_Button = New System.Windows.Forms.Button()
+        Me.Button_ReportAmoo = New System.Windows.Forms.Button()
+        Me.Button_ReportGun = New System.Windows.Forms.Button()
         Me.FullName_TextBox = New System.Windows.Forms.TextBox()
         Me.Person_Label = New System.Windows.Forms.Label()
         Me.LName_CheckBox = New System.Windows.Forms.CheckBox()
@@ -34,17 +36,29 @@ Partial Class MainReportByPerson
         Me.TextBox_FATHER = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ComboBoxPersons = New System.Windows.Forms.ComboBox()
+        Me.IDCARDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox_FName = New System.Windows.Forms.TextBox()
         Me.TextBoxMilitNb = New System.Windows.Forms.TextBox()
+        Me.IDCARDTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.IDCARDTableAdapter()
+        Me.N0itemsAndPerGUnBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.N0itemsAndPerGUnTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.N0itemsAndPerGUnTableAdapter()
+        Me.GunReportInfoFormBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GunReportInfoFormTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.GunReportInfoFormTableAdapter()
         Me.Panel2.SuspendLayout()
+        CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.N0itemsAndPerGUnBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GunReportInfoFormBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.SearchGun_Button)
+        Me.Panel2.Controls.Add(Me.Button_ReportAmoo)
+        Me.Panel2.Controls.Add(Me.Button_ReportGun)
         Me.Panel2.Controls.Add(Me.FullName_TextBox)
         Me.Panel2.Controls.Add(Me.Person_Label)
         Me.Panel2.Controls.Add(Me.LName_CheckBox)
@@ -64,14 +78,23 @@ Partial Class MainReportByPerson
         Me.Panel2.Size = New System.Drawing.Size(656, 181)
         Me.Panel2.TabIndex = 6
         '
-        'SearchGun_Button
+        'Button_ReportAmoo
         '
-        Me.SearchGun_Button.Location = New System.Drawing.Point(477, 141)
-        Me.SearchGun_Button.Name = "SearchGun_Button"
-        Me.SearchGun_Button.Size = New System.Drawing.Size(160, 23)
-        Me.SearchGun_Button.TabIndex = 18
-        Me.SearchGun_Button.Text = "Search Guns and Ammo"
-        Me.SearchGun_Button.UseVisualStyleBackColor = True
+        Me.Button_ReportAmoo.Location = New System.Drawing.Point(429, 153)
+        Me.Button_ReportAmoo.Name = "Button_ReportAmoo"
+        Me.Button_ReportAmoo.Size = New System.Drawing.Size(128, 23)
+        Me.Button_ReportAmoo.TabIndex = 20
+        Me.Button_ReportAmoo.Text = "Print Report Ammo"
+        Me.Button_ReportAmoo.UseVisualStyleBackColor = True
+        '
+        'Button_ReportGun
+        '
+        Me.Button_ReportGun.Location = New System.Drawing.Point(287, 153)
+        Me.Button_ReportGun.Name = "Button_ReportGun"
+        Me.Button_ReportGun.Size = New System.Drawing.Size(118, 23)
+        Me.Button_ReportGun.TabIndex = 19
+        Me.Button_ReportGun.Text = "Print Report Guns"
+        Me.Button_ReportGun.UseVisualStyleBackColor = True
         '
         'FullName_TextBox
         '
@@ -159,6 +182,7 @@ Partial Class MainReportByPerson
         '
         'ComboBoxPersons
         '
+        Me.ComboBoxPersons.DataSource = Me.IDCARDBindingSource
         Me.ComboBoxPersons.DisplayMember = "FullName"
         Me.ComboBoxPersons.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxPersons.FormattingEnabled = True
@@ -167,6 +191,16 @@ Partial Class MainReportByPerson
         Me.ComboBoxPersons.Size = New System.Drawing.Size(201, 21)
         Me.ComboBoxPersons.TabIndex = 4
         Me.ComboBoxPersons.ValueMember = "CODE"
+        '
+        'IDCARDBindingSource
+        '
+        Me.IDCARDBindingSource.DataMember = "IDCARD"
+        Me.IDCARDBindingSource.DataSource = Me.GdssDataSet1
+        '
+        'GdssDataSet1
+        '
+        Me.GdssDataSet1.DataSetName = "gdssDataSet1"
+        Me.GdssDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label4
         '
@@ -201,23 +235,48 @@ Partial Class MainReportByPerson
         Me.TextBoxMilitNb.Size = New System.Drawing.Size(100, 20)
         Me.TextBoxMilitNb.TabIndex = 0
         '
+        'IDCARDTableAdapter
+        '
+        Me.IDCARDTableAdapter.ClearBeforeFill = True
+        '
+        'N0itemsAndPerGUnBindingSource
+        '
+        Me.N0itemsAndPerGUnBindingSource.DataMember = "N0itemsAndPerGUn"
+        Me.N0itemsAndPerGUnBindingSource.DataSource = Me.GdssDataSet1
+        '
+        'N0itemsAndPerGUnTableAdapter
+        '
+        Me.N0itemsAndPerGUnTableAdapter.ClearBeforeFill = True
+        '
+        'GunReportInfoFormBindingSource
+        '
+        Me.GunReportInfoFormBindingSource.DataMember = "GunReportInfoForm"
+        Me.GunReportInfoFormBindingSource.DataSource = Me.GdssDataSet1
+        '
+        'GunReportInfoFormTableAdapter
+        '
+        Me.GunReportInfoFormTableAdapter.ClearBeforeFill = True
+        '
         'MainReportByPerson
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(780, 310)
+        Me.ClientSize = New System.Drawing.Size(725, 220)
         Me.Controls.Add(Me.Panel2)
         Me.MaximizeBox = False
         Me.Name = "MainReportByPerson"
         Me.Text = "MainReportByPerson"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.N0itemsAndPerGUnBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GunReportInfoFormBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents SearchGun_Button As Button
     Friend WithEvents FullName_TextBox As TextBox
     Friend WithEvents Person_Label As Label
     Friend WithEvents LName_CheckBox As CheckBox
@@ -232,4 +291,13 @@ Partial Class MainReportByPerson
     Friend WithEvents Label3 As Label
     Friend WithEvents TextBox_FName As TextBox
     Friend WithEvents TextBoxMilitNb As TextBox
+    Friend WithEvents GdssDataSet1 As gdssDataSet1
+    Friend WithEvents IDCARDBindingSource As BindingSource
+    Friend WithEvents IDCARDTableAdapter As gdssDataSet1TableAdapters.IDCARDTableAdapter
+    Friend WithEvents N0itemsAndPerGUnBindingSource As BindingSource
+    Friend WithEvents N0itemsAndPerGUnTableAdapter As gdssDataSet1TableAdapters.N0itemsAndPerGUnTableAdapter
+    Friend WithEvents Button_ReportAmoo As Button
+    Friend WithEvents Button_ReportGun As Button
+    Friend WithEvents GunReportInfoFormBindingSource As BindingSource
+    Friend WithEvents GunReportInfoFormTableAdapter As gdssDataSet1TableAdapters.GunReportInfoFormTableAdapter
 End Class

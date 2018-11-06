@@ -37,7 +37,7 @@
         ' Me.IDCARDTableAdapter.Fill(Me.GdssDataSet1.IDCARD)
 
     End Sub
-
+    'search person form 
     Private Sub TextBoxMilitNb_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxMilitNb.KeyPress
         If TextBoxMilitNb.Text <> String.Empty Then
             Person_Label.Visible = False
@@ -65,7 +65,7 @@
             End If
         End If
     End Sub
-
+    'search person form 
     Private Sub ComboBoxPersons_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxPersons.SelectedIndexChanged
         FullName_TextBox.Text = ComboBoxPersons.GetItemText(ComboBoxPersons.SelectedItem)
         If FullName_TextBox.Text <> String.Empty Then
@@ -73,7 +73,7 @@
 
         End If
     End Sub
-
+    'search person form 
     Private Sub FName_CheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles FName_CheckBox.CheckedChanged
         If FName_CheckBox.Checked = True Then
             TextBox_FName.Enabled = True
@@ -82,7 +82,7 @@
             TextBox_FName.Text = ""
         End If
     End Sub
-
+    'search person form 
     Private Sub FATHER_CheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles FATHER_CheckBox.CheckedChanged
         If FATHER_CheckBox.Checked = True Then
             TextBox_FATHER.Enabled = True
@@ -92,7 +92,7 @@
 
         End If
     End Sub
-
+    'search person form 
     Private Sub LName_CheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles LName_CheckBox.CheckedChanged
         If LName_CheckBox.Checked = True Then
             TextBoxLName.Enabled = True
@@ -101,7 +101,7 @@
             TextBoxLName.Text = ""
         End If
     End Sub
-
+    'search person form 
     Private Sub TextBox_FATHER_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox_FATHER.KeyPress
         If e.KeyChar = ChrW(Keys.Enter) Then
             TextBoxMilitNb.Text = ""
@@ -135,7 +135,7 @@
 
         End If
     End Sub
-
+    'search person form 
     Private Sub TextBoxLName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxLName.KeyPress
         If e.KeyChar = ChrW(Keys.Enter) Then
             TextBoxMilitNb.Text = ""
@@ -169,7 +169,7 @@
 
         End If
     End Sub
-
+    'search person form 
     Private Sub TextBox_FName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox_FName.KeyPress
         If e.KeyChar = ChrW(Keys.Enter) Then
             TextBoxMilitNb.Text = ""
@@ -205,7 +205,7 @@
             End If
         End If
     End Sub
-
+    'search person form 
     Private Sub SearchGun_Button_Click(sender As Object, e As EventArgs) Handles SearchGun_Button.Click
         If FullName_TextBox.Text.Length = 0 Then
             MsgBox("Please a choose a person first !!!")
