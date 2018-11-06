@@ -13183,7 +13183,7 @@ Namespace gdssDataSet1TableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(1) {}
+            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(2) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        TEAM.PERGUN.*, TEAM.N0ITEMS.LABEL, TEAM.GRADE.LABEL AS EXPR1, TEAM."& _ 
@@ -13220,6 +13220,31 @@ Namespace gdssDataSet1TableAdapters
             param.IsNullable = true
             param.SourceColumn = "CODE"
             Me._commandCollection(1).Parameters.Add(param)
+            Me._commandCollection(2) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "SELECT        TEAM.PERGUN.CODE, TEAM.PERGUN.GNAME, TEAM.PERGUN.GTYPE, TEAM.PERGUN"& _ 
+                ".GNUMBER, TEAM.PERGUN.GSTORE, TEAM.PERGUN.GSIZE, TEAM.PERGUN.GCLEANER, TEAM.PERG"& _ 
+                "UN.GAMMO, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.PERGUN.SUPPLIER, TEAM.PERGUN.OWNER, TE"& _ 
+                "AM.PERGUN.OWNERSOURCE, TEAM.PERGUN.GRADE, TEAM.PERGUN.DDATE, TEAM.PERGUN.NBDOC, "& _ 
+                "TEAM.PERGUN.NOTE, TEAM.PERGUN.SDATE, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.PERGUN.UDAT"& _ 
+                "E, TEAM.PERGUN.UUSER, TEAM.PERGUN.MDATE, TEAM.PERGUN.MUSER, TEAM.N0ITEMS.LABEL, "& _ 
+                "TEAM.GRADE.LABEL AS EXPR1, TEAM.N0OFFICE1.LABEL AS EXPR2, TEAM.IDCARD.FNAME, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&" "& _ 
+                "                        TEAM.IDCARD.LNAME, TEAM.IDCARD.FATHER, TEAM.IDCARD.DBIRT"& _ 
+                "H"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.PERGUN INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.N0ITEMS"& _ 
+                " ON TEAM.PERGUN.GNAME = TEAM.N0ITEMS.ITEM INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         T"& _ 
+                "EAM.GRADE ON TEAM.PERGUN.GRADE = TEAM.GRADE.CODE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                   "& _ 
+                "      TEAM.N0OFFICE1 ON TEAM.PERGUN.SUPPLIER = TEAM.N0OFFICE1.CODE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&" "& _ 
+                "                        TEAM.IDCARD ON TEAM.PERGUN.OWNER = TEAM.IDCARD.CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHE"& _ 
+                "RE        (TEAM.PERGUN.OWNER = :Owner)"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":Owner"
+            param.DbType = Global.System.Data.DbType.[Decimal]
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.[Decimal]
+            param.Size = 22
+            param.IsNullable = true
+            param.SourceColumn = "OWNER"
+            Me._commandCollection(2).Parameters.Add(param)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13267,6 +13292,32 @@ Namespace gdssDataSet1TableAdapters
         Public Overloads Overridable Function GetDataByCode(ByVal code As Decimal) As gdssDataSet1.GunReportInfoFormDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(code,Decimal)
+            Dim dataTable As gdssDataSet1.GunReportInfoFormDataTable = New gdssDataSet1.GunReportInfoFormDataTable(true)
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByOwner(ByVal dataTable As gdssDataSet1.GunReportInfoFormDataTable, ByVal Owner As Decimal) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(Owner,Decimal)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataByOwner(ByVal Owner As Decimal) As gdssDataSet1.GunReportInfoFormDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(Owner,Decimal)
             Dim dataTable As gdssDataSet1.GunReportInfoFormDataTable = New gdssDataSet1.GunReportInfoFormDataTable(true)
             Me.Adapter.Fill(dataTable)
             Return dataTable

@@ -23,7 +23,7 @@ Partial Class PrintAmmoInfo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.gdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
         Me.AmmoReportInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -34,9 +34,9 @@ Partial Class PrintAmmoInfo
         '
         'ReportViewer1
         '
-        ReportDataSource1.Name = "DataSet1"
-        ReportDataSource1.Value = Me.AmmoReportInfoBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        ReportDataSource2.Name = "DataSet1"
+        ReportDataSource2.Value = Me.AmmoReportInfoBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "GDSSTEMPLATE.AmmoReport.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(1, 24)
         Me.ReportViewer1.Name = "ReportViewer1"
@@ -63,6 +63,7 @@ Partial Class PrintAmmoInfo
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(727, 647)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.MaximizeBox = False
         Me.Name = "PrintAmmoInfo"
         Me.Text = "PrintAmmoInfo"
         CType(Me.gdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()

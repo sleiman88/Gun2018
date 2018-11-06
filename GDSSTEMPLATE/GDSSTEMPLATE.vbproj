@@ -124,6 +124,12 @@
     <Compile Include="main.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MainReportByPerson.Designer.vb">
+      <DependentUpon>MainReportByPerson.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainReportByPerson.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -149,6 +155,18 @@
       <DependentUpon>PrintGunInfo.vb</DependentUpon>
     </Compile>
     <Compile Include="PrintGunInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportAmmoByPerson.Designer.vb">
+      <DependentUpon>ReportAmmoByPerson.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportAmmoByPerson.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportGunByPerson.Designer.vb">
+      <DependentUpon>ReportGunByPerson.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportGunByPerson.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="serversettings.Designer.vb">
@@ -177,6 +195,9 @@
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainReportByPerson.resx">
+      <DependentUpon>MainReportByPerson.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -191,6 +212,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="deliveryGunReport.rdlc" />
     <EmbeddedResource Include="AmmoReport.rdlc" />
+    <EmbeddedResource Include="ReportAmmoByPerson.resx">
+      <DependentUpon>ReportAmmoByPerson.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportGunByPerson.resx">
+      <DependentUpon>ReportGunByPerson.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="serversettings.resx">
       <DependentUpon>serversettings.vb</DependentUpon>
     </EmbeddedResource>

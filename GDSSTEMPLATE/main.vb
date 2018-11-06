@@ -282,6 +282,14 @@
 
 
 
+    Private Sub ByPersonToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ByPersonToolStripMenuItem.Click
+        Dim MyMainReportByPerson As MainReportByPerson
+        MyMainReportByPerson = New MainReportByPerson()
+        MyMainReportByPerson.ShowDialog()
+    End Sub
+
+
+
 
 
     'Private Sub DataGridView_TypeErreur_RowHeaderMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DataGridView_TypeErreur.RowHeaderMouseDoubleClick

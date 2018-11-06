@@ -94,32 +94,32 @@ Partial Class main
         'GiveGunToolStripMenuItem
         '
         Me.GiveGunToolStripMenuItem.Name = "GiveGunToolStripMenuItem"
-        Me.GiveGunToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.GiveGunToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.GiveGunToolStripMenuItem.Text = "Give Gun"
         '
         'GiveAmmoToolStripMenuItem
         '
         Me.GiveAmmoToolStripMenuItem.Name = "GiveAmmoToolStripMenuItem"
-        Me.GiveAmmoToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.GiveAmmoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.GiveAmmoToolStripMenuItem.Text = "Give ammo"
         '
         'ReportsToolStripMenuItem
         '
         Me.ReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ByPersonToolStripMenuItem})
         Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
-        Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ReportsToolStripMenuItem.Text = "Reports"
         '
         'ByPersonToolStripMenuItem
         '
         Me.ByPersonToolStripMenuItem.Name = "ByPersonToolStripMenuItem"
-        Me.ByPersonToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.ByPersonToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ByPersonToolStripMenuItem.Text = "By Person"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'Panel2
@@ -439,6 +439,7 @@ Partial Class main
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.MaximizeBox = False
         Me.Name = "main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main"
