@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class PrintGunInfo
+Partial Class PrintAmmoInfo
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -24,72 +24,55 @@ Partial Class PrintGunInfo
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.GunReportInfoFormBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.GunReportInfoFormTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.GunReportInfoFormTableAdapter()
+        Me.gdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
         Me.AmmoReportInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AmmoReportInfoTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.AmmoReportInfoTableAdapter()
-        CType(Me.GunReportInfoFormBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AmmoReportInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'GunReportInfoFormBindingSource
-        '
-        Me.GunReportInfoFormBindingSource.DataMember = "GunReportInfoForm"
-        Me.GunReportInfoFormBindingSource.DataSource = Me.GdssDataSet1
-        '
-        'GdssDataSet1
-        '
-        Me.GdssDataSet1.DataSetName = "gdssDataSet1"
-        Me.GdssDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
         ReportDataSource1.Name = "DataSet1"
-        ReportDataSource1.Value = Me.GunReportInfoFormBindingSource
+        ReportDataSource1.Value = Me.AmmoReportInfoBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "GDSSTEMPLATE.deliveryGunReport.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(12, 12)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "GDSSTEMPLATE.AmmoReport.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(1, 24)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(883, 391)
+        Me.ReportViewer1.Size = New System.Drawing.Size(723, 547)
         Me.ReportViewer1.TabIndex = 0
         '
-        'GunReportInfoFormTableAdapter
+        'gdssDataSet1
         '
-        Me.GunReportInfoFormTableAdapter.ClearBeforeFill = True
+        Me.gdssDataSet1.DataSetName = "gdssDataSet1"
+        Me.gdssDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'AmmoReportInfoBindingSource
         '
         Me.AmmoReportInfoBindingSource.DataMember = "AmmoReportInfo"
-        Me.AmmoReportInfoBindingSource.DataSource = Me.GdssDataSet1
+        Me.AmmoReportInfoBindingSource.DataSource = Me.gdssDataSet1
         '
         'AmmoReportInfoTableAdapter
         '
         Me.AmmoReportInfoTableAdapter.ClearBeforeFill = True
         '
-        'PrintGunInfo
+        'PrintAmmoInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(927, 471)
+        Me.ClientSize = New System.Drawing.Size(727, 647)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
-        Me.Name = "PrintGunInfo"
-        Me.Text = "PrintGunInfo"
-        CType(Me.GunReportInfoFormBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Name = "PrintAmmoInfo"
+        Me.Text = "PrintAmmoInfo"
+        CType(Me.gdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AmmoReportInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
-    Friend WithEvents GdssDataSet1 As gdssDataSet1
-    Friend WithEvents GunReportInfoFormBindingSource As BindingSource
-    Friend WithEvents GunReportInfoFormTableAdapter As gdssDataSet1TableAdapters.GunReportInfoFormTableAdapter
     Friend WithEvents AmmoReportInfoBindingSource As BindingSource
+    Friend WithEvents gdssDataSet1 As gdssDataSet1
     Friend WithEvents AmmoReportInfoTableAdapter As gdssDataSet1TableAdapters.AmmoReportInfoTableAdapter
 End Class

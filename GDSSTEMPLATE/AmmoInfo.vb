@@ -15,11 +15,10 @@
     End Sub
 
     Private Sub Button_Print_Click(sender As Object, e As EventArgs) Handles Button_Print.Click
+        Dim MyPrintAmmoInfo As PrintAmmoInfo
+        MyPrintAmmoInfo = New PrintAmmoInfo(myPK)
+        MyPrintAmmoInfo.ShowDialog()
+        MyPrintAmmoInfo.ReportViewer1.RefreshReport()
 
-        Dim MyPrintGunIfo As PrintGunInfo
-        MyPrintGunIfo = New PrintGunInfo(myPK)
-        MyPrintGunIfo.ShowDialog()
-        MyPrintGunIfo.ReportViewer1.LocalReport.ReportEmbeddedResource = "Gun2018.deliveryGunReport.rdlc"
-        MyPrintGunIfo.ReportViewer1.RefreshReport()
     End Sub
 End Class
