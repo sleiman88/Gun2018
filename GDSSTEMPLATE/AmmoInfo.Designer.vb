@@ -70,6 +70,7 @@ Partial Class AmmoInfo
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.SpecialOrder_CheckBox = New System.Windows.Forms.CheckBox()
+        Me.Button_Print = New System.Windows.Forms.Button()
         AMMOTRANSACTION_PKLabel = New System.Windows.Forms.Label()
         MILITARY_NBLabel = New System.Windows.Forms.Label()
         YEARLabel = New System.Windows.Forms.Label()
@@ -95,29 +96,6 @@ Partial Class AmmoInfo
         Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
-        'GdssDataSet1
-        '
-        Me.GdssDataSet1.DataSetName = "gdssDataSet1"
-        Me.GdssDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'AmmoReportInfoBindingSource
-        '
-        Me.AmmoReportInfoBindingSource.DataMember = "AmmoReportInfo"
-        Me.AmmoReportInfoBindingSource.DataSource = Me.GdssDataSet1
-        '
-        'AmmoReportInfoTableAdapter
-        '
-        Me.AmmoReportInfoTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.AMMOTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.N0ITEMSTableAdapter = Nothing
-        Me.TableAdapterManager.PERGUNTableAdapterTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = GDSSTEMPLATE.gdssDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
         'AMMOTRANSACTION_PKLabel
         '
         AMMOTRANSACTION_PKLabel.AutoSize = True
@@ -129,16 +107,6 @@ Partial Class AmmoInfo
         AMMOTRANSACTION_PKLabel.Text = "AMMOTRANSACTION PK:"
         AMMOTRANSACTION_PKLabel.Visible = False
         '
-        'AMMOTRANSACTION_PKTextBox
-        '
-        Me.AMMOTRANSACTION_PKTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "AMMOTRANSACTION_PK", True))
-        Me.AMMOTRANSACTION_PKTextBox.Enabled = False
-        Me.AMMOTRANSACTION_PKTextBox.Location = New System.Drawing.Point(193, 482)
-        Me.AMMOTRANSACTION_PKTextBox.Name = "AMMOTRANSACTION_PKTextBox"
-        Me.AMMOTRANSACTION_PKTextBox.Size = New System.Drawing.Size(200, 20)
-        Me.AMMOTRANSACTION_PKTextBox.TabIndex = 2
-        Me.AMMOTRANSACTION_PKTextBox.Visible = False
-        '
         'MILITARY_NBLabel
         '
         MILITARY_NBLabel.AutoSize = True
@@ -147,15 +115,6 @@ Partial Class AmmoInfo
         MILITARY_NBLabel.Size = New System.Drawing.Size(74, 13)
         MILITARY_NBLabel.TabIndex = 3
         MILITARY_NBLabel.Text = "MILITARY NB:"
-        '
-        'MILITARY_NBTextBox
-        '
-        Me.MILITARY_NBTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "MILITARY_NB", True))
-        Me.MILITARY_NBTextBox.Enabled = False
-        Me.MILITARY_NBTextBox.Location = New System.Drawing.Point(140, 29)
-        Me.MILITARY_NBTextBox.Name = "MILITARY_NBTextBox"
-        Me.MILITARY_NBTextBox.Size = New System.Drawing.Size(200, 20)
-        Me.MILITARY_NBTextBox.TabIndex = 4
         '
         'YEARLabel
         '
@@ -166,15 +125,6 @@ Partial Class AmmoInfo
         YEARLabel.TabIndex = 5
         YEARLabel.Text = "YEAR:"
         '
-        'YEARTextBox
-        '
-        Me.YEARTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "YEAR", True))
-        Me.YEARTextBox.Enabled = False
-        Me.YEARTextBox.Location = New System.Drawing.Point(139, 3)
-        Me.YEARTextBox.Name = "YEARTextBox"
-        Me.YEARTextBox.Size = New System.Drawing.Size(200, 20)
-        Me.YEARTextBox.TabIndex = 6
-        '
         'QUANTITYLabel
         '
         QUANTITYLabel.AutoSize = True
@@ -184,15 +134,6 @@ Partial Class AmmoInfo
         QUANTITYLabel.TabIndex = 7
         QUANTITYLabel.Text = "QUANTITY:"
         '
-        'QUANTITYTextBox
-        '
-        Me.QUANTITYTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "QUANTITY", True))
-        Me.QUANTITYTextBox.Enabled = False
-        Me.QUANTITYTextBox.Location = New System.Drawing.Point(139, 36)
-        Me.QUANTITYTextBox.Name = "QUANTITYTextBox"
-        Me.QUANTITYTextBox.Size = New System.Drawing.Size(200, 20)
-        Me.QUANTITYTextBox.TabIndex = 8
-        '
         'NBROF_DOCLabel
         '
         NBROF_DOCLabel.AutoSize = True
@@ -201,15 +142,6 @@ Partial Class AmmoInfo
         NBROF_DOCLabel.Size = New System.Drawing.Size(70, 13)
         NBROF_DOCLabel.TabIndex = 9
         NBROF_DOCLabel.Text = "NBROF DOC:"
-        '
-        'NBROF_DOCTextBox
-        '
-        Me.NBROF_DOCTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "NBROF_DOC", True))
-        Me.NBROF_DOCTextBox.Enabled = False
-        Me.NBROF_DOCTextBox.Location = New System.Drawing.Point(140, 2)
-        Me.NBROF_DOCTextBox.Name = "NBROF_DOCTextBox"
-        Me.NBROF_DOCTextBox.Size = New System.Drawing.Size(200, 20)
-        Me.NBROF_DOCTextBox.TabIndex = 10
         '
         'DATEOF_DOCLabel
         '
@@ -229,16 +161,6 @@ Partial Class AmmoInfo
         IS_SPECIAL_ORDERLabel.TabIndex = 13
         IS_SPECIAL_ORDERLabel.Text = "IS SPECIAL ORDER:"
         '
-        'SPECIAL_NOTETextBox
-        '
-        Me.SPECIAL_NOTETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "SPECIAL_NOTE", True))
-        Me.SPECIAL_NOTETextBox.Enabled = False
-        Me.SPECIAL_NOTETextBox.Location = New System.Drawing.Point(12, 383)
-        Me.SPECIAL_NOTETextBox.Multiline = True
-        Me.SPECIAL_NOTETextBox.Name = "SPECIAL_NOTETextBox"
-        Me.SPECIAL_NOTETextBox.Size = New System.Drawing.Size(728, 93)
-        Me.SPECIAL_NOTETextBox.TabIndex = 16
-        '
         'SIZE_AMMOLabel
         '
         SIZE_AMMOLabel.AutoSize = True
@@ -247,15 +169,6 @@ Partial Class AmmoInfo
         SIZE_AMMOLabel.Size = New System.Drawing.Size(67, 13)
         SIZE_AMMOLabel.TabIndex = 17
         SIZE_AMMOLabel.Text = "SIZE AMMO:"
-        '
-        'SIZE_AMMOTextBox
-        '
-        Me.SIZE_AMMOTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "SIZE_AMMO", True))
-        Me.SIZE_AMMOTextBox.Enabled = False
-        Me.SIZE_AMMOTextBox.Location = New System.Drawing.Point(139, 73)
-        Me.SIZE_AMMOTextBox.Name = "SIZE_AMMOTextBox"
-        Me.SIZE_AMMOTextBox.Size = New System.Drawing.Size(200, 20)
-        Me.SIZE_AMMOTextBox.TabIndex = 18
         '
         'NOTELabel
         '
@@ -266,16 +179,6 @@ Partial Class AmmoInfo
         NOTELabel.TabIndex = 19
         NOTELabel.Text = "NOTE:"
         '
-        'NOTETextBox
-        '
-        Me.NOTETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "NOTE", True))
-        Me.NOTETextBox.Enabled = False
-        Me.NOTETextBox.Location = New System.Drawing.Point(389, 271)
-        Me.NOTETextBox.Multiline = True
-        Me.NOTETextBox.Name = "NOTETextBox"
-        Me.NOTETextBox.Size = New System.Drawing.Size(351, 79)
-        Me.NOTETextBox.TabIndex = 20
-        '
         'USER_APPLabel
         '
         USER_APPLabel.AutoSize = True
@@ -284,15 +187,6 @@ Partial Class AmmoInfo
         USER_APPLabel.Size = New System.Drawing.Size(84, 13)
         USER_APPLabel.TabIndex = 21
         USER_APPLabel.Text = "Data Entry User"
-        '
-        'USER_APPTextBox
-        '
-        Me.USER_APPTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "USER_APP", True))
-        Me.USER_APPTextBox.Enabled = False
-        Me.USER_APPTextBox.Location = New System.Drawing.Point(139, 8)
-        Me.USER_APPTextBox.Name = "USER_APPTextBox"
-        Me.USER_APPTextBox.Size = New System.Drawing.Size(200, 20)
-        Me.USER_APPTextBox.TabIndex = 22
         '
         'SYSTEM_DATELabel
         '
@@ -311,15 +205,6 @@ Partial Class AmmoInfo
         UPDATE_USERLabel.Size = New System.Drawing.Size(79, 13)
         UPDATE_USERLabel.TabIndex = 25
         UPDATE_USERLabel.Text = "UPDATE USER:"
-        '
-        'UPDATE_USERTextBox
-        '
-        Me.UPDATE_USERTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "UPDATE_USER", True))
-        Me.UPDATE_USERTextBox.Enabled = False
-        Me.UPDATE_USERTextBox.Location = New System.Drawing.Point(140, 3)
-        Me.UPDATE_USERTextBox.Name = "UPDATE_USERTextBox"
-        Me.UPDATE_USERTextBox.Size = New System.Drawing.Size(200, 20)
-        Me.UPDATE_USERTextBox.TabIndex = 26
         '
         'UPDATE_DATELabel
         '
@@ -348,15 +233,6 @@ Partial Class AmmoInfo
         PHONELabel.TabIndex = 37
         PHONELabel.Text = "PHONE:"
         '
-        'PHONETextBox
-        '
-        Me.PHONETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "PHONE", True))
-        Me.PHONETextBox.Enabled = False
-        Me.PHONETextBox.Location = New System.Drawing.Point(140, 55)
-        Me.PHONETextBox.Name = "PHONETextBox"
-        Me.PHONETextBox.Size = New System.Drawing.Size(200, 20)
-        Me.PHONETextBox.TabIndex = 38
-        '
         'FullNameLabel
         '
         FullNameLabel.AutoSize = True
@@ -365,6 +241,131 @@ Partial Class AmmoInfo
         FullNameLabel.Size = New System.Drawing.Size(57, 13)
         FullNameLabel.TabIndex = 41
         FullNameLabel.Text = "Full Name:"
+        '
+        'GdssDataSet1
+        '
+        Me.GdssDataSet1.DataSetName = "gdssDataSet1"
+        Me.GdssDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'AmmoReportInfoBindingSource
+        '
+        Me.AmmoReportInfoBindingSource.DataMember = "AmmoReportInfo"
+        Me.AmmoReportInfoBindingSource.DataSource = Me.GdssDataSet1
+        '
+        'AmmoReportInfoTableAdapter
+        '
+        Me.AmmoReportInfoTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.AMMOTableAdapter = Nothing
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.N0ITEMSTableAdapter = Nothing
+        Me.TableAdapterManager.PERGUNTableAdapterTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = GDSSTEMPLATE.gdssDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'AMMOTRANSACTION_PKTextBox
+        '
+        Me.AMMOTRANSACTION_PKTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "AMMOTRANSACTION_PK", True))
+        Me.AMMOTRANSACTION_PKTextBox.Enabled = False
+        Me.AMMOTRANSACTION_PKTextBox.Location = New System.Drawing.Point(193, 482)
+        Me.AMMOTRANSACTION_PKTextBox.Name = "AMMOTRANSACTION_PKTextBox"
+        Me.AMMOTRANSACTION_PKTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.AMMOTRANSACTION_PKTextBox.TabIndex = 2
+        Me.AMMOTRANSACTION_PKTextBox.Visible = False
+        '
+        'MILITARY_NBTextBox
+        '
+        Me.MILITARY_NBTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "MILITARY_NB", True))
+        Me.MILITARY_NBTextBox.Enabled = False
+        Me.MILITARY_NBTextBox.Location = New System.Drawing.Point(140, 29)
+        Me.MILITARY_NBTextBox.Name = "MILITARY_NBTextBox"
+        Me.MILITARY_NBTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.MILITARY_NBTextBox.TabIndex = 4
+        '
+        'YEARTextBox
+        '
+        Me.YEARTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "YEAR", True))
+        Me.YEARTextBox.Enabled = False
+        Me.YEARTextBox.Location = New System.Drawing.Point(139, 3)
+        Me.YEARTextBox.Name = "YEARTextBox"
+        Me.YEARTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.YEARTextBox.TabIndex = 6
+        '
+        'QUANTITYTextBox
+        '
+        Me.QUANTITYTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "QUANTITY", True))
+        Me.QUANTITYTextBox.Enabled = False
+        Me.QUANTITYTextBox.Location = New System.Drawing.Point(139, 36)
+        Me.QUANTITYTextBox.Name = "QUANTITYTextBox"
+        Me.QUANTITYTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.QUANTITYTextBox.TabIndex = 8
+        '
+        'NBROF_DOCTextBox
+        '
+        Me.NBROF_DOCTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "NBROF_DOC", True))
+        Me.NBROF_DOCTextBox.Enabled = False
+        Me.NBROF_DOCTextBox.Location = New System.Drawing.Point(140, 2)
+        Me.NBROF_DOCTextBox.Name = "NBROF_DOCTextBox"
+        Me.NBROF_DOCTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.NBROF_DOCTextBox.TabIndex = 10
+        '
+        'SPECIAL_NOTETextBox
+        '
+        Me.SPECIAL_NOTETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "SPECIAL_NOTE", True))
+        Me.SPECIAL_NOTETextBox.Enabled = False
+        Me.SPECIAL_NOTETextBox.Location = New System.Drawing.Point(12, 383)
+        Me.SPECIAL_NOTETextBox.Multiline = True
+        Me.SPECIAL_NOTETextBox.Name = "SPECIAL_NOTETextBox"
+        Me.SPECIAL_NOTETextBox.Size = New System.Drawing.Size(728, 93)
+        Me.SPECIAL_NOTETextBox.TabIndex = 16
+        '
+        'SIZE_AMMOTextBox
+        '
+        Me.SIZE_AMMOTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "SIZE_AMMO", True))
+        Me.SIZE_AMMOTextBox.Enabled = False
+        Me.SIZE_AMMOTextBox.Location = New System.Drawing.Point(139, 73)
+        Me.SIZE_AMMOTextBox.Name = "SIZE_AMMOTextBox"
+        Me.SIZE_AMMOTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.SIZE_AMMOTextBox.TabIndex = 18
+        '
+        'NOTETextBox
+        '
+        Me.NOTETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "NOTE", True))
+        Me.NOTETextBox.Enabled = False
+        Me.NOTETextBox.Location = New System.Drawing.Point(389, 271)
+        Me.NOTETextBox.Multiline = True
+        Me.NOTETextBox.Name = "NOTETextBox"
+        Me.NOTETextBox.Size = New System.Drawing.Size(351, 79)
+        Me.NOTETextBox.TabIndex = 20
+        '
+        'USER_APPTextBox
+        '
+        Me.USER_APPTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "USER_APP", True))
+        Me.USER_APPTextBox.Enabled = False
+        Me.USER_APPTextBox.Location = New System.Drawing.Point(139, 8)
+        Me.USER_APPTextBox.Name = "USER_APPTextBox"
+        Me.USER_APPTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.USER_APPTextBox.TabIndex = 22
+        '
+        'UPDATE_USERTextBox
+        '
+        Me.UPDATE_USERTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "UPDATE_USER", True))
+        Me.UPDATE_USERTextBox.Enabled = False
+        Me.UPDATE_USERTextBox.Location = New System.Drawing.Point(140, 3)
+        Me.UPDATE_USERTextBox.Name = "UPDATE_USERTextBox"
+        Me.UPDATE_USERTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.UPDATE_USERTextBox.TabIndex = 26
+        '
+        'PHONETextBox
+        '
+        Me.PHONETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.AmmoReportInfoBindingSource, "PHONE", True))
+        Me.PHONETextBox.Enabled = False
+        Me.PHONETextBox.Location = New System.Drawing.Point(140, 55)
+        Me.PHONETextBox.Name = "PHONETextBox"
+        Me.PHONETextBox.Size = New System.Drawing.Size(200, 20)
+        Me.PHONETextBox.TabIndex = 38
         '
         'FullNameTextBox
         '
@@ -527,11 +528,21 @@ Partial Class AmmoInfo
         Me.SpecialOrder_CheckBox.TabIndex = 57
         Me.SpecialOrder_CheckBox.UseVisualStyleBackColor = True
         '
+        'Button_Print
+        '
+        Me.Button_Print.Location = New System.Drawing.Point(669, 485)
+        Me.Button_Print.Name = "Button_Print"
+        Me.Button_Print.Size = New System.Drawing.Size(75, 23)
+        Me.Button_Print.TabIndex = 58
+        Me.Button_Print.Text = "Print"
+        Me.Button_Print.UseVisualStyleBackColor = True
+        '
         'AmmoInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(762, 508)
+        Me.Controls.Add(Me.Button_Print)
         Me.Controls.Add(Me.SpecialOrder_CheckBox)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Panel5)
@@ -599,4 +610,5 @@ Partial Class AmmoInfo
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Label5 As Label
     Friend WithEvents SpecialOrder_CheckBox As CheckBox
+    Friend WithEvents Button_Print As Button
 End Class

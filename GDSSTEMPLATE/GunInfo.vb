@@ -4,7 +4,7 @@
         mycode = code
         ' This call is required by the designer.
         InitializeComponent()
-        Me.GunReportInfoFormTableAdapter.GetDataByCode(mycode)
+        '  Me.GunReportInfoFormTableAdapter.GetDataByCode(mycode)
 
         ' Add any initialization after the InitializeComponent() call.
 
@@ -21,8 +21,9 @@
         'Call report viwer
         Me.GunReportInfoFormTableAdapter.FillByCode(Me.GdssDataSet1.GunReportInfoForm, mycode)
         Dim MyPrintGunIfo As PrintGunInfo
-        MyPrintGunIfo = New PrintGunInfo(mycode, Me)
+        MyPrintGunIfo = New PrintGunInfo(mycode)
         MyPrintGunIfo.ShowDialog()
+        MyPrintGunIfo.ReportViewer1.LocalReport.ReportEmbeddedResource = "Gun2018.deliveryGunReport.rdlc"
         MyPrintGunIfo.ReportViewer1.RefreshReport()
     End Sub
 End Class

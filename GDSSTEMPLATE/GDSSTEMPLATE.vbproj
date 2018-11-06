@@ -180,8 +180,7 @@
     <EmbeddedResource Include="PrintGunInfo.resx">
       <DependentUpon>PrintGunInfo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1.rdlc" />
-    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="deliveryGunReport.rdlc" />
     <EmbeddedResource Include="serversettings.resx">
       <DependentUpon>serversettings.vb</DependentUpon>
     </EmbeddedResource>
