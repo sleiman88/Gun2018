@@ -1,5 +1,7 @@
 ﻿Public Class MainReportByPerson
     Private Sub MainReportByPerson_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'GdssDataSet1.AmmoReportInfo' table. You can move, or remove it, as needed.
+        Me.AmmoReportInfoTableAdapter.Fill(Me.GdssDataSet1.AmmoReportInfo)
         'TODO: This line of code loads data into the 'GdssDataSet1.GunReportInfoForm' table. You can move, or remove it, as needed.
         Me.GunReportInfoFormTableAdapter.Fill(Me.GdssDataSet1.GunReportInfoForm)
         'TODO: This line of code loads data into the 'GdssDataSet1.N0itemsAndPerGUn' table. You can move, or remove it, as needed.
@@ -200,7 +202,14 @@
 
             Person_Label.Visible = True
         Else
-            Me.GunReportInfoFormTableAdapter.FillByOwner(Me.GdssDataSet1.GunReportInfoForm, ComboBoxPersons.SelectedValue)
+            ' Me.GunReportInfoFormTableAdapter.FillByOwner(Me.GdssDataSet1.GunReportInfoForm, ComboBoxPersons.SelectedValue)
+            Me.AmmoReportInfoTableAdapter.FillByMILINB(Me.GdssDataSet1.AmmoReportInfo, ComboBoxPersons.SelectedValue)
+            Dim MyReportAmmoByPerson As ReportAmmoByPerson
+            MyReportAmmoByPerson = New ReportAmmoByPerson()
+            MyReportAmmoByPerson.ShowDialog()
+            MyReportAmmoByPerson.ReportViewer1.RefreshReport()
+
+            'Me.GunReportInfoFormTableAdapter.FillByOwner(Me.GdssDataSet1.GunReportInfoForm, ComboBoxPersons.SelectedValue)
             ' Me.N0itemsAndPerGUnTableAdapter.FillByOwner(Me.GdssDataSet1.N0itemsAndPerGUn, ComboBoxPersons.SelectedValue)
 
         End If

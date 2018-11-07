@@ -14,8 +14,8 @@
     <Shape ID="DesignTable:AMMO" ZOrder="6" X="378" Y="235" Height="362" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:N0itemsAndPerGUn" ZOrder="4" X="843" Y="508" Height="172" Width="261" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:AMMODataGrid" ZOrder="3" X="429" Y="632" Height="153" Width="298" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
-    <Shape ID="DesignTable:GunReportInfoForm" ZOrder="2" X="1144" Y="503" Height="362" Width="210" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="275" />
-    <Shape ID="DesignTable:AmmoReportInfo" ZOrder="1" X="44" Y="506" Height="324" Width="262" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:GunReportInfoForm" ZOrder="2" X="1126" Y="435" Height="364" Width="262" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="275" />
+    <Shape ID="DesignTable:AmmoReportInfo" ZOrder="1" X="44" Y="506" Height="324" Width="262" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="24" OldDataTableHeight="0" SplitterPosition="254" />
   </Shapes>
   <Connectors />
 </DiagramLayout>
