@@ -6,28 +6,22 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.92833in</Width>
+              <Width>0.96354in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>0.96354in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.5625in</Width>
+              <Width>0.71354in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.66667in</Width>
+              <Width>1.21354in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.8125in</Width>
+              <Width>1.76562in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.4675in</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.35417in</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.4375in</Width>
+              <Width>0.80728in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -43,7 +37,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>LABEL</Value>
+                              <Value>QUANTITY</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -79,7 +73,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>GTYPE</Value>
+                              <Value>SIZE AMMO</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -115,7 +109,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>SUPPLIER</Value>
+                              <Value>YEAR</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -151,7 +145,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>AMMO</Value>
+                              <Value>Number DOC</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -187,7 +181,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>CLEANER</Value>
+                              <Value>DATE OF DOC</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -223,7 +217,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>SIZE</Value>
+                              <Value>SPECIAL ORDER</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -250,78 +244,6 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox13">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>NUMBER</Value>
-                              <Style>
-                                <FontFamily>Tahoma</FontFamily>
-                                <FontSize>11pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox13</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>#7292cc</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox17">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>NBDOC</Value>
-                              <Style>
-                                <FontFamily>Tahoma</FontFamily>
-                                <FontSize>11pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox17</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>#7292cc</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
               </TablixCells>
             </TablixRow>
             <TablixRow>
@@ -329,24 +251,26 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="LABEL">
+                    <Textbox Name="QUANTITY">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!LABEL.Value</Value>
+                              <Value>=Fields!QUANTITY.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>LABEL</rd:DefaultName>
+                      <rd:DefaultName>QUANTITY</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#e5e5e5</Color>
@@ -362,14 +286,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="GTYPE">
+                    <Textbox Name="SIZE_AMMO">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!GTYPE.Value</Value>
+                              <Value>=Fields!SIZE_AMMO.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Color>#4d4d4d</Color>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>   mm</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -381,7 +312,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>GTYPE</rd:DefaultName>
+                      <rd:DefaultName>SIZE_AMMO</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#e5e5e5</Color>
@@ -397,14 +328,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="SUPPLIER">
+                    <Textbox Name="YEAR">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=First(Fields!EXPR2.Value, "DataSet1")</Value>
+                              <Value>=Fields!YEAR.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -416,7 +347,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>SUPPLIER</rd:DefaultName>
+                      <rd:DefaultName>YEAR</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#e5e5e5</Color>
@@ -432,14 +363,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="GAMMO">
+                    <Textbox Name="NBROF_DOC">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!GAMMO.Value</Value>
+                              <Value>=Fields!NBROF_DOC.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -451,7 +382,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>GAMMO</rd:DefaultName>
+                      <rd:DefaultName>NBROF_DOC</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#e5e5e5</Color>
@@ -467,14 +398,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="GCLEANER">
+                    <Textbox Name="DATEOF_DOC">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=IIF(Fields!GCLEANER.Value=1,"With Cleaner","With out Clearner")</Value>
+                              <Value>=Fields!DATEOF_DOC.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -486,7 +417,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>GCLEANER</rd:DefaultName>
+                      <rd:DefaultName>DATEOF_DOC</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#e5e5e5</Color>
@@ -502,14 +433,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="GSIZE">
+                    <Textbox Name="IS_SPECIAL_ORDER">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!GSIZE.Value</Value>
+                              <Value>=IIF(Fields!IS_SPECIAL_ORDER.Value=1,"True","False")</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -521,77 +452,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>GSIZE</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>#e5e5e5</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="GNUMBER">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!GNUMBER.Value</Value>
-                              <Style>
-                                <FontFamily>Tahoma</FontFamily>
-                                <Color>#4d4d4d</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Left</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>GNUMBER</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>#e5e5e5</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="NBDOC">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!NBDOC.Value</Value>
-                              <Style>
-                                <FontFamily>Tahoma</FontFamily>
-                                <Color>#4d4d4d</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Left</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>NBDOC</rd:DefaultName>
+                      <rd:DefaultName>IS_SPECIAL_ORDER</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#e5e5e5</Color>
@@ -617,8 +478,6 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -632,15 +491,130 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>2.3993in</Top>
+        <Top>2.10193in</Top>
         <Height>0.5in</Height>
-        <Width>9.22917in</Width>
+        <Width>6.42708in</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
+      <Rectangle Name="Rectangle3">
+        <ReportItems>
+          <Textbox Name="Textbox25">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Date: </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Today()</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox20</rd:DefaultName>
+            <Top>0.11458in</Top>
+            <Left>0.13417in</Left>
+            <Height>0.25in</Height>
+            <Width>2.56375in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox24">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Total Ammo delivered:</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Sum(Fields!QUANTITY.Value, "DataSet1")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox24</rd:DefaultName>
+            <Top>0.63763in</Top>
+            <Left>0.13417in</Left>
+            <Height>0.25in</Height>
+            <Width>2.56375in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <KeepTogether>true</KeepTogether>
+        <Top>0.50472in</Top>
+        <Left>3.33333in</Left>
+        <Height>1.23958in</Height>
+        <Width>2.83333in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Rectangle>
+      <Textbox Name="Textbox19">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Ammo Delivery Report</Value>
+                <Style>
+                  <FontSize>14pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox19</rd:DefaultName>
+        <Top>0.04514in</Top>
+        <Left>2.03125in</Left>
+        <Height>0.36458in</Height>
+        <Width>2.47in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
       <Rectangle Name="Rectangle2">
         <ReportItems>
           <Textbox Name="Textbox20">
@@ -686,7 +660,7 @@
                     <Style />
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!EXPR1.Value, "DataSet1")</Value>
+                    <Value>=First(Fields!GRADE.Value, "DataSet1")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -719,7 +693,7 @@
                     <Style />
                   </TextRun>
                   <TextRun>
-                    <Value>=First(Fields!OWNER.Value, "DataSet1")</Value>
+                    <Value>=First(Fields!MILITARY_NB.Value, "DataSet1")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -743,49 +717,16 @@
           </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>0.67014in</Top>
-        <Left>0.125in</Left>
+        <Top>0.51513in</Top>
         <Height>1.23958in</Height>
         <Width>2.21875in</Width>
-        <ZIndex>1</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
           </Border>
         </Style>
       </Rectangle>
-      <Textbox Name="Textbox19">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Guns Delivery Report</Value>
-                <Style>
-                  <FontSize>14pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Left>2.14583in</Left>
-        <Height>0.36458in</Height>
-        <Width>2.47in</Width>
-        <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Textbox Name="Textbox23">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -804,42 +745,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>0.31473in</Top>
-        <Left>0.125in</Left>
+        <Top>0.15972in</Top>
         <Height>0.25in</Height>
         <Width>1in</Width>
-        <ZIndex>3</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox24">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Items Details </Value>
-                <Style>
-                  <FontSize>14pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>2.13541in</Top>
-        <Height>0.25in</Height>
-        <Width>1.52208in</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -851,58 +759,43 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Rectangle Name="Rectangle3">
-        <ReportItems>
-          <Textbox Name="Textbox25">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Date: </Value>
-                    <Style />
-                  </TextRun>
-                  <TextRun>
-                    <Value>=Today()</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox20</rd:DefaultName>
-            <Top>0.11458in</Top>
-            <Height>0.25in</Height>
-            <Width>2.69792in</Width>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-        </ReportItems>
+      <Textbox Name="Textbox26">
+        <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
-        <Top>0.65973in</Top>
-        <Left>4.41667in</Left>
-        <Height>1.23958in</Height>
-        <Width>2.83333in</Width>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Items</Value>
+                <Style>
+                  <FontSize>14pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox26</rd:DefaultName>
+        <Top>1.81027in</Top>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
         </Style>
-      </Rectangle>
+      </Textbox>
     </ReportItems>
-    <Height>2.97916in</Height>
+    <Height>2.64583in</Height>
     <Style />
   </Body>
-  <Width>9.22917in</Width>
+  <Width>6.46875in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -917,7 +810,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>f472ab04-ba0c-4133-b630-c9b1a2d198ad</rd:DataSourceID>
+      <rd:DataSourceID>9b704f88-56d8-4166-b903-d4fcc5737fce</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -927,97 +820,61 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="CODE">
-          <DataField>CODE</DataField>
+        <Field Name="AMMOTRANSACTION_PK">
+          <DataField>AMMOTRANSACTION_PK</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="GNAME">
-          <DataField>GNAME</DataField>
+        <Field Name="MILITARY_NB">
+          <DataField>MILITARY_NB</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="GTYPE">
-          <DataField>GTYPE</DataField>
+        <Field Name="YEAR">
+          <DataField>YEAR</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="QUANTITY">
+          <DataField>QUANTITY</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="NBROF_DOC">
+          <DataField>NBROF_DOC</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="GNUMBER">
-          <DataField>GNUMBER</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="GSTORE">
-          <DataField>GSTORE</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="GSIZE">
-          <DataField>GSIZE</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="GCLEANER">
-          <DataField>GCLEANER</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="GAMMO">
-          <DataField>GAMMO</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="SUPPLIER">
-          <DataField>SUPPLIER</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="OWNER">
-          <DataField>OWNER</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="OWNERSOURCE">
-          <DataField>OWNERSOURCE</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="GRADE">
-          <DataField>GRADE</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="DDATE">
-          <DataField>DDATE</DataField>
+        <Field Name="DATEOF_DOC">
+          <DataField>DATEOF_DOC</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="NBDOC">
-          <DataField>NBDOC</DataField>
+        <Field Name="IS_SPECIAL_ORDER">
+          <DataField>IS_SPECIAL_ORDER</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="SPECIAL_NOTE">
+          <DataField>SPECIAL_NOTE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SIZE_AMMO">
+          <DataField>SIZE_AMMO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="NOTE">
           <DataField>NOTE</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="SDATE">
-          <DataField>SDATE</DataField>
+        <Field Name="USER_APP">
+          <DataField>USER_APP</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SYSTEM_DATE">
+          <DataField>SYSTEM_DATE</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="UDATE">
-          <DataField>UDATE</DataField>
+        <Field Name="UPDATE_USER">
+          <DataField>UPDATE_USER</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UPDATE_DATE">
+          <DataField>UPDATE_DATE</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="UUSER">
-          <DataField>UUSER</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="MDATE">
-          <DataField>MDATE</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="MUSER">
-          <DataField>MUSER</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="LABEL">
-          <DataField>LABEL</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="EXPR1">
-          <DataField>EXPR1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="EXPR2">
-          <DataField>EXPR2</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="FNAME">
           <DataField>FNAME</DataField>
@@ -1035,6 +892,18 @@
           <DataField>DBIRTH</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
+        <Field Name="PHONE">
+          <DataField>PHONE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SOURCE">
+          <DataField>SOURCE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="GRADE">
+          <DataField>GRADE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="FullName">
           <DataField>FullName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -1043,13 +912,13 @@
       <rd:DataSetInfo>
         <rd:DataSetName>gdssDataSet1</rd:DataSetName>
         <rd:SchemaPath>C:\Users\ME\documents\visual studio 2015\Projects\Gun2018\GDSSTEMPLATE\gdssDataSet1.xsd</rd:SchemaPath>
-        <rd:TableName>GunReportInfoForm</rd:TableName>
+        <rd:TableName>AmmoReportWithGrade</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>GunReportInfoFormTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>AmmoReportWithGradeTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>6a4275dd-837a-4ab2-9c1a-ef2102becdc7</rd:ReportID>
+  <rd:ReportID>d5f8b19c-90db-46a1-9930-e1c210b8608b</rd:ReportID>
 </Report>

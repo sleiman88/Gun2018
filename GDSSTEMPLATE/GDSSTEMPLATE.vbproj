@@ -212,7 +212,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="deliveryGunReport.rdlc" />
     <EmbeddedResource Include="AmmoReport.rdlc" />
-    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="ReportAmmoByPerson.rdlc" />
     <EmbeddedResource Include="ReportGunByPerson.rdlc" />
     <EmbeddedResource Include="ReportAmmoByPerson.resx">
       <DependentUpon>ReportAmmoByPerson.vb</DependentUpon>

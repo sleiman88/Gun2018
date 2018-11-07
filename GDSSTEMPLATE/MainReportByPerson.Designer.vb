@@ -47,14 +47,14 @@ Partial Class MainReportByPerson
         Me.N0itemsAndPerGUnTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.N0itemsAndPerGUnTableAdapter()
         Me.GunReportInfoFormBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GunReportInfoFormTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.GunReportInfoFormTableAdapter()
-        Me.AmmoReportInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.AmmoReportInfoTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.AmmoReportInfoTableAdapter()
+        Me.AmmoReportWithGradeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AmmoReportWithGradeTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.AmmoReportWithGradeTableAdapter()
         Me.Panel2.SuspendLayout()
         CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.N0itemsAndPerGUnBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GunReportInfoFormBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AmmoReportInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AmmoReportWithGradeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
@@ -260,14 +260,14 @@ Partial Class MainReportByPerson
         '
         Me.GunReportInfoFormTableAdapter.ClearBeforeFill = True
         '
-        'AmmoReportInfoBindingSource
+        'AmmoReportWithGradeBindingSource
         '
-        Me.AmmoReportInfoBindingSource.DataMember = "AmmoReportInfo"
-        Me.AmmoReportInfoBindingSource.DataSource = Me.GdssDataSet1
+        Me.AmmoReportWithGradeBindingSource.DataMember = "AmmoReportWithGrade"
+        Me.AmmoReportWithGradeBindingSource.DataSource = Me.GdssDataSet1
         '
-        'AmmoReportInfoTableAdapter
+        'AmmoReportWithGradeTableAdapter
         '
-        Me.AmmoReportInfoTableAdapter.ClearBeforeFill = True
+        Me.AmmoReportWithGradeTableAdapter.ClearBeforeFill = True
         '
         'MainReportByPerson
         '
@@ -284,7 +284,7 @@ Partial Class MainReportByPerson
         CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.N0itemsAndPerGUnBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GunReportInfoFormBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AmmoReportInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AmmoReportWithGradeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -313,6 +313,6 @@ Partial Class MainReportByPerson
     Friend WithEvents Button_ReportGun As Button
     Friend WithEvents GunReportInfoFormBindingSource As BindingSource
     Friend WithEvents GunReportInfoFormTableAdapter As gdssDataSet1TableAdapters.GunReportInfoFormTableAdapter
-    Friend WithEvents AmmoReportInfoBindingSource As BindingSource
-    Friend WithEvents AmmoReportInfoTableAdapter As gdssDataSet1TableAdapters.AmmoReportInfoTableAdapter
+    Friend WithEvents AmmoReportWithGradeBindingSource As BindingSource
+    Friend WithEvents AmmoReportWithGradeTableAdapter As gdssDataSet1TableAdapters.AmmoReportWithGradeTableAdapter
 End Class

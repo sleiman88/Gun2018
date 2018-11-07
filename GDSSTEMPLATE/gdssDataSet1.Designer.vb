@@ -45,6 +45,8 @@ Partial Public Class gdssDataSet1
     
     Private tableAmmoReportInfo As AmmoReportInfoDataTable
     
+    Private tableAmmoReportWithGrade As AmmoReportWithGradeDataTable
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -107,6 +109,9 @@ Partial Public Class gdssDataSet1
             End If
             If (Not (ds.Tables("AmmoReportInfo")) Is Nothing) Then
                 MyBase.Tables.Add(New AmmoReportInfoDataTable(ds.Tables("AmmoReportInfo")))
+            End If
+            If (Not (ds.Tables("AmmoReportWithGrade")) Is Nothing) Then
+                MyBase.Tables.Add(New AmmoReportWithGradeDataTable(ds.Tables("AmmoReportWithGrade")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -228,6 +233,16 @@ Partial Public Class gdssDataSet1
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property AmmoReportWithGrade() As AmmoReportWithGradeDataTable
+        Get
+            Return Me.tableAmmoReportWithGrade
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.BrowsableAttribute(true),  _
      Global.System.ComponentModel.DesignerSerializationVisibilityAttribute(Global.System.ComponentModel.DesignerSerializationVisibility.Visible)>  _
     Public Overrides Property SchemaSerializationMode() As Global.System.Data.SchemaSerializationMode
@@ -324,6 +339,9 @@ Partial Public Class gdssDataSet1
             If (Not (ds.Tables("AmmoReportInfo")) Is Nothing) Then
                 MyBase.Tables.Add(New AmmoReportInfoDataTable(ds.Tables("AmmoReportInfo")))
             End If
+            If (Not (ds.Tables("AmmoReportWithGrade")) Is Nothing) Then
+                MyBase.Tables.Add(New AmmoReportWithGradeDataTable(ds.Tables("AmmoReportWithGrade")))
+            End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
             Me.Namespace = ds.Namespace
@@ -416,6 +434,12 @@ Partial Public Class gdssDataSet1
                 Me.tableAmmoReportInfo.InitVars
             End If
         End If
+        Me.tableAmmoReportWithGrade = CType(MyBase.Tables("AmmoReportWithGrade"),AmmoReportWithGradeDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableAmmoReportWithGrade) Is Nothing) Then
+                Me.tableAmmoReportWithGrade.InitVars
+            End If
+        End If
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -446,6 +470,8 @@ Partial Public Class gdssDataSet1
         MyBase.Tables.Add(Me.tableGunReportInfoForm)
         Me.tableAmmoReportInfo = New AmmoReportInfoDataTable(false)
         MyBase.Tables.Add(Me.tableAmmoReportInfo)
+        Me.tableAmmoReportWithGrade = New AmmoReportWithGradeDataTable(false)
+        MyBase.Tables.Add(Me.tableAmmoReportWithGrade)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -505,6 +531,12 @@ Partial Public Class gdssDataSet1
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Function ShouldSerializeAmmoReportInfo() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Private Function ShouldSerializeAmmoReportWithGrade() As Boolean
         Return false
     End Function
     
@@ -572,6 +604,7 @@ Partial Public Class gdssDataSet1
         Me.IDCARD.FullNameColumn.Expression = "FName+' '+FATHER+' '+LNAME"
         Me.GunReportInfoForm.FullNameColumn.Expression = "FName+' '+FATHER+' '+LNAME"
         Me.AmmoReportInfo.FullNameColumn.Expression = "FName+' '+FATHER+' '+LNAME"
+        Me.AmmoReportWithGrade.FullNameColumn.Expression = "FName+' '+FATHER+' '+LNAME"
     End Sub
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -603,6 +636,9 @@ Partial Public Class gdssDataSet1
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub AmmoReportInfoRowChangeEventHandler(ByVal sender As Object, ByVal e As AmmoReportInfoRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Delegate Sub AmmoReportWithGradeRowChangeEventHandler(ByVal sender As Object, ByVal e As AmmoReportWithGradeRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -4602,6 +4638,7 @@ Partial Public Class gdssDataSet1
             MyBase.Columns.Add(Me.columnSOURCE)
             Me.columnFullName = New Global.System.Data.DataColumn("FullName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnFullName)
+            Me.columnAMMOTRANSACTION_PK.AllowDBNull = false
             Me.columnAMMOTRANSACTION_PK.ReadOnly = true
             Me.columnMILITARY_NB.AllowDBNull = false
             Me.columnMILITARY_NB.MaxLength = 20
@@ -4613,25 +4650,33 @@ Partial Public Class gdssDataSet1
             Me.columnIS_SPECIAL_ORDER.AllowDBNull = false
             Me.columnSPECIAL_NOTE.ReadOnly = true
             Me.columnSPECIAL_NOTE.MaxLength = 500
+            Me.columnSIZE_AMMO.AllowDBNull = false
             Me.columnSIZE_AMMO.ReadOnly = true
             Me.columnSIZE_AMMO.MaxLength = 20
             Me.columnNOTE.ReadOnly = true
             Me.columnNOTE.MaxLength = 500
+            Me.columnUSER_APP.AllowDBNull = false
             Me.columnUSER_APP.ReadOnly = true
             Me.columnUSER_APP.MaxLength = 20
+            Me.columnSYSTEM_DATE.AllowDBNull = false
             Me.columnSYSTEM_DATE.ReadOnly = true
             Me.columnUPDATE_USER.ReadOnly = true
             Me.columnUPDATE_USER.MaxLength = 20
             Me.columnUPDATE_DATE.ReadOnly = true
+            Me.columnFNAME.AllowDBNull = false
             Me.columnFNAME.ReadOnly = true
             Me.columnFNAME.MaxLength = 20
+            Me.columnLNAME.AllowDBNull = false
             Me.columnLNAME.ReadOnly = true
             Me.columnLNAME.MaxLength = 35
+            Me.columnFATHER.AllowDBNull = false
             Me.columnFATHER.ReadOnly = true
             Me.columnFATHER.MaxLength = 20
+            Me.columnDBIRTH.AllowDBNull = false
             Me.columnDBIRTH.ReadOnly = true
             Me.columnPHONE.ReadOnly = true
             Me.columnPHONE.MaxLength = 30
+            Me.columnSOURCE.AllowDBNull = false
             Me.columnSOURCE.ReadOnly = true
             Me.columnSOURCE.MaxLength = 1
             Me.columnFullName.ReadOnly = true
@@ -4727,6 +4772,629 @@ Partial Public Class gdssDataSet1
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
             attribute2.FixedValue = "AmmoReportInfoDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class AmmoReportWithGradeDataTable
+        Inherits Global.System.Data.TypedTableBase(Of AmmoReportWithGradeRow)
+        
+        Private columnAMMOTRANSACTION_PK As Global.System.Data.DataColumn
+        
+        Private columnMILITARY_NB As Global.System.Data.DataColumn
+        
+        Private columnYEAR As Global.System.Data.DataColumn
+        
+        Private columnQUANTITY As Global.System.Data.DataColumn
+        
+        Private columnNBROF_DOC As Global.System.Data.DataColumn
+        
+        Private columnDATEOF_DOC As Global.System.Data.DataColumn
+        
+        Private columnIS_SPECIAL_ORDER As Global.System.Data.DataColumn
+        
+        Private columnSPECIAL_NOTE As Global.System.Data.DataColumn
+        
+        Private columnSIZE_AMMO As Global.System.Data.DataColumn
+        
+        Private columnNOTE As Global.System.Data.DataColumn
+        
+        Private columnUSER_APP As Global.System.Data.DataColumn
+        
+        Private columnSYSTEM_DATE As Global.System.Data.DataColumn
+        
+        Private columnUPDATE_USER As Global.System.Data.DataColumn
+        
+        Private columnUPDATE_DATE As Global.System.Data.DataColumn
+        
+        Private columnFNAME As Global.System.Data.DataColumn
+        
+        Private columnLNAME As Global.System.Data.DataColumn
+        
+        Private columnFATHER As Global.System.Data.DataColumn
+        
+        Private columnDBIRTH As Global.System.Data.DataColumn
+        
+        Private columnPHONE As Global.System.Data.DataColumn
+        
+        Private columnSOURCE As Global.System.Data.DataColumn
+        
+        Private columnGRADE As Global.System.Data.DataColumn
+        
+        Private columnFullName As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            Me.New(false)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal initExpressions As Boolean)
+            MyBase.New
+            Me.TableName = "AmmoReportWithGrade"
+            Me.BeginInit
+            Me.InitClass
+            If (initExpressions = true) Then
+                Me.InitExpressions
+            End If
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property AMMOTRANSACTION_PKColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAMMOTRANSACTION_PK
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property MILITARY_NBColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMILITARY_NB
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property YEARColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnYEAR
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property QUANTITYColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnQUANTITY
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property NBROF_DOCColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNBROF_DOC
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property DATEOF_DOCColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDATEOF_DOC
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property IS_SPECIAL_ORDERColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIS_SPECIAL_ORDER
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property SPECIAL_NOTEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSPECIAL_NOTE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property SIZE_AMMOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSIZE_AMMO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property NOTEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNOTE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property USER_APPColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnUSER_APP
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property SYSTEM_DATEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSYSTEM_DATE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property UPDATE_USERColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnUPDATE_USER
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property UPDATE_DATEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnUPDATE_DATE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property FNAMEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFNAME
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property LNAMEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnLNAME
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property FATHERColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFATHER
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property DBIRTHColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDBIRTH
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property PHONEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPHONE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property SOURCEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSOURCE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property GRADEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGRADE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property FullNameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFullName
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As AmmoReportWithGradeRow
+            Get
+                Return CType(Me.Rows(index),AmmoReportWithGradeRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event AmmoReportWithGradeRowChanging As AmmoReportWithGradeRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event AmmoReportWithGradeRowChanged As AmmoReportWithGradeRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event AmmoReportWithGradeRowDeleting As AmmoReportWithGradeRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event AmmoReportWithGradeRowDeleted As AmmoReportWithGradeRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub AddAmmoReportWithGradeRow(ByVal row As AmmoReportWithGradeRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function AddAmmoReportWithGradeRow( _
+                    ByVal AMMOTRANSACTION_PK As Decimal,  _
+                    ByVal MILITARY_NB As String,  _
+                    ByVal YEAR As Integer,  _
+                    ByVal QUANTITY As Long,  _
+                    ByVal NBROF_DOC As String,  _
+                    ByVal DATEOF_DOC As Date,  _
+                    ByVal IS_SPECIAL_ORDER As Short,  _
+                    ByVal SPECIAL_NOTE As String,  _
+                    ByVal SIZE_AMMO As String,  _
+                    ByVal NOTE As String,  _
+                    ByVal USER_APP As String,  _
+                    ByVal SYSTEM_DATE As Date,  _
+                    ByVal UPDATE_USER As String,  _
+                    ByVal UPDATE_DATE As Date,  _
+                    ByVal FNAME As String,  _
+                    ByVal LNAME As String,  _
+                    ByVal FATHER As String,  _
+                    ByVal DBIRTH As Date,  _
+                    ByVal PHONE As String,  _
+                    ByVal SOURCE As String,  _
+                    ByVal GRADE As String,  _
+                    ByVal FullName As String) As AmmoReportWithGradeRow
+            Dim rowAmmoReportWithGradeRow As AmmoReportWithGradeRow = CType(Me.NewRow,AmmoReportWithGradeRow)
+            Dim columnValuesArray() As Object = New Object() {AMMOTRANSACTION_PK, MILITARY_NB, YEAR, QUANTITY, NBROF_DOC, DATEOF_DOC, IS_SPECIAL_ORDER, SPECIAL_NOTE, SIZE_AMMO, NOTE, USER_APP, SYSTEM_DATE, UPDATE_USER, UPDATE_DATE, FNAME, LNAME, FATHER, DBIRTH, PHONE, SOURCE, GRADE, FullName}
+            rowAmmoReportWithGradeRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowAmmoReportWithGradeRow)
+            Return rowAmmoReportWithGradeRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function AddAmmoReportWithGradeRow( _
+                    ByVal AMMOTRANSACTION_PK As Decimal,  _
+                    ByVal MILITARY_NB As String,  _
+                    ByVal YEAR As Integer,  _
+                    ByVal QUANTITY As Long,  _
+                    ByVal NBROF_DOC As String,  _
+                    ByVal DATEOF_DOC As Date,  _
+                    ByVal IS_SPECIAL_ORDER As Short,  _
+                    ByVal SPECIAL_NOTE As String,  _
+                    ByVal SIZE_AMMO As String,  _
+                    ByVal NOTE As String,  _
+                    ByVal USER_APP As String,  _
+                    ByVal SYSTEM_DATE As Date,  _
+                    ByVal UPDATE_USER As String,  _
+                    ByVal UPDATE_DATE As Date,  _
+                    ByVal FNAME As String,  _
+                    ByVal LNAME As String,  _
+                    ByVal FATHER As String,  _
+                    ByVal DBIRTH As Date,  _
+                    ByVal PHONE As String,  _
+                    ByVal SOURCE As String,  _
+                    ByVal GRADE As String) As AmmoReportWithGradeRow
+            Dim rowAmmoReportWithGradeRow As AmmoReportWithGradeRow = CType(Me.NewRow,AmmoReportWithGradeRow)
+            Dim columnValuesArray() As Object = New Object() {AMMOTRANSACTION_PK, MILITARY_NB, YEAR, QUANTITY, NBROF_DOC, DATEOF_DOC, IS_SPECIAL_ORDER, SPECIAL_NOTE, SIZE_AMMO, NOTE, USER_APP, SYSTEM_DATE, UPDATE_USER, UPDATE_DATE, FNAME, LNAME, FATHER, DBIRTH, PHONE, SOURCE, GRADE, Nothing}
+            rowAmmoReportWithGradeRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowAmmoReportWithGradeRow)
+            Return rowAmmoReportWithGradeRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As AmmoReportWithGradeDataTable = CType(MyBase.Clone,AmmoReportWithGradeDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New AmmoReportWithGradeDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnAMMOTRANSACTION_PK = MyBase.Columns("AMMOTRANSACTION_PK")
+            Me.columnMILITARY_NB = MyBase.Columns("MILITARY_NB")
+            Me.columnYEAR = MyBase.Columns("YEAR")
+            Me.columnQUANTITY = MyBase.Columns("QUANTITY")
+            Me.columnNBROF_DOC = MyBase.Columns("NBROF_DOC")
+            Me.columnDATEOF_DOC = MyBase.Columns("DATEOF_DOC")
+            Me.columnIS_SPECIAL_ORDER = MyBase.Columns("IS_SPECIAL_ORDER")
+            Me.columnSPECIAL_NOTE = MyBase.Columns("SPECIAL_NOTE")
+            Me.columnSIZE_AMMO = MyBase.Columns("SIZE_AMMO")
+            Me.columnNOTE = MyBase.Columns("NOTE")
+            Me.columnUSER_APP = MyBase.Columns("USER_APP")
+            Me.columnSYSTEM_DATE = MyBase.Columns("SYSTEM_DATE")
+            Me.columnUPDATE_USER = MyBase.Columns("UPDATE_USER")
+            Me.columnUPDATE_DATE = MyBase.Columns("UPDATE_DATE")
+            Me.columnFNAME = MyBase.Columns("FNAME")
+            Me.columnLNAME = MyBase.Columns("LNAME")
+            Me.columnFATHER = MyBase.Columns("FATHER")
+            Me.columnDBIRTH = MyBase.Columns("DBIRTH")
+            Me.columnPHONE = MyBase.Columns("PHONE")
+            Me.columnSOURCE = MyBase.Columns("SOURCE")
+            Me.columnGRADE = MyBase.Columns("GRADE")
+            Me.columnFullName = MyBase.Columns("FullName")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnAMMOTRANSACTION_PK = New Global.System.Data.DataColumn("AMMOTRANSACTION_PK", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAMMOTRANSACTION_PK)
+            Me.columnMILITARY_NB = New Global.System.Data.DataColumn("MILITARY_NB", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMILITARY_NB)
+            Me.columnYEAR = New Global.System.Data.DataColumn("YEAR", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnYEAR)
+            Me.columnQUANTITY = New Global.System.Data.DataColumn("QUANTITY", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnQUANTITY)
+            Me.columnNBROF_DOC = New Global.System.Data.DataColumn("NBROF_DOC", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNBROF_DOC)
+            Me.columnDATEOF_DOC = New Global.System.Data.DataColumn("DATEOF_DOC", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDATEOF_DOC)
+            Me.columnIS_SPECIAL_ORDER = New Global.System.Data.DataColumn("IS_SPECIAL_ORDER", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIS_SPECIAL_ORDER)
+            Me.columnSPECIAL_NOTE = New Global.System.Data.DataColumn("SPECIAL_NOTE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSPECIAL_NOTE)
+            Me.columnSIZE_AMMO = New Global.System.Data.DataColumn("SIZE_AMMO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSIZE_AMMO)
+            Me.columnNOTE = New Global.System.Data.DataColumn("NOTE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNOTE)
+            Me.columnUSER_APP = New Global.System.Data.DataColumn("USER_APP", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUSER_APP)
+            Me.columnSYSTEM_DATE = New Global.System.Data.DataColumn("SYSTEM_DATE", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSYSTEM_DATE)
+            Me.columnUPDATE_USER = New Global.System.Data.DataColumn("UPDATE_USER", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUPDATE_USER)
+            Me.columnUPDATE_DATE = New Global.System.Data.DataColumn("UPDATE_DATE", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUPDATE_DATE)
+            Me.columnFNAME = New Global.System.Data.DataColumn("FNAME", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFNAME)
+            Me.columnLNAME = New Global.System.Data.DataColumn("LNAME", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnLNAME)
+            Me.columnFATHER = New Global.System.Data.DataColumn("FATHER", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFATHER)
+            Me.columnDBIRTH = New Global.System.Data.DataColumn("DBIRTH", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDBIRTH)
+            Me.columnPHONE = New Global.System.Data.DataColumn("PHONE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPHONE)
+            Me.columnSOURCE = New Global.System.Data.DataColumn("SOURCE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSOURCE)
+            Me.columnGRADE = New Global.System.Data.DataColumn("GRADE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGRADE)
+            Me.columnFullName = New Global.System.Data.DataColumn("FullName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFullName)
+            Me.columnAMMOTRANSACTION_PK.AllowDBNull = false
+            Me.columnMILITARY_NB.AllowDBNull = false
+            Me.columnMILITARY_NB.MaxLength = 20
+            Me.columnYEAR.AllowDBNull = false
+            Me.columnQUANTITY.AllowDBNull = false
+            Me.columnNBROF_DOC.AllowDBNull = false
+            Me.columnNBROF_DOC.MaxLength = 50
+            Me.columnDATEOF_DOC.AllowDBNull = false
+            Me.columnIS_SPECIAL_ORDER.AllowDBNull = false
+            Me.columnSPECIAL_NOTE.MaxLength = 500
+            Me.columnSIZE_AMMO.AllowDBNull = false
+            Me.columnSIZE_AMMO.MaxLength = 20
+            Me.columnNOTE.MaxLength = 500
+            Me.columnUSER_APP.AllowDBNull = false
+            Me.columnUSER_APP.MaxLength = 20
+            Me.columnSYSTEM_DATE.AllowDBNull = false
+            Me.columnUPDATE_USER.MaxLength = 20
+            Me.columnFNAME.AllowDBNull = false
+            Me.columnFNAME.MaxLength = 20
+            Me.columnLNAME.AllowDBNull = false
+            Me.columnLNAME.MaxLength = 35
+            Me.columnFATHER.AllowDBNull = false
+            Me.columnFATHER.MaxLength = 20
+            Me.columnDBIRTH.AllowDBNull = false
+            Me.columnPHONE.MaxLength = 30
+            Me.columnSOURCE.AllowDBNull = false
+            Me.columnSOURCE.MaxLength = 1
+            Me.columnGRADE.AllowDBNull = false
+            Me.columnGRADE.MaxLength = 20
+            Me.columnFullName.ReadOnly = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function NewAmmoReportWithGradeRow() As AmmoReportWithGradeRow
+            Return CType(Me.NewRow,AmmoReportWithGradeRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New AmmoReportWithGradeRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(AmmoReportWithGradeRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitExpressions()
+            Me.FullNameColumn.Expression = "FName+' '+FATHER+' '+LNAME"
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.AmmoReportWithGradeRowChangedEvent) Is Nothing) Then
+                RaiseEvent AmmoReportWithGradeRowChanged(Me, New AmmoReportWithGradeRowChangeEvent(CType(e.Row,AmmoReportWithGradeRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.AmmoReportWithGradeRowChangingEvent) Is Nothing) Then
+                RaiseEvent AmmoReportWithGradeRowChanging(Me, New AmmoReportWithGradeRowChangeEvent(CType(e.Row,AmmoReportWithGradeRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.AmmoReportWithGradeRowDeletedEvent) Is Nothing) Then
+                RaiseEvent AmmoReportWithGradeRowDeleted(Me, New AmmoReportWithGradeRowChangeEvent(CType(e.Row,AmmoReportWithGradeRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.AmmoReportWithGradeRowDeletingEvent) Is Nothing) Then
+                RaiseEvent AmmoReportWithGradeRowDeleting(Me, New AmmoReportWithGradeRowChangeEvent(CType(e.Row,AmmoReportWithGradeRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub RemoveAmmoReportWithGradeRow(ByVal row As AmmoReportWithGradeRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As gdssDataSet1 = New gdssDataSet1()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "AmmoReportWithGradeDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -6706,11 +7374,7 @@ Partial Public Class gdssDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property AMMOTRANSACTION_PK() As Decimal
             Get
-                Try 
-                    Return CType(Me(Me.tableAmmoReportInfo.AMMOTRANSACTION_PKColumn),Decimal)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'AMMOTRANSACTION_PK' in table 'AmmoReportInfo' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableAmmoReportInfo.AMMOTRANSACTION_PKColumn),Decimal)
             End Get
             Set
                 Me(Me.tableAmmoReportInfo.AMMOTRANSACTION_PKColumn) = value
@@ -6802,11 +7466,7 @@ Partial Public Class gdssDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property SIZE_AMMO() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableAmmoReportInfo.SIZE_AMMOColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'SIZE_AMMO' in table 'AmmoReportInfo' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableAmmoReportInfo.SIZE_AMMOColumn),String)
             End Get
             Set
                 Me(Me.tableAmmoReportInfo.SIZE_AMMOColumn) = value
@@ -6832,11 +7492,7 @@ Partial Public Class gdssDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property USER_APP() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableAmmoReportInfo.USER_APPColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'USER_APP' in table 'AmmoReportInfo' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableAmmoReportInfo.USER_APPColumn),String)
             End Get
             Set
                 Me(Me.tableAmmoReportInfo.USER_APPColumn) = value
@@ -6847,11 +7503,7 @@ Partial Public Class gdssDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property SYSTEM_DATE() As Date
             Get
-                Try 
-                    Return CType(Me(Me.tableAmmoReportInfo.SYSTEM_DATEColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'SYSTEM_DATE' in table 'AmmoReportInfo' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableAmmoReportInfo.SYSTEM_DATEColumn),Date)
             End Get
             Set
                 Me(Me.tableAmmoReportInfo.SYSTEM_DATEColumn) = value
@@ -6892,11 +7544,7 @@ Partial Public Class gdssDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property FNAME() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableAmmoReportInfo.FNAMEColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'FNAME' in table 'AmmoReportInfo' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableAmmoReportInfo.FNAMEColumn),String)
             End Get
             Set
                 Me(Me.tableAmmoReportInfo.FNAMEColumn) = value
@@ -6907,11 +7555,7 @@ Partial Public Class gdssDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property LNAME() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableAmmoReportInfo.LNAMEColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'LNAME' in table 'AmmoReportInfo' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableAmmoReportInfo.LNAMEColumn),String)
             End Get
             Set
                 Me(Me.tableAmmoReportInfo.LNAMEColumn) = value
@@ -6922,11 +7566,7 @@ Partial Public Class gdssDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property FATHER() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableAmmoReportInfo.FATHERColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'FATHER' in table 'AmmoReportInfo' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableAmmoReportInfo.FATHERColumn),String)
             End Get
             Set
                 Me(Me.tableAmmoReportInfo.FATHERColumn) = value
@@ -6937,11 +7577,7 @@ Partial Public Class gdssDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property DBIRTH() As Date
             Get
-                Try 
-                    Return CType(Me(Me.tableAmmoReportInfo.DBIRTHColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'DBIRTH' in table 'AmmoReportInfo' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableAmmoReportInfo.DBIRTHColumn),Date)
             End Get
             Set
                 Me(Me.tableAmmoReportInfo.DBIRTHColumn) = value
@@ -6967,11 +7603,7 @@ Partial Public Class gdssDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property SOURCE() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableAmmoReportInfo.SOURCEColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'SOURCE' in table 'AmmoReportInfo' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableAmmoReportInfo.SOURCEColumn),String)
             End Get
             Set
                 Me(Me.tableAmmoReportInfo.SOURCEColumn) = value
@@ -6995,18 +7627,6 @@ Partial Public Class gdssDataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsAMMOTRANSACTION_PKNull() As Boolean
-            Return Me.IsNull(Me.tableAmmoReportInfo.AMMOTRANSACTION_PKColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetAMMOTRANSACTION_PKNull()
-            Me(Me.tableAmmoReportInfo.AMMOTRANSACTION_PKColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsSPECIAL_NOTENull() As Boolean
             Return Me.IsNull(Me.tableAmmoReportInfo.SPECIAL_NOTEColumn)
         End Function
@@ -7019,18 +7639,6 @@ Partial Public Class gdssDataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsSIZE_AMMONull() As Boolean
-            Return Me.IsNull(Me.tableAmmoReportInfo.SIZE_AMMOColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetSIZE_AMMONull()
-            Me(Me.tableAmmoReportInfo.SIZE_AMMOColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsNOTENull() As Boolean
             Return Me.IsNull(Me.tableAmmoReportInfo.NOTEColumn)
         End Function
@@ -7039,30 +7647,6 @@ Partial Public Class gdssDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetNOTENull()
             Me(Me.tableAmmoReportInfo.NOTEColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsUSER_APPNull() As Boolean
-            Return Me.IsNull(Me.tableAmmoReportInfo.USER_APPColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetUSER_APPNull()
-            Me(Me.tableAmmoReportInfo.USER_APPColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsSYSTEM_DATENull() As Boolean
-            Return Me.IsNull(Me.tableAmmoReportInfo.SYSTEM_DATEColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetSYSTEM_DATENull()
-            Me(Me.tableAmmoReportInfo.SYSTEM_DATEColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7091,54 +7675,6 @@ Partial Public Class gdssDataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsFNAMENull() As Boolean
-            Return Me.IsNull(Me.tableAmmoReportInfo.FNAMEColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetFNAMENull()
-            Me(Me.tableAmmoReportInfo.FNAMEColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsLNAMENull() As Boolean
-            Return Me.IsNull(Me.tableAmmoReportInfo.LNAMEColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetLNAMENull()
-            Me(Me.tableAmmoReportInfo.LNAMEColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsFATHERNull() As Boolean
-            Return Me.IsNull(Me.tableAmmoReportInfo.FATHERColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetFATHERNull()
-            Me(Me.tableAmmoReportInfo.FATHERColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsDBIRTHNull() As Boolean
-            Return Me.IsNull(Me.tableAmmoReportInfo.DBIRTHColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetDBIRTHNull()
-            Me(Me.tableAmmoReportInfo.DBIRTHColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsPHONENull() As Boolean
             Return Me.IsNull(Me.tableAmmoReportInfo.PHONEColumn)
         End Function
@@ -7151,18 +7687,6 @@ Partial Public Class gdssDataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsSOURCENull() As Boolean
-            Return Me.IsNull(Me.tableAmmoReportInfo.SOURCEColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetSOURCENull()
-            Me(Me.tableAmmoReportInfo.SOURCEColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsFullNameNull() As Boolean
             Return Me.IsNull(Me.tableAmmoReportInfo.FullNameColumn)
         End Function
@@ -7171,6 +7695,360 @@ Partial Public Class gdssDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetFullNameNull()
             Me(Me.tableAmmoReportInfo.FullNameColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class AmmoReportWithGradeRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableAmmoReportWithGrade As AmmoReportWithGradeDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableAmmoReportWithGrade = CType(Me.Table,AmmoReportWithGradeDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property AMMOTRANSACTION_PK() As Decimal
+            Get
+                Return CType(Me(Me.tableAmmoReportWithGrade.AMMOTRANSACTION_PKColumn),Decimal)
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.AMMOTRANSACTION_PKColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property MILITARY_NB() As String
+            Get
+                Return CType(Me(Me.tableAmmoReportWithGrade.MILITARY_NBColumn),String)
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.MILITARY_NBColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property YEAR() As Integer
+            Get
+                Return CType(Me(Me.tableAmmoReportWithGrade.YEARColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.YEARColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property QUANTITY() As Long
+            Get
+                Return CType(Me(Me.tableAmmoReportWithGrade.QUANTITYColumn),Long)
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.QUANTITYColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property NBROF_DOC() As String
+            Get
+                Return CType(Me(Me.tableAmmoReportWithGrade.NBROF_DOCColumn),String)
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.NBROF_DOCColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property DATEOF_DOC() As Date
+            Get
+                Return CType(Me(Me.tableAmmoReportWithGrade.DATEOF_DOCColumn),Date)
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.DATEOF_DOCColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property IS_SPECIAL_ORDER() As Short
+            Get
+                Return CType(Me(Me.tableAmmoReportWithGrade.IS_SPECIAL_ORDERColumn),Short)
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.IS_SPECIAL_ORDERColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property SPECIAL_NOTE() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAmmoReportWithGrade.SPECIAL_NOTEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SPECIAL_NOTE' in table 'AmmoReportWithGrade' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.SPECIAL_NOTEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property SIZE_AMMO() As String
+            Get
+                Return CType(Me(Me.tableAmmoReportWithGrade.SIZE_AMMOColumn),String)
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.SIZE_AMMOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property NOTE() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAmmoReportWithGrade.NOTEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'NOTE' in table 'AmmoReportWithGrade' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.NOTEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property USER_APP() As String
+            Get
+                Return CType(Me(Me.tableAmmoReportWithGrade.USER_APPColumn),String)
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.USER_APPColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property SYSTEM_DATE() As Date
+            Get
+                Return CType(Me(Me.tableAmmoReportWithGrade.SYSTEM_DATEColumn),Date)
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.SYSTEM_DATEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property UPDATE_USER() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAmmoReportWithGrade.UPDATE_USERColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'UPDATE_USER' in table 'AmmoReportWithGrade' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.UPDATE_USERColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property UPDATE_DATE() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableAmmoReportWithGrade.UPDATE_DATEColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'UPDATE_DATE' in table 'AmmoReportWithGrade' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.UPDATE_DATEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property FNAME() As String
+            Get
+                Return CType(Me(Me.tableAmmoReportWithGrade.FNAMEColumn),String)
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.FNAMEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property LNAME() As String
+            Get
+                Return CType(Me(Me.tableAmmoReportWithGrade.LNAMEColumn),String)
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.LNAMEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property FATHER() As String
+            Get
+                Return CType(Me(Me.tableAmmoReportWithGrade.FATHERColumn),String)
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.FATHERColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property DBIRTH() As Date
+            Get
+                Return CType(Me(Me.tableAmmoReportWithGrade.DBIRTHColumn),Date)
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.DBIRTHColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property PHONE() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAmmoReportWithGrade.PHONEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'PHONE' in table 'AmmoReportWithGrade' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.PHONEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property SOURCE() As String
+            Get
+                Return CType(Me(Me.tableAmmoReportWithGrade.SOURCEColumn),String)
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.SOURCEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property GRADE() As String
+            Get
+                Return CType(Me(Me.tableAmmoReportWithGrade.GRADEColumn),String)
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.GRADEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property FullName() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableAmmoReportWithGrade.FullNameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'FullName' in table 'AmmoReportWithGrade' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableAmmoReportWithGrade.FullNameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsSPECIAL_NOTENull() As Boolean
+            Return Me.IsNull(Me.tableAmmoReportWithGrade.SPECIAL_NOTEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetSPECIAL_NOTENull()
+            Me(Me.tableAmmoReportWithGrade.SPECIAL_NOTEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsNOTENull() As Boolean
+            Return Me.IsNull(Me.tableAmmoReportWithGrade.NOTEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetNOTENull()
+            Me(Me.tableAmmoReportWithGrade.NOTEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsUPDATE_USERNull() As Boolean
+            Return Me.IsNull(Me.tableAmmoReportWithGrade.UPDATE_USERColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetUPDATE_USERNull()
+            Me(Me.tableAmmoReportWithGrade.UPDATE_USERColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsUPDATE_DATENull() As Boolean
+            Return Me.IsNull(Me.tableAmmoReportWithGrade.UPDATE_DATEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetUPDATE_DATENull()
+            Me(Me.tableAmmoReportWithGrade.UPDATE_DATEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsPHONENull() As Boolean
+            Return Me.IsNull(Me.tableAmmoReportWithGrade.PHONEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetPHONENull()
+            Me(Me.tableAmmoReportWithGrade.PHONEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsFullNameNull() As Boolean
+            Return Me.IsNull(Me.tableAmmoReportWithGrade.FullNameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetFullNameNull()
+            Me(Me.tableAmmoReportWithGrade.FullNameColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -7520,6 +8398,42 @@ Partial Public Class gdssDataSet1
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property Row() As AmmoReportInfoRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class AmmoReportWithGradeRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As AmmoReportWithGradeRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As AmmoReportWithGradeRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As AmmoReportWithGradeRow
             Get
                 Return Me.eventRow
             End Get
@@ -13487,10 +14401,14 @@ Namespace gdssDataSet1TableAdapters
             Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(2) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        TEAM.AMMO.*, TEAM.IDCARD.FNAME, TEAM.IDCARD.LNAME, TEAM.IDCARD.FATH"& _ 
-                "ER, TEAM.IDCARD.DBIRTH, TEAM.IDCARD.PHONE, TEAM.IDCARD.SOURCE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            T"& _ 
-                "EAM.AMMO INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.IDCARD ON TEAM.AMMO.MILITARY_"& _ 
-                "NB = TEAM.IDCARD.CODE"
+            Me._commandCollection(0).CommandText = "SELECT        TEAM.AMMO.AMMOTRANSACTION_PK, TEAM.AMMO.MILITARY_NB, TEAM.AMMO.""YEA"& _ 
+                "R"", TEAM.AMMO.QUANTITY, TEAM.AMMO.NBROF_DOC, TEAM.AMMO.DATEOF_DOC, TEAM.AMMO.IS_"& _ 
+                "SPECIAL_ORDER, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.AMMO.SPECIAL_NOTE, TEAM.AMMO.SIZE"& _ 
+                "_AMMO, TEAM.AMMO.NOTE, TEAM.AMMO.USER_APP, TEAM.AMMO.SYSTEM_DATE, TEAM.AMMO.UPDA"& _ 
+                "TE_USER, TEAM.AMMO.UPDATE_DATE, TEAM.IDCARD.FNAME, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TE"& _ 
+                "AM.IDCARD.LNAME, TEAM.IDCARD.FATHER, TEAM.IDCARD.DBIRTH, TEAM.IDCARD.PHONE, TEAM"& _ 
+                ".IDCARD.SOURCE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.AMMO INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         T"& _ 
+                "EAM.IDCARD ON TEAM.AMMO.MILITARY_NB = TEAM.IDCARD.CODE"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(1).Connection = Me.Connection
@@ -13613,6 +14531,260 @@ Namespace gdssDataSet1TableAdapters
             Me.Adapter.SelectCommand = Me.CommandCollection(2)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(PK,Decimal)
             Dim dataTable As gdssDataSet1.AmmoReportInfoDataTable = New gdssDataSet1.AmmoReportInfoDataTable(true)
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class AmmoReportWithGradeTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter
+        
+        Private _connection As Global.Oracle.ManagedDataAccess.Client.OracleConnection
+        
+        Private _transaction As Global.Oracle.ManagedDataAccess.Client.OracleTransaction
+        
+        Private _commandCollection() As Global.Oracle.ManagedDataAccess.Client.OracleCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Connection() As Global.Oracle.ManagedDataAccess.Client.OracleConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.Oracle.ManagedDataAccess.Client.OracleCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Transaction() As Global.Oracle.ManagedDataAccess.Client.OracleTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.Oracle.ManagedDataAccess.Client.OracleDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "AmmoReportWithGrade"
+            tableMapping.ColumnMappings.Add("AMMOTRANSACTION_PK", "AMMOTRANSACTION_PK")
+            tableMapping.ColumnMappings.Add("MILITARY_NB", "MILITARY_NB")
+            tableMapping.ColumnMappings.Add("YEAR", "YEAR")
+            tableMapping.ColumnMappings.Add("QUANTITY", "QUANTITY")
+            tableMapping.ColumnMappings.Add("NBROF_DOC", "NBROF_DOC")
+            tableMapping.ColumnMappings.Add("DATEOF_DOC", "DATEOF_DOC")
+            tableMapping.ColumnMappings.Add("IS_SPECIAL_ORDER", "IS_SPECIAL_ORDER")
+            tableMapping.ColumnMappings.Add("SPECIAL_NOTE", "SPECIAL_NOTE")
+            tableMapping.ColumnMappings.Add("SIZE_AMMO", "SIZE_AMMO")
+            tableMapping.ColumnMappings.Add("NOTE", "NOTE")
+            tableMapping.ColumnMappings.Add("USER_APP", "USER_APP")
+            tableMapping.ColumnMappings.Add("SYSTEM_DATE", "SYSTEM_DATE")
+            tableMapping.ColumnMappings.Add("UPDATE_USER", "UPDATE_USER")
+            tableMapping.ColumnMappings.Add("UPDATE_DATE", "UPDATE_DATE")
+            tableMapping.ColumnMappings.Add("FNAME", "FNAME")
+            tableMapping.ColumnMappings.Add("LNAME", "LNAME")
+            tableMapping.ColumnMappings.Add("FATHER", "FATHER")
+            tableMapping.ColumnMappings.Add("DBIRTH", "DBIRTH")
+            tableMapping.ColumnMappings.Add("PHONE", "PHONE")
+            tableMapping.ColumnMappings.Add("SOURCE", "SOURCE")
+            tableMapping.ColumnMappings.Add("GRADE", "GRADE")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.Oracle.ManagedDataAccess.Client.OracleConnection()
+            Me._connection.ConnectionString = Global.GDSSTEMPLATE.My.MySettings.Default.gdssConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(1) {}
+            Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT        TEAM.AMMO.AMMOTRANSACTION_PK, TEAM.AMMO.MILITARY_NB, TEAM.AMMO.""YEA"& _ 
+                "R"", TEAM.AMMO.QUANTITY, TEAM.AMMO.NBROF_DOC, TEAM.AMMO.DATEOF_DOC, TEAM.AMMO.IS_"& _ 
+                "SPECIAL_ORDER, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.AMMO.SPECIAL_NOTE, TEAM.AMMO.SIZE"& _ 
+                "_AMMO, TEAM.AMMO.NOTE, TEAM.AMMO.USER_APP, TEAM.AMMO.SYSTEM_DATE, TEAM.AMMO.UPDA"& _ 
+                "TE_USER, TEAM.AMMO.UPDATE_DATE, TEAM.IDCARD.FNAME, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TE"& _ 
+                "AM.IDCARD.LNAME, TEAM.IDCARD.FATHER, TEAM.IDCARD.DBIRTH, TEAM.IDCARD.PHONE, TEAM"& _ 
+                ".IDCARD.SOURCE, TEAM.GRADE.LABEL AS Grade"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.AMMO INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.IDCARD ON TEAM.AMMO.MILITARY_NB = TEAM.IDCARD.COD"& _ 
+                "E INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.GRADE ON TEAM.IDCARD.GRADE = TEAM.GR"& _ 
+                "ADE.CODE"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT        TEAM.AMMO.AMMOTRANSACTION_PK, TEAM.AMMO.MILITARY_NB, TEAM.AMMO.""YEA"& _ 
+                "R"", TEAM.AMMO.QUANTITY, TEAM.AMMO.NBROF_DOC, TEAM.AMMO.DATEOF_DOC, TEAM.AMMO.IS_"& _ 
+                "SPECIAL_ORDER, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.AMMO.SPECIAL_NOTE, TEAM.AMMO.SIZE"& _ 
+                "_AMMO, TEAM.AMMO.NOTE, TEAM.AMMO.USER_APP, TEAM.AMMO.SYSTEM_DATE, TEAM.AMMO.UPDA"& _ 
+                "TE_USER, TEAM.AMMO.UPDATE_DATE, TEAM.IDCARD.FNAME, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TE"& _ 
+                "AM.IDCARD.LNAME, TEAM.IDCARD.FATHER, TEAM.IDCARD.DBIRTH, TEAM.IDCARD.PHONE, TEAM"& _ 
+                ".IDCARD.SOURCE, TEAM.GRADE.LABEL as Grade"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.AMMO INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.IDCARD ON TEAM.AMMO.MILITARY_NB = TEAM.IDCARD.COD"& _ 
+                "E INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.GRADE ON TEAM.IDCARD.GRADE = TEAM.GR"& _ 
+                "ADE.CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (TEAM.AMMO.MILITARY_NB = :MILINB)"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":MILINB"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 20
+            param.IsNullable = true
+            param.SourceColumn = "MILITARY_NB"
+            Me._commandCollection(1).Parameters.Add(param)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As gdssDataSet1.AmmoReportWithGradeDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As gdssDataSet1.AmmoReportWithGradeDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As gdssDataSet1.AmmoReportWithGradeDataTable = New gdssDataSet1.AmmoReportWithGradeDataTable(true)
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByMilitaryNb(ByVal dataTable As gdssDataSet1.AmmoReportWithGradeDataTable, ByVal MILINB As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (MILINB Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("MILINB")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(MILINB,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataByMilitaryNb(ByVal MILINB As String) As gdssDataSet1.AmmoReportWithGradeDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (MILINB Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("MILINB")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(MILINB,String)
+            End If
+            Dim dataTable As gdssDataSet1.AmmoReportWithGradeDataTable = New gdssDataSet1.AmmoReportWithGradeDataTable(true)
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function

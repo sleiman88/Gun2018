@@ -1,9 +1,11 @@
 ﻿Public Class MainReportByPerson
     Private Sub MainReportByPerson_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'GdssDataSet1.AmmoReportWithGrade' table. You can move, or remove it, as needed.
+        'Me.AmmoReportWithGradeTableAdapter.Fill(Me.GdssDataSet1.AmmoReportWithGrade)
         'TODO: This line of code loads data into the 'GdssDataSet1.AmmoReportInfo' table. You can move, or remove it, as needed.
-        Me.AmmoReportInfoTableAdapter.Fill(Me.GdssDataSet1.AmmoReportInfo)
+        ' Me.AmmoReportInfoTableAdapter.Fill(Me.GdssDataSet1.AmmoReportInfo)
         'TODO: This line of code loads data into the 'GdssDataSet1.GunReportInfoForm' table. You can move, or remove it, as needed.
-        Me.GunReportInfoFormTableAdapter.Fill(Me.GdssDataSet1.GunReportInfoForm)
+        '  Me.GunReportInfoFormTableAdapter.Fill(Me.GdssDataSet1.GunReportInfoForm)
         'TODO: This line of code loads data into the 'GdssDataSet1.N0itemsAndPerGUn' table. You can move, or remove it, as needed.
         ' Me.N0itemsAndPerGUnTableAdapter.Fill(Me.GdssDataSet1.N0itemsAndPerGUn)
         'TODO: This line of code loads data into the 'GdssDataSet1.IDCARD' table. You can move, or remove it, as needed.
@@ -202,8 +204,10 @@
 
             Person_Label.Visible = True
         Else
+            Me.AmmoReportWithGradeTableAdapter.FillByMilitaryNb(Me.GdssDataSet1.AmmoReportWithGrade, ComboBoxPersons.SelectedValue)
             ' Me.GunReportInfoFormTableAdapter.FillByOwner(Me.GdssDataSet1.GunReportInfoForm, ComboBoxPersons.SelectedValue)
-            Me.AmmoReportInfoTableAdapter.FillByMILINB(Me.GdssDataSet1.AmmoReportInfo, ComboBoxPersons.SelectedValue)
+            'Me.AmmoReportInfoTableAdapter.FillByMILINB(Me.GdssDataSet1.AmmoReportInfo, ComboBoxPersons.SelectedValue)
+            ' Me.AmmoReportInfoTableAdapter.FillByMILINB(Me.GdssDataSet1.AmmoReportInfo, ComboBoxPersons.SelectedValue.ToString)
             Dim MyReportAmmoByPerson As ReportAmmoByPerson
             MyReportAmmoByPerson = New ReportAmmoByPerson()
             MyReportAmmoByPerson.ShowDialog()

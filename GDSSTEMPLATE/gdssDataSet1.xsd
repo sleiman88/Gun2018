@@ -795,10 +795,12 @@ WHERE        (TEAM.PERGUN.OWNER = :Owner)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AmmoReportInfoTableAdapter" GeneratorDataComponentClassName="AmmoReportInfoTableAdapter" Name="AmmoReportInfo" UserDataComponentName="AmmoReportInfoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="gdssConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="gdssConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        TEAM.AMMO.*, TEAM.IDCARD.FNAME, TEAM.IDCARD.LNAME, TEAM.IDCARD.FATHER, TEAM.IDCARD.DBIRTH, TEAM.IDCARD.PHONE, TEAM.IDCARD.SOURCE
+                    <CommandText>SELECT        TEAM.AMMO.AMMOTRANSACTION_PK, TEAM.AMMO.MILITARY_NB, TEAM.AMMO."YEAR", TEAM.AMMO.QUANTITY, TEAM.AMMO.NBROF_DOC, TEAM.AMMO.DATEOF_DOC, TEAM.AMMO.IS_SPECIAL_ORDER, 
+                         TEAM.AMMO.SPECIAL_NOTE, TEAM.AMMO.SIZE_AMMO, TEAM.AMMO.NOTE, TEAM.AMMO.USER_APP, TEAM.AMMO.SYSTEM_DATE, TEAM.AMMO.UPDATE_USER, TEAM.AMMO.UPDATE_DATE, TEAM.IDCARD.FNAME, 
+                         TEAM.IDCARD.LNAME, TEAM.IDCARD.FATHER, TEAM.IDCARD.DBIRTH, TEAM.IDCARD.PHONE, TEAM.IDCARD.SOURCE
 FROM            TEAM.AMMO INNER JOIN
                          TEAM.IDCARD ON TEAM.AMMO.MILITARY_NB = TEAM.IDCARD.CODE</CommandText>
                     <Parameters />
@@ -861,6 +863,64 @@ WHERE        (TEAM.AMMO.AMMOTRANSACTION_PK = :PK)</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AmmoReportWithGradeTableAdapter" GeneratorDataComponentClassName="AmmoReportWithGradeTableAdapter" Name="AmmoReportWithGrade" UserDataComponentName="AmmoReportWithGradeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="gdssConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TEAM.AMMO.AMMOTRANSACTION_PK, TEAM.AMMO.MILITARY_NB, TEAM.AMMO."YEAR", TEAM.AMMO.QUANTITY, TEAM.AMMO.NBROF_DOC, TEAM.AMMO.DATEOF_DOC, TEAM.AMMO.IS_SPECIAL_ORDER, 
+                         TEAM.AMMO.SPECIAL_NOTE, TEAM.AMMO.SIZE_AMMO, TEAM.AMMO.NOTE, TEAM.AMMO.USER_APP, TEAM.AMMO.SYSTEM_DATE, TEAM.AMMO.UPDATE_USER, TEAM.AMMO.UPDATE_DATE, TEAM.IDCARD.FNAME, 
+                         TEAM.IDCARD.LNAME, TEAM.IDCARD.FATHER, TEAM.IDCARD.DBIRTH, TEAM.IDCARD.PHONE, TEAM.IDCARD.SOURCE, TEAM.GRADE.LABEL AS Grade
+FROM            TEAM.AMMO INNER JOIN
+                         TEAM.IDCARD ON TEAM.AMMO.MILITARY_NB = TEAM.IDCARD.CODE INNER JOIN
+                         TEAM.GRADE ON TEAM.IDCARD.GRADE = TEAM.GRADE.CODE</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="AMMOTRANSACTION_PK" DataSetColumn="AMMOTRANSACTION_PK" />
+              <Mapping SourceColumn="MILITARY_NB" DataSetColumn="MILITARY_NB" />
+              <Mapping SourceColumn="YEAR" DataSetColumn="YEAR" />
+              <Mapping SourceColumn="QUANTITY" DataSetColumn="QUANTITY" />
+              <Mapping SourceColumn="NBROF_DOC" DataSetColumn="NBROF_DOC" />
+              <Mapping SourceColumn="DATEOF_DOC" DataSetColumn="DATEOF_DOC" />
+              <Mapping SourceColumn="IS_SPECIAL_ORDER" DataSetColumn="IS_SPECIAL_ORDER" />
+              <Mapping SourceColumn="SPECIAL_NOTE" DataSetColumn="SPECIAL_NOTE" />
+              <Mapping SourceColumn="SIZE_AMMO" DataSetColumn="SIZE_AMMO" />
+              <Mapping SourceColumn="NOTE" DataSetColumn="NOTE" />
+              <Mapping SourceColumn="USER_APP" DataSetColumn="USER_APP" />
+              <Mapping SourceColumn="SYSTEM_DATE" DataSetColumn="SYSTEM_DATE" />
+              <Mapping SourceColumn="UPDATE_USER" DataSetColumn="UPDATE_USER" />
+              <Mapping SourceColumn="UPDATE_DATE" DataSetColumn="UPDATE_DATE" />
+              <Mapping SourceColumn="FNAME" DataSetColumn="FNAME" />
+              <Mapping SourceColumn="LNAME" DataSetColumn="LNAME" />
+              <Mapping SourceColumn="FATHER" DataSetColumn="FATHER" />
+              <Mapping SourceColumn="DBIRTH" DataSetColumn="DBIRTH" />
+              <Mapping SourceColumn="PHONE" DataSetColumn="PHONE" />
+              <Mapping SourceColumn="SOURCE" DataSetColumn="SOURCE" />
+              <Mapping SourceColumn="GRADE" DataSetColumn="GRADE" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="gdssConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByMilitaryNb" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByMilitaryNb" GeneratorSourceName="FillByMilitaryNb" GetMethodModifier="Public" GetMethodName="GetDataByMilitaryNb" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByMilitaryNb" UserSourceName="FillByMilitaryNb">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TEAM.AMMO.AMMOTRANSACTION_PK, TEAM.AMMO.MILITARY_NB, TEAM.AMMO."YEAR", TEAM.AMMO.QUANTITY, TEAM.AMMO.NBROF_DOC, TEAM.AMMO.DATEOF_DOC, TEAM.AMMO.IS_SPECIAL_ORDER, 
+                         TEAM.AMMO.SPECIAL_NOTE, TEAM.AMMO.SIZE_AMMO, TEAM.AMMO.NOTE, TEAM.AMMO.USER_APP, TEAM.AMMO.SYSTEM_DATE, TEAM.AMMO.UPDATE_USER, TEAM.AMMO.UPDATE_DATE, TEAM.IDCARD.FNAME, 
+                         TEAM.IDCARD.LNAME, TEAM.IDCARD.FATHER, TEAM.IDCARD.DBIRTH, TEAM.IDCARD.PHONE, TEAM.IDCARD.SOURCE, TEAM.GRADE.LABEL as Grade
+FROM            TEAM.AMMO INNER JOIN
+                         TEAM.IDCARD ON TEAM.AMMO.MILITARY_NB = TEAM.IDCARD.CODE INNER JOIN
+                         TEAM.GRADE ON TEAM.IDCARD.GRADE = TEAM.GRADE.CODE
+WHERE        (TEAM.AMMO.MILITARY_NB = :MILINB)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="MILINB" ColumnName="MILITARY_NB" DataSourceName="TEAM.AMMO" DataTypeServer="VARCHAR2(20)" DbType="String" Direction="Input" ParameterName=":MILINB" Precision="0" ProviderType="Varchar2" Scale="0" Size="20" SourceColumn="MILITARY_NB" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -869,14 +929,14 @@ WHERE        (TEAM.AMMO.AMMOTRANSACTION_PK = :PK)</CommandText>
   <xs:element name="gdssDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="gdssDataSet1" msprop:Generator_UserDSName="gdssDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="serverdatetime" msprop:Generator_TableClassName="serverdatetimeDataTable" msprop:Generator_TableVarName="tableserverdatetime" msprop:Generator_RowChangedName="serverdatetimeRowChanged" msprop:Generator_TablePropName="serverdatetime" msprop:Generator_RowDeletingName="serverdatetimeRowDeleting" msprop:Generator_RowChangingName="serverdatetimeRowChanging" msprop:Generator_RowEvHandlerName="serverdatetimeRowChangeEventHandler" msprop:Generator_RowDeletedName="serverdatetimeRowDeleted" msprop:Generator_RowClassName="serverdatetimeRow" msprop:Generator_UserTableName="serverdatetime" msprop:Generator_RowEvArgName="serverdatetimeRowChangeEvent">
+        <xs:element name="serverdatetime" msprop:Generator_TableClassName="serverdatetimeDataTable" msprop:Generator_TableVarName="tableserverdatetime" msprop:Generator_TablePropName="serverdatetime" msprop:Generator_RowDeletingName="serverdatetimeRowDeleting" msprop:Generator_RowChangingName="serverdatetimeRowChanging" msprop:Generator_RowEvHandlerName="serverdatetimeRowChangeEventHandler" msprop:Generator_RowDeletedName="serverdatetimeRowDeleted" msprop:Generator_UserTableName="serverdatetime" msprop:Generator_RowChangedName="serverdatetimeRowChanged" msprop:Generator_RowEvArgName="serverdatetimeRowChangeEvent" msprop:Generator_RowClassName="serverdatetimeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SYSDATE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSYSDATE" msprop:Generator_ColumnPropNameInRow="SYSDATE" msprop:Generator_ColumnPropNameInTable="SYSDATEColumn" msprop:Generator_UserColumnName="SYSDATE" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="N0ITEMS" msprop:Generator_TableClassName="N0ITEMSDataTable" msprop:Generator_TableVarName="tableN0ITEMS" msprop:Generator_TablePropName="N0ITEMS" msprop:Generator_RowDeletingName="N0ITEMSRowDeleting" msprop:Generator_RowChangingName="N0ITEMSRowChanging" msprop:Generator_RowEvHandlerName="N0ITEMSRowChangeEventHandler" msprop:Generator_RowDeletedName="N0ITEMSRowDeleted" msprop:Generator_UserTableName="N0ITEMS" msprop:Generator_RowChangedName="N0ITEMSRowChanged" msprop:Generator_RowEvArgName="N0ITEMSRowChangeEvent" msprop:Generator_RowClassName="N0ITEMSRow">
+        <xs:element name="N0ITEMS" msprop:Generator_TableClassName="N0ITEMSDataTable" msprop:Generator_TableVarName="tableN0ITEMS" msprop:Generator_RowChangedName="N0ITEMSRowChanged" msprop:Generator_TablePropName="N0ITEMS" msprop:Generator_RowDeletingName="N0ITEMSRowDeleting" msprop:Generator_RowChangingName="N0ITEMSRowChanging" msprop:Generator_RowEvHandlerName="N0ITEMSRowChangeEventHandler" msprop:Generator_RowDeletedName="N0ITEMSRowDeleted" msprop:Generator_RowClassName="N0ITEMSRow" msprop:Generator_UserTableName="N0ITEMS" msprop:Generator_RowEvArgName="N0ITEMSRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ITEM" msprop:Generator_ColumnVarNameInTable="columnITEM" msprop:Generator_ColumnPropNameInRow="ITEM" msprop:Generator_ColumnPropNameInTable="ITEMColumn" msprop:Generator_UserColumnName="ITEM">
@@ -896,7 +956,7 @@ WHERE        (TEAM.AMMO.AMMOTRANSACTION_PK = :PK)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="IDCARD" msprop:Generator_TableClassName="IDCARDDataTable" msprop:Generator_TableVarName="tableIDCARD" msprop:Generator_TablePropName="IDCARD" msprop:Generator_RowDeletingName="IDCARDRowDeleting" msprop:Generator_RowChangingName="IDCARDRowChanging" msprop:Generator_RowEvHandlerName="IDCARDRowChangeEventHandler" msprop:Generator_RowDeletedName="IDCARDRowDeleted" msprop:Generator_UserTableName="IDCARD" msprop:Generator_RowChangedName="IDCARDRowChanged" msprop:Generator_RowEvArgName="IDCARDRowChangeEvent" msprop:Generator_RowClassName="IDCARDRow">
+        <xs:element name="IDCARD" msprop:Generator_TableClassName="IDCARDDataTable" msprop:Generator_TableVarName="tableIDCARD" msprop:Generator_RowChangedName="IDCARDRowChanged" msprop:Generator_TablePropName="IDCARD" msprop:Generator_RowDeletingName="IDCARDRowDeleting" msprop:Generator_RowChangingName="IDCARDRowChanging" msprop:Generator_RowEvHandlerName="IDCARDRowChangeEventHandler" msprop:Generator_RowDeletedName="IDCARDRowDeleted" msprop:Generator_RowClassName="IDCARDRow" msprop:Generator_UserTableName="IDCARD" msprop:Generator_RowEvArgName="IDCARDRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CODE" msprop:Generator_ColumnVarNameInTable="columnCODE" msprop:Generator_ColumnPropNameInRow="CODE" msprop:Generator_ColumnPropNameInTable="CODEColumn" msprop:Generator_UserColumnName="CODE" type="xs:int" />
@@ -941,7 +1001,7 @@ WHERE        (TEAM.AMMO.AMMOTRANSACTION_PK = :PK)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="N0OFFICE1" msprop:Generator_TableClassName="N0OFFICE1DataTable" msprop:Generator_TableVarName="tableN0OFFICE1" msprop:Generator_TablePropName="N0OFFICE1" msprop:Generator_RowDeletingName="N0OFFICE1RowDeleting" msprop:Generator_RowChangingName="N0OFFICE1RowChanging" msprop:Generator_RowEvHandlerName="N0OFFICE1RowChangeEventHandler" msprop:Generator_RowDeletedName="N0OFFICE1RowDeleted" msprop:Generator_UserTableName="N0OFFICE1" msprop:Generator_RowChangedName="N0OFFICE1RowChanged" msprop:Generator_RowEvArgName="N0OFFICE1RowChangeEvent" msprop:Generator_RowClassName="N0OFFICE1Row">
+        <xs:element name="N0OFFICE1" msprop:Generator_TableClassName="N0OFFICE1DataTable" msprop:Generator_TableVarName="tableN0OFFICE1" msprop:Generator_RowChangedName="N0OFFICE1RowChanged" msprop:Generator_TablePropName="N0OFFICE1" msprop:Generator_RowDeletingName="N0OFFICE1RowDeleting" msprop:Generator_RowChangingName="N0OFFICE1RowChanging" msprop:Generator_RowEvHandlerName="N0OFFICE1RowChangeEventHandler" msprop:Generator_RowDeletedName="N0OFFICE1RowDeleted" msprop:Generator_RowClassName="N0OFFICE1Row" msprop:Generator_UserTableName="N0OFFICE1" msprop:Generator_RowEvArgName="N0OFFICE1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CODE" msprop:Generator_ColumnVarNameInTable="columnCODE" msprop:Generator_ColumnPropNameInRow="CODE" msprop:Generator_ColumnPropNameInTable="CODEColumn" msprop:Generator_UserColumnName="CODE" type="xs:int" />
@@ -984,7 +1044,7 @@ WHERE        (TEAM.AMMO.AMMOTRANSACTION_PK = :PK)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PERGUNTableAdapter" msprop:Generator_TableClassName="PERGUNTableAdapterDataTable" msprop:Generator_TableVarName="tablePERGUNTableAdapter" msprop:Generator_RowChangedName="PERGUNTableAdapterRowChanged" msprop:Generator_TablePropName="PERGUNTableAdapter" msprop:Generator_RowDeletingName="PERGUNTableAdapterRowDeleting" msprop:Generator_RowChangingName="PERGUNTableAdapterRowChanging" msprop:Generator_RowEvHandlerName="PERGUNTableAdapterRowChangeEventHandler" msprop:Generator_RowDeletedName="PERGUNTableAdapterRowDeleted" msprop:Generator_RowClassName="PERGUNTableAdapterRow" msprop:Generator_UserTableName="PERGUNTableAdapter" msprop:Generator_RowEvArgName="PERGUNTableAdapterRowChangeEvent">
+        <xs:element name="PERGUNTableAdapter" msprop:Generator_TableClassName="PERGUNTableAdapterDataTable" msprop:Generator_TableVarName="tablePERGUNTableAdapter" msprop:Generator_TablePropName="PERGUNTableAdapter" msprop:Generator_RowDeletingName="PERGUNTableAdapterRowDeleting" msprop:Generator_RowChangingName="PERGUNTableAdapterRowChanging" msprop:Generator_RowEvHandlerName="PERGUNTableAdapterRowChangeEventHandler" msprop:Generator_RowDeletedName="PERGUNTableAdapterRowDeleted" msprop:Generator_UserTableName="PERGUNTableAdapter" msprop:Generator_RowChangedName="PERGUNTableAdapterRowChanged" msprop:Generator_RowEvArgName="PERGUNTableAdapterRowChangeEvent" msprop:Generator_RowClassName="PERGUNTableAdapterRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CODE" msprop:Generator_ColumnVarNameInTable="columnCODE" msprop:Generator_ColumnPropNameInRow="CODE" msprop:Generator_ColumnPropNameInTable="CODEColumn" msprop:Generator_UserColumnName="CODE" type="xs:decimal" />
@@ -1058,7 +1118,7 @@ WHERE        (TEAM.AMMO.AMMOTRANSACTION_PK = :PK)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AMMO" msprop:Generator_TableClassName="AMMODataTable" msprop:Generator_TableVarName="tableAMMO" msprop:Generator_RowChangedName="AMMORowChanged" msprop:Generator_TablePropName="AMMO" msprop:Generator_RowDeletingName="AMMORowDeleting" msprop:Generator_RowChangingName="AMMORowChanging" msprop:Generator_RowEvHandlerName="AMMORowChangeEventHandler" msprop:Generator_RowDeletedName="AMMORowDeleted" msprop:Generator_RowClassName="AMMORow" msprop:Generator_UserTableName="AMMO" msprop:Generator_RowEvArgName="AMMORowChangeEvent">
+        <xs:element name="AMMO" msprop:Generator_TableClassName="AMMODataTable" msprop:Generator_TableVarName="tableAMMO" msprop:Generator_TablePropName="AMMO" msprop:Generator_RowDeletingName="AMMORowDeleting" msprop:Generator_RowChangingName="AMMORowChanging" msprop:Generator_RowEvHandlerName="AMMORowChangeEventHandler" msprop:Generator_RowDeletedName="AMMORowDeleted" msprop:Generator_UserTableName="AMMO" msprop:Generator_RowChangedName="AMMORowChanged" msprop:Generator_RowEvArgName="AMMORowChangeEvent" msprop:Generator_RowClassName="AMMORow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="AMMOTRANSACTION_PK" msprop:Generator_ColumnVarNameInTable="columnAMMOTRANSACTION_PK" msprop:Generator_ColumnPropNameInRow="AMMOTRANSACTION_PK" msprop:Generator_ColumnPropNameInTable="AMMOTRANSACTION_PKColumn" msprop:Generator_UserColumnName="AMMOTRANSACTION_PK" type="xs:decimal" />
@@ -1120,7 +1180,7 @@ WHERE        (TEAM.AMMO.AMMOTRANSACTION_PK = :PK)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="N0itemsAndPerGUn" msprop:Generator_TableClassName="N0itemsAndPerGUnDataTable" msprop:Generator_TableVarName="tableN0itemsAndPerGUn" msprop:Generator_TablePropName="N0itemsAndPerGUn" msprop:Generator_RowDeletingName="N0itemsAndPerGUnRowDeleting" msprop:Generator_RowChangingName="N0itemsAndPerGUnRowChanging" msprop:Generator_RowEvHandlerName="N0itemsAndPerGUnRowChangeEventHandler" msprop:Generator_RowDeletedName="N0itemsAndPerGUnRowDeleted" msprop:Generator_UserTableName="N0itemsAndPerGUn" msprop:Generator_RowChangedName="N0itemsAndPerGUnRowChanged" msprop:Generator_RowEvArgName="N0itemsAndPerGUnRowChangeEvent" msprop:Generator_RowClassName="N0itemsAndPerGUnRow">
+        <xs:element name="N0itemsAndPerGUn" msprop:Generator_TableClassName="N0itemsAndPerGUnDataTable" msprop:Generator_TableVarName="tableN0itemsAndPerGUn" msprop:Generator_RowChangedName="N0itemsAndPerGUnRowChanged" msprop:Generator_TablePropName="N0itemsAndPerGUn" msprop:Generator_RowDeletingName="N0itemsAndPerGUnRowDeleting" msprop:Generator_RowChangingName="N0itemsAndPerGUnRowChanging" msprop:Generator_RowEvHandlerName="N0itemsAndPerGUnRowChangeEventHandler" msprop:Generator_RowDeletedName="N0itemsAndPerGUnRowDeleted" msprop:Generator_RowClassName="N0itemsAndPerGUnRow" msprop:Generator_UserTableName="N0itemsAndPerGUn" msprop:Generator_RowEvArgName="N0itemsAndPerGUnRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="LABEL" msprop:Generator_ColumnVarNameInTable="columnLABEL" msprop:Generator_ColumnPropNameInRow="LABEL" msprop:Generator_ColumnPropNameInTable="LABELColumn" msprop:Generator_UserColumnName="LABEL">
@@ -1135,7 +1195,7 @@ WHERE        (TEAM.AMMO.AMMOTRANSACTION_PK = :PK)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AMMODataGrid" msprop:Generator_TableClassName="AMMODataGridDataTable" msprop:Generator_TableVarName="tableAMMODataGrid" msprop:Generator_TablePropName="AMMODataGrid" msprop:Generator_RowDeletingName="AMMODataGridRowDeleting" msprop:Generator_RowChangingName="AMMODataGridRowChanging" msprop:Generator_RowEvHandlerName="AMMODataGridRowChangeEventHandler" msprop:Generator_RowDeletedName="AMMODataGridRowDeleted" msprop:Generator_UserTableName="AMMODataGrid" msprop:Generator_RowChangedName="AMMODataGridRowChanged" msprop:Generator_RowEvArgName="AMMODataGridRowChangeEvent" msprop:Generator_RowClassName="AMMODataGridRow">
+        <xs:element name="AMMODataGrid" msprop:Generator_TableClassName="AMMODataGridDataTable" msprop:Generator_TableVarName="tableAMMODataGrid" msprop:Generator_RowChangedName="AMMODataGridRowChanged" msprop:Generator_TablePropName="AMMODataGrid" msprop:Generator_RowDeletingName="AMMODataGridRowDeleting" msprop:Generator_RowChangingName="AMMODataGridRowChanging" msprop:Generator_RowEvHandlerName="AMMODataGridRowChangeEventHandler" msprop:Generator_RowDeletedName="AMMODataGridRowDeleted" msprop:Generator_RowClassName="AMMODataGridRow" msprop:Generator_UserTableName="AMMODataGrid" msprop:Generator_RowEvArgName="AMMODataGridRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="AMMOTRANSACTION_PK" msprop:Generator_ColumnVarNameInTable="columnAMMOTRANSACTION_PK" msprop:Generator_ColumnPropNameInRow="AMMOTRANSACTION_PK" msprop:Generator_ColumnPropNameInTable="AMMOTRANSACTION_PKColumn" msprop:Generator_UserColumnName="AMMOTRANSACTION_PK" type="xs:decimal" />
@@ -1144,7 +1204,7 @@ WHERE        (TEAM.AMMO.AMMOTRANSACTION_PK = :PK)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GunReportInfoForm" msprop:Generator_TableClassName="GunReportInfoFormDataTable" msprop:Generator_TableVarName="tableGunReportInfoForm" msprop:Generator_TablePropName="GunReportInfoForm" msprop:Generator_RowDeletingName="GunReportInfoFormRowDeleting" msprop:Generator_RowChangingName="GunReportInfoFormRowChanging" msprop:Generator_RowEvHandlerName="GunReportInfoFormRowChangeEventHandler" msprop:Generator_RowDeletedName="GunReportInfoFormRowDeleted" msprop:Generator_UserTableName="GunReportInfoForm" msprop:Generator_RowChangedName="GunReportInfoFormRowChanged" msprop:Generator_RowEvArgName="GunReportInfoFormRowChangeEvent" msprop:Generator_RowClassName="GunReportInfoFormRow">
+        <xs:element name="GunReportInfoForm" msprop:Generator_TableClassName="GunReportInfoFormDataTable" msprop:Generator_TableVarName="tableGunReportInfoForm" msprop:Generator_RowChangedName="GunReportInfoFormRowChanged" msprop:Generator_TablePropName="GunReportInfoForm" msprop:Generator_RowDeletingName="GunReportInfoFormRowDeleting" msprop:Generator_RowChangingName="GunReportInfoFormRowChanging" msprop:Generator_RowEvHandlerName="GunReportInfoFormRowChangeEventHandler" msprop:Generator_RowDeletedName="GunReportInfoFormRowDeleted" msprop:Generator_RowClassName="GunReportInfoFormRow" msprop:Generator_UserTableName="GunReportInfoForm" msprop:Generator_RowEvArgName="GunReportInfoFormRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CODE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCODE" msprop:Generator_ColumnPropNameInRow="CODE" msprop:Generator_ColumnPropNameInTable="CODEColumn" msprop:Generator_UserColumnName="CODE" type="xs:decimal" minOccurs="0" />
@@ -1262,10 +1322,10 @@ WHERE        (TEAM.AMMO.AMMOTRANSACTION_PK = :PK)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AmmoReportInfo" msprop:Generator_TableClassName="AmmoReportInfoDataTable" msprop:Generator_TableVarName="tableAmmoReportInfo" msprop:Generator_RowChangedName="AmmoReportInfoRowChanged" msprop:Generator_TablePropName="AmmoReportInfo" msprop:Generator_RowDeletingName="AmmoReportInfoRowDeleting" msprop:Generator_RowChangingName="AmmoReportInfoRowChanging" msprop:Generator_RowEvHandlerName="AmmoReportInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="AmmoReportInfoRowDeleted" msprop:Generator_RowClassName="AmmoReportInfoRow" msprop:Generator_UserTableName="AmmoReportInfo" msprop:Generator_RowEvArgName="AmmoReportInfoRowChangeEvent">
+        <xs:element name="AmmoReportInfo" msprop:Generator_TableClassName="AmmoReportInfoDataTable" msprop:Generator_TableVarName="tableAmmoReportInfo" msprop:Generator_TablePropName="AmmoReportInfo" msprop:Generator_RowDeletingName="AmmoReportInfoRowDeleting" msprop:Generator_RowChangingName="AmmoReportInfoRowChanging" msprop:Generator_RowEvHandlerName="AmmoReportInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="AmmoReportInfoRowDeleted" msprop:Generator_UserTableName="AmmoReportInfo" msprop:Generator_RowChangedName="AmmoReportInfoRowChanged" msprop:Generator_RowEvArgName="AmmoReportInfoRowChangeEvent" msprop:Generator_RowClassName="AmmoReportInfoRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="AMMOTRANSACTION_PK" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAMMOTRANSACTION_PK" msprop:Generator_ColumnPropNameInRow="AMMOTRANSACTION_PK" msprop:Generator_ColumnPropNameInTable="AMMOTRANSACTION_PKColumn" msprop:Generator_UserColumnName="AMMOTRANSACTION_PK" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AMMOTRANSACTION_PK" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAMMOTRANSACTION_PK" msprop:Generator_ColumnPropNameInRow="AMMOTRANSACTION_PK" msprop:Generator_ColumnPropNameInTable="AMMOTRANSACTION_PKColumn" msprop:Generator_UserColumnName="AMMOTRANSACTION_PK" type="xs:decimal" />
               <xs:element name="MILITARY_NB" msprop:Generator_ColumnVarNameInTable="columnMILITARY_NB" msprop:Generator_ColumnPropNameInRow="MILITARY_NB" msprop:Generator_ColumnPropNameInTable="MILITARY_NBColumn" msprop:Generator_UserColumnName="MILITARY_NB">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1291,7 +1351,7 @@ WHERE        (TEAM.AMMO.AMMOTRANSACTION_PK = :PK)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="SIZE_AMMO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSIZE_AMMO" msprop:Generator_ColumnPropNameInRow="SIZE_AMMO" msprop:Generator_ColumnPropNameInTable="SIZE_AMMOColumn" msprop:Generator_UserColumnName="SIZE_AMMO" minOccurs="0">
+              <xs:element name="SIZE_AMMO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSIZE_AMMO" msprop:Generator_ColumnPropNameInRow="SIZE_AMMO" msprop:Generator_ColumnPropNameInTable="SIZE_AMMOColumn" msprop:Generator_UserColumnName="SIZE_AMMO">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
@@ -1305,14 +1365,14 @@ WHERE        (TEAM.AMMO.AMMOTRANSACTION_PK = :PK)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="USER_APP" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnUSER_APP" msprop:Generator_ColumnPropNameInRow="USER_APP" msprop:Generator_ColumnPropNameInTable="USER_APPColumn" msprop:Generator_UserColumnName="USER_APP" minOccurs="0">
+              <xs:element name="USER_APP" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnUSER_APP" msprop:Generator_ColumnPropNameInRow="USER_APP" msprop:Generator_ColumnPropNameInTable="USER_APPColumn" msprop:Generator_UserColumnName="USER_APP">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="SYSTEM_DATE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSYSTEM_DATE" msprop:Generator_ColumnPropNameInRow="SYSTEM_DATE" msprop:Generator_ColumnPropNameInTable="SYSTEM_DATEColumn" msprop:Generator_UserColumnName="SYSTEM_DATE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SYSTEM_DATE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSYSTEM_DATE" msprop:Generator_ColumnPropNameInRow="SYSTEM_DATE" msprop:Generator_ColumnPropNameInTable="SYSTEM_DATEColumn" msprop:Generator_UserColumnName="SYSTEM_DATE" type="xs:dateTime" />
               <xs:element name="UPDATE_USER" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnUPDATE_USER" msprop:Generator_ColumnPropNameInRow="UPDATE_USER" msprop:Generator_ColumnPropNameInTable="UPDATE_USERColumn" msprop:Generator_UserColumnName="UPDATE_USER" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1321,28 +1381,28 @@ WHERE        (TEAM.AMMO.AMMOTRANSACTION_PK = :PK)</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="UPDATE_DATE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnUPDATE_DATE" msprop:Generator_ColumnPropNameInRow="UPDATE_DATE" msprop:Generator_ColumnPropNameInTable="UPDATE_DATEColumn" msprop:Generator_UserColumnName="UPDATE_DATE" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="FNAME" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFNAME" msprop:Generator_ColumnPropNameInRow="FNAME" msprop:Generator_ColumnPropNameInTable="FNAMEColumn" msprop:Generator_UserColumnName="FNAME" minOccurs="0">
+              <xs:element name="FNAME" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFNAME" msprop:Generator_ColumnPropNameInRow="FNAME" msprop:Generator_ColumnPropNameInTable="FNAMEColumn" msprop:Generator_UserColumnName="FNAME">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="LNAME" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLNAME" msprop:Generator_ColumnPropNameInRow="LNAME" msprop:Generator_ColumnPropNameInTable="LNAMEColumn" msprop:Generator_UserColumnName="LNAME" minOccurs="0">
+              <xs:element name="LNAME" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLNAME" msprop:Generator_ColumnPropNameInRow="LNAME" msprop:Generator_ColumnPropNameInTable="LNAMEColumn" msprop:Generator_UserColumnName="LNAME">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="35" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="FATHER" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFATHER" msprop:Generator_ColumnPropNameInRow="FATHER" msprop:Generator_ColumnPropNameInTable="FATHERColumn" msprop:Generator_UserColumnName="FATHER" minOccurs="0">
+              <xs:element name="FATHER" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFATHER" msprop:Generator_ColumnPropNameInRow="FATHER" msprop:Generator_ColumnPropNameInTable="FATHERColumn" msprop:Generator_UserColumnName="FATHER">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DBIRTH" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDBIRTH" msprop:Generator_ColumnPropNameInRow="DBIRTH" msprop:Generator_ColumnPropNameInTable="DBIRTHColumn" msprop:Generator_UserColumnName="DBIRTH" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DBIRTH" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDBIRTH" msprop:Generator_ColumnPropNameInRow="DBIRTH" msprop:Generator_ColumnPropNameInTable="DBIRTHColumn" msprop:Generator_UserColumnName="DBIRTH" type="xs:dateTime" />
               <xs:element name="PHONE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPHONE" msprop:Generator_ColumnPropNameInRow="PHONE" msprop:Generator_ColumnPropNameInTable="PHONEColumn" msprop:Generator_UserColumnName="PHONE" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1350,10 +1410,116 @@ WHERE        (TEAM.AMMO.AMMOTRANSACTION_PK = :PK)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="SOURCE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSOURCE" msprop:Generator_ColumnPropNameInRow="SOURCE" msprop:Generator_ColumnPropNameInTable="SOURCEColumn" msprop:Generator_UserColumnName="SOURCE" minOccurs="0">
+              <xs:element name="SOURCE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSOURCE" msprop:Generator_ColumnPropNameInRow="SOURCE" msprop:Generator_ColumnPropNameInTable="SOURCEColumn" msprop:Generator_UserColumnName="SOURCE">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FullName" msdata:ReadOnly="true" msdata:Expression="FName+' '+FATHER+' '+LNAME" msprop:Generator_ColumnVarNameInTable="columnFullName" msprop:Generator_ColumnPropNameInRow="FullName" msprop:Generator_ColumnPropNameInTable="FullNameColumn" msprop:Generator_UserColumnName="FullName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AmmoReportWithGrade" msprop:Generator_TableClassName="AmmoReportWithGradeDataTable" msprop:Generator_TableVarName="tableAmmoReportWithGrade" msprop:Generator_TablePropName="AmmoReportWithGrade" msprop:Generator_RowDeletingName="AmmoReportWithGradeRowDeleting" msprop:Generator_RowChangingName="AmmoReportWithGradeRowChanging" msprop:Generator_RowEvHandlerName="AmmoReportWithGradeRowChangeEventHandler" msprop:Generator_RowDeletedName="AmmoReportWithGradeRowDeleted" msprop:Generator_UserTableName="AmmoReportWithGrade" msprop:Generator_RowChangedName="AmmoReportWithGradeRowChanged" msprop:Generator_RowEvArgName="AmmoReportWithGradeRowChangeEvent" msprop:Generator_RowClassName="AmmoReportWithGradeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AMMOTRANSACTION_PK" msprop:Generator_ColumnVarNameInTable="columnAMMOTRANSACTION_PK" msprop:Generator_ColumnPropNameInRow="AMMOTRANSACTION_PK" msprop:Generator_ColumnPropNameInTable="AMMOTRANSACTION_PKColumn" msprop:Generator_UserColumnName="AMMOTRANSACTION_PK" type="xs:decimal" />
+              <xs:element name="MILITARY_NB" msprop:Generator_ColumnVarNameInTable="columnMILITARY_NB" msprop:Generator_ColumnPropNameInRow="MILITARY_NB" msprop:Generator_ColumnPropNameInTable="MILITARY_NBColumn" msprop:Generator_UserColumnName="MILITARY_NB">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YEAR" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" msprop:Generator_UserColumnName="YEAR" type="xs:int" />
+              <xs:element name="QUANTITY" msprop:Generator_ColumnVarNameInTable="columnQUANTITY" msprop:Generator_ColumnPropNameInRow="QUANTITY" msprop:Generator_ColumnPropNameInTable="QUANTITYColumn" msprop:Generator_UserColumnName="QUANTITY" type="xs:long" />
+              <xs:element name="NBROF_DOC" msprop:Generator_ColumnVarNameInTable="columnNBROF_DOC" msprop:Generator_ColumnPropNameInRow="NBROF_DOC" msprop:Generator_ColumnPropNameInTable="NBROF_DOCColumn" msprop:Generator_UserColumnName="NBROF_DOC">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DATEOF_DOC" msprop:Generator_ColumnVarNameInTable="columnDATEOF_DOC" msprop:Generator_ColumnPropNameInRow="DATEOF_DOC" msprop:Generator_ColumnPropNameInTable="DATEOF_DOCColumn" msprop:Generator_UserColumnName="DATEOF_DOC" type="xs:dateTime" />
+              <xs:element name="IS_SPECIAL_ORDER" msprop:Generator_ColumnVarNameInTable="columnIS_SPECIAL_ORDER" msprop:Generator_ColumnPropNameInRow="IS_SPECIAL_ORDER" msprop:Generator_ColumnPropNameInTable="IS_SPECIAL_ORDERColumn" msprop:Generator_UserColumnName="IS_SPECIAL_ORDER" type="xs:short" />
+              <xs:element name="SPECIAL_NOTE" msprop:Generator_ColumnVarNameInTable="columnSPECIAL_NOTE" msprop:Generator_ColumnPropNameInRow="SPECIAL_NOTE" msprop:Generator_ColumnPropNameInTable="SPECIAL_NOTEColumn" msprop:Generator_UserColumnName="SPECIAL_NOTE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SIZE_AMMO" msprop:Generator_ColumnVarNameInTable="columnSIZE_AMMO" msprop:Generator_ColumnPropNameInRow="SIZE_AMMO" msprop:Generator_ColumnPropNameInTable="SIZE_AMMOColumn" msprop:Generator_UserColumnName="SIZE_AMMO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOTE" msprop:Generator_ColumnVarNameInTable="columnNOTE" msprop:Generator_ColumnPropNameInRow="NOTE" msprop:Generator_ColumnPropNameInTable="NOTEColumn" msprop:Generator_UserColumnName="NOTE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="USER_APP" msprop:Generator_ColumnVarNameInTable="columnUSER_APP" msprop:Generator_ColumnPropNameInRow="USER_APP" msprop:Generator_ColumnPropNameInTable="USER_APPColumn" msprop:Generator_UserColumnName="USER_APP">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SYSTEM_DATE" msprop:Generator_ColumnVarNameInTable="columnSYSTEM_DATE" msprop:Generator_ColumnPropNameInRow="SYSTEM_DATE" msprop:Generator_ColumnPropNameInTable="SYSTEM_DATEColumn" msprop:Generator_UserColumnName="SYSTEM_DATE" type="xs:dateTime" />
+              <xs:element name="UPDATE_USER" msprop:Generator_ColumnVarNameInTable="columnUPDATE_USER" msprop:Generator_ColumnPropNameInRow="UPDATE_USER" msprop:Generator_ColumnPropNameInTable="UPDATE_USERColumn" msprop:Generator_UserColumnName="UPDATE_USER" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UPDATE_DATE" msprop:Generator_ColumnVarNameInTable="columnUPDATE_DATE" msprop:Generator_ColumnPropNameInRow="UPDATE_DATE" msprop:Generator_ColumnPropNameInTable="UPDATE_DATEColumn" msprop:Generator_UserColumnName="UPDATE_DATE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FNAME" msprop:Generator_ColumnVarNameInTable="columnFNAME" msprop:Generator_ColumnPropNameInRow="FNAME" msprop:Generator_ColumnPropNameInTable="FNAMEColumn" msprop:Generator_UserColumnName="FNAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LNAME" msprop:Generator_ColumnVarNameInTable="columnLNAME" msprop:Generator_ColumnPropNameInRow="LNAME" msprop:Generator_ColumnPropNameInTable="LNAMEColumn" msprop:Generator_UserColumnName="LNAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FATHER" msprop:Generator_ColumnVarNameInTable="columnFATHER" msprop:Generator_ColumnPropNameInRow="FATHER" msprop:Generator_ColumnPropNameInTable="FATHERColumn" msprop:Generator_UserColumnName="FATHER">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DBIRTH" msprop:Generator_ColumnVarNameInTable="columnDBIRTH" msprop:Generator_ColumnPropNameInRow="DBIRTH" msprop:Generator_ColumnPropNameInTable="DBIRTHColumn" msprop:Generator_UserColumnName="DBIRTH" type="xs:dateTime" />
+              <xs:element name="PHONE" msprop:Generator_ColumnVarNameInTable="columnPHONE" msprop:Generator_ColumnPropNameInRow="PHONE" msprop:Generator_ColumnPropNameInTable="PHONEColumn" msprop:Generator_UserColumnName="PHONE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SOURCE" msprop:Generator_ColumnVarNameInTable="columnSOURCE" msprop:Generator_ColumnPropNameInRow="SOURCE" msprop:Generator_ColumnPropNameInTable="SOURCEColumn" msprop:Generator_UserColumnName="SOURCE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GRADE" msprop:Generator_ColumnVarNameInTable="columnGRADE" msprop:Generator_ColumnPropNameInRow="GRADE" msprop:Generator_ColumnPropNameInTable="GRADEColumn" msprop:Generator_UserColumnName="GRADE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
