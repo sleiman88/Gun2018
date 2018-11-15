@@ -30,7 +30,6 @@ Partial Class GunInfo
         Dim GSIZELabel As System.Windows.Forms.Label
         Dim GCLEANERLabel As System.Windows.Forms.Label
         Dim GAMMOLabel As System.Windows.Forms.Label
-        Dim OWNERSOURCELabel As System.Windows.Forms.Label
         Dim DDATELabel As System.Windows.Forms.Label
         Dim NBDOCLabel As System.Windows.Forms.Label
         Dim NOTELabel As System.Windows.Forms.Label
@@ -53,7 +52,6 @@ Partial Class GunInfo
         Me.GSTORETextBox = New System.Windows.Forms.TextBox()
         Me.GSIZETextBox = New System.Windows.Forms.TextBox()
         Me.GAMMOTextBox = New System.Windows.Forms.TextBox()
-        Me.OWNERSOURCETextBox = New System.Windows.Forms.TextBox()
         Me.NBDOCTextBox = New System.Windows.Forms.TextBox()
         Me.NOTETextBox = New System.Windows.Forms.TextBox()
         Me.UUSERTextBox = New System.Windows.Forms.TextBox()
@@ -81,7 +79,6 @@ Partial Class GunInfo
         GSIZELabel = New System.Windows.Forms.Label()
         GCLEANERLabel = New System.Windows.Forms.Label()
         GAMMOLabel = New System.Windows.Forms.Label()
-        OWNERSOURCELabel = New System.Windows.Forms.Label()
         DDATELabel = New System.Windows.Forms.Label()
         NBDOCLabel = New System.Windows.Forms.Label()
         NOTELabel = New System.Windows.Forms.Label()
@@ -117,171 +114,162 @@ Partial Class GunInfo
         GTYPELabel.AutoSize = True
         GTYPELabel.Location = New System.Drawing.Point(23, 32)
         GTYPELabel.Name = "GTYPELabel"
-        GTYPELabel.Size = New System.Drawing.Size(53, 13)
+        GTYPELabel.Size = New System.Drawing.Size(29, 13)
         GTYPELabel.TabIndex = 5
-        GTYPELabel.Text = "Gun Type"
+        GTYPELabel.Text = "النوع"
         '
         'GNUMBERLabel
         '
         GNUMBERLabel.AutoSize = True
         GNUMBERLabel.Location = New System.Drawing.Point(23, 58)
         GNUMBERLabel.Name = "GNUMBERLabel"
-        GNUMBERLabel.Size = New System.Drawing.Size(66, 13)
+        GNUMBERLabel.Size = New System.Drawing.Size(60, 13)
         GNUMBERLabel.TabIndex = 7
-        GNUMBERLabel.Text = "Gun Number"
+        GNUMBERLabel.Text = "رقم السلاح"
         '
         'GSTORELabel
         '
         GSTORELabel.AutoSize = True
         GSTORELabel.Location = New System.Drawing.Point(23, 84)
         GSTORELabel.Name = "GSTORELabel"
-        GSTORELabel.Size = New System.Drawing.Size(86, 13)
+        GSTORELabel.Size = New System.Drawing.Size(73, 13)
         GSTORELabel.TabIndex = 9
-        GSTORELabel.Text = "Number of Store"
+        GSTORELabel.Text = "عدد المماشط "
         '
         'GSIZELabel
         '
         GSIZELabel.AutoSize = True
         GSIZELabel.Location = New System.Drawing.Point(23, 110)
         GSIZELabel.Name = "GSIZELabel"
-        GSIZELabel.Size = New System.Drawing.Size(47, 13)
+        GSIZELabel.Size = New System.Drawing.Size(50, 13)
         GSIZELabel.TabIndex = 11
-        GSIZELabel.Text = "Gun size"
+        GSIZELabel.Text = "عيار (مم)"
         '
         'GCLEANERLabel
         '
         GCLEANERLabel.AutoSize = True
-        GCLEANERLabel.Location = New System.Drawing.Point(11, 192)
+        GCLEANERLabel.Location = New System.Drawing.Point(23, 192)
         GCLEANERLabel.Name = "GCLEANERLabel"
-        GCLEANERLabel.Size = New System.Drawing.Size(101, 13)
+        GCLEANERLabel.Size = New System.Drawing.Size(60, 13)
         GCLEANERLabel.TabIndex = 13
-        GCLEANERLabel.Text = "With Cleaner or not"
+        GCLEANERLabel.Text = " عدة تنظيف"
         '
         'GAMMOLabel
         '
         GAMMOLabel.AutoSize = True
         GAMMOLabel.Location = New System.Drawing.Point(23, 136)
         GAMMOLabel.Name = "GAMMOLabel"
-        GAMMOLabel.Size = New System.Drawing.Size(89, 13)
+        GAMMOLabel.Size = New System.Drawing.Size(61, 13)
         GAMMOLabel.TabIndex = 15
-        GAMMOLabel.Text = "Number of Ammo"
-        '
-        'OWNERSOURCELabel
-        '
-        OWNERSOURCELabel.AutoSize = True
-        OWNERSOURCELabel.Location = New System.Drawing.Point(15, 132)
-        OWNERSOURCELabel.Name = "OWNERSOURCELabel"
-        OWNERSOURCELabel.Size = New System.Drawing.Size(90, 13)
-        OWNERSOURCELabel.TabIndex = 21
-        OWNERSOURCELabel.Text = "OWNERSOURCE:"
+        GAMMOLabel.Text = "عدد الذخيرة"
         '
         'DDATELabel
         '
         DDATELabel.AutoSize = True
         DDATELabel.Location = New System.Drawing.Point(22, 64)
         DDATELabel.Name = "DDATELabel"
-        DDATELabel.Size = New System.Drawing.Size(81, 13)
+        DDATELabel.Size = New System.Drawing.Size(58, 13)
         DDATELabel.TabIndex = 25
-        DDATELabel.Text = "Document Date"
+        DDATELabel.Text = "تاريخ الملف"
         '
         'NBDOCLabel
         '
         NBDOCLabel.AutoSize = True
-        NBDOCLabel.Location = New System.Drawing.Point(7, 18)
+        NBDOCLabel.Location = New System.Drawing.Point(26, 15)
         NBDOCLabel.Name = "NBDOCLabel"
-        NBDOCLabel.Size = New System.Drawing.Size(108, 13)
+        NBDOCLabel.Size = New System.Drawing.Size(54, 13)
         NBDOCLabel.TabIndex = 27
-        NBDOCLabel.Text = "Number of Document"
+        NBDOCLabel.Text = "رقم الملف"
         '
         'NOTELabel
         '
         NOTELabel.AutoSize = True
         NOTELabel.Location = New System.Drawing.Point(10, 456)
         NOTELabel.Name = "NOTELabel"
-        NOTELabel.Size = New System.Drawing.Size(38, 13)
+        NOTELabel.Size = New System.Drawing.Size(48, 13)
         NOTELabel.TabIndex = 29
-        NOTELabel.Text = "NOTE:"
+        NOTELabel.Text = "ملاحظات"
         '
         'SDATELabel
         '
         SDATELabel.AutoSize = True
         SDATELabel.Location = New System.Drawing.Point(11, 64)
         SDATELabel.Name = "SDATELabel"
-        SDATELabel.Size = New System.Drawing.Size(71, 13)
+        SDATELabel.Size = New System.Drawing.Size(69, 13)
         SDATELabel.TabIndex = 31
-        SDATELabel.Text = "Delivery date"
+        SDATELabel.Text = "تاريخ التسليم"
         '
         'UDATELabel
         '
         UDATELabel.AutoSize = True
-        UDATELabel.Location = New System.Drawing.Point(11, 31)
+        UDATELabel.Location = New System.Drawing.Point(-2, 38)
         UDATELabel.Name = "UDATELabel"
-        UDATELabel.Size = New System.Drawing.Size(85, 13)
+        UDATELabel.Size = New System.Drawing.Size(105, 13)
         UDATELabel.TabIndex = 33
-        UDATELabel.Text = "Data entry Date"
+        UDATELabel.Text = "تاريخ ادخال المعلومات"
         '
         'UUSERLabel
         '
         UUSERLabel.AutoSize = True
         UUSERLabel.Location = New System.Drawing.Point(11, 8)
         UUSERLabel.Name = "UUSERLabel"
-        UUSERLabel.Size = New System.Drawing.Size(63, 13)
+        UUSERLabel.Size = New System.Drawing.Size(86, 13)
         UUSERLabel.TabIndex = 35
-        UUSERLabel.Text = "Entered By "
+        UUSERLabel.Text = "مدخل المعلومات "
         '
         'MDATELabel
         '
         MDATELabel.AutoSize = True
         MDATELabel.Location = New System.Drawing.Point(11, 94)
         MDATELabel.Name = "MDATELabel"
-        MDATELabel.Size = New System.Drawing.Size(68, 13)
+        MDATELabel.Size = New System.Drawing.Size(64, 13)
         MDATELabel.TabIndex = 37
-        MDATELabel.Text = "Update Date"
+        MDATELabel.Text = "تاريخ التعديل"
         '
         'MUSERLabel
         '
         MUSERLabel.AutoSize = True
         MUSERLabel.Location = New System.Drawing.Point(11, 119)
         MUSERLabel.Name = "MUSERLabel"
-        MUSERLabel.Size = New System.Drawing.Size(66, 13)
+        MUSERLabel.Size = New System.Drawing.Size(39, 13)
         MUSERLabel.TabIndex = 39
-        MUSERLabel.Text = "Updated By "
+        MUSERLabel.Text = "المعدل"
         '
         'LABELLabel
         '
         LABELLabel.AutoSize = True
         LABELLabel.Location = New System.Drawing.Point(23, 6)
         LABELLabel.Name = "LABELLabel"
-        LABELLabel.Size = New System.Drawing.Size(56, 13)
+        LABELLabel.Size = New System.Drawing.Size(68, 13)
         LABELLabel.TabIndex = 41
-        LABELLabel.Text = "Gun Name"
+        LABELLabel.Text = "اسم السلاح "
         '
         'EXPR1Label
         '
         EXPR1Label.AutoSize = True
         EXPR1Label.Location = New System.Drawing.Point(16, 54)
         EXPR1Label.Name = "EXPR1Label"
-        EXPR1Label.Size = New System.Drawing.Size(36, 13)
+        EXPR1Label.Size = New System.Drawing.Size(31, 13)
         EXPR1Label.TabIndex = 43
-        EXPR1Label.Text = "Grade"
+        EXPR1Label.Text = "الرتبة"
         '
         'EXPR2Label
         '
         EXPR2Label.AutoSize = True
         EXPR2Label.Location = New System.Drawing.Point(23, 162)
         EXPR2Label.Name = "EXPR2Label"
-        EXPR2Label.Size = New System.Drawing.Size(45, 13)
+        EXPR2Label.Size = New System.Drawing.Size(39, 13)
         EXPR2Label.TabIndex = 45
-        EXPR2Label.Text = "Supplier"
+        EXPR2Label.Text = "المصنع"
         '
         'DBIRTHLabel
         '
         DBIRTHLabel.AutoSize = True
         DBIRTHLabel.Location = New System.Drawing.Point(16, 91)
         DBIRTHLabel.Name = "DBIRTHLabel"
-        DBIRTHLabel.Size = New System.Drawing.Size(68, 13)
+        DBIRTHLabel.Size = New System.Drawing.Size(61, 13)
         DBIRTHLabel.TabIndex = 53
-        DBIRTHLabel.Text = "Date of Birth"
+        DBIRTHLabel.Text = "تاريخ الميلاد"
         '
         'GdssDataSet1
         '
@@ -361,15 +349,6 @@ Partial Class GunInfo
         Me.GAMMOTextBox.Size = New System.Drawing.Size(200, 20)
         Me.GAMMOTextBox.TabIndex = 16
         '
-        'OWNERSOURCETextBox
-        '
-        Me.OWNERSOURCETextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.GunReportInfoFormBindingSource, "OWNERSOURCE", True))
-        Me.OWNERSOURCETextBox.Enabled = False
-        Me.OWNERSOURCETextBox.Location = New System.Drawing.Point(112, 129)
-        Me.OWNERSOURCETextBox.Name = "OWNERSOURCETextBox"
-        Me.OWNERSOURCETextBox.Size = New System.Drawing.Size(197, 20)
-        Me.OWNERSOURCETextBox.TabIndex = 22
-        '
         'NBDOCTextBox
         '
         Me.NBDOCTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.GunReportInfoFormBindingSource, "NBDOC", True))
@@ -448,9 +427,9 @@ Partial Class GunInfo
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(16, 19)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(53, 13)
+        Me.Label1.Size = New System.Drawing.Size(68, 13)
         Me.Label1.TabIndex = 56
-        Me.Label1.Text = "Full Name"
+        Me.Label1.Text = "الاسم الكامل"
         '
         'DateOFBirth_TextBox
         '
@@ -541,8 +520,6 @@ Partial Class GunInfo
         Me.Panel2.Controls.Add(EXPR1Label)
         Me.Panel2.Controls.Add(Me.DateOFBirth_TextBox)
         Me.Panel2.Controls.Add(DBIRTHLabel)
-        Me.Panel2.Controls.Add(Me.OWNERSOURCETextBox)
-        Me.Panel2.Controls.Add(OWNERSOURCELabel)
         Me.Panel2.Location = New System.Drawing.Point(351, 44)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(334, 219)
@@ -631,7 +608,6 @@ Partial Class GunInfo
     Friend WithEvents GSTORETextBox As TextBox
     Friend WithEvents GSIZETextBox As TextBox
     Friend WithEvents GAMMOTextBox As TextBox
-    Friend WithEvents OWNERSOURCETextBox As TextBox
     Friend WithEvents NBDOCTextBox As TextBox
     Friend WithEvents NOTETextBox As TextBox
     Friend WithEvents UUSERTextBox As TextBox

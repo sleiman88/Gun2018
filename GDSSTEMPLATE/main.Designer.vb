@@ -65,6 +65,7 @@ Partial Class main
         Me.AMMODataGridTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.AMMODataGridTableAdapter()
         Me.GiveGun_Button = New System.Windows.Forms.Button()
         Me.GiveAmmo_Button = New System.Windows.Forms.Button()
+        Me.DateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -105,7 +106,7 @@ Partial Class main
         '
         'ReportsToolStripMenuItem
         '
-        Me.ReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ByPersonToolStripMenuItem})
+        Me.ReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ByPersonToolStripMenuItem, Me.DateToolStripMenuItem})
         Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
         Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ReportsToolStripMenuItem.Text = "Reports"
@@ -425,6 +426,12 @@ Partial Class main
         Me.GiveAmmo_Button.Text = "Give Ammo"
         Me.GiveAmmo_Button.UseVisualStyleBackColor = True
         '
+        'DateToolStripMenuItem
+        '
+        Me.DateToolStripMenuItem.Name = "DateToolStripMenuItem"
+        Me.DateToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DateToolStripMenuItem.Text = "Date"
+        '
         'main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -500,4 +507,5 @@ Partial Class main
     Friend WithEvents QUANTITYDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents GiveGun_Button As Button
     Friend WithEvents GiveAmmo_Button As Button
+    Friend WithEvents DateToolStripMenuItem As ToolStripMenuItem
 End Class

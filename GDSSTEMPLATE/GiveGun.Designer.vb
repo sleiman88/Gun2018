@@ -913,6 +913,7 @@ Partial Class GiveGun
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
+        Me.MaximizeBox = False
         Me.Name = "GiveGun"
         Me.Text = "Guns"
         CType(Me.N0ITEMSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

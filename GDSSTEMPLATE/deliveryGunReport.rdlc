@@ -9,14 +9,16 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Report of delivery Guns</Value>
+                <Value>تقرير تسليم السلاح</Value>
                 <Style>
                   <FontSize>18pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <Left>1.3425in</Left>
@@ -41,15 +43,19 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Full Name: </Value>
-                    <Style />
+                    <Value>الاسم الكامل</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox13</rd:DefaultName>
-            <Top>0.18847in</Top>
+            <Top>0.17805in</Top>
             <Left>0.05208in</Left>
             <Height>0.25in</Height>
             <Width>1.23958in</Width>
@@ -70,15 +76,19 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Grade</Value>
-                    <Style />
+                    <Value>الرتبة</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
-            <Top>0.56347in</Top>
+            <Top>0.55305in</Top>
             <Left>0.04167in</Left>
             <Height>0.25in</Height>
             <Width>1.23958in</Width>
@@ -101,10 +111,14 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!EXPR1.Value, "DataSet1")</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox15</rd:DefaultName>
@@ -131,10 +145,14 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!FullName.Value, "DataSet1")</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
@@ -160,11 +178,15 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Military Number</Value>
-                    <Style />
+                    <Value>الرقم العسكري</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
@@ -191,11 +213,13 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!OWNER.Value, "DataSet1")</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Left</TextAlign>
+                  <TextAlign>Center</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
@@ -381,14 +405,16 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Person </Value>
+                <Value>المستفيد</Value>
                 <Style>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
@@ -414,7 +440,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Gun details</Value>
+                <Value>تفاصيل السلاح</Value>
                 <Style>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -461,11 +487,15 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Gun Name: </Value>
-                    <Style />
+                    <Value>اسم السلاح </Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox13</rd:DefaultName>
@@ -490,11 +520,15 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Gun Type</Value>
-                    <Style />
+                    <Value>النوع</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
@@ -520,11 +554,15 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!EXPR1.Value, "DataSet1")</Value>
-                    <Style />
+                    <Value>=First(Fields!GTYPE.Value, "DataSet1")</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox15</rd:DefaultName>
@@ -550,18 +588,22 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!FullName.Value, "DataSet1")</Value>
-                    <Style />
+                    <Value>=First(Fields!LABEL.Value, "DataSet1")</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
             <Top>0.18847in</Top>
             <Left>1.47917in</Left>
             <Height>0.25in</Height>
-            <Width>1.09375in</Width>
+            <Width>1.46874in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -580,11 +622,15 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Gun Number</Value>
-                    <Style />
+                    <Value>رقم السلاح</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
@@ -611,11 +657,13 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!GNUMBER.Value, "DataSet1")</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Left</TextAlign>
+                  <TextAlign>Center</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
@@ -642,11 +690,15 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Number of store: </Value>
-                    <Style />
+                    <Value>عدد المماشط </Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox13</rd:DefaultName>
@@ -672,11 +724,28 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Gun Size</Value>
-                    <Style />
+                    <Value>عيار (</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>مم</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>)</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
@@ -702,11 +771,15 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Number of Ammo</Value>
-                    <Style />
+                    <Value>عدد الذخيرة</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
@@ -732,11 +805,15 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Supplier</Value>
-                    <Style />
+                    <Value>المصنع</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
@@ -762,11 +839,15 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>With clearner or Not</Value>
-                    <Style />
+                    <Value> عدة تنظيف</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
@@ -793,11 +874,13 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!GSTORE.Value, "DataSet1")</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Left</TextAlign>
+                  <TextAlign>Center</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
@@ -825,19 +908,21 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!GSIZE.Value, "DataSet1")</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Left</TextAlign>
+                  <TextAlign>Center</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox18</rd:DefaultName>
-            <Top>1.70424in</Top>
-            <Left>1.47917in</Left>
+            <Top>1.74591in</Top>
+            <Left>1.50694in</Left>
             <Height>0.25in</Height>
-            <Width>1.09375in</Width>
+            <Width>1.06598in</Width>
             <ZIndex>12</ZIndex>
             <Style>
               <Border>
@@ -857,11 +942,13 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!GAMMO.Value, "DataSet1")</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Left</TextAlign>
+                  <TextAlign>Center</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
@@ -889,19 +976,21 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!EXPR2.Value, "DataSet1")</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Left</TextAlign>
+                  <TextAlign>Center</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox18</rd:DefaultName>
             <Top>2.49368in</Top>
-            <Left>1.47917in</Left>
+            <Left>1.49306in</Left>
             <Height>0.25in</Height>
-            <Width>1.57292in</Width>
+            <Width>1.45486in</Width>
             <ZIndex>14</ZIndex>
             <Style>
               <Border>
@@ -920,12 +1009,14 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Sum(Fields!GCLEANER.Value, "DataSet1")</Value>
-                    <Style />
+                    <Value>=IIF(Fields!GCLEANER.Value=1,"مع عدة تنظيف","بدون عدة تنظيف")</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Left</TextAlign>
+                  <TextAlign>Center</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
@@ -1045,7 +1136,7 @@
         <Top>0.74243in</Top>
         <Left>0.01958in</Left>
         <Height>3.1632in</Height>
-        <Width>3.05208in</Width>
+        <Width>3.06598in</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -1062,16 +1153,20 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Nbr of Document</Value>
-                    <Style />
+                    <Value>رقم الملف</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox13</rd:DefaultName>
             <Top>0.18847in</Top>
-            <Left>0.05209in</Left>
+            <Left>0.08333in</Left>
             <Height>0.25in</Height>
             <Width>1.23958in</Width>
             <Style>
@@ -1091,16 +1186,20 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Document Date</Value>
-                    <Style />
+                    <Value>تاريخ الملف</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>0.56347in</Top>
-            <Left>0.01042in</Left>
+            <Left>0.02084in</Left>
             <Height>0.25in</Height>
             <Width>1.23958in</Width>
             <ZIndex>1</ZIndex>
@@ -1122,11 +1221,13 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!DDATE.Value, "DataSet1")</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Left</TextAlign>
+                  <TextAlign>Center</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
@@ -1154,10 +1255,14 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!NBDOC.Value, "DataSet1")</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
@@ -1219,14 +1324,16 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Document</Value>
+                <Value>الايصال</Value>
                 <Style>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
@@ -1254,11 +1361,15 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Data entry Date</Value>
-                    <Style />
+                    <Value>تاريخ ادخال المعلومات</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox13</rd:DefaultName>
@@ -1283,16 +1394,20 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Delivery date</Value>
-                    <Style />
+                    <Value>تاريخ التسليم</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>0.56347in</Top>
-            <Left>0.04167in</Left>
+            <Left>0.04861in</Left>
             <Height>0.25in</Height>
             <Width>1.32291in</Width>
             <ZIndex>1</ZIndex>
@@ -1314,7 +1429,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!SDATE.Value, "DataSet1")</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -1326,7 +1443,7 @@
             <Top>0.56347in</Top>
             <Left>1.46875in</Left>
             <Height>0.25in</Height>
-            <Width>1.57291in</Width>
+            <Width>1.80208in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -1346,7 +1463,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=First(Fields!UDATE.Value, "DataSet1")</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -1358,7 +1477,7 @@
             <Top>0.18847in</Top>
             <Left>1.46875in</Left>
             <Height>0.25in</Height>
-            <Width>1.57291in</Width>
+            <Width>1.80208in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -1385,7 +1504,7 @@
             <Top>0.49403in</Top>
             <Left>0.04167in</Left>
             <Height>0in</Height>
-            <Width>2.99999in</Width>
+            <Width>3.22916in</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
@@ -1398,7 +1517,7 @@
         <Top>4.25285in</Top>
         <Left>0.0925in</Left>
         <Height>0.94791in</Height>
-        <Width>3.04166in</Width>
+        <Width>3.27083in</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -1413,14 +1532,16 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Dates</Value>
+                <Value>التواريخ</Value>
                 <Style>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
           <Paragraph>
             <TextRuns>
@@ -1469,7 +1590,7 @@
             <rd:DefaultName>Textbox69</rd:DefaultName>
             <Top>0.05556in</Top>
             <Left>0.05903in</Left>
-            <Height>1.28819in</Height>
+            <Height>1.05902in</Height>
             <Width>6.09375in</Width>
             <Style>
               <Border>
@@ -1485,7 +1606,7 @@
         <KeepTogether>true</KeepTogether>
         <Top>5.61333in</Top>
         <Left>0.0925in</Left>
-        <Height>1.44792in</Height>
+        <Height>1.3125in</Height>
         <Width>6.27778in</Width>
         <ZIndex>10</ZIndex>
         <Style>
@@ -1501,7 +1622,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Note</Value>
+                <Value>ملاحظات</Value>
                 <Style>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>

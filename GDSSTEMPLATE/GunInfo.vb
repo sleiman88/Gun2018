@@ -1,5 +1,6 @@
 ﻿Public Class GunInfo
     Dim mycode As Integer
+
     Public Sub New(code As Integer)
         mycode = code
         ' This call is required by the designer.

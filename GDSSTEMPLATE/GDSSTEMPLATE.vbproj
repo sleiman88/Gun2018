@@ -124,6 +124,12 @@
     <Compile Include="main.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MainReportByDate.Designer.vb">
+      <DependentUpon>MainReportByDate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainReportByDate.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainReportByPerson.Designer.vb">
       <DependentUpon>MainReportByPerson.vb</DependentUpon>
     </Compile>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainReportByDate.resx">
+      <DependentUpon>MainReportByDate.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainReportByPerson.resx">
       <DependentUpon>MainReportByPerson.vb</DependentUpon>
