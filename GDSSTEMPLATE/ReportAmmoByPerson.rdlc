@@ -37,7 +37,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>QUANTITY</Value>
+                              <Value>العدد</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -73,7 +73,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>SIZE AMMO</Value>
+                              <Value>عيار (مم)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -109,7 +109,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>YEAR</Value>
+                              <Value>السنة</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -145,7 +145,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Number DOC</Value>
+                              <Value>رقم الملف</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -181,7 +181,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>DATE OF DOC</Value>
+                              <Value>تاريخ الملف</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -217,7 +217,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>SPECIAL ORDER</Value>
+                              <Value>طلب خاص؟</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -300,7 +300,7 @@
                               </Style>
                             </TextRun>
                             <TextRun>
-                              <Value>   mm</Value>
+                              <Value>  مم</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -440,7 +440,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=IIF(Fields!IS_SPECIAL_ORDER.Value=1,"True","False")</Value>
+                              <Value>=IIF(Fields!IS_SPECIAL_ORDER.Value=1,"مع ","بدون")</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -493,7 +493,7 @@
         <DataSetName>DataSet1</DataSetName>
         <Top>2.10193in</Top>
         <Height>0.5in</Height>
-        <Width>6.42708in</Width>
+        <Width>6.42706in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -542,7 +542,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Total Ammo delivered:</Value>
+                    <Value>  اجمالي عدد الذخيرة المستلمة   :</Value>
                     <Style />
                   </TextRun>
                   <TextRun>
@@ -589,7 +589,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Ammo Delivery Report</Value>
+                <Value>تقرير استلام الذخيرة</Value>
                 <Style>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -624,7 +624,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Full Name: </Value>
+                    <Value>الاسم الكامل </Value>
                     <Style />
                   </TextRun>
                   <TextRun>
@@ -656,7 +656,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Grade: </Value>
+                    <Value>الرتبة </Value>
                     <Style />
                   </TextRun>
                   <TextRun>
@@ -689,7 +689,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Military Number: </Value>
+                    <Value>الرقم العسكري </Value>
                     <Style />
                   </TextRun>
                   <TextRun>
@@ -734,7 +734,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Person</Value>
+                <Value>المستلم</Value>
                 <Style>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>

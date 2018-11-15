@@ -43,7 +43,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>LABEL</Value>
+                              <Value>اسم السلاح </Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -79,7 +79,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>GTYPE</Value>
+                              <Value>النوع</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -115,7 +115,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>SUPPLIER</Value>
+                              <Value>المصنع</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -151,7 +151,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>AMMO</Value>
+                              <Value>عدد الذخيرة</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -187,7 +187,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>CLEANER</Value>
+                              <Value> عدة تنظيف</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -223,7 +223,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>SIZE</Value>
+                              <Value>عيار (مم)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -259,7 +259,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>NUMBER</Value>
+                              <Value>رقم السلاح</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -295,7 +295,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>NBDOC</Value>
+                              <Value>رقم الملف</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -474,7 +474,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=IIF(Fields!GCLEANER.Value=1,"With Cleaner","With out Clearner")</Value>
+                              <Value>=IIF(Fields!GCLEANER.Value=1,"مع","بدون")</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -650,7 +650,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Full Name: </Value>
+                    <Value>الاسم الكامل: </Value>
                     <Style />
                   </TextRun>
                   <TextRun>
@@ -682,7 +682,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Grade: </Value>
+                    <Value>الرتبة: </Value>
                     <Style />
                   </TextRun>
                   <TextRun>
@@ -715,7 +715,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Military Number: </Value>
+                    <Value>الرقم العسكري: </Value>
                     <Style />
                   </TextRun>
                   <TextRun>
@@ -761,7 +761,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Guns Delivery Report</Value>
+                <Value>تقرير تسليم الاسلحة</Value>
                 <Style>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>

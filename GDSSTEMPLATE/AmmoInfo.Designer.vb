@@ -112,135 +112,135 @@ Partial Class AmmoInfo
         MILITARY_NBLabel.AutoSize = True
         MILITARY_NBLabel.Location = New System.Drawing.Point(5, 36)
         MILITARY_NBLabel.Name = "MILITARY_NBLabel"
-        MILITARY_NBLabel.Size = New System.Drawing.Size(74, 13)
+        MILITARY_NBLabel.Size = New System.Drawing.Size(79, 13)
         MILITARY_NBLabel.TabIndex = 3
-        MILITARY_NBLabel.Text = "MILITARY NB:"
+        MILITARY_NBLabel.Text = "الرقم العسكري"
         '
         'YEARLabel
         '
         YEARLabel.AutoSize = True
         YEARLabel.Location = New System.Drawing.Point(4, 6)
         YEARLabel.Name = "YEARLabel"
-        YEARLabel.Size = New System.Drawing.Size(37, 13)
+        YEARLabel.Size = New System.Drawing.Size(35, 13)
         YEARLabel.TabIndex = 5
-        YEARLabel.Text = "YEAR:"
+        YEARLabel.Text = "السنة"
         '
         'QUANTITYLabel
         '
         QUANTITYLabel.AutoSize = True
         QUANTITYLabel.Location = New System.Drawing.Point(4, 43)
         QUANTITYLabel.Name = "QUANTITYLabel"
-        QUANTITYLabel.Size = New System.Drawing.Size(62, 13)
+        QUANTITYLabel.Size = New System.Drawing.Size(30, 13)
         QUANTITYLabel.TabIndex = 7
-        QUANTITYLabel.Text = "QUANTITY:"
+        QUANTITYLabel.Text = "العدد"
         '
         'NBROF_DOCLabel
         '
         NBROF_DOCLabel.AutoSize = True
         NBROF_DOCLabel.Location = New System.Drawing.Point(5, 9)
         NBROF_DOCLabel.Name = "NBROF_DOCLabel"
-        NBROF_DOCLabel.Size = New System.Drawing.Size(70, 13)
+        NBROF_DOCLabel.Size = New System.Drawing.Size(54, 13)
         NBROF_DOCLabel.TabIndex = 9
-        NBROF_DOCLabel.Text = "NBROF DOC:"
+        NBROF_DOCLabel.Text = "رقم الملف"
         '
         'DATEOF_DOCLabel
         '
         DATEOF_DOCLabel.AutoSize = True
         DATEOF_DOCLabel.Location = New System.Drawing.Point(3, 32)
         DATEOF_DOCLabel.Name = "DATEOF_DOCLabel"
-        DATEOF_DOCLabel.Size = New System.Drawing.Size(76, 13)
+        DATEOF_DOCLabel.Size = New System.Drawing.Size(58, 13)
         DATEOF_DOCLabel.TabIndex = 11
-        DATEOF_DOCLabel.Text = "DATEOF DOC:"
+        DATEOF_DOCLabel.Text = "تاريخ الملف"
         '
         'IS_SPECIAL_ORDERLabel
         '
         IS_SPECIAL_ORDERLabel.AutoSize = True
         IS_SPECIAL_ORDERLabel.Location = New System.Drawing.Point(9, 356)
         IS_SPECIAL_ORDERLabel.Name = "IS_SPECIAL_ORDERLabel"
-        IS_SPECIAL_ORDERLabel.Size = New System.Drawing.Size(103, 13)
+        IS_SPECIAL_ORDERLabel.Size = New System.Drawing.Size(59, 13)
         IS_SPECIAL_ORDERLabel.TabIndex = 13
-        IS_SPECIAL_ORDERLabel.Text = "IS SPECIAL ORDER:"
+        IS_SPECIAL_ORDERLabel.Text = "طلب خاص؟"
         '
         'SIZE_AMMOLabel
         '
         SIZE_AMMOLabel.AutoSize = True
         SIZE_AMMOLabel.Location = New System.Drawing.Point(4, 80)
         SIZE_AMMOLabel.Name = "SIZE_AMMOLabel"
-        SIZE_AMMOLabel.Size = New System.Drawing.Size(67, 13)
+        SIZE_AMMOLabel.Size = New System.Drawing.Size(50, 13)
         SIZE_AMMOLabel.TabIndex = 17
-        SIZE_AMMOLabel.Text = "SIZE AMMO:"
+        SIZE_AMMOLabel.Text = "عيار (مم)"
         '
         'NOTELabel
         '
         NOTELabel.AutoSize = True
         NOTELabel.Location = New System.Drawing.Point(390, 252)
         NOTELabel.Name = "NOTELabel"
-        NOTELabel.Size = New System.Drawing.Size(38, 13)
+        NOTELabel.Size = New System.Drawing.Size(48, 13)
         NOTELabel.TabIndex = 19
-        NOTELabel.Text = "NOTE:"
+        NOTELabel.Text = "ملاحظات"
         '
         'USER_APPLabel
         '
         USER_APPLabel.AutoSize = True
         USER_APPLabel.Location = New System.Drawing.Point(3, 7)
         USER_APPLabel.Name = "USER_APPLabel"
-        USER_APPLabel.Size = New System.Drawing.Size(84, 13)
+        USER_APPLabel.Size = New System.Drawing.Size(86, 13)
         USER_APPLabel.TabIndex = 21
-        USER_APPLabel.Text = "Data Entry User"
+        USER_APPLabel.Text = "مدخل المعلومات "
         '
         'SYSTEM_DATELabel
         '
         SYSTEM_DATELabel.AutoSize = True
         SYSTEM_DATELabel.Location = New System.Drawing.Point(3, 34)
         SYSTEM_DATELabel.Name = "SYSTEM_DATELabel"
-        SYSTEM_DATELabel.Size = New System.Drawing.Size(84, 13)
+        SYSTEM_DATELabel.Size = New System.Drawing.Size(105, 13)
         SYSTEM_DATELabel.TabIndex = 23
-        SYSTEM_DATELabel.Text = "Data Entry date"
+        SYSTEM_DATELabel.Text = "تاريخ ادخال المعلومات"
         '
         'UPDATE_USERLabel
         '
         UPDATE_USERLabel.AutoSize = True
         UPDATE_USERLabel.Location = New System.Drawing.Point(5, 6)
         UPDATE_USERLabel.Name = "UPDATE_USERLabel"
-        UPDATE_USERLabel.Size = New System.Drawing.Size(79, 13)
+        UPDATE_USERLabel.Size = New System.Drawing.Size(39, 13)
         UPDATE_USERLabel.TabIndex = 25
-        UPDATE_USERLabel.Text = "UPDATE USER:"
+        UPDATE_USERLabel.Text = "المعدل"
         '
         'UPDATE_DATELabel
         '
         UPDATE_DATELabel.AutoSize = True
         UPDATE_DATELabel.Location = New System.Drawing.Point(5, 33)
         UPDATE_DATELabel.Name = "UPDATE_DATELabel"
-        UPDATE_DATELabel.Size = New System.Drawing.Size(79, 13)
+        UPDATE_DATELabel.Size = New System.Drawing.Size(64, 13)
         UPDATE_DATELabel.TabIndex = 27
-        UPDATE_DATELabel.Text = "UPDATE DATE:"
+        UPDATE_DATELabel.Text = "تاريخ التعديل"
         '
         'DBIRTHLabel
         '
         DBIRTHLabel.AutoSize = True
         DBIRTHLabel.Location = New System.Drawing.Point(5, 91)
         DBIRTHLabel.Name = "DBIRTHLabel"
-        DBIRTHLabel.Size = New System.Drawing.Size(68, 13)
+        DBIRTHLabel.Size = New System.Drawing.Size(61, 13)
         DBIRTHLabel.TabIndex = 35
-        DBIRTHLabel.Text = "Date of Birth"
+        DBIRTHLabel.Text = "تاريخ الميلاد"
         '
         'PHONELabel
         '
         PHONELabel.AutoSize = True
         PHONELabel.Location = New System.Drawing.Point(5, 62)
         PHONELabel.Name = "PHONELabel"
-        PHONELabel.Size = New System.Drawing.Size(45, 13)
+        PHONELabel.Size = New System.Drawing.Size(35, 13)
         PHONELabel.TabIndex = 37
-        PHONELabel.Text = "PHONE:"
+        PHONELabel.Text = "الهاتف"
         '
         'FullNameLabel
         '
         FullNameLabel.AutoSize = True
         FullNameLabel.Location = New System.Drawing.Point(5, 6)
         FullNameLabel.Name = "FullNameLabel"
-        FullNameLabel.Size = New System.Drawing.Size(57, 13)
+        FullNameLabel.Size = New System.Drawing.Size(68, 13)
         FullNameLabel.TabIndex = 41
-        FullNameLabel.Text = "Full Name:"
+        FullNameLabel.Text = "الاسم الكامل"
         '
         'GdssDataSet1
         '
@@ -414,6 +414,7 @@ Partial Class AmmoInfo
         '
         'Panel1
         '
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.FullNameTextBox)
         Me.Panel1.Controls.Add(FullNameLabel)
         Me.Panel1.Controls.Add(Me.DateOfBirth_TextBox)
@@ -432,12 +433,13 @@ Partial Class AmmoInfo
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(12, 11)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(40, 13)
+        Me.Label1.Size = New System.Drawing.Size(48, 13)
         Me.Label1.TabIndex = 48
-        Me.Label1.Text = "Person"
+        Me.Label1.Text = "المستلم"
         '
         'Panel2
         '
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel2.Controls.Add(Me.YEARTextBox)
         Me.Panel2.Controls.Add(Me.SIZE_AMMOTextBox)
         Me.Panel2.Controls.Add(SIZE_AMMOLabel)
@@ -454,12 +456,13 @@ Partial Class AmmoInfo
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(386, 10)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(36, 13)
+        Me.Label2.Size = New System.Drawing.Size(40, 13)
         Me.Label2.TabIndex = 50
-        Me.Label2.Text = "Ammo"
+        Me.Label2.Text = "الذخيرة"
         '
         'Panel3
         '
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel3.Controls.Add(Me.DateOfDocument_TextBox)
         Me.Panel3.Controls.Add(DATEOF_DOCLabel)
         Me.Panel3.Controls.Add(NBROF_DOCLabel)
@@ -474,12 +477,13 @@ Partial Class AmmoInfo
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(12, 156)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(55, 13)
+        Me.Label3.Size = New System.Drawing.Size(39, 13)
         Me.Label3.TabIndex = 52
-        Me.Label3.Text = "Document"
+        Me.Label3.Text = "الايصال"
         '
         'Panel4
         '
+        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel4.Controls.Add(SYSTEM_DATELabel)
         Me.Panel4.Controls.Add(Me.USER_APPTextBox)
         Me.Panel4.Controls.Add(USER_APPLabel)
@@ -494,12 +498,13 @@ Partial Class AmmoInfo
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(386, 156)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(55, 13)
+        Me.Label4.Size = New System.Drawing.Size(81, 13)
         Me.Label4.TabIndex = 54
-        Me.Label4.Text = "Operation"
+        Me.Label4.Text = "ادخال المعلومات"
         '
         'Panel5
         '
+        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel5.Controls.Add(Me.UPDATE_USERTextBox)
         Me.Panel5.Controls.Add(UPDATE_DATELabel)
         Me.Panel5.Controls.Add(UPDATE_USERLabel)
@@ -514,9 +519,9 @@ Partial Class AmmoInfo
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(12, 252)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(42, 13)
+        Me.Label5.Size = New System.Drawing.Size(40, 13)
         Me.Label5.TabIndex = 56
-        Me.Label5.Text = "Update"
+        Me.Label5.Text = "التعديل"
         '
         'SpecialOrder_CheckBox
         '

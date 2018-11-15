@@ -27,4 +27,8 @@
 
         MyPrintGunIfo.ReportViewer1.RefreshReport()
     End Sub
+
+    Private Sub LABELLabel_Click(sender As Object, e As EventArgs)
+
+    End Sub
 End Class

@@ -9,14 +9,16 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Report of delivery Ammo</Value>
+                <Value>تقرير تسليم ذخيرة</Value>
                 <Style>
                   <FontSize>18pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <Left>1.34312in</Left>
@@ -41,8 +43,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Full Name: </Value>
-                    <Style />
+                    <Value>الاسم الكامل</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -70,15 +74,17 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Military Number</Value>
-                    <Style />
+                    <Value>الرقم العسكري</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
-            <Top>0.56347in</Top>
+            <Top>0.55305in</Top>
             <Left>0.04167in</Left>
             <Height>0.25in</Height>
             <Width>1.23958in</Width>
@@ -160,15 +166,17 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Phone</Value>
-                    <Style />
+                    <Value>الهاتف</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>0.98014in</Top>
+            <Top>0.96972in</Top>
             <Left>0.04167in</Left>
             <Height>0.25in</Height>
             <Width>1.23958in</Width>
@@ -470,7 +478,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Person </Value>
+                <Value>المستلم</Value>
                 <Style>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -503,7 +511,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Ammo details</Value>
+                <Value>الذخيرة</Value>
                 <Style>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -550,15 +558,17 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Size Ammo: </Value>
-                    <Style />
+                    <Value>عيار (مم)</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox13</rd:DefaultName>
-            <Top>0.18847in</Top>
+            <Top>0.17805in</Top>
             <Left>0.05209in</Left>
             <Height>0.25in</Height>
             <Width>1.32291in</Width>
@@ -579,15 +589,17 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Quantity</Value>
-                    <Style />
+                    <Value>العدد</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
-            <Top>0.56347in</Top>
+            <Top>0.55305in</Top>
             <Left>0.05209in</Left>
             <Height>0.25in</Height>
             <Width>1.32291in</Width>
@@ -671,15 +683,17 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Year</Value>
-                    <Style />
+                    <Value>السنة</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>0.98014in</Top>
+            <Top>0.96972in</Top>
             <Left>0.05209in</Left>
             <Height>0.25in</Height>
             <Width>1.32291in</Width>
@@ -780,8 +794,11 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>mm</Value>
-                    <Style />
+                    <Value>مم</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -825,15 +842,17 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Nbr of Document</Value>
-                    <Style />
+                    <Value>رقم الملف</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox13</rd:DefaultName>
-            <Top>0.18847in</Top>
+            <Top>0.17805in</Top>
             <Left>0.05209in</Left>
             <Height>0.25in</Height>
             <Width>1.23958in</Width>
@@ -854,15 +873,17 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Document Date</Value>
-                    <Style />
+                    <Value>تاريخ الملف</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
-            <Top>0.56347in</Top>
+            <Top>0.55305in</Top>
             <Left>0.01042in</Left>
             <Height>0.25in</Height>
             <Width>1.23958in</Width>
@@ -982,7 +1003,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Document</Value>
+                <Value>الايصال</Value>
                 <Style>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -1017,15 +1038,17 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Data entry User</Value>
-                    <Style />
+                    <Value>مدخل المعلومات </Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox13</rd:DefaultName>
-            <Top>0.11902in</Top>
+            <Top>0.1086in</Top>
             <Left>0.04167in</Left>
             <Height>0.25in</Height>
             <Width>1.32291in</Width>
@@ -1046,15 +1069,17 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Delivery Entry date</Value>
-                    <Style />
+                    <Value>تاريخ ادخال المعلومات</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
-            <Top>0.49402in</Top>
+            <Top>0.4836in</Top>
             <Left>0.04167in</Left>
             <Height>0.25in</Height>
             <Width>1.32291in</Width>
@@ -1176,7 +1201,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Operation</Value>
+                <Value>ادخال المعلومات</Value>
                 <Style>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -1199,7 +1224,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox20</rd:DefaultName>
-        <Top>2.17565in</Top>
+        <Top>2.15135in</Top>
         <Left>3.37438in</Left>
         <Height>0.25in</Height>
         <Width>1.375in</Width>
@@ -1264,7 +1289,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Note</Value>
+                <Value>ملاحظات</Value>
                 <Style>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -1303,7 +1328,7 @@
                     <Style />
                   </TextRun>
                   <TextRun>
-                    <Value>=IIF(First(Fields!IS_SPECIAL_ORDER.Value, "DataSet1")=1,"True","False")</Value>
+                    <Value>=IIF(First(Fields!IS_SPECIAL_ORDER.Value, "DataSet1")=1,"بطلب خاص","بدون طلب خاص")</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -1344,7 +1369,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Special order</Value>
+                <Value>طلب خاص؟</Value>
                 <Style>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -1377,7 +1402,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Special Order Note</Value>
+                <Value>بموافقة من</Value>
                 <Style>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>

@@ -243,6 +243,7 @@ Partial Class GunInfo
         LABELLabel.Size = New System.Drawing.Size(68, 13)
         LABELLabel.TabIndex = 41
         LABELLabel.Text = "اسم السلاح "
+        AddHandler LABELLabel.Click, AddressOf Me.LABELLabel_Click
         '
         'EXPR1Label
         '
