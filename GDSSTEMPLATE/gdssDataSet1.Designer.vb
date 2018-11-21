@@ -14097,7 +14097,7 @@ Namespace gdssDataSet1TableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(2) {}
+            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(4) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        TEAM.PERGUN.*, TEAM.N0ITEMS.LABEL, TEAM.GRADE.LABEL AS EXPR1, TEAM."& _ 
@@ -14149,8 +14149,32 @@ Namespace gdssDataSet1TableAdapters
                 "EAM.GRADE ON TEAM.PERGUN.GRADE = TEAM.GRADE.CODE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                   "& _ 
                 "      TEAM.N0OFFICE1 ON TEAM.PERGUN.SUPPLIER = TEAM.N0OFFICE1.CODE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&" "& _ 
                 "                        TEAM.IDCARD ON TEAM.PERGUN.OWNER = TEAM.IDCARD.CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHE"& _ 
-                "RE        (TEAM.PERGUN.OWNER = :Owner)"
+                "RE        (TEAM.PERGUN.GNUMBER = :GunNumber)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":GunNumber"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 50
+            param.IsNullable = true
+            param.SourceColumn = "GNUMBER"
+            Me._commandCollection(2).Parameters.Add(param)
+            Me._commandCollection(3) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "SELECT        TEAM.PERGUN.CODE, TEAM.PERGUN.GNAME, TEAM.PERGUN.GTYPE, TEAM.PERGUN"& _ 
+                ".GNUMBER, TEAM.PERGUN.GSTORE, TEAM.PERGUN.GSIZE, TEAM.PERGUN.GCLEANER, TEAM.PERG"& _ 
+                "UN.GAMMO, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.PERGUN.SUPPLIER, TEAM.PERGUN.OWNER, TE"& _ 
+                "AM.PERGUN.OWNERSOURCE, TEAM.PERGUN.GRADE, TEAM.PERGUN.DDATE, TEAM.PERGUN.NBDOC, "& _ 
+                "TEAM.PERGUN.NOTE, TEAM.PERGUN.SDATE, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.PERGUN.UDAT"& _ 
+                "E, TEAM.PERGUN.UUSER, TEAM.PERGUN.MDATE, TEAM.PERGUN.MUSER, TEAM.N0ITEMS.LABEL, "& _ 
+                "TEAM.GRADE.LABEL AS EXPR1, TEAM.N0OFFICE1.LABEL AS EXPR2, TEAM.IDCARD.FNAME, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&" "& _ 
+                "                        TEAM.IDCARD.LNAME, TEAM.IDCARD.FATHER, TEAM.IDCARD.DBIRT"& _ 
+                "H"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.PERGUN INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.N0ITEMS"& _ 
+                " ON TEAM.PERGUN.GNAME = TEAM.N0ITEMS.ITEM INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         T"& _ 
+                "EAM.GRADE ON TEAM.PERGUN.GRADE = TEAM.GRADE.CODE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                   "& _ 
+                "      TEAM.N0OFFICE1 ON TEAM.PERGUN.SUPPLIER = TEAM.N0OFFICE1.CODE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&" "& _ 
+                "                        TEAM.IDCARD ON TEAM.PERGUN.OWNER = TEAM.IDCARD.CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHE"& _ 
+                "RE        (TEAM.PERGUN.OWNER = :Owner)"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
             param.ParameterName = ":Owner"
             param.DbType = Global.System.Data.DbType.[Decimal]
@@ -14158,7 +14182,24 @@ Namespace gdssDataSet1TableAdapters
             param.Size = 22
             param.IsNullable = true
             param.SourceColumn = "OWNER"
-            Me._commandCollection(2).Parameters.Add(param)
+            Me._commandCollection(3).Parameters.Add(param)
+            Me._commandCollection(4) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "SELECT        NVL(TEAM.PERGUN.CODE, 0) AS Code"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.PERGUN INNER"& _ 
+                " JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.N0ITEMS ON TEAM.PERGUN.GNAME = TEAM.N0ITEMS"& _ 
+                ".ITEM INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.GRADE ON TEAM.PERGUN.GRADE = TEA"& _ 
+                "M.GRADE.CODE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.N0OFFICE1 ON TEAM.PERGUN."& _ 
+                "SUPPLIER = TEAM.N0OFFICE1.CODE INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         TEAM.IDCARD "& _ 
+                "ON TEAM.PERGUN.OWNER = TEAM.IDCARD.CODE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (TEAM.PERGUN.GNUMBER = :Gu"& _ 
+                "nNumber)"
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":GunNumber"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 50
+            param.IsNullable = true
+            param.SourceColumn = "GNUMBER"
+            Me._commandCollection(4).Parameters.Add(param)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -14215,8 +14256,42 @@ Namespace gdssDataSet1TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByOwner(ByVal dataTable As gdssDataSet1.GunReportInfoFormDataTable, ByVal Owner As Decimal) As Integer
+        Public Overloads Overridable Function FillByGunNumber(ByVal dataTable As gdssDataSet1.GunReportInfoFormDataTable, ByVal GunNumber As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            If (GunNumber Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("GunNumber")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(GunNumber,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataByGunNumber(ByVal GunNumber As String) As gdssDataSet1.GunReportInfoFormDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            If (GunNumber Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("GunNumber")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(GunNumber,String)
+            End If
+            Dim dataTable As gdssDataSet1.GunReportInfoFormDataTable = New gdssDataSet1.GunReportInfoFormDataTable(true)
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByOwner(ByVal dataTable As gdssDataSet1.GunReportInfoFormDataTable, ByVal Owner As Decimal) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(Owner,Decimal)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -14230,11 +14305,42 @@ Namespace gdssDataSet1TableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
         Public Overloads Overridable Function GetDataByOwner(ByVal Owner As Decimal) As gdssDataSet1.GunReportInfoFormDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(Owner,Decimal)
             Dim dataTable As gdssDataSet1.GunReportInfoFormDataTable = New gdssDataSet1.GunReportInfoFormDataTable(true)
             Me.Adapter.Fill(dataTable)
             Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function getCodeByGunNumber(ByVal GunNumber As String) As Object
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = Me.CommandCollection(4)
+            If (GunNumber Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("GunNumber")
+            Else
+                command.Parameters(0).Value = CType(GunNumber,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return Nothing
+            Else
+                Return CType(returnValue,Object)
+            End If
         End Function
     End Class
     

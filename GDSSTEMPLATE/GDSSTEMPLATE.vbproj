@@ -175,6 +175,12 @@
     <Compile Include="ReportGunByPerson.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SearchGunFrom.Designer.vb">
+      <DependentUpon>SearchGunFrom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SearchGunFrom.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="serversettings.Designer.vb">
       <DependentUpon>serversettings.vb</DependentUpon>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportGunByPerson.resx">
       <DependentUpon>ReportGunByPerson.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchGunFrom.resx">
+      <DependentUpon>SearchGunFrom.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="serversettings.resx">
       <DependentUpon>serversettings.vb</DependentUpon>

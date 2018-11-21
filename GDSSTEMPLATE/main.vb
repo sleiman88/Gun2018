@@ -288,6 +288,12 @@
         MyMainReportByPerson.ShowDialog()
     End Sub
 
+    Private Sub SearchGunToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SearchGunToolStripMenuItem.Click
+        Dim MySearchgun As SearchGunFrom
+        MySearchgun = New SearchGunFrom()
+        MySearchgun.ShowDialog()
+    End Sub
+
 
 
 

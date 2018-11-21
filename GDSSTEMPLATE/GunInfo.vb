@@ -8,19 +8,14 @@
         '  Me.GunReportInfoFormTableAdapter.GetDataByCode(mycode)
 
         ' Add any initialization after the InitializeComponent() call.
-
-    End Sub
-
-    Private Sub GunInfo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
         Me.GunReportInfoFormTableAdapter.FillByCode(Me.GdssDataSet1.GunReportInfoForm, mycode)
-
     End Sub
+
+
 
     Private Sub Print_Button_Click(sender As Object, e As EventArgs) Handles Print_Button.Click
         'Call report viwer
-        Me.GunReportInfoFormTableAdapter.FillByCode(Me.GdssDataSet1.GunReportInfoForm, mycode)
+        'Me.GunReportInfoFormTableAdapter.FillByCode(Me.GdssDataSet1.GunReportInfoForm, mycode)
         Dim MyPrintGunIfo As PrintGunInfo
         MyPrintGunIfo = New PrintGunInfo(mycode)
         MyPrintGunIfo.ShowDialog()
