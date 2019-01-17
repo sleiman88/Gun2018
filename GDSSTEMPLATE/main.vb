@@ -294,6 +294,10 @@
         MySearchgun.ShowDialog()
     End Sub
 
+    Private Sub TextBoxMilitNb_TextChanged(sender As Object, e As EventArgs) Handles TextBoxMilitNb.TextChanged
+
+    End Sub
+
 
 
 
