@@ -18,6 +18,7 @@
 
             Dim ncs = My.Settings.cstring.Replace("username", txt_user.Text).Replace("password", txt_pass.Text).Replace("SRV", cmb_server.SelectedItem)
             'MsgBox(ncs)
+
             My.Settings.Item("gdssConnectionString") = ncs
             'MsgBox(My.Settings.Item("numbersConnectionString"))
 

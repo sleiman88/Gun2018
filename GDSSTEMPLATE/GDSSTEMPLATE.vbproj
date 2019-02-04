@@ -227,6 +227,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="deliveryGunReport.rdlc" />
     <EmbeddedResource Include="AmmoReport.rdlc" />
+    <EmbeddedResource Include="DeliveryGunReportUpdated.rdlc" />
     <EmbeddedResource Include="ReportAmmoByPerson.rdlc" />
     <EmbeddedResource Include="ReportGunByPerson.rdlc" />
     <EmbeddedResource Include="ReportAmmoByPerson.resx">
