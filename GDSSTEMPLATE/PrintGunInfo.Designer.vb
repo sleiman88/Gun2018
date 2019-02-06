@@ -50,7 +50,7 @@ Partial Class PrintGunInfo
         ReportDataSource1.Name = "DataSet1"
         ReportDataSource1.Value = Me.GunReportInfoFormBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "GDSSTEMPLATE.deliveryGunReport.rdlc"
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "GDSSTEMPLATE.DeliveryGunReportUpdated.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(12, 12)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.Size = New System.Drawing.Size(883, 391)
