@@ -29,7 +29,6 @@ Partial Class main
         Me.GiveAmmoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ByPersonToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SearchGunToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -96,44 +95,38 @@ Partial Class main
         'GiveGunToolStripMenuItem
         '
         Me.GiveGunToolStripMenuItem.Name = "GiveGunToolStripMenuItem"
-        Me.GiveGunToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.GiveGunToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.GiveGunToolStripMenuItem.Text = "Give Gun"
         '
         'GiveAmmoToolStripMenuItem
         '
         Me.GiveAmmoToolStripMenuItem.Name = "GiveAmmoToolStripMenuItem"
-        Me.GiveAmmoToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.GiveAmmoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.GiveAmmoToolStripMenuItem.Text = "Give ammo"
         '
         'ReportsToolStripMenuItem
         '
-        Me.ReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ByPersonToolStripMenuItem, Me.DateToolStripMenuItem})
+        Me.ReportsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ByPersonToolStripMenuItem})
         Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
-        Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ReportsToolStripMenuItem.Text = "Reports"
         '
         'ByPersonToolStripMenuItem
         '
         Me.ByPersonToolStripMenuItem.Name = "ByPersonToolStripMenuItem"
-        Me.ByPersonToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.ByPersonToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ByPersonToolStripMenuItem.Text = "By Person"
-        '
-        'DateToolStripMenuItem
-        '
-        Me.DateToolStripMenuItem.Name = "DateToolStripMenuItem"
-        Me.DateToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
-        Me.DateToolStripMenuItem.Text = "Date"
         '
         'SearchGunToolStripMenuItem
         '
         Me.SearchGunToolStripMenuItem.Name = "SearchGunToolStripMenuItem"
-        Me.SearchGunToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.SearchGunToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.SearchGunToolStripMenuItem.Text = "Search Gun"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'Panel2
@@ -514,6 +507,5 @@ Partial Class main
     Friend WithEvents QUANTITYDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents GiveGun_Button As Button
     Friend WithEvents GiveAmmo_Button As Button
-    Friend WithEvents DateToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SearchGunToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -71,6 +71,8 @@ Partial Class AmmoInfo
         Me.Label5 = New System.Windows.Forms.Label()
         Me.SpecialOrder_CheckBox = New System.Windows.Forms.CheckBox()
         Me.Button_Print = New System.Windows.Forms.Button()
+        Me.AmmoReportWithGradeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AmmoReportWithGradeTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.AmmoReportWithGradeTableAdapter()
         AMMOTRANSACTION_PKLabel = New System.Windows.Forms.Label()
         MILITARY_NBLabel = New System.Windows.Forms.Label()
         YEARLabel = New System.Windows.Forms.Label()
@@ -94,6 +96,7 @@ Partial Class AmmoInfo
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel5.SuspendLayout()
+        CType(Me.AmmoReportWithGradeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'AMMOTRANSACTION_PKLabel
@@ -261,6 +264,7 @@ Partial Class AmmoInfo
         Me.TableAdapterManager.AMMOTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.LOGINTableAdapter = Nothing
         Me.TableAdapterManager.N0ITEMSTableAdapter = Nothing
         Me.TableAdapterManager.PERGUNTableAdapterTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = GDSSTEMPLATE.gdssDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
@@ -542,6 +546,15 @@ Partial Class AmmoInfo
         Me.Button_Print.Text = "Print"
         Me.Button_Print.UseVisualStyleBackColor = True
         '
+        'AmmoReportWithGradeBindingSource
+        '
+        Me.AmmoReportWithGradeBindingSource.DataMember = "AmmoReportWithGrade"
+        Me.AmmoReportWithGradeBindingSource.DataSource = Me.GdssDataSet1
+        '
+        'AmmoReportWithGradeTableAdapter
+        '
+        Me.AmmoReportWithGradeTableAdapter.ClearBeforeFill = True
+        '
         'AmmoInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -579,6 +592,7 @@ Partial Class AmmoInfo
         Me.Panel4.PerformLayout()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
+        CType(Me.AmmoReportWithGradeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -616,4 +630,6 @@ Partial Class AmmoInfo
     Friend WithEvents Label5 As Label
     Friend WithEvents SpecialOrder_CheckBox As CheckBox
     Friend WithEvents Button_Print As Button
+    Friend WithEvents AmmoReportWithGradeBindingSource As BindingSource
+    Friend WithEvents AmmoReportWithGradeTableAdapter As gdssDataSet1TableAdapters.AmmoReportWithGradeTableAdapter
 End Class

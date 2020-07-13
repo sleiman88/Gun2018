@@ -1,4 +1,5 @@
-﻿Public Class AmmoInfo
+﻿
+Public Class AmmoInfo
     Public myPK As Int32
     Public Sub New(pk As Integer)
 
@@ -9,15 +10,23 @@
 
     End Sub
     Private Sub AmmoInfo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'GdssDataSet1.AmmoReportWithGrade' table. You can move, or remove it, as needed.
+        ' Me.AmmoReportWithGradeTableAdapter.Fill(Me.GdssDataSet1.AmmoReportWithGrade)
         'TODO: This line of code loads data into the 'GdssDataSet1.AmmoReportInfo' table. You can move, or remove it, as needed.
         ' Me.AmmoReportInfoTableAdapter.Fill(Me.GdssDataSet1.AmmoReportInfo)
         Me.AmmoReportInfoTableAdapter.FillByPK(Me.GdssDataSet1.AmmoReportInfo, myPK)
     End Sub
 
     Private Sub Button_Print_Click(sender As Object, e As EventArgs) Handles Button_Print.Click
+
+
         Dim MyPrintAmmoInfo As PrintAmmoInfo
         MyPrintAmmoInfo = New PrintAmmoInfo(myPK)
+        Me.AmmoReportInfoTableAdapter.ClearBeforeFill = True
+
+        Me.AmmoReportInfoTableAdapter.FillByPK(Me.GdssDataSet1.AmmoReportInfo, myPK)
         MyPrintAmmoInfo.ShowDialog()
+
         MyPrintAmmoInfo.ReportViewer1.RefreshReport()
 
     End Sub

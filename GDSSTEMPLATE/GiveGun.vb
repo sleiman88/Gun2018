@@ -375,7 +375,8 @@
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
         Dim temp As Date
         temp = DateTimePicker1.Value
-        temp.ToString("MM/DD/yyyy hh:mm")
+        temp.ToString("MM/DD/yyyy")
+        ' temp.ToString("MM/DD/yyyy hh:mm")
         DDATE_TextBox.Text = temp.ToString
         DDate_Label.Visible = False
 
@@ -390,7 +391,8 @@
 
             Dim CurrentTime As String
 
-            CurrentTime = Date.Now.ToString("MM/dd/yyyy hh:mm tt")
+            CurrentTime = Date.Now.ToString("MM/dd/yyyy ")
+            '  CurrentTime = Date.Now.ToString("MM/dd/yyyy hh:mm tt")
 
             Dim withCleaner As Integer
             If WithCleaner_CheckBox.AutoCheck = True Then
@@ -562,9 +564,16 @@
     End Sub
 
     Private Sub DateTimePickerSDATE_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePickerSDATE.ValueChanged
-        Dim temp As Date
+        Dim temp, temp2 As Date
         temp = DateTimePicker1.Value
-        temp.ToString("MM/DD/yyyy hh:mm")
+        Try
+            temp2 = DateTime.ParseExact(temp, "MM/dd/yyyy", Globalization.CultureInfo.InstalledUICulture)
+        Catch ex As Exception
+            MsgBox(ex.Message())
+        End Try
+
+        temp.ToString("MM/dd/yyyy")
+        'temp.ToString("MM/DD/yyyy hh:mm")
         SDATE_TextBox.Text = temp.ToString
         SDATE_Label.Visible = False
     End Sub
@@ -578,4 +587,6 @@
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
+
+
 End Class

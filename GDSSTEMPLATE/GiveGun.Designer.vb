@@ -722,6 +722,7 @@ Partial Class GiveGun
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(192, 20)
         Me.DateTimePicker1.TabIndex = 2
+        Me.DateTimePicker1.Value = New Date(2019, 2, 6, 0, 0, 0, 0)
         '
         'DDate_Label
         '
@@ -889,6 +890,7 @@ Partial Class GiveGun
         '
         Me.TableAdapterManager.AMMOTableAdapter = Nothing
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.LOGINTableAdapter = Nothing
         Me.TableAdapterManager.N0ITEMSTableAdapter = Nothing
         Me.TableAdapterManager.PERGUNTableAdapterTableAdapter = Me.PERGUNTableAdapterTableAdapter
         Me.TableAdapterManager.UpdateOrder = GDSSTEMPLATE.gdssDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete

@@ -23,39 +23,51 @@ Partial Class PrintAmmoInfo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.gdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
         Me.AmmoReportInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.gdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
         Me.AmmoReportInfoTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.AmmoReportInfoTableAdapter()
-        CType(Me.gdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.AmmoReportWithGradeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AmmoReportWithGradeTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.AmmoReportWithGradeTableAdapter()
         CType(Me.AmmoReportInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gdssDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AmmoReportWithGradeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ReportViewer1
         '
-        ReportDataSource2.Name = "DataSet1"
-        ReportDataSource2.Value = Me.AmmoReportInfoBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "GDSSTEMPLATE.AmmoReport.rdlc"
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.AmmoReportInfoBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "GDSSTEMPLATE.AmmoInfoUpdated.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(1, 24)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.Size = New System.Drawing.Size(723, 547)
         Me.ReportViewer1.TabIndex = 0
-        '
-        'gdssDataSet1
-        '
-        Me.gdssDataSet1.DataSetName = "gdssDataSet1"
-        Me.gdssDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'AmmoReportInfoBindingSource
         '
         Me.AmmoReportInfoBindingSource.DataMember = "AmmoReportInfo"
         Me.AmmoReportInfoBindingSource.DataSource = Me.gdssDataSet1
         '
+        'gdssDataSet1
+        '
+        Me.gdssDataSet1.DataSetName = "gdssDataSet1"
+        Me.gdssDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'AmmoReportInfoTableAdapter
         '
         Me.AmmoReportInfoTableAdapter.ClearBeforeFill = True
+        '
+        'AmmoReportWithGradeBindingSource
+        '
+        Me.AmmoReportWithGradeBindingSource.DataMember = "AmmoReportWithGrade"
+        Me.AmmoReportWithGradeBindingSource.DataSource = Me.gdssDataSet1
+        '
+        'AmmoReportWithGradeTableAdapter
+        '
+        Me.AmmoReportWithGradeTableAdapter.ClearBeforeFill = True
         '
         'PrintAmmoInfo
         '
@@ -66,8 +78,9 @@ Partial Class PrintAmmoInfo
         Me.MaximizeBox = False
         Me.Name = "PrintAmmoInfo"
         Me.Text = "PrintAmmoInfo"
-        CType(Me.gdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AmmoReportInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AmmoReportWithGradeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -76,4 +89,6 @@ Partial Class PrintAmmoInfo
     Friend WithEvents AmmoReportInfoBindingSource As BindingSource
     Friend WithEvents gdssDataSet1 As gdssDataSet1
     Friend WithEvents AmmoReportInfoTableAdapter As gdssDataSet1TableAdapters.AmmoReportInfoTableAdapter
+    Friend WithEvents AmmoReportWithGradeBindingSource As BindingSource
+    Friend WithEvents AmmoReportWithGradeTableAdapter As gdssDataSet1TableAdapters.AmmoReportWithGradeTableAdapter
 End Class
