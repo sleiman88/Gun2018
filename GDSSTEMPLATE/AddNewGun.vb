@@ -45,6 +45,13 @@
             MsgBox("error")
         Else
 
+
+            Dim newId As String
+            '' newId = temp.ToString(temp)
+            newId = "ع" + Me.N0ITEMSTableAdapter.getNewID.ToString
+            MsgBox(newId)
+
+
         End If
     End Sub
 
