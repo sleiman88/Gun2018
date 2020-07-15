@@ -28,7 +28,6 @@ Partial Class AddNewGun
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label_error_double = New System.Windows.Forms.Label()
         Me.Label_er = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.GdssDataSet1 = New GDSSTEMPLATE.gdssDataSet1()
         Me.N0ITEMSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.N0ITEMSTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.N0ITEMSTableAdapter()
@@ -54,7 +53,7 @@ Partial Class AddNewGun
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(66, 162)
+        Me.Button1.Location = New System.Drawing.Point(88, 119)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 2
@@ -83,14 +82,6 @@ Partial Class AddNewGun
         Me.Label_er.Text = "*"
         Me.Label_er.Visible = False
         '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(247, 163)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 5
-        '
         'GdssDataSet1
         '
         Me.GdssDataSet1.DataSetName = "gdssDataSet1"
@@ -109,13 +100,14 @@ Partial Class AddNewGun
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(437, 313)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.ClientSize = New System.Drawing.Size(450, 169)
         Me.Controls.Add(Me.Label_er)
         Me.Controls.Add(Me.Label_error_double)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox_gunName)
         Me.Controls.Add(Me.Label1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "AddNewGun"
         Me.Text = "AddNewGun"
         CType(Me.GdssDataSet1, System.ComponentModel.ISupportInitialize).EndInit()

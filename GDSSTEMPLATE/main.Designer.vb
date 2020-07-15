@@ -66,6 +66,7 @@ Partial Class main
         Me.AMMODataGridTableAdapter = New GDSSTEMPLATE.gdssDataSet1TableAdapters.AMMODataGridTableAdapter()
         Me.GiveGun_Button = New System.Windows.Forms.Button()
         Me.GiveAmmo_Button = New System.Windows.Forms.Button()
+        Me.AddNewGunToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.IDCARDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,7 +88,7 @@ Partial Class main
         '
         'MenuToolStripMenuItem
         '
-        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GiveGunToolStripMenuItem, Me.GiveAmmoToolStripMenuItem, Me.ReportsToolStripMenuItem, Me.SearchGunToolStripMenuItem, Me.ExitToolStripMenuItem})
+        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GiveGunToolStripMenuItem, Me.GiveAmmoToolStripMenuItem, Me.ReportsToolStripMenuItem, Me.AddNewGunToolStripMenuItem, Me.SearchGunToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
         Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
         Me.MenuToolStripMenuItem.Text = "Menu"
@@ -114,7 +115,7 @@ Partial Class main
         'ByPersonToolStripMenuItem
         '
         Me.ByPersonToolStripMenuItem.Name = "ByPersonToolStripMenuItem"
-        Me.ByPersonToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ByPersonToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.ByPersonToolStripMenuItem.Text = "By Person"
         '
         'SearchGunToolStripMenuItem
@@ -432,6 +433,12 @@ Partial Class main
         Me.GiveAmmo_Button.Text = "Give Ammo"
         Me.GiveAmmo_Button.UseVisualStyleBackColor = True
         '
+        'AddNewGunToolStripMenuItem
+        '
+        Me.AddNewGunToolStripMenuItem.Name = "AddNewGunToolStripMenuItem"
+        Me.AddNewGunToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AddNewGunToolStripMenuItem.Text = "Add New Gun"
+        '
         'main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -508,4 +515,5 @@ Partial Class main
     Friend WithEvents GiveGun_Button As Button
     Friend WithEvents GiveAmmo_Button As Button
     Friend WithEvents SearchGunToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AddNewGunToolStripMenuItem As ToolStripMenuItem
 End Class

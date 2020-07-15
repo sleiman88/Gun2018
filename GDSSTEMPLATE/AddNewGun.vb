@@ -71,8 +71,37 @@
 
     Private Sub AddNewGun_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'GdssDataSet1.N0ITEMS' table. You can move, or remove it, as needed.
-        ComboBox1.Visible = False
+        '' ComboBox1.Visible = False
         Me.N0ITEMSTableAdapter.Fill(Me.GdssDataSet1.N0ITEMS)
 
+    End Sub
+
+    Private Sub TextBox_gunName_TextChanged(sender As Object, e As EventArgs) Handles TextBox_gunName.TextChanged
+
+    End Sub
+
+    Private Sub TextBox_gunName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox_gunName.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+
+            If checkTest() = True Then
+                MsgBox("error")
+            Else
+
+
+                Dim newId As String
+                '' newId = temp.ToString(temp)
+                newId = "ع" + Me.N0ITEMSTableAdapter.getNewID.ToString
+
+                Me.N0ITEMSTableAdapter.InsertQuery(newId, TextBox_gunName.Text)
+
+                MsgBox("Saved Succefully ")
+                TextBox_gunName.Text = ""
+                Label_error_double.Visible = False
+                Label_er.Visible = False
+                TextBox_gunName.Focus()
+
+            End If
+
+        End If
     End Sub
 End Class

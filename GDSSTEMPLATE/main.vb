@@ -298,6 +298,13 @@
 
     End Sub
 
+    Private Sub AddNewGunToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddNewGunToolStripMenuItem.Click
+        Dim AddNewGunForm As AddNewGun
+        AddNewGunForm = New AddNewGun()
+        AddNewGunForm.ShowDialog()
+
+    End Sub
+
 
 
 
