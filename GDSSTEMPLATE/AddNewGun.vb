@@ -28,8 +28,7 @@
     Private Function checkNumberIfExist() As Boolean
 
         Dim result As String
-
-        ''    result = Me.PERGUNTableAdapterTableAdapter.checkIfNbExist(gunNbConfirm_TextBox.Text)
+        ''  result = Me.N0ITEMSAddGunTableAdapter.checkIfExist(TextBox_gunName.Text)
 
         If result Is Nothing Then
             Return False
@@ -53,5 +52,13 @@
         If TextBox_gunName.Text <> String.Empty Then
             Label_er.Visible = False
         End If
+    End Sub
+
+    Private Sub AddNewGun_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'GdssDataSet1.N0ITEMSAddGun' table. You can move, or remove it, as needed.
+        Me.N0ITEMSAddGunTableAdapter.Fill(Me.GdssDataSet1.N0ITEMSAddGun)
+        'TODO: This line of code loads data into the 'GdssDataSet1.N0ITEMS' table. You can move, or remove it, as needed.
+        Me.N0ITEMSTableAdapter.Fill(Me.GdssDataSet1.N0ITEMS)
+
     End Sub
 End Class
