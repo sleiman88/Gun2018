@@ -9269,7 +9269,7 @@ Namespace gdssDataSet1TableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(3) {}
+            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(4) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        ITEM, LABEL"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.N0ITEMS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (ITEM LIKE "& _ 
@@ -9304,6 +9304,24 @@ Namespace gdssDataSet1TableAdapters
             Me._commandCollection(3).CommandText = "SELECT       substr(MAX(ITEM), 2) + 1 AS EXPR1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.N0ITEMS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHE"& _ 
                 "RE        (substr(ITEM, 1, 1) = 'ع')"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY ITEM"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "INSERT INTO ""TEAM"".""N0ITEMS"" (""ITEM"", ""LABEL"") VALUES (:ITEM, :LABEL)"
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":ITEM"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 7
+            param.IsNullable = true
+            param.SourceColumn = "ITEM"
+            Me._commandCollection(4).Parameters.Add(param)
+            param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
+            param.ParameterName = ":LABEL"
+            param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
+            param.Size = 60
+            param.IsNullable = true
+            param.SourceColumn = "LABEL"
+            Me._commandCollection(4).Parameters.Add(param)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9555,6 +9573,38 @@ Namespace gdssDataSet1TableAdapters
             Else
                 Return CType(returnValue,Object)
             End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
+        Public Overloads Overridable Function InsertQuery(ByVal ITEM As String, ByVal LABEL As String) As Integer
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = Me.CommandCollection(4)
+            If (ITEM Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("ITEM")
+            Else
+                command.Parameters(0).Value = CType(ITEM,String)
+            End If
+            If (LABEL Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("LABEL")
+            Else
+                command.Parameters(1).Value = CType(LABEL,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
         End Function
     End Class
     

@@ -49,8 +49,14 @@
             Dim newId As String
             '' newId = temp.ToString(temp)
             newId = "ع" + Me.N0ITEMSTableAdapter.getNewID.ToString
-            MsgBox(newId)
 
+            Me.N0ITEMSTableAdapter.InsertQuery(newId, TextBox_gunName.Text)
+
+            MsgBox("Saved Succefully ")
+            TextBox_gunName.Text = ""
+            Label_error_double.Visible = False
+            Label_er.Visible = False
+            TextBox_gunName.Focus()
 
         End If
     End Sub
