@@ -94,6 +94,17 @@ WHERE        (ITEM LIKE '%ع%') AND (LABEL LIKE :PARAM1)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
+              <DbSource ConnectionRef="gdssConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="getNewID" Modifier="Public" Name="getNewID" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="getNewID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT       substr(MAX(ITEM), 2) + 1 AS EXPR1
+FROM            TEAM.N0ITEMS
+WHERE        (substr(ITEM, 1, 1) = 'ع')
+ORDER BY ITEM</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
             </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="IDCARDTableAdapter" GeneratorDataComponentClassName="IDCARDTableAdapter" Name="IDCARD" UserDataComponentName="IDCARDTableAdapter">
