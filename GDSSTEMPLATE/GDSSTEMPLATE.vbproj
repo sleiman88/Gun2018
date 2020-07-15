@@ -79,6 +79,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewGun.Designer.vb">
+      <DependentUpon>AddNewGun.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewGun.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AmmoInfo.Designer.vb">
       <DependentUpon>AmmoInfo.vb</DependentUpon>
     </Compile>
@@ -189,6 +195,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddNewGun.resx">
+      <DependentUpon>AddNewGun.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AmmoInfo.resx">
       <DependentUpon>AmmoInfo.vb</DependentUpon>
     </EmbeddedResource>

@@ -588,5 +588,7 @@
 
     End Sub
 
+    Private Sub gunNbConfirm_TextBox_TextChanged(sender As Object, e As EventArgs) Handles gunNbConfirm_TextBox.TextChanged
 
+    End Sub
 End Class
