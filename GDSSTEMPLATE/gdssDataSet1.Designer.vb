@@ -9269,7 +9269,7 @@ Namespace gdssDataSet1TableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(3) {}
+            Me._commandCollection = New Global.Oracle.ManagedDataAccess.Client.OracleCommand(2) {}
             Me._commandCollection(0) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        ITEM, LABEL"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.N0ITEMS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (ITEM LIKE "& _ 
@@ -9277,11 +9277,11 @@ Namespace gdssDataSet1TableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        ITEM, LABEL"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.N0ITEMS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (ITEM LIKE "& _ 
-                "'%ع%') AND (LABEL LIKE :PARAM1)"
+            Me._commandCollection(1).CommandText = "SELECT        LABEL"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.N0ITEMS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (LABEL = :NamePar"& _ 
+                "am)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Dim param As Global.Oracle.ManagedDataAccess.Client.OracleParameter = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = ":PARAM1"
+            param.ParameterName = ":NameParam"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 60
             param.IsNullable = true
@@ -9289,21 +9289,16 @@ Namespace gdssDataSet1TableAdapters
             Me._commandCollection(1).Parameters.Add(param)
             Me._commandCollection(2) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT       substr(MAX(ITEM), 2) + 1 AS EXPR1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.N0ITEMS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHE"& _ 
-                "RE        (substr(ITEM, 1, 1) = 'ع')"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY ITEM"
+            Me._commandCollection(2).CommandText = "SELECT        ITEM, LABEL"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.N0ITEMS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (ITEM LIKE "& _ 
+                "'%ع%') AND (LABEL LIKE :PARAM1)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(3) = New Global.Oracle.ManagedDataAccess.Client.OracleCommand()
-            Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT       LABEL"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            TEAM.N0ITEMS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (LABEL = :GunName)"& _ 
-                ""
-            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             param = New Global.Oracle.ManagedDataAccess.Client.OracleParameter()
-            param.ParameterName = ":GunName"
+            param.ParameterName = ":PARAM1"
             param.OracleDbTypeEx = Global.Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2
             param.Size = 60
             param.IsNullable = true
             param.SourceColumn = "LABEL"
-            Me._commandCollection(3).Parameters.Add(param)
+            Me._commandCollection(2).Parameters.Add(param)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9335,7 +9330,7 @@ Namespace gdssDataSet1TableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
         Public Overloads Overridable Function FillBy(ByVal dataTable As gdssDataSet1.N0ITEMSDataTable, ByVal PARAM1 As String) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
             If (PARAM1 Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("PARAM1")
             Else
@@ -9353,7 +9348,7 @@ Namespace gdssDataSet1TableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
         Public Overloads Overridable Function GetDataBy(ByVal PARAM1 As String) As gdssDataSet1.N0ITEMSDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
             If (PARAM1 Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("PARAM1")
             Else
@@ -9503,38 +9498,12 @@ Namespace gdssDataSet1TableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function getMax() As Global.System.Nullable(Of Decimal)
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = Me.CommandCollection(2)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open
-            End If
-            Dim returnValue As Object
-            Try 
-                returnValue = command.ExecuteScalar
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close
-                End If
-            End Try
-            If ((returnValue Is Nothing)  _
-                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
-                Return New Global.System.Nullable(Of Decimal)()
+        Public Overloads Overridable Function AlreadyExist(ByVal NameParam As String) As Object
+            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = Me.CommandCollection(1)
+            If (NameParam Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("NameParam")
             Else
-                Return New Global.System.Nullable(Of Decimal)(CType(returnValue,Decimal))
-            End If
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Search(ByVal GunName As String) As String
-            Dim command As Global.Oracle.ManagedDataAccess.Client.OracleCommand = Me.CommandCollection(3)
-            If (GunName Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("GunName")
-            Else
-                command.Parameters(0).Value = CType(GunName,String)
+                command.Parameters(0).Value = CType(NameParam,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -9553,7 +9522,7 @@ Namespace gdssDataSet1TableAdapters
                         OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
                 Return Nothing
             Else
-                Return CType(returnValue,String)
+                Return CType(returnValue,Object)
             End If
         End Function
     End Class
