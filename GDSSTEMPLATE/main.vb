@@ -68,6 +68,7 @@
     'search person form 
     Private Sub ComboBoxPersons_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxPersons.SelectedIndexChanged
         FullName_TextBox.Text = ComboBoxPersons.GetItemText(ComboBoxPersons.SelectedItem)
+        TextBoxMilitNb.Text = ComboBoxPersons.SelectedValue
         If FullName_TextBox.Text <> String.Empty Then
             Person_Label.Visible = False
 
